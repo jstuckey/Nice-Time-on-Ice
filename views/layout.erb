@@ -1,0 +1,70 @@
+<!doctype html>  
+<html lang="en">  
+<head>  
+  <meta charset="utf8">  
+  <title>Nice Time on Ice<%= @titleAddition %></title>  
+  <link href='http://fonts.googleapis.com/css?family=Michroma' rel='stylesheet' type='text/css'>
+  <link href="/css/boilerplate.css" rel="stylesheet">
+  <link href="/css/common.css" rel="stylesheet">
+  <link href="/css/<%= @style %>" rel="stylesheet">
+</head>  
+<body> 
+  <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+  <script type="text/javascript" src="/scripts/jquery.activity-indicator-1.0.0.min.js"></script>
+  <script type="text/javascript" src="/scripts/prefixfree.min.js"></script>
+  <script type="text/javascript" src="/scripts/<%= @script %>"></script>
+  <header>
+  	<a href="/">  
+	    <hgroup>  
+	      <h1>Nice Time on Ice</h1>  
+	      <h2>Mashup of NHL game data</h2>  
+	    </hgroup>
+    </a>
+  </header>  
+  
+  <article role="main">  
+    <%= yield %>  
+  </article>  
+  
+  <footer>
+  	<section>  
+		<p>Copyright © 2012 Jeremy Stuckey</p>
+		<p>Source code available on <a href="https://github.com/jstuckey/NiceTimeOnIce" target="new">GitHub</a></p>
+		<p><a href="/api">Nice Time on Ice REST API</a></p>
+	</section>
+	<section>
+    	<p><a href="http://www.flickr.com/photos/aepoc/6977401165/" target = "new">Background image</a> by jason.kessenich (<a href="http://www.aepoc.com" target="new">www.aepoc.com</a>)</p>
+    	<p><a href="https://en.wikipedia.org/wiki/File:NHL_Hockey_Rink.svg" target="new">Rink image</a> by <a href="https://en.wikipedia.org/wiki/User:Completefailure" target="new">Completefailure</a></p>
+    	<p><a href="https://www.google.com/webfonts/specimen/Michroma" target="new">Michroma font</a> by <a href="https://plus.google.com/107807505287232434305/about" target="new">Vernon Adams</a></p>
+	</section>
+    <section>
+		<div class="spacer"></div>
+    	<div class="linksRight">
+	    	<h3>Hockey</h3>
+	    	<ul>
+	    		<li><a href="http://nhl.com" target="new">NHL.com</a></li>
+	    		<li><a href="http://timeonice.com" target="new">Time on Ice</a></li>
+	    		<li><a href="http://behindthenet.ca" target="new">Behind the Net</a></li>
+	    		<li><a href="http://www.hockey-reference.com/" target="new">Hockey-Reference</a></li>
+	    		<li><a href="http://japersrink.com" target="new">Japers' Rink</a></li>
+	    	</ul>
+    	</div>
+    	<div>
+    		<a href="http://www.sbnation.com/users/Laich%20It%20Or%20Lump%20It" target="new"><img src="/images/avatar.jpg"></img></a>
+    	</div>
+    	<div>
+	    	<h3>Tech</h3>
+	    	<ul>
+	    		<li><a href="http://sinatrarb.com/" target="new">Sinatra</a></li>
+	    		<li><a href="http://datamapper.org/" target="new">DataMapper</a></li>
+	    		<li><a href="http://crummy.com/software/BeautifulSoup/" target="new">Beautiful Soup</a></li>
+	    		<li><a href="http://jquery.com/" target="new">jQuery</a></li>
+	    		<li><a href="http://leaverou.github.com/prefixfree/" target="new">-prefix-free</a></li>
+	    		<li><a href="http://neteye.github.com/activity-indicator.html" target="new">Activity Indicator</a></li>
+			</ul>
+		</div>
+		<div class="spacer"></div>
+    </section>
+  </footer>  
+</body>  
+</html>

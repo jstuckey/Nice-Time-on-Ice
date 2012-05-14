@@ -1,0 +1,51 @@
+ <span>
+	<section id="Seasons">
+		<h3>Seasons</h3>
+		<ol id="seasonList">
+		<% @seasons.each do |s| %>
+			<li>
+				<a class="<%= SEASONLINKCLASS %>" href="javascript:clickedSeason('<%= s.seasonID %>', 'Regular')"><%= s.seasonID[0,4] %> - <%= s.seasonID[-4,4] %></a>
+			</li>
+			<li>
+				<a class="<%= SEASONLINKCLASS %>" href="javascript:clickedSeason('<%= s.seasonID %>', 'Playoffs')"><%= s.seasonID[0,4] %> - <%= s.seasonID[-4,4] %> Playoffs</a>
+			</li>
+		<% end %> 
+		</ol>
+	</section>
+	<section id="Teams">
+		<h3>Teams</h3>
+		<ol id="teamList">
+		<% @teams.each do |t| %>
+			<li>
+				<a class="<%= TEAMLINKCLASS %>" href="javascript:clickedTeam('<%= t.teamID %>')"><%= t.name %></a>
+			</li>
+		<% end %> 
+		</ol>
+	</section>
+</span>	
+<span>
+	<section id="Games">
+		<h3>
+			<a href="javascript:clickedGameSort('ASC')" class="sort">Sort<div class="glyph-down"></div></a>
+			Games
+		</h3>
+		<div class="activityIndicator"></div>
+		<ol id="gameList"></ol>
+	</section>
+</span>
+<span>	
+	<section id="Links">
+		<h3>
+			<div id="seasonNumber"></div>
+			Season Links
+		</h3>
+		<div class="activityIndicator"></div>
+		<ul id="seasonLinkList"></ul>
+		<h3>
+			<div id="gameNumber"></div>
+			Game Links
+		</h3>
+		<div class="activityIndicator"></div>
+		<ul id="gameLinkList"></ul>	
+	</section>
+</span>

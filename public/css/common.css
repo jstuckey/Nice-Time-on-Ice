@@ -1,0 +1,169 @@
+/* -------- */
+/* - Body - */
+/* -------- */
+body {
+	font:16px Helvetica;
+	margin:0 auto;
+	background-color: #FFF;
+	background:url(/images/background.png)  no-repeat top center;
+	width:980px;
+}
+
+.smallBody {
+	width: 100% !important;
+}
+
+.smallBody:before, .smallBody:after {
+	width: 0px;
+	content: none;
+	box-shadow: none;
+	background:none;
+}
+
+/* ----------- */
+/* - Headers - */
+/* ----------- */
+
+header{
+	border-bottom-style:ridge;
+	border-bottom-width:2px;
+	margin-bottom: 5px;
+	height:120px;
+	background:url(/images/rink.png)  no-repeat center;
+}
+
+header, footer {
+	width: 100%
+}
+
+header a, header a:hover, header a:visited {
+	text-decoration: none;
+	color: #000;
+}
+
+h1, h2 {
+	text-align: center;
+}
+
+h1, h2, h3, h4 {
+font-family: 'Michroma', sans-serif;
+}
+
+h1 {
+	padding-top: 10px;
+	font-size: 45px;
+}
+
+h2 {
+	font-size: 14px;
+	color: #757575;
+}
+
+h3 {
+	color:#0082CE;
+	padding: 5px;
+	margin: 0;
+	font-size: 13px;
+}
+
+h4 {
+	color:#000;
+	font-size: 12px;
+	padding-left:15px;
+}
+
+/* ------------ */
+/* - Sections - */
+/* ------------ */
+
+article section {
+	border: solid #000;
+	border-width: 2px;
+	border-radius:10px;
+	margin: 5px;
+	background: url(/images/faceoff.png) no-repeat bottom right , radial-gradient(right top, circle farthest-corner, #C9C9C9 0%, #FFF 100%);
+}
+
+/* ------------------------ */
+/* - Lists and List Items - */
+/* ------------------------ */
+
+article ol, article ul {
+	margin: 0;
+}
+
+li {
+	list-style-type:none;
+	margin: 0;
+}
+
+li a {
+	margin-left:  15px;	
+}
+
+article li:hover {
+	background-color: #E8E8E8;
+}
+
+/* ---------- */
+/* - Footer - */
+/* ---------- */
+
+footer {
+	margin: 5px 0;
+	border-top-style:ridge;
+	border-top-width:2px;
+	float: left;
+	height: 75px !important;
+	bottom:0px;
+	font-size: 13px;
+}
+
+footer h3 {
+	padding: 0;
+}
+
+footer section, footer div {
+	float:left;
+}
+
+footer section {
+	width:100%;
+	margin: 15px 0 0;
+}
+
+footer div {
+	width: 20%;
+	margin: 0px auto;
+}
+
+footer ul {
+	margin: 0;	
+}
+
+footer ul a {
+	margin-left:15px;
+}
+
+footer p {
+	text-align: center;
+}
+
+footer img {
+	height:100px;
+	width:100px;
+	display:block;
+	margin: auto;
+}
+
+.spacer {
+	padding:1px; /* Give padding so empty spacer div still takes up space */
+}
+
+.linksRight ul, .linksRight h3 {
+	text-align: right;
+}
+
+.linksRight ul a {
+	margin-right: 15px;
+}

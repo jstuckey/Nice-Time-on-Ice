@@ -1,0 +1,115 @@
+/* -------- */
+/* - Span - */
+/* -------- */
+span {
+	margin:0 0 12px;
+	float:left;
+	padding: 0px;
+	width: 33.33%;
+	height: 716px; /* Subtract 4 from desired height for top and bottom boarder widths */
+	max-height:716px;
+	display: inline-block;
+}
+
+/* ------------ */
+/* - Sections - */
+/* ------------ */
+
+span:first-child section:first-child {
+	height: 127px;
+}
+
+span:first-child section:last-child {
+	margin-top: 10px;
+	height: 574px;
+}
+
+/* --------- */
+/* - Lists - */
+/* --------- */
+
+article span:first-child section:first-child ol{
+	height:90px;	
+}
+
+article span:first-child section:last-child ol {
+	height:540px;	
+}
+
+article ol, article ul {
+	overflow:auto;
+	height:687px; /* Need height so overflow works properly */
+}
+
+#gameLinkList {
+	height: 370px;
+}
+
+#seasonLinkList {
+	height: 289px;
+}
+
+/* ----------- */
+/* - Anchors - */
+/* ----------- */
+
+article a, article a:visited {
+	color:#000;
+	display: block;
+	margin-left:30px;
+	transition: margin 0.1s ease-out;
+}
+
+article a:hover {
+	margin-left:25px;
+}
+
+span:first-child a {
+	margin-left:15px;
+}
+
+span:first-child a:hover {
+	margin-left:10px;
+}
+
+/* ----------- */
+/* - Classes - */
+/* ----------- */
+
+.activityIndicator {
+	width:100%;
+	height:200px;
+	float: left;
+}
+
+.selected, .selected:hover, .selected a, .selected:hover a {
+	background-image:linear-gradient(top, #00AEFF 0%, #36C3FF 50%, #00A3EF 100%);
+}
+
+.selected a, .selected:hover a {
+	color:#FFF;
+}
+
+.sort, #gameNumber, #seasonNumber, .glyph-down, .glyph-up {
+	float: right;
+	color:#0082CE;
+	text-decoration: none;
+}
+
+.glyph-down {
+	width: 0;
+	height: 0;
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-top: 10px solid #0082CE;
+	margin: 4px 0 4px 4px;
+}
+
+.glyph-up {
+	width: 0;
+	height: 0;
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-bottom: 10px solid #0082CE;
+	margin: 4px;
+}
