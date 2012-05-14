@@ -3,7 +3,7 @@ require 'data_mapper'
 
 # This script can be called from the project root (NiceTimeOnIce) or the scripts folder (NiceTimeOnIce/data)
 # We always want the database to be created in the project root
-if Dir.pwd.include? "NiceTimeOnIce/data"
+if Dir.pwd.include? "Nice-Time-on-Ice/data"
   dbPath = File.expand_path("..", Dir.pwd)
 else
   dbPath = Dir.pwd 
