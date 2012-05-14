@@ -1,9 +1,9 @@
 require 'rubygems'
 require 'data_mapper'
 
-# This script can be called from the project root (NiceTimeOnIce) or the scripts folder (NiceTimeOnIce/data)
+# This script can be called from the project root or the data folder (./data)
 # We always want the database to be created in the project root
-if Dir.pwd.include? "Nice-Time-on-Ice/data"
+if Dir.pwd.include? "/data"
   dbPath = File.expand_path("..", Dir.pwd)
 else
   dbPath = Dir.pwd 
