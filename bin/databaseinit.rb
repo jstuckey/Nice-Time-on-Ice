@@ -1,4 +1,5 @@
-require File.join(File.expand_path(".."), "ntoidatamapper.rb")
+require_relative "../ntoidatamapper.rb"
+# require File.join(File.expand_path(".."), "ntoidatamapper.rb")
 
 def initDatabase
   

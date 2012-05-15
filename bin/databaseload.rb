@@ -1,5 +1,7 @@
-require File.join(File.expand_path(".."), "ntoidatamapper.rb")
-require 'databaseinit.rb'
+require_relative "../ntoidatamapper.rb"
+require_relative "databaseinit.rb"
+# require File.join(File.expand_path(".."), "ntoidatamapper.rb")
+# require 'databaseinit.rb'
 
 # Check if the database has been initialized
 if Team.count <= 0
