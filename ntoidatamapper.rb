@@ -1,15 +1,15 @@
 require 'rubygems'
 require 'data_mapper'
 
-# This script can be called from the project root or the data folder (./data)
+# This script can be called from the project root or the bin folder (./bin)
 # We always want the database to be created in the project root
-if Dir.pwd.include? "/data"
+if Dir.pwd.include? "/bin"
   dbPath = File.expand_path("..", Dir.pwd)
 else
   dbPath = Dir.pwd 
 end
 
-DataMapper::setup(:default, "sqlite3://#{dbPath}/toi.db")    
+DataMapper::setup(:default, ENV['SHARED_DATABASE_URL'] || "sqlite3://#{dbPath}/toi.db")
 
 class Conference
   include DataMapper::Resource
