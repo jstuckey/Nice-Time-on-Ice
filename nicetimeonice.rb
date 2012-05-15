@@ -1,7 +1,8 @@
 require 'rubygems'
 require 'sinatra'
 require 'json'
-require 'ntoidatamapper.rb'
+require_relative 'ntoidatamapper.rb'
+# require 'ntoidatamapper.rb'
 
 configure do
   # Constants
