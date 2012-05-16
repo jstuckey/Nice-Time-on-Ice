@@ -22,7 +22,7 @@ Deployed with [Heroku](http://www.heroku.com/)
 
 Style Credits
 -------------
-- [jason.kessenich](www.aepoc.com) for background image
+- [jason.kessenich](http://www.aepoc.com) for background image
 - [Completefailure](https://en.wikipedia.org/wiki/User:Completefailure) for rink image
 - [Vernon Adams](https://plus.google.com/107807505287232434305/about) for Michroma font
-- [Eric Meyer](http://meyerweb.com/eric/tools/css/reset/) and [Richard Clark](http://html5doctor.com/html-5-reset-stylesheet/) for html5 boilerplate
+- [Eric Meyer](http://meyerweb.com/eric/tools/css/reset/) and [Richard Clark](http://html5doctor.com/html-5-reset-stylesheet/) for HTML5 boilerplate
