@@ -9,6 +9,7 @@ Tech Credits
 
 - [Sinatra](http://sinatrarb.com/)
 - [DataMapper](http://datamapper.org/)
+- [json gem](http://flori.github.com/json/)
 - [Beautiful Soup](http://crummy.com/software/BeautifulSoup/)
 - [jQuery](http://jquery.com/)
 - [-prefix-free](http://leaverou.github.com/prefixfree/)
