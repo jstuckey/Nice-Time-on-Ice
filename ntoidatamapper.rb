@@ -14,7 +14,7 @@ DataMapper::setup(:default, ENV['SHARED_DATABASE_URL'] || "sqlite3://#{dbPath}/t
 class Conference
   include DataMapper::Resource
   property :dmID, Serial
-  property :name, Text
+  property :name, String
   
   has n, :divisions
 end
@@ -22,7 +22,7 @@ end
 class Division
   include DataMapper::Resource
   property :dmID, Serial
-  property :name, Text
+  property :name, String
   
   belongs_to :conference
   has n, :teams
@@ -31,8 +31,8 @@ end
 class Team
   include DataMapper::Resource
   property :dmID, Serial
-  property :teamID, Text
-  property :name, Text
+  property :teamID, String
+  property :name, String
   
   belongs_to :division
   has n, :seasons, :through => Resource
@@ -41,7 +41,7 @@ end
 class Season
   include DataMapper::Resource
   property :dmID, Serial
-  property :seasonID, Text
+  property :seasonID, String
   
   has n, :games
 end
@@ -49,9 +49,9 @@ end
 class Game
   include DataMapper::Resource
   property :dmID, Serial
-  property :gameID, Text
-  property :date, Text
-  property :gameType, Text
+  property :gameID, String
+  property :date, String
+  property :gameType, String
   
   belongs_to :season
   
