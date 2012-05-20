@@ -86,7 +86,7 @@ span:first-child a:hover {
 	background-image:linear-gradient(top, #00AEFF 0%, #36C3FF 50%, #00A3EF 100%);
 }
 
-.selected a, .selected:hover a, .selected:hover a {
+.selected a, .selected:hover a, .selected a:visited {
 	color:#FFF;
 }
 
