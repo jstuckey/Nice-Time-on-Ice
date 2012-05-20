@@ -1,22 +1,22 @@
 $(document).ready(function() {
-   // Season global var
-   currentSeasonID = '20112012';
+	// Season global var
+	currentSeasonID = '20112012';
    
-   // Game type global var
-   currentGameType = 'Regular'
+	// Game type global var
+	currentGameType = 'Regular'
    
-   // Team global var
-   currentTeamID = null;
+	// Team global var
+	currentTeamID = null;
    
-   // Set selected default season
-   var currentSeasonHref = '   '
-   $(".season:first").parent().addClass('selected');
+	// Set selected default season
+	var currentSeasonHref = '   '
+	$(".season:first").parent().addClass('selected');
    
-   // Hide Atlanta <li> by default. Poor Thrashers...
-   $(".team:contains('Atlanta')").parent().hide();
+	// Hide Atlanta <li> by default. Poor Thrashers...
+	$(".team:contains('Atlanta')").parent().hide();
    
-   // Hide activity indicator divs
-   $('.activityIndicator').hide();
+	// Hide load mask divs
+	$('.loadMask').hide();
    
 	// Check for cookie containing the selected team option
 	var foundTeamCookie = false;
@@ -84,8 +84,8 @@ function clickedTeam(teamID) {
 	$(".team[href*='" + teamID + "']").parent().addClass('selected');
 	
 	// Show games activity indicator
-	$('#Games').children('.activityIndicator').show();
-	$('#Games').children('.activityIndicator').activity();
+	$('#Games .loadMask').show();
+	$('#Games .activityIndicator').activity();
 	
 	// Clear previous data
 	clearGames();
@@ -107,8 +107,8 @@ function clickedTeam(teamID) {
 			$("#gameList").show();
 			
 			// Hide games activity indicator
-			$('#Games').children('.activityIndicator').activity(false);
-			$('#Games').children('.activityIndicator').hide();
+			$('#Games .loadMask').hide();
+			$('#Games .activityIndicator').activity(false);
 			
 			// Select the first link in the list
 			var firstGameID = $('#gameList').children('li:first').children('a').attr('href').substr(-12, 10);
@@ -124,8 +124,8 @@ function clickedGame(gameID) {
 	$(".game[href*='" + gameID + "']").parent().addClass('selected');
 	
 	// Show links activity indicator
-	$('#Links').children('.activityIndicator:last').show();
-	$('#Links').children('.activityIndicator:last').activity();
+	$('#Links .loadMask').show();
+	$('#Links .activityIndicator').activity();
 	
 	// Clear previous link data
 	clearGameLinks();
@@ -141,16 +141,16 @@ function clickedGame(gameID) {
 			$('#gameNumber').text(gameID);
 			
 			// Hide links activity indicator
-			$('#Links').children('.activityIndicator:last').activity(false);
-			$('#Links').children('.activityIndicator:last').hide();
+			$('#Links .loadMask').hide();
+			$('#Links .activityIndicator').activity(false);
 		}
 	});
 }
 
 function clickedGameSort(order) {
 	// Show games activity indicator
-	$('#Games').children('.activityIndicator').show();
-	$('#Games').children('.activityIndicator').activity();
+	$('#Games .loadMask').show();
+	$('#Games .activityIndicator').activity();
 	
 	// Clear previous data
 	clearGames();
@@ -174,8 +174,8 @@ function clickedGameSort(order) {
 			$("#gameList").show();
 			
 			// Hide games activity indicator
-			$('#Games').children('.activityIndicator').activity(false);
-			$('#Games').children('.activityIndicator').hide();
+			$('#Games .loadMask').hide();
+			$('#Games .activityIndicator').activity(false);
 			
 			// Select the first link in the list
 			var firstGameID = $('#gameList').children('li:first').children('a').attr('href').substr(-12, 10);
@@ -186,8 +186,8 @@ function clickedGameSort(order) {
 
 function getSeasonLinks() {
 	// Show links activity indicator
-	$('#Links').children('.activityIndicator:first').show();
-	$('#Links').children('.activityIndicator:first').activity();
+	$('#Links .loadMask').show();
+	$('#Links .activityIndicator').activity();
 	
 	// Clear previous link data
 	clearSeasonLinks();
@@ -203,8 +203,8 @@ function getSeasonLinks() {
 			$('#seasonNumber').text(currentSeasonID);
 			
 			// Hide links activity indicator
-			$('#Links').children('.activityIndicator:first').activity(false);
-			$('#Links').children('.activityIndicator:first').hide();
+			$('#Links .loadMask').hide();
+			$('#Links .activityIndicator').activity(false);
 		}
 	});
 }

@@ -1,7 +1,6 @@
 $(document).ready(function() {
 	// Hide activity indicator divs and form elements
 	$('.loadMask').hide();
-	$('.activityIndicator').hide();
 	$('form').hide();
    	
 	// Show api parameter form
@@ -46,7 +45,6 @@ function makeAPICall(clickedEl, apiPath) {
 	
 	// Show activity indicator
 	$('.loadMask').show();
-	$('.activityIndicator').show();
 	$('.activityIndicator').activity();
 	
 	// Check if path has parameters
@@ -80,7 +78,6 @@ function makeAPICall(clickedEl, apiPath) {
 			
 			// Hide activity indicator
 			$('.loadMask').hide();
-			$('.activityIndicator').hide();
 			$('.activityIndicator').activity(false);
 			
 			// Show the output form
@@ -92,7 +89,6 @@ function makeAPICall(clickedEl, apiPath) {
 			
 			// Hide activity indicator
 			$('.loadMask').hide();
-			$('.activityIndicator').hide();
 			$('.activityIndicator').activity(false);
 			
 			// Show the output form

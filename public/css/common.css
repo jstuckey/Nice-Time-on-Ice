@@ -80,6 +80,7 @@ h4 {
 /* ------------ */
 
 article section {
+	position: relative;
 	border: solid #000;
 	border-width: 2px;
 	border-radius:10px;
@@ -170,4 +171,26 @@ footer img {
 
 .linksRight ul a {
 	margin-right: 15px;
+}
+
+/* ------------------------------- */
+/* - Activity Indicator and Mask - */
+/* ------------------------------- */
+
+.loadMask {
+	position: absolute;
+	left: 0px;
+	right: 0px;
+	top: 0px;
+	bottom: 0px;
+	background-color: black;
+	opacity: 0.25;
+}
+
+.activityIndicator {
+	height:100%;
+	color:#FFF;
+	margin-left: 0 !important;
+	margin-right: 0 !important;
+	width:100%;
 }

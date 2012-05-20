@@ -24,6 +24,10 @@ span:first-child section:last-child {
 	height: 574px;
 }
 
+article span section {
+	overflow:hidden;
+}
+
 /* --------- */
 /* - Lists - */
 /* --------- */
@@ -75,12 +79,6 @@ span:first-child a:hover {
 /* ----------- */
 /* - Classes - */
 /* ----------- */
-
-.activityIndicator {
-	width:100%;
-	height:200px;
-	float: left;
-}
 
 .selected, .selected:hover, .selected a, .selected:hover a {
 	background-image:linear-gradient(top, #00AEFF 0%, #36C3FF 50%, #00A3EF 100%);

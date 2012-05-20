@@ -2,10 +2,6 @@
 /* - API Styles - */
 /* -------------- */
 
-article section {
-	position: relative;
-}
-
 article section:first-child h3 {
 	margin: 3px 20px 7px;
 }
@@ -42,25 +38,10 @@ textarea {
 	margin-left: 50px;
 }
 
-form, .activityIndicator {
+form {
 	margin-left: 0 !important;
 	margin-right: 0 !important;
 	width:100%;
-}
-
-.loadMask {
-	position: absolute;
-	left: 0px;
-	right: 0px;
-	top: 0px;
-	bottom: 0px;
-	background-color: black;
-	opacity: 0.25;
-}
-
-.activityIndicator {
-	height:100%;
-	color:#FFF;
 }
 
 .inputLabel {
