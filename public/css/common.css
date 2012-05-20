@@ -11,13 +11,7 @@ body {
 
 .smallBody {
 	width: 100% !important;
-}
-
-.smallBody:before, .smallBody:after {
-	width: 0px;
-	content: none;
-	box-shadow: none;
-	background:none;
+	background: none;
 }
 
 /* ----------- */
