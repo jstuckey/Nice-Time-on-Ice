@@ -40,7 +40,7 @@ $(document).ready(function() {
    
 	// Check for mobile browser
 	if(navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry)/)) {
-		$('body').addClass('smallBody');
+		$('body').addClass('mobile');
 	}
 });
  
