@@ -10,6 +10,7 @@ $(document).ready(function() {
    			// Hide input area
 			$(event.target).removeClass('expanded');
    			$(event.target).children(".input").hide("1");
+   			$(event.target).children(".output").hide("1");
    		} else {
    			// Show input area
    			$(event.target).addClass('expanded');
@@ -23,6 +24,7 @@ $(document).ready(function() {
    			// Hide input area
 			$(event.target).parent().removeClass('expanded');
    			$(event.target).siblings(".input").hide("1");
+   			$(event.target).siblings(".output").hide("1");
    		} else {
    			// Show input area
    			$(event.target).parent().addClass('expanded');
