@@ -24,6 +24,6 @@ Style Credits
 - [HTML5 Shiv](https://github.com/aFarkas/html5shiv)
 - [-prefix-free](http://leaverou.github.com/prefixfree/)
 - [Activity Indicator](http://neteye.github.com/activity-indicator.html)
-- [jason.kessenich](http://www.aepoc.com) for background image
-- [Completefailure](https://en.wikipedia.org/wiki/User:Completefailure) for rink image
-- [Vernon Adams](https://plus.google.com/107807505287232434305/about) for Michroma font
+- [jason.kessenich](http://www.aepoc.com) for [background image](http://www.flickr.com/photos/aepoc/6977401165/)
+- [Completefailure](https://en.wikipedia.org/wiki/User:Completefailure) for [rink image](https://en.wikipedia.org/wiki/File:NHL_Hockey_Rink.svg)
+- [Vernon Adams](https://plus.google.com/107807505287232434305/about) for [Michroma font](https://www.google.com/webfonts/specimen/Michroma)
