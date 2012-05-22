@@ -15,6 +15,7 @@ Tech Credits
 - [jQuery](http://jquery.com/)
 - [-prefix-free](http://leaverou.github.com/prefixfree/)
 - [Activity Indicator](http://neteye.github.com/activity-indicator.html)
+- [HTML5 Shiv](https://github.com/aFarkas/html5shiv)
 - [Ruby](http://www.ruby-lang.org/)
 - [Python](http://www.python.org/)
 
