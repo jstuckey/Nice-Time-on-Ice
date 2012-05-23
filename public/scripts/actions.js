@@ -111,7 +111,7 @@ function clickedTeam(teamID) {
 			$('#Games .activityIndicator').activity(false);
 			
 			// Select the first link in the list
-			var firstGameID = $('#gameList').children('li:first').children('a').attr('href').substr(-12, 10);
+			var firstGameID = $('#gameList').children('li:first').children('a').attr('href').substr(24, 10);
 			clickedGame(firstGameID);
 		}
 	});	

@@ -15,13 +15,14 @@ span {
 /* - Sections - */
 /* ------------ */
 
-span:first-child section:first-child {
-	height: 127px;
-}
-
-span:first-child section:last-child {
+span:first-child section {
 	margin-top: 10px;
 	height: 574px;
+}
+
+span:first-child section:first-child {
+	margin-top: 5px;
+	height: 127px;
 }
 
 article span section {
