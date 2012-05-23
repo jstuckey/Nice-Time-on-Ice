@@ -27,11 +27,6 @@ form input {
 	font-size: 13px;
 }
 
-form input:last-child {
-	width: 50px;	
-	margin-left: 50px;
-}
-
 textarea {
 	width: 890px;
 	height: 100px;
@@ -42,6 +37,11 @@ form {
 	margin-left: 0 !important;
 	margin-right: 0 !important;
 	width:100%;
+}
+
+.button {
+	width: 50px;	
+	margin-left: 50px;
 }
 
 .inputLabel {
