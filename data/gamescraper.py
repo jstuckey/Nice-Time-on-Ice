@@ -1,6 +1,5 @@
 import os
 import re
-import sys
 import urllib2
 from bs4 import BeautifulSoup
 from bs4 import Tag
