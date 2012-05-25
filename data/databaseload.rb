@@ -8,8 +8,14 @@ if Team.count <= 0
   initDatabase
 end
 
-# Open game scrape file
-scrapeFile = File.open("gamescrape.txt")
+# Check if calling this script from the data folder or the project root
+if Dir.pwd.include? "/data"
+  # Open game scrape file from this directory
+  scrapeFile = File.open("gamescrape.txt")
+else
+  # Open game scrape file from data directory
+  scrapeFile = File.open(File.expand_path("data/gamescrape.txt", Dir.pwd)) 
+end
 
 # Loop through each line of the scrape file
 scrapeFile.each do |line|
