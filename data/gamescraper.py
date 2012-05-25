@@ -1,14 +1,17 @@
 import os
 import re
+import sys
 import urllib2
-import sqlite3
 from bs4 import BeautifulSoup
 from bs4 import Tag
 
 def scrapeForSeason(seasonID, gameType):
-
+        
     # Open the file to write to
-    scrapeFile = open('gamescrape.txt', 'a')
+    if rootDir:
+        scrapeFile = open('data/gamescrape.txt', 'a')
+    else:
+        scrapeFile = open('gamescrape.txt', 'a')
     
     # Regular expression for parsing game links to extract the game ID
     gameLinkPattern = re.compile('/ice/recap\.htm\?id=')
@@ -103,8 +106,17 @@ def scrapeForSeason(seasonID, gameType):
     scrapeFile.close()
     
 if __name__ == "__main__":
+    
+    # Check if calling this script from the project root or the data folder
+    rootDir = True
+    if os.getcwd().find('/data') >= 0:
+        rootDir = False
+    
     # Remove old scrape file
-    os.system('rm gamescrape.txt')
+    if rootDir:
+        os.system('rm data/gamescrape.txt')
+    else:
+        os.system('rm gamescrape.txt')
     
     # Scrape game data for the following seasons
     scrapeForSeason('20072008', '2')
@@ -119,4 +131,7 @@ if __name__ == "__main__":
     scrapeForSeason('20112012', '3')
 
     # Call ruby script to load scraped data into database using DataMapper
-    os.system("ruby databaseload.rb")
+    if rootDir:
+        os.system("ruby data/databaseload.rb")
+    else:
+        os.system("ruby databaseload.rb")
