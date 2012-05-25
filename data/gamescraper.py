@@ -131,6 +131,6 @@ if __name__ == "__main__":
 
     # Call ruby script to load scraped data into database using DataMapper
     if rootDir:
-        os.system("ruby data/databaseload.rb")
+        os.system("ruby data/databaseload.rb 'gamescrape.txt'")
     else:
-        os.system("ruby databaseload.rb")
+        os.system("ruby databaseload.rb 'gamescrape.txt'")
