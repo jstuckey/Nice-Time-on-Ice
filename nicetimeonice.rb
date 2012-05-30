@@ -4,6 +4,10 @@ require 'json'
 require_relative 'ntoidatamapper.rb'
 # require 'ntoidatamapper.rb'
 
+configure :production do
+  require 'newrelic_rpm'
+end
+
 configure do
   # Constants
   CURRENTSEASON = "20112012"

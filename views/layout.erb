@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 	<head>
+		<%= NewRelic::Agent.browser_timing_header rescue "" %>
 		<meta charset="utf8">
 		<title>Nice Time on Ice<%= @titleAddition %></title>
 		<link href="/css/boilerplate.css" rel="stylesheet">
@@ -102,5 +103,6 @@
 				<div class="spacer"></div>
 			</section>
 		</footer>
+		<%= NewRelic::Agent.browser_timing_footer rescue "" %>
 	</body>
 </html>
