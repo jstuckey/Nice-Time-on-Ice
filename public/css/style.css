@@ -1,31 +1,30 @@
-/* -------- */
-/* - Span - */
-/* -------- */
-span {
+/* ----------------------- */
+/* - Section Wrapper Div - */
+/* ----------------------- */
+.column {
 	margin:0 0 12px;
 	float:left;
 	padding: 0px;
 	width: 33.33%;
 	height: 716px; /* Subtract 4 from desired height for top and bottom boarder widths */
 	max-height:716px;
-	display: inline-block;
 }
 
 /* ------------ */
 /* - Sections - */
 /* ------------ */
 
-span:first-child section {
+.column:first-child section {
 	margin-top: 10px;
 	height: 574px;
 }
 
-span:first-child section:first-child {
+.column:first-child section:first-child {
 	margin-top: 5px;
 	height: 127px;
 }
 
-article span section {
+.column section {
 	overflow:hidden;
 }
 
@@ -33,11 +32,11 @@ article span section {
 /* - Lists - */
 /* --------- */
 
-article span:first-child section:first-child ol{
+.column:first-child section:first-child ol{
 	height:90px;	
 }
 
-article span:first-child section:last-child ol {
+.column:first-child section:last-child ol {
 	height:540px;	
 }
 
@@ -69,11 +68,11 @@ article a:hover {
 	margin-left:25px;
 }
 
-span:first-child a {
+div:first-child a {
 	margin-left:15px;
 }
 
-span:first-child a:hover {
+div:first-child a:hover {
 	margin-left:10px;
 }
 
