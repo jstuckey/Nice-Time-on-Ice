@@ -9,7 +9,7 @@ else
   dbPath = Dir.pwd 
 end
 
-DataMapper::setup(:default, ENV['SHARED_DATABASE_URL'] || "sqlite3://#{dbPath}/toi.db") # "postgres://postgres@localhost/nicetimeonice"
+DataMapper::setup(:default, ENV['DATABASE_URL'] || "sqlite3://#{dbPath}/toi.db") # "postgres://postgres@localhost/nicetimeonice"
 
 class Conference
   include DataMapper::Resource
