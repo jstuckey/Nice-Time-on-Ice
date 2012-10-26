@@ -85,9 +85,10 @@ article section {
 	border-width: 2px;
 	border-radius:10px;
 	margin: 5px;
-	background-image: url(/images/faceoff.png), radial-gradient(right top, circle farthest-corner, #C9C9C9 0%, #FFF 100%);
+	background-color: #C9C9C9;
+	background-image: radial-gradient(right top, circle farthest-corner, #C9C9C9 0%, #FFF 100%), url(/images/faceoff.png);
 	background-repeat: no-repeat, no-repeat;
-	background-position: bottom right, top left;
+	background-position: top left, bottom right;
 }
 
 /* ------------------------ */
