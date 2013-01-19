@@ -4,7 +4,7 @@ require_relative "../ntoidatamapper.rb"
 def addSeason
     
   # Add 2012-2013 season
-  # Season.create(:seasonID => "20122013")
+  Season.create(:seasonID => "20122013")
   puts 'Added 2012-2013 season to database.'
   
   # Add 2012-2013 season for all teams
