@@ -128,6 +128,8 @@ if __name__ == "__main__":
     scrapeForSeason('20102011', '3')
     scrapeForSeason('20112012', '2')
     scrapeForSeason('20112012', '3')
+    scrapeForSeason('20122013', '2')
+#    scrapeForSeason('20122013', '3')
 
     # Call ruby script to load scraped data into database using DataMapper
     if rootDir:

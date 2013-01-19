@@ -89,6 +89,11 @@ div:first-child a:hover {
 	color:#FFF;
 }
 
+.disabled, .disabled:hover {
+	color: #C9C9C9;
+	text-decoration: underline;
+}
+
 .sort, #gameNumber, #seasonNumber, .glyph-down, .glyph-up {
 	float: right;
 	color:#0082CE;

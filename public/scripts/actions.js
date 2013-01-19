@@ -1,6 +1,6 @@
 $(document).ready(function() {
 	// Season global var
-	currentSeasonID = '20112012';
+	currentSeasonID = '20122013';
    
 	// Game type global var
 	currentGameType = 'Regular'
@@ -37,6 +37,10 @@ $(document).ready(function() {
 	if (!foundTeamCookie) {
 		clickedTeam('WSH');
 	}
+	
+	// Disable 2012-2013 playoffs for now
+	$($('#seasonList li a')[1]).addClass('disabled');
+	$($('#seasonList li a')[1]).removeAttr('href');
    
 	// Check for mobile browser
 	if(navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry)/)) {

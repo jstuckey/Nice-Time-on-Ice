@@ -29,13 +29,14 @@ if __name__ == "__main__":
     gameLinkPattern = re.compile('/ice/preview\.htm\?id=')
     
     # Hardcode this season's seasonID and gameType
-    seasonID = '20112012'
-    gameType = 'Playoffs'
+    # 2 = Regular season, 3 = Playoffs
+    seasonID = '20122013'
+    gameType = '2'
     
     print 'Connecting to nhl.com daily schedule...'
     
     # Make some soup out of the nhl.com daily schedule page
-    soup = BeautifulSoup(urllib2.urlopen('http://www.nhl.com/ice/schedulebyday.htm').read())
+    soup = BeautifulSoup(urllib2.urlopen('http://www.nhl.com/ice/schedulebyday.htm').read(), 'lxml')
     
     print 'Scraping nhl.com schedule for today\'s games...'
     
