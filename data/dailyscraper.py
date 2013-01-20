@@ -36,7 +36,7 @@ if __name__ == "__main__":
     print 'Connecting to nhl.com daily schedule...'
     
     # Make some soup out of the nhl.com daily schedule page
-    soup = BeautifulSoup(urllib2.urlopen('http://www.nhl.com/ice/schedulebyday.htm').read(), 'lxml')
+    soup = BeautifulSoup(urllib2.urlopen('http://www.nhl.com/ice/schedulebyday.htm').read(), 'html5lib')
     
     print 'Scraping nhl.com schedule for today\'s games...'
     
