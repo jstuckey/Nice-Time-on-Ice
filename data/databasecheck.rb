@@ -55,11 +55,11 @@ end
 
 # Check if missing games were found
 if missingGames.length > 0
-  puts "Missing games:"
+  puts "Missing games as of #{Season.all(:seasonID => '20122013').games.all(:order => :gameID).last.date}:"
   missingGames.each do |mg|
     puts mg
   end
 else 
-  puts 'No missing games'
+  puts "No missing games as of #{Season.all(:seasonID => '20122013').games.all(:order => :gameID).last.date}."
   puts
 end
