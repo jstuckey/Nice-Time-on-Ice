@@ -9,9 +9,11 @@ body {
 	width:980px;
 }
 
-.mobile {
-	width: 100% !important;
-	background: none;
+@media only screen and (max-width: 979px) {
+	body {
+		width: 100% !important;
+		background: none !important;
+	}
 }
 
 /* ----------- */

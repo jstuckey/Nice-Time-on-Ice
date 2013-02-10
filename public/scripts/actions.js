@@ -42,10 +42,6 @@ $(document).ready(function() {
 	$($('#seasonList li a')[1]).addClass('disabled');
 	$($('#seasonList li a')[1]).removeAttr('href');
    
-	// Check for mobile browser
-	if(navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry)/)) {
-		$('body').addClass('mobile');
-	}
 });
  
 function clickedSeason(seasonID, gameType) {
