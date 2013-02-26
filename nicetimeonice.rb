@@ -254,6 +254,8 @@ helpers do
       @links << newLink
       newLink = Link.new("Behind the Net", "Linemates", "http://www.behindthenet.ca/nhl_time_on_ice_stats.php?ds=8&f1=#{year[0,4]}_#{gameTypeNumber == "3" ? "p" : "s"}&f2=5v5&f5=#{fixBTNTeamName(teamAbbrev)}&c=0+1+3+5+8+9+10+11+12+13+14+15+16+17+18+19+20+21+22+23+24+25+26+27+28")
       @links << newLink  
+      newLink = Link.new("Some Kind of Ninja", "Player Usage Chart", "http://somekindofninja.com/nhl/usage.php?f1=#{year[0,4]}_#{gameTypeNumber == "3" ? "p" : "s"}&f2=5v5&f3=&f5=#{fixBTNTeamName(teamAbbrev)}&f4=&f7=&update-filters=Update+Results") 
+      @links << newLink  
     end
     
     @links
