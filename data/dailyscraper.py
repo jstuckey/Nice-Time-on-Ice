@@ -25,8 +25,9 @@ if __name__ == "__main__":
     else:
         scrapeFile = open('dailyscrape.txt', 'a')
     
-    # Regular expression for parsing game preview links to extract the game ID
-    gameLinkPattern = re.compile('/ice/preview\.htm\?id=')
+    # Regular expressions for parsing game links to extract the game ID
+    previewLinkPattern = re.compile('/ice/preview\.htm\?id=')
+    recapLinkPattern = re.compile('/ice/recap\.htm\?id=')
     
     # Hardcode this season's seasonID and gameType
     # 2 = Regular season, 3 = Playoffs
@@ -48,7 +49,10 @@ if __name__ == "__main__":
     
     # Today's date is in the h3 tag inside the contentBlock div
     # Date format is EEEE MMMM dd, yyyy - Needs to be EEE MMM dd, yyyy for consistency
-    gameDateRaw = soup('div', {'class' : 'contentBlock'})[0].h3.contents[0]    
+    gameDateRaw = soup('div', {'class' : 'contentBlock'})[0].h3.contents[0]
+    gameDateRaw = gameDateRaw.replace('\n', '')
+    gameDateRaw = gameDateRaw.replace('- FINAL GAMES', '')
+    
     gameDateObj = time.strptime(gameDateRaw.strip(), '%A %B %d, %Y')
     gameDate = time.strftime('%a %b %d, %Y', gameDateObj)
 
@@ -105,12 +109,16 @@ if __name__ == "__main__":
             if skedLinkAnchors:
                 # Loop through the anchors and look for the preview link 
                 for anchor in skedLinkAnchors:
-                    # Use the reg ex compiled above to check if it is a preview link
-                    regExMatch = gameLinkPattern.match(anchor['href'])
-                    if regExMatch:
+                    # Use the regular expressions compiled above to check for game link
+                    regExMatch1 = previewLinkPattern.match(anchor['href'])
+                    regExMatch2 = recapLinkPattern.match(anchor['href'])
+                    if regExMatch1:
                         # Extract the nhl game ID from the end of the preview link
-                        nhlGameID = anchor['href'][regExMatch.end():]
-         
+                        nhlGameID = anchor['href'][regExMatch1.end():]
+                    elif regExMatch2:
+                        # Extract the nhl game ID from the end of the recap link
+                        nhlGameID = anchor['href'][regExMatch2.end():]
+
         # Check if we parsed out all the info from the current tr
         if gameDate and awayTeam and homeTeam and nhlGameID:              
             scrapeFile.write(seasonID + '***' + ('Regular' if gameType == '2' else 'Playoffs' ) + '***' + awayTeam + '***' + homeTeam + '***' + gameDate + '***' + nhlGameID + '\n')
@@ -118,7 +126,7 @@ if __name__ == "__main__":
               
     # Close the file connection
     scrapeFile.close()
-
+    
     # Call ruby script to load scraped data into database using DataMapper
     if rootDir:
         os.system("ruby data/databaseload.rb 'dailyscrape.txt'")
