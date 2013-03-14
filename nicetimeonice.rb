@@ -293,7 +293,7 @@ helpers do
       @links << newLink
       newLink = Link.new("NHL.com", "Shot Report", "http://www.nhl.com/scores/htmlreports/#{year}/SS#{gameNumber[-6, 6]}.HTM")
       @links << newLink
-      newLink = Link.new("Time on Ice", "Shift Chart", "http://timeonice.com/SC#{year[2, 2] + year[-2, 2]}.html?GameNumber=#{gameNumber[-5, 5]}&submit=Go")
+      newLink = Link.new("Time on Ice", "Shift Chart", "http://timeonice.com/#{year == CURRENTSEASON ? "default" : "SC" + year[2, 2] + year[-2, 2]}.html?GameNumber=#{gameNumber[-5, 5]}&submit=Go")
       @links << newLink
       newLink = Link.new("Time on Ice", "Head-to-Head", "http://timeonice.com/H2H#{year[2, 2] + year[-2, 2]}.html?GameNumber=#{gameNumber[-5, 5]}&submit=Go")
       @links << newLink
