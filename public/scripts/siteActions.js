@@ -124,12 +124,13 @@ function clickedGame(gameID) {
 	$(".game[href*='" + gameID + "']").parent().addClass('selected');
 	
 	// Show links activity indicator
-	$('#Links .loadMask').show();
-	$('#Links .activityIndicator').activity();
+	$('#GameLinks .loadMask').show();
+	$('#GameLinks .activityIndicator').activity();
 	
 	// Clear previous link data
 	clearGameLinks();
 	
+	// Get games links
 	$.ajax({
 		url:'/seasons/' + currentSeasonID + '/games/' + gameID + '/links',
 		success: function(data, textStatus, jqXHR) {
@@ -141,8 +142,8 @@ function clickedGame(gameID) {
 			$('#gameNumber').text(gameID);
 			
 			// Hide links activity indicator
-			$('#Links .loadMask').hide();
-			$('#Links .activityIndicator').activity(false);
+			$('#GameLinks .loadMask').hide();
+			$('#GameLinks .activityIndicator').activity(false);
 		}
 	});
 }
@@ -186,8 +187,8 @@ function clickedGameSort(order) {
 
 function getSeasonLinks() {
 	// Show links activity indicator
-	$('#Links .loadMask').show();
-	$('#Links .activityIndicator').activity();
+	$('#SeasonLinks .loadMask').show();
+	$('#SeasonLinks .activityIndicator').activity();
 	
 	// Clear previous link data
 	clearSeasonLinks();
@@ -203,8 +204,8 @@ function getSeasonLinks() {
 			$('#seasonNumber').text(currentSeasonID);
 			
 			// Hide links activity indicator
-			$('#Links .loadMask').hide();
-			$('#Links .activityIndicator').activity(false);
+			$('#SeasonLinks .loadMask').hide();
+			$('#SeasonLinks .activityIndicator').activity(false);
 		}
 	});
 }
