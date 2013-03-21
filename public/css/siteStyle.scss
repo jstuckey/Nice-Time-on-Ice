@@ -1,33 +1,35 @@
-/* ----------- */
-/* - Columns - */
-/* ----------- */
-
 //
-// Height and Width Calculations
+// Height Calculations
 //
 
-$total-height: 805px;
+$total-height: 860px;
 
 $section-margin: 5px;
 $section-border: 2px;
+$section-separator-margin: 10px;
+$section-header-height: 28px;
 
 $column-height: $total-height - 2.0 * $section-margin; 
 $section-height: $column-height - 2.0 * $section-border;
 
-$header-height: 28px;
-$first-column-margin: 10px;
+$divided-column-available-height: $section-height - $section-separator-margin - 2.0 * $section-border; 
 
-$first-column-available-height: $section-height - $first-column-margin - 2.0 * $section-border; 
-$third-column-available-height: $section-height - 2.0 * $header-height;
+$season-section-height: $divided-column-available-height * 0.30;
+$team-section-height: $divided-column-available-height - $season-section-height;
+$season-link-section-height: $divided-column-available-height * 0.53;
+$game-link-section-height: $divided-column-available-height - $season-link-section-height;
 
-$season-section-height: $first-column-available-height * 0.25;
-$team-section-height: $first-column-available-height - $season-section-height;
-$season-link-height: $third-column-available-height * 0.53;
-$game-link-height: $third-column-available-height - $season-link-height;
+/* ----------- */ 
+/* - Article - */
+/* ----------- */
 
 article {
   height: $total-height;
 }
+
+/* ----------- */
+/* - Columns - */
+/* ----------- */
 
 .column {
   float: left;
@@ -43,17 +45,23 @@ article {
     margin: $section-margin;
   }
 
-  // Season section
-  &:first-child section:first-child {
+  #Seasons {
     height: $season-section-height;
-    margin-top: $section-margin;
   }
   
-  // Team section
-  &:first-child section {
+  #Teams {
     height: $team-section-height;
-    margin-top: $first-column-margin;
+    margin-top: $section-separator-margin;
+  }
+  
+  #SeasonLinks {
+    height: $season-link-section-height;
   } 
+  
+  #GameLinks {
+    height: $game-link-section-height;
+    margin-top: $section-separator-margin;
+  }
   
 }
 
@@ -68,19 +76,23 @@ article ol, article ul {
 }
 
 #seasonList{
-  height: $season-section-height - $header-height;  
+  height: $season-section-height - $section-header-height;  
 }
 
 #teamList {
-  height: $team-section-height - $header-height; 
+  height: $team-section-height - $section-header-height; 
+}
+
+#gameList {
+  height: $section-height - $section-header-height;
 }
 
 #seasonLinkList {
-  height: $season-link-height;
+  height: $season-link-section-height - $section-header-height;
 }
 
 #gameLinkList {
-  height: $game-link-height;
+  height: $game-link-section-height - $section-header-height;
 }
 
 /* ----------- */
@@ -96,14 +108,6 @@ article a, article a:visited {
 
 article a:hover {
   margin-left:25px;
-}
-
-div:first-child a {
-  margin-left:15px;
-}
-
-div:first-child a:hover {
-  margin-left:10px;
 }
 
 /* ----------- */

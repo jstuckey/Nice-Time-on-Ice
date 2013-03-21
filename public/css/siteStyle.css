@@ -1,25 +1,32 @@
 /* ----------- */
-/* - Columns - */
+/* - Article - */
 /* ----------- */
 article {
-  height: 805px; }
+  height: 860px; }
 
+/* ----------- */
+/* - Columns - */
+/* ----------- */
 .column {
   float: left;
   margin: 0;
   padding: 0;
-  height: 795px;
+  height: 850px;
   width: 33.33333333%; }
   .column section {
     overflow: hidden;
-    height: 791px;
+    height: 846px;
     padding: 0;
     margin: 5px; }
-  .column:first-child section:first-child {
-    height: 194.25px;
-    margin-top: 5px; }
-  .column:first-child section {
-    height: 582.75px;
+  .column #Seasons {
+    height: 249.6px; }
+  .column #Teams {
+    height: 582.4px;
+    margin-top: 10px; }
+  .column #SeasonLinks {
+    height: 440.96px; }
+  .column #GameLinks {
+    height: 391.04px;
     margin-top: 10px; }
 
 /* --------- */
@@ -31,16 +38,19 @@ article ol, article ul {
   height: 100px; }
 
 #seasonList {
-  height: 166.25px; }
+  height: 221.6px; }
 
 #teamList {
-  height: 554.75px; }
+  height: 554.4px; }
+
+#gameList {
+  height: 818px; }
 
 #seasonLinkList {
-  height: 389.55px; }
+  height: 412.96px; }
 
 #gameLinkList {
-  height: 345.45px; }
+  height: 363.04px; }
 
 /* ----------- */
 /* - Anchors - */
@@ -53,12 +63,6 @@ article a, article a:visited {
 
 article a:hover {
   margin-left: 25px; }
-
-div:first-child a {
-  margin-left: 15px; }
-
-div:first-child a:hover {
-  margin-left: 10px; }
 
 /* ----------- */
 /* - Classes - */
