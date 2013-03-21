@@ -5,25 +5,22 @@ The source for my website: http://www.nicetimeonice.com
 
 Includes main website and REST API.
 
-Tech Credits
+Tech
 ------------
 
 - [Sinatra](http://sinatrarb.com/)
 - [DataMapper](http://datamapper.org/)
-- [json gem](http://flori.github.com/json/)
 - [Beautiful Soup](http://crummy.com/software/BeautifulSoup/)
 - [jQuery](http://jquery.com/)
-- [Ruby](http://www.ruby-lang.org/)
-- [Python](http://www.python.org/)
+- [Sass](http://sass-lang.com/)
+- [Prefix Free](http://leaverou.github.com/prefixfree/)
+- HTML5 Boilerplate ([Eric Meyer](http://meyerweb.com/eric/tools/css/reset/), [Richard Clark](http://html5doctor.com/html-5-reset-stylesheet/)) 
+- [HTML5 Shiv](https://github.com/aFarkas/html5shiv)
 
 Deployed with [Heroku](http://www.heroku.com/)
 
-Style Credits
+Style
 -------------
-- HTML5 boilerplate ([Eric Meyer](http://meyerweb.com/eric/tools/css/reset/), [Richard Clark](http://html5doctor.com/html-5-reset-stylesheet/)) 
-- [HTML5 Shiv](https://github.com/aFarkas/html5shiv)
-- [-prefix-free](http://leaverou.github.com/prefixfree/)
-- [Activity Indicator](http://neteye.github.com/activity-indicator.html)
 - [jason.kessenich](http://www.aepoc.com) for [background image](http://www.flickr.com/photos/aepoc/6977401165/)
 - [Completefailure](https://en.wikipedia.org/wiki/User:Completefailure) for [rink image](https://en.wikipedia.org/wiki/File:NHL_Hockey_Rink.svg)
 - [Vernon Adams](https://plus.google.com/107807505287232434305/about) for [Michroma font](https://www.google.com/webfonts/specimen/Michroma)
