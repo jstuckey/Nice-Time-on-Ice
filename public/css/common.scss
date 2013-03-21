@@ -1,0 +1,233 @@
+/* -------- */
+/* - Font - */
+/* -------- */
+
+@mixin michroma-font {
+  font: {
+    family: 'Michroma';
+    style: normal;
+    weight: normal;
+  }
+}
+
+@font-face {
+  @include michroma-font;
+  src: local('Michroma'), url('https://themes.googleusercontent.com/static/fonts/michroma/v4/FZQqjemuMkmQGwk1YxMXlXYhjbSpvc47ee6xR_80Hnw.woff') format('woff');
+}
+
+h1, h2, h3, h4 {
+  @include michroma-font;
+}
+
+/* -------- */
+/* - Body - */
+/* -------- */
+
+body {
+  font:16px Helvetica;
+  margin:0 auto;
+  background-color: #FFF;
+  background:url(/images/background.jpg)  no-repeat top center;
+  width:980px;
+}
+
+@media only screen and (max-width: 979px) {
+  body {
+    width: 100% !important;
+    background: none !important;
+  }
+}
+
+/* ----------- */
+/* - Headers - */
+/* ----------- */
+
+header{
+  height:120px;
+  width: 100%;
+  margin-bottom: 5px;
+  background:url(/images/rink.png)  no-repeat center;
+  
+  border-bottom: {
+    style:ridge;
+    width:2px;
+  }
+  
+  a, a:hover, a:visited {
+    text-decoration: none;
+    color: #000;
+  }
+  
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+h1 {
+  padding-top: 10px;
+  font-size: 45px;
+}
+
+h2 {
+  font-size: 14px;
+  color: #757575;
+}
+
+h3 {
+  color:#0082CE;
+  padding: 0;
+  margin: 5px;
+  font-size: 13px;
+}
+
+h4 {
+  color:#000;
+  font-size: 12px;
+  padding-left:15px;
+}
+
+/* ------------ */
+/* - Sections - */
+/* ------------ */
+
+article section {
+  position: relative;
+  margin: 5px;
+  
+  border: {
+    style: solid;
+    color: #000;
+    width: 2px;
+    radius: 10px;
+  }
+  
+  background: {
+    color: #C9C9C9;
+    image: url(/images/faceoff.png), radial-gradient(right top, circle farthest-corner, #C9C9C9 0%, #FFF 100%);
+    repeat: no-repeat, no-repeat;
+    position: bottom right, top left;  
+  }
+  
+}
+
+/* --------- */
+/* - Lists - */
+/* --------- */
+
+@mixin list-item-style {
+  list-style-type:none;
+  margin: 0;
+  line-height: 18px;
+}
+
+article {
+  ol, ul {
+    margin: 0;
+  }
+
+  li {
+    @include list-item-style;
+    
+    &:hover {
+      background-color: #E8E8E8;
+    }
+  }
+  
+  a {
+    margin-left:  15px; 
+  }  
+  
+}
+
+/* ---------- */
+/* - Footer - */
+/* ---------- */
+
+footer {
+  height: 75px !important;
+  width: 100%;
+  margin: 5px 0;
+  float: left;
+  bottom:0px;
+  font-size: 13px;
+  
+  border-top: {
+    style:ridge;
+    width:2px;
+  }
+  
+  h3 {
+    padding: 0;
+  }
+  
+ section {
+    float:left;
+    width:100%;
+    margin: 15px 0 0;
+  }
+  
+  div {
+    float:left;
+    width: 20%;
+    margin: 0px auto;
+  }
+  
+  ul {
+    margin: 0;
+    
+    a {
+      margin-left:15px;
+    }
+  }
+  
+  li {
+    @include list-item-style;
+  }
+  
+  p {
+    text-align: center;
+  }
+  
+  img {
+    height:100px;
+    width:100px;
+    display:block;
+    margin: auto;
+  }
+  
+}
+
+.spacer {
+  padding:1px; /* Give padding so empty spacer div still takes up space */
+}
+
+.linksRight ul, .linksRight h3 {
+  text-align: right;
+}
+
+.linksRight ul a {
+  margin-right: 15px;
+}
+
+/* ------------------------------- */
+/* - Activity Indicator and Mask - */
+/* ------------------------------- */
+
+.loadMask {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  background-color: black;
+  opacity: 0.25;
+}
+
+.activityIndicator {
+  height:100%;
+  color:#FFF;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  width:100%;
+}

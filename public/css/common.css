@@ -1,201 +1,159 @@
 /* -------- */
-/* - Body - */
+/* - Font - */
 /* -------- */
-body {
-	font:16px Helvetica;
-	margin:0 auto;
-	background-color: #FFF;
-	background:url(/images/background.jpg)  no-repeat top center;
-	width:980px;
-}
-
-@media only screen and (max-width: 979px) {
-	body {
-		width: 100% !important;
-		background: none !important;
-	}
-}
-
-/* ----------- */
-/* - Headers - */
-/* ----------- */
-
-header{
-	border-bottom-style:ridge;
-	border-bottom-width:2px;
-	margin-bottom: 5px;
-	height:120px;
-	background:url(/images/rink.png)  no-repeat center;
-}
-
-header, footer {
-	width: 100%
-}
-
-header a, header a:hover, header a:visited {
-	text-decoration: none;
-	color: #000;
-}
-
-h1, h2 {
-	text-align: center;
-}
-
 @font-face {
   font-family: 'Michroma';
   font-style: normal;
   font-weight: normal;
-  src: local('Michroma'), url('https://themes.googleusercontent.com/static/fonts/michroma/v4/FZQqjemuMkmQGwk1YxMXlXYhjbSpvc47ee6xR_80Hnw.woff') format('woff');
-}
+  src: local("Michroma"), url("https://themes.googleusercontent.com/static/fonts/michroma/v4/FZQqjemuMkmQGwk1YxMXlXYhjbSpvc47ee6xR_80Hnw.woff") format("woff"); }
 
 h1, h2, h3, h4 {
-	font-family: 'Michroma', sans-serif;
-	font-weight: normal;
-	font-style: normal;
-}
+  font-family: 'Michroma';
+  font-style: normal;
+  font-weight: normal; }
+
+/* -------- */
+/* - Body - */
+/* -------- */
+body {
+  font: 16px Helvetica;
+  margin: 0 auto;
+  background-color: #FFF;
+  background: url(/images/background.jpg) no-repeat top center;
+  width: 980px; }
+
+@media only screen and (max-width: 979px) {
+  body {
+    width: 100% !important;
+    background: none !important; } }
+/* ----------- */
+/* - Headers - */
+/* ----------- */
+header {
+  height: 120px;
+  width: 100%;
+  margin-bottom: 5px;
+  background: url(/images/rink.png) no-repeat center;
+  border-bottom-style: ridge;
+  border-bottom-width: 2px; }
+  header a, header a:hover, header a:visited {
+    text-decoration: none;
+    color: #000; }
+
+h1, h2 {
+  text-align: center; }
 
 h1 {
-	padding-top: 10px;
-	font-size: 45px;
-}
+  padding-top: 10px;
+  font-size: 45px; }
 
 h2 {
-	font-size: 14px;
-	color: #757575;
-}
+  font-size: 14px;
+  color: #757575; }
 
 h3 {
-	color:#0082CE;
-	padding: 0;
-	margin: 5px;
-	font-size: 13px;
-}
+  color: #0082CE;
+  padding: 0;
+  margin: 5px;
+  font-size: 13px; }
 
 h4 {
-	color:#000;
-	font-size: 12px;
-	padding-left:15px;
-}
+  color: #000;
+  font-size: 12px;
+  padding-left: 15px; }
 
 /* ------------ */
 /* - Sections - */
 /* ------------ */
-
 article section {
-	position: relative;
-	border: solid #000;
-	border-width: 2px;
-	border-radius:10px;
-	margin: 5px;
-	background-color: #C9C9C9;
-	background-image: url(/images/faceoff.png), radial-gradient(right top, circle farthest-corner, #C9C9C9 0%, #FFF 100%);
-	background-repeat: no-repeat, no-repeat;
-	background-position: bottom right, top left;
-}
+  position: relative;
+  margin: 5px;
+  border-style: solid;
+  border-color: #000;
+  border-width: 2px;
+  border-radius: 10px;
+  background-color: #C9C9C9;
+  background-image: url(/images/faceoff.png), radial-gradient(right top, circle farthest-corner, #c9c9c9 0%, white 100%);
+  background-repeat: no-repeat, no-repeat;
+  background-position: bottom right, top left; }
 
-/* ------------------------ */
-/* - Lists and List Items - */
-/* ------------------------ */
-
+/* --------- */
+/* - Lists - */
+/* --------- */
 article ol, article ul {
-	margin: 0;
-}
-
-li {
-	list-style-type:none;
-	margin: 0;
-	line-height: 18px;
-}
-
-li a {
-	margin-left:  15px;	
-}
-
-article li:hover {
-	background-color: #E8E8E8;
-}
+  margin: 0; }
+article li {
+  list-style-type: none;
+  margin: 0;
+  line-height: 18px; }
+  article li:hover {
+    background-color: #E8E8E8; }
+article a {
+  margin-left: 15px; }
 
 /* ---------- */
 /* - Footer - */
 /* ---------- */
-
 footer {
-	margin: 5px 0;
-	border-top-style:ridge;
-	border-top-width:2px;
-	float: left;
-	height: 75px !important;
-	bottom:0px;
-	font-size: 13px;
-}
-
-footer h3 {
-	padding: 0;
-}
-
-footer section, footer div {
-	float:left;
-}
-
-footer section {
-	width:100%;
-	margin: 15px 0 0;
-}
-
-footer div {
-	width: 20%;
-	margin: 0px auto;
-}
-
-footer ul {
-	margin: 0;	
-}
-
-footer ul a {
-	margin-left:15px;
-}
-
-footer p {
-	text-align: center;
-}
-
-footer img {
-	height:100px;
-	width:100px;
-	display:block;
-	margin: auto;
-}
+  height: 75px !important;
+  width: 100%;
+  margin: 5px 0;
+  float: left;
+  bottom: 0px;
+  font-size: 13px;
+  border-top-style: ridge;
+  border-top-width: 2px; }
+  footer h3 {
+    padding: 0; }
+  footer section {
+    float: left;
+    width: 100%;
+    margin: 15px 0 0; }
+  footer div {
+    float: left;
+    width: 20%;
+    margin: 0px auto; }
+  footer ul {
+    margin: 0; }
+    footer ul a {
+      margin-left: 15px; }
+  footer li {
+    list-style-type: none;
+    margin: 0;
+    line-height: 18px; }
+  footer p {
+    text-align: center; }
+  footer img {
+    height: 100px;
+    width: 100px;
+    display: block;
+    margin: auto; }
 
 .spacer {
-	padding:1px; /* Give padding so empty spacer div still takes up space */
-}
+  padding: 1px;
+  /* Give padding so empty spacer div still takes up space */ }
 
 .linksRight ul, .linksRight h3 {
-	text-align: right;
-}
+  text-align: right; }
 
 .linksRight ul a {
-	margin-right: 15px;
-}
+  margin-right: 15px; }
 
 /* ------------------------------- */
 /* - Activity Indicator and Mask - */
 /* ------------------------------- */
-
 .loadMask {
-	position: absolute;
-	left: 0px;
-	right: 0px;
-	top: 0px;
-	bottom: 0px;
-	background-color: black;
-	opacity: 0.25;
-}
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  background-color: black;
+  opacity: 0.25; }
 
 .activityIndicator {
-	height:100%;
-	color:#FFF;
-	margin-left: 0 !important;
-	margin-right: 0 !important;
-	width:100%;
-}
+  height: 100%;
+  color: #FFF;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  width: 100%; }
