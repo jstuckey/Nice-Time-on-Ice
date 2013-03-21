@@ -1,0 +1,96 @@
+/* ----------- */
+/* - Columns - */
+/* ----------- */
+article {
+  height: 805px; }
+
+.column {
+  float: left;
+  margin: 0;
+  padding: 0;
+  height: 795px;
+  width: 33.33333333%; }
+  .column section {
+    overflow: hidden;
+    height: 791px;
+    padding: 0;
+    margin: 5px; }
+  .column:first-child section:first-child {
+    height: 194.25px;
+    margin-top: 5px; }
+  .column:first-child section {
+    height: 582.75px;
+    margin-top: 10px; }
+
+/* --------- */
+/* - Lists - */
+/* --------- */
+/* Lists need a height so overflow works properly */
+article ol, article ul {
+  overflow: auto;
+  height: 100px; }
+
+#seasonList {
+  height: 166.25px; }
+
+#teamList {
+  height: 554.75px; }
+
+#seasonLinkList {
+  height: 389.55px; }
+
+#gameLinkList {
+  height: 345.45px; }
+
+/* ----------- */
+/* - Anchors - */
+/* ----------- */
+article a, article a:visited {
+  color: #000;
+  display: block;
+  margin-left: 30px;
+  transition: margin 0.1s ease-out; }
+
+article a:hover {
+  margin-left: 25px; }
+
+div:first-child a {
+  margin-left: 15px; }
+
+div:first-child a:hover {
+  margin-left: 10px; }
+
+/* ----------- */
+/* - Classes - */
+/* ----------- */
+.selected, .selected:hover, .selected a, .selected:hover a {
+  background-color: #00AEFF;
+  background-image: linear-gradient(top, #00aeff 0%, #36c3ff 50%, #00a3ef 100%); }
+
+.selected a, .selected:hover a, .selected a:visited {
+  color: #FFF; }
+
+.disabled, .disabled:hover {
+  color: #C9C9C9;
+  text-decoration: underline; }
+
+.sort, #gameNumber, #seasonNumber, .glyph-down, .glyph-up {
+  float: right;
+  color: #0082ce;
+  text-decoration: none; }
+
+.glyph-down {
+  width: 0;
+  height: 0;
+  margin: 4px 0 4px 4px;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 10px solid #0082ce; }
+
+.glyph-up {
+  width: 0;
+  height: 0;
+  margin: 4px;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 10px solid #0082ce; }
