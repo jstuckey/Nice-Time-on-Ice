@@ -217,6 +217,8 @@ helpers do
     if @team && @season
       year = @season.seasonID
       teamAbbrev = @team.teamID
+      teamName = @team.name
+      teamNumber = @team.dmID
       gameTypeNumber = "2"
       
       # Check if gameType is playoffs
@@ -228,6 +230,12 @@ helpers do
           # Requested playoff links for team that was not in playoffs
           return @links
         end
+      end
+      
+      # Check if team number is for WPG
+      if teamNumber > 30
+        # Hardcode to 2 for ATL
+        teamNumber = 2
       end
       
       newLink = Link.new("NHL.com", "Summary", "http://www.nhl.com/ice/playerstats.htm?season=#{year}&gameType=#{gameTypeNumber}&team=#{teamAbbrev}&position=S&country=&status=&viewName=summary")
@@ -254,8 +262,16 @@ helpers do
       @links << newLink
       newLink = Link.new("Behind the Net", "Linemates", "http://www.behindthenet.ca/nhl_time_on_ice_stats.php?ds=8&f1=#{year[0,4]}_#{gameTypeNumber == "3" ? "p" : "s"}&f2=5v5&f5=#{fixBTNTeamName(teamAbbrev)}&c=0+1+3+5+8+9+10+11+12+13+14+15+16+17+18+19+20+21+22+23+24+25+26+27+28")
       @links << newLink  
+      newLink = Link.new("Hockey Analysis", "Player Ratings (Goals)", "http://stats.hockeyanalysis.com/ratings.php?db=#{year[0, 4] + year[6, 2]}&sit=5v5&type=goals&teamid=#{teamNumber}&pos=skaters&minutes=50&disp=1") 
+      @links << newLink
+      newLink = Link.new("Hockey Analysis", "Player Ratings (Fenwick)", "http://stats.hockeyanalysis.com/ratings.php?db=#{year[0, 4] + year[6, 2]}&sit=5v5&type=fenwick&teamid=#{teamNumber}&pos=skaters&minutes=50&disp=1") 
+      @links << newLink
+      newLink = Link.new("Hockey Analysis", "Individual Stats", "http://stats.hockeyanalysis.com/ratings.php?db=#{year[0, 4] + year[6, 2]}&sit=5v5&type=individual&teamid=#{teamNumber}&pos=skaters&minutes=50&disp=1") 
+      @links << newLink
       newLink = Link.new("Some Kind of Ninja", "Player Usage Chart", "http://somekindofninja.com/nhl/usage.php?f1=#{year[0,4]}_#{gameTypeNumber == "3" ? "p" : "s"}&f2=5v5&f3=&f5=#{fixBTNTeamName(teamAbbrev)}&f4=&f7=&update-filters=Update+Results") 
-      @links << newLink  
+      @links << newLink
+      newLink = Link.new("Some Kind of Ninja", "Super Shot Search", "http://somekindofninja.com/nhl/index.php?season=#{gameTypeNumber == "3" ? "Post" : "Regular"}&year=#{year[0,4]}-#{year[4,4]}&shots=For&team=#{teamName.gsub(' ', '+')}&ice_player_name=&withPlayer=On+Ice&player_name=&goalie_name=&event=Shots+and+Goals&game=Away&strength=Even&time=Regulation&search=Search") 
+      @links << newLink
     end
     
     @links
@@ -428,8 +444,8 @@ end
 get '/' do
   allSeasons
   allTeams
-  @script = "actions.js"
-  @style = "style.css"
+  @script = "siteActions.js"
+  @style = "siteStyle.css"
   erb :home
 end
 
