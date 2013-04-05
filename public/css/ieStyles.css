@@ -15,3 +15,9 @@ article section {
 .selected, .selected:hover, .selected a, .selected:hover a {
 	background-color: #00AEFF;
 }
+
+/* Older IE versions do not handle decimal widths well.	*/
+
+.column {
+	width: 326px;
+}
