@@ -1,0 +1,9 @@
+source :rubygems
+gem 'sinatra'
+gem 'data_mapper'
+gem 'ps'
+gem 'do_postgres'
+gem 'dm-postgres-adapter'
+gem 'json'
+gem 'thin'
+gem 'newrelic_rpm'
