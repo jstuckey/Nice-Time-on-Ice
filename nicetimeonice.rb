@@ -238,6 +238,8 @@ helpers do
         teamNumber = 2
       end
       
+      newLink = Link.new("NHL.com", "Schedule", "http://www.nhl.com/ice/schedulebyseason.htm?season=#{year}&gameType=#{gameTypeNumber}&team=#{teamAbbrev}&network=&venue=")
+      @links << newLink
       newLink = Link.new("NHL.com", "Summary", "http://www.nhl.com/ice/playerstats.htm?season=#{year}&gameType=#{gameTypeNumber}&team=#{teamAbbrev}&position=S&country=&status=&viewName=summary")
       @links << newLink
       newLink = Link.new("NHL.com", "Goals", "http://www.nhl.com/ice/playerstats.htm?gameType=#{gameTypeNumber}&position=S&season=#{year}&sort=goals&status=A&team=#{teamAbbrev}&viewName=goals")
