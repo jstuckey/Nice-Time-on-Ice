@@ -18,7 +18,7 @@ h1, h2, h3, h4 {
 body {
   font: 16px Helvetica;
   margin: 0 auto;
-  background-color: #FFF;
+  background-color: white;
   background: url(/images/background.jpg) no-repeat top center;
   width: 980px; }
 
@@ -73,9 +73,13 @@ article section {
   border-width: 2px;
   border-radius: 10px;
   background-color: #C9C9C9;
-  background-image: url(/images/faceoff.png), radial-gradient(right top, circle farthest-corner, #c9c9c9 0%, white 100%);
   background-repeat: no-repeat, no-repeat;
-  background-position: bottom right, top left; }
+  background-position: bottom right, top left;
+  background-image: url(/images/faceoff.png), -webkit-radial-gradient(right top, circle farthest-corner, #c9c9c9 0%, white 100%);
+  background-image: url(/images/faceoff.png), -moz-radial-gradient(right top, circle farthest-corner, #c9c9c9 0%, white 100%);
+  background-image: url(/images/faceoff.png), -ms-radial-gradient(right top, circle farthest-corner, #c9c9c9 0%, white 100%);
+  background-image: url(/images/faceoff.png), -o-radial-gradient(right top, circle farthest-corner, #c9c9c9 0%, white 100%);
+  background-image: url(/images/faceoff.png), radial-gradient(circle farthest-corner at right top, #c9c9c9 0%, white 100%); }
 
 /* --------- */
 /* - Lists - */
@@ -153,7 +157,7 @@ footer {
 
 .activityIndicator {
   height: 100%;
-  color: #FFF;
+  color: white;
   margin-left: 0 !important;
   margin-right: 0 !important;
   width: 100%; }

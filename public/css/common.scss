@@ -23,10 +23,12 @@ h1, h2, h3, h4 {
 /* - Body - */
 /* -------- */
 
+$white-color: #fff;
+
 body {
   font:16px Helvetica;
   margin:0 auto;
-  background-color: #FFF;
+  background-color: $white-color;
   background:url(/images/background.jpg)  no-repeat top center;
   width:980px;
 }
@@ -91,6 +93,10 @@ h4 {
 /* - Sections - */
 /* ------------ */
 
+@mixin section-background-image($vendor-prefix) {
+  image: url(/images/faceoff.png), -#{$vendor-prefix}-radial-gradient(right top, circle farthest-corner, #C9C9C9 0%, #FFFFFF 100%);
+}
+
 article section {
   position: relative;
   margin: 5px;
@@ -104,9 +110,15 @@ article section {
   
   background: {
     color: #C9C9C9;
-    image: url(/images/faceoff.png), radial-gradient(right top, circle farthest-corner, #C9C9C9 0%, #FFF 100%);
     repeat: no-repeat, no-repeat;
     position: bottom right, top left;  
+        
+    @include section-background-image(webkit);
+    @include section-background-image(moz);
+    @include section-background-image(ms);
+    @include section-background-image(o);
+
+    image: url(/images/faceoff.png), radial-gradient(circle farthest-corner at right top, #C9C9C9 0%, #FFFFFF 100%);
   }
   
 }
@@ -226,7 +238,7 @@ footer {
 
 .activityIndicator {
   height:100%;
-  color:#FFF;
+  color:$white-color;
   margin-left: 0 !important;
   margin-right: 0 !important;
   width:100%;

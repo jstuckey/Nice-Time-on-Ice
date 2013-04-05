@@ -2,7 +2,7 @@
 // Height Calculations
 //
 
-$total-height: 860px;
+$total-height: 870px;
 
 $section-margin: 5px;
 $section-border: 2px;
@@ -16,7 +16,7 @@ $divided-column-available-height: $section-height - $section-separator-margin - 
 
 $season-section-height: $divided-column-available-height * 0.30;
 $team-section-height: $divided-column-available-height - $season-section-height;
-$season-link-section-height: $divided-column-available-height * 0.53;
+$season-link-section-height: $divided-column-available-height * 0.54;
 $game-link-section-height: $divided-column-available-height - $season-link-section-height;
 
 /* ----------- */ 
@@ -114,9 +114,22 @@ article a:hover {
 /* - Classes - */
 /* ----------- */
 
+@mixin selected-anchor-background($vendor-prefix) {
+  image: -#{$vendor-prefix}-linear-gradient(bottom, #00AEFF 0%, #36C3FF 50%, #00A3EF 100%);
+}
+
 .selected, .selected:hover, .selected a, .selected:hover a {
-  background-color: #00AEFF;
-  background-image: linear-gradient(top, #00AEFF 0%, #36C3FF 50%, #00A3EF 100%);
+  background: {
+    color: #00AEFF;
+    
+    @include selected-anchor-background(webkit);
+    @include selected-anchor-background(moz);
+    @include selected-anchor-background(ms);
+    @include selected-anchor-background(o);
+    
+    image: linear-gradient(to top, #00AEFF 0%, #36C3FF 50%, #00A3EF 100%);
+    
+  }
 }
 
 .selected a, .selected:hover a, .selected a:visited {
