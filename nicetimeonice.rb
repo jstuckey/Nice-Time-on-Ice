@@ -258,7 +258,7 @@ helpers do
       @links << newLink
       newLink = Link.new("Hockey-Reference", "Schedule and Results", "http://www.hockey-reference.com/teams/#{teamAbbrev}/#{year[4,4]}_games.html")
       @links << newLink
-      newLink = Link.new("Behind the Net", "Player Breakdown", "http://www.behindthenet.ca/nhl_statistics.php?ds=30&f1=#{year[0,4]}_#{gameTypeNumber == "3" ? "p" : "s"}&f2=5v5&f5=#{fixBTNTeamName(teamAbbrev)}&c=0+1+3+5+2+4+6+7+10+8+11+12+13+14+15+16+17+18+19+20+21+22+23+24+25+26+27+28+32+33+34+29+30+31+35+36+37+38+39+40+47+48+49+50+51+52+53+54+55+56+63+67+57+58+59+60+61+62+64+65+66+41+42+43+44+45+46")
+      newLink = Link.new("Behind the Net", "Player Breakdown", "http://www.behindthenet.ca/nhl_statistics.php?ds=13&f1=#{year[0,4]}_#{gameTypeNumber == "3" ? "p" : "s"}&f2=5v5&f5=#{fixBTNTeamName(teamAbbrev)}&c=0+3+4+6+7+8+13+14+15+16+29+30+31+34+32+33+35+36+17+18+19+20+21+22+25+26+27+28+10+11+12+37+38+39+40+47+48+49+50+51+52+53+54+55+56+63+67+57+58+59+60+61+62+64+65+66+41+42+43+44+45+46")
       @links << newLink
       newLink = Link.new("Behind the Net", "Player Shooting", "http://www.behindthenet.ca/nhl_shot_statistics.php?ds=13&f1=#{year[0,4]}_#{gameTypeNumber == "3" ? "p" : "s"}&f2=5v5&f5=#{fixBTNTeamName(teamAbbrev)}&c=0+1+3+5+4+7+8+9+10+11+12+13+14+15+16+17+18+19+20+21+22+23+24+25+26+27+28")
       @links << newLink
