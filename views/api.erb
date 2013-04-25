@@ -16,7 +16,7 @@
 <section>
 	<div class="loadMask"><div class="activityIndicator"></div></div>
 	<ul>
-		<% @APIResources.each do |resource| %>
+		<% apiResources.each do |resource| %>
 			<li>
 				<h3><%= resource.path  %></h3>
 				<p><%= resource.description %></p>

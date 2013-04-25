@@ -1,5 +1,5 @@
 <% currentSite = '' %>
-<% @links.each do |l| %>
+<% links.each do |l| %>
 	<% if currentSite != l.site %>
 		<h4><%= l.site %></h4>
 		<% currentSite = l.site %>

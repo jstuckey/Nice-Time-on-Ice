@@ -3,10 +3,10 @@
 	<head>
 		<%= NewRelic::Agent.browser_timing_header rescue "" %>
 		<meta charset="utf8">
-		<title>Nice Time on Ice<%= @titleAddition %></title>
+		<title>Nice Time on Ice<%= titleAddition %></title>
 		<link href="/css/boilerplate.css" rel="stylesheet">
 		<link href="/css/common.css" rel="stylesheet">
-		<link href="/css/<%= @style %>" rel="stylesheet">
+		<link href="/css/<%= style %>" rel="stylesheet">
 		<link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 		<!--[if lte IE 9]>
 			<link href="/css/ieStyles.css" rel="stylesheet">
@@ -19,7 +19,7 @@
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
 		<script type="text/javascript" src="/scripts/jquery.activity-indicator-1.0.0.min.js"></script>
 		<script type="text/javascript" src="/scripts/prefixfree.min.js"></script>
-		<script type="text/javascript" src="/scripts/<%= @script %>"></script>
+		<script type="text/javascript" src="/scripts/<%= script %>"></script>
 		<header>
 			<a href="/">
 				<h1>Nice Time on Ice</h1>

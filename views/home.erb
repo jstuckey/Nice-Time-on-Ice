@@ -2,7 +2,7 @@
 	<section id="Seasons">
 		<h3>Seasons</h3>
 		<ol id="seasonList">
-		<% @seasons.each do |s| %>
+		<% seasons.each do |s| %>
 			<li>
 				<a class="<%= SEASONLINKCLASS %>" href="javascript:clickedSeason('<%= s.seasonID %>', 'Regular')"><%= s.seasonID[0,4] %> - <%= s.seasonID[-4,4] %></a>
 			</li>
@@ -15,7 +15,7 @@
 	<section id="Teams">
 		<h3>Teams</h3>
 		<ol id="teamList">
-		<% @teams.each do |t| %>
+		<% teams.each do |t| %>
 			<li>
 				<a class="<%= TEAMLINKCLASS %>" href="javascript:clickedTeam('<%= t.teamID %>')"><%= t.name %></a>
 			</li>
@@ -25,7 +25,9 @@
 </div>	
 <div class="column">
 	<section id="Games">
-		<div class="loadMask"><div class="activityIndicator"></div></div>
+		<div class="loadMask">
+			<div class="activityIndicator"></div>
+		</div>
 		<h3>
 			<a href="javascript:clickedGameSort('ASC')" class="sort">Sort<div class="glyph-down"></div></a>
 			Games
@@ -35,7 +37,9 @@
 </div>
 <div class="column">	
 	<section id="SeasonLinks">
-		<div class="loadMask"><div class="activityIndicator"></div></div>
+		<div class="loadMask">
+			<div class="activityIndicator"></div>
+		</div>
 		<h3>
 			<span id="seasonNumber"></span>
 			Season Links
