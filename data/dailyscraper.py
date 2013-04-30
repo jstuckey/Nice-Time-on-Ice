@@ -8,6 +8,9 @@ from bs4 import Tag
   
 if __name__ == "__main__":
     
+    # Hardcode this season's seasonID
+    seasonID = '20122013'
+    
     # Check if calling this script from the project root or the data folder
     rootDir = True
     if os.getcwd().find('/data') >= 0:
@@ -28,11 +31,6 @@ if __name__ == "__main__":
     # Regular expressions for parsing game links to extract the game ID
     previewLinkPattern = re.compile('/ice/preview\.htm\?id=')
     recapLinkPattern = re.compile('/ice/recap\.htm\?id=')
-    
-    # Hardcode this season's seasonID and gameType
-    # 2 = Regular season, 3 = Playoffs
-    seasonID = '20122013'
-    gameType = '2'
     
     print 'Connecting to nhl.com daily schedule...'
     
@@ -120,8 +118,9 @@ if __name__ == "__main__":
                         nhlGameID = anchor['href'][regExMatch2.end():]
 
         # Check if we parsed out all the info from the current tr
-        if gameDate and awayTeam and homeTeam and nhlGameID:              
-            scrapeFile.write(seasonID + '***' + ('Regular' if gameType == '2' else 'Playoffs' ) + '***' + awayTeam + '***' + homeTeam + '***' + gameDate + '***' + nhlGameID + '\n')
+        if gameDate and awayTeam and homeTeam and nhlGameID:
+            # Write game to scrape file
+            scrapeFile.write(seasonID + '***' + ('Regular' if nhlGameID[5] == '2' else 'Playoffs' ) + '***' + awayTeam + '***' + homeTeam + '***' + gameDate + '***' + nhlGameID + '\n')
             print 'Wrote to scrape file: ' + awayTeam + ' at ' + homeTeam + ' on ' + gameDate + ' (' + nhlGameID + ')'
               
     # Close the file connection
