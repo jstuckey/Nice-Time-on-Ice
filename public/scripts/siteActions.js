@@ -9,7 +9,7 @@ $(document).ready(function() {
 	currentTeamID = null;
    
 	// Set selected default season
-	$("#seasonList").children().eq(0).addClass('selected');
+	$("#seasonList").children().eq(1).addClass('selected');
    
 	// Hide Atlanta <li> by default. Poor Thrashers...
 	$(".team:contains('Atlanta')").parent().hide();
