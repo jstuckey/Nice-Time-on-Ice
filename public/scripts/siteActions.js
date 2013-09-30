@@ -1,22 +1,22 @@
 $(document).ready(function() {
 	// Season global var
-	currentSeasonID = '20122013';
-   
+	currentSeasonID = '20132014';
+
 	// Game type global var
-	currentGameType = 'Playoffs'
-   
+	currentGameType = 'Regular'
+
 	// Team global var
 	currentTeamID = null;
-   
+
 	// Set selected default season
-	$("#seasonList").children().eq(1).addClass('selected');
-   
+	$("#seasonList").children().eq(0).addClass('selected');
+
 	// Hide Atlanta <li> by default. Poor Thrashers...
 	$(".team:contains('Atlanta')").parent().hide();
-   
+
 	// Hide load mask divs
 	$('.loadMask').hide();
-   
+
 	// Check for cookie containing the selected team option
 	var foundTeamCookie = false;
 	var allCookies = document.cookie.split(';');
@@ -27,22 +27,22 @@ $(document).ready(function() {
 			// Get cookie value load the selected team
 			var cookieValue = allCookies[cookieIndex].split('=')[1];
 			clickedTeam(cookieValue);
-			foundTeamCookie = true;	 
+			foundTeamCookie = true;
 			break;
 		}
   	}
-  
+
 	// Load Washington by default. Go Caps!
 	if (!foundTeamCookie) {
 		clickedTeam('WSH');
 	}
-	
-	// Disable 2012-2013 playoffs for now
-	// $($('#seasonList li a')[1]).addClass('disabled');
-	// $($('#seasonList li a')[1]).removeAttr('href');
-   
+
+	// Disable 2013-2014 playoffs for now
+	$($('#seasonList li a')[1]).addClass('disabled');
+	$($('#seasonList li a')[1]).removeAttr('href');
+
 });
- 
+
 function clickedSeason(seasonID, gameType) {
 	if (currentSeasonID !== seasonID || currentGameType != gameType) {
 		// Clear links
@@ -50,16 +50,16 @@ function clickedSeason(seasonID, gameType) {
 	}
 	currentSeasonID = seasonID;
 	currentGameType = gameType;
-	
+
 	// Add a class to the selected season so it gets styled
 	$(".season").parent().removeClass('selected');
 	$(".season[href*='\\'" + seasonID + "\\', \\'" + gameType + "\\'']").parent().addClass('selected');
-	
+
 	// Reset sort link
 	$(".sort").attr("href", "javascript:clickedGameSort('ASC')");
 	$(".glyph-up").addClass("glyph-down");
 	$(".glyph-up").removeClass("glyph-up");
-	
+
 	// Show/hide Atlanta and Winnipeg depending on the season
 	if (parseInt(seasonID, 10) < 20112012) {
 		$(".team:contains('Atlanta')").parent().show();
@@ -68,67 +68,67 @@ function clickedSeason(seasonID, gameType) {
 		$(".team:contains('Atlanta')").parent().hide();
 		$(".team:contains('Winnipeg')").parent().show();
 	}
-	
+
 	if (currentTeamID) {
 		// Reload games for team and new season
 		clickedTeam(currentTeamID);
 	}
-} 
- 
+}
+
 function clickedTeam(teamID) {
 	currentTeamID = teamID;
-	
+
 	// Add a class to the selected team so it gets styled
 	$(".team").parent().removeClass('selected');
 	$(".team[href*='" + teamID + "']").parent().addClass('selected');
-	
+
 	// Show games activity indicator
 	$('#Games .loadMask').show();
 	$('#Games .activityIndicator').activity();
-	
+
 	// Clear previous data
 	clearGames();
 	clearGameLinks();
-	
+
 	// Save as a cookie
 	var expireDate = new Date();
 	expireDate.setMonth(expireDate.getMonth()+6);
 	document.cookie='selectedTeam' + "=" + teamID + '; expires=' + expireDate.toUTCString();
-	
+
 	// Get season links
 	getSeasonLinks();
-	
+
 	$.ajax({
 		url:'/seasons/' + currentSeasonID + '/games?team=' + teamID + "&gameType=" + currentGameType,
 		success: function(data, textStatus, jqXHR) {
 			// Append game html
 			$("#gameList").append(data);
 			$("#gameList").show();
-			
+
 			// Hide games activity indicator
 			$('#Games .loadMask').hide();
 			$('#Games .activityIndicator').activity(false);
-			
+
 			// Select the first link in the list
 			var firstGameID = $('#gameList').children('li:first').children('a').attr('href').substr(24, 10);
 			clickedGame(firstGameID);
 		}
-	});	
+	});
 }
 
 function clickedGame(gameID) {
-	
+
 	// Add a class to the selected game so it gets styled
 	$(".game").parent().removeClass('selected');
 	$(".game[href*='" + gameID + "']").parent().addClass('selected');
-	
+
 	// Show links activity indicator
 	$('#GameLinks .loadMask').show();
 	$('#GameLinks .activityIndicator').activity();
-	
+
 	// Clear previous link data
 	clearGameLinks();
-	
+
 	// Get games links
 	$.ajax({
 		url:'/seasons/' + currentSeasonID + '/games/' + gameID + '/links',
@@ -136,10 +136,10 @@ function clickedGame(gameID) {
 			// Append link html
 			$("#gameLinkList").append(data);
 			$("#gameLinkList").show();
-			
+
 			// Set game number in header
 			$('#gameNumber').text(gameID);
-			
+
 			// Hide links activity indicator
 			$('#GameLinks .loadMask').hide();
 			$('#GameLinks .activityIndicator').activity(false);
@@ -151,11 +151,11 @@ function clickedGameSort(order) {
 	// Show games activity indicator
 	$('#Games .loadMask').show();
 	$('#Games .activityIndicator').activity();
-	
+
 	// Clear previous data
 	clearGames();
 	clearGameLinks();
-	
+
 	// Change sort link
 	if (order.toUpperCase() === 'DESC') {
 		$(".sort").attr("href", "javascript:clickedGameSort('ASC')");
@@ -166,17 +166,17 @@ function clickedGameSort(order) {
 		$(".glyph-down").addClass("glyph-up");
 		$(".glyph-down").removeClass("glyph-down");
 	}
-	
+
 	$.ajax({
 		url:'/seasons/' + currentSeasonID + '/games?team=' + currentTeamID + '&order=' + order + '&gameType=' + currentGameType,
 		success: function(data, textStatus, jqXHR) {
 			$("#gameList").append(data);
 			$("#gameList").show();
-			
+
 			// Hide games activity indicator
 			$('#Games .loadMask').hide();
 			$('#Games .activityIndicator').activity(false);
-			
+
 			// Select the first link in the list
 			var firstGameID = $('#gameList').children('li:first').children('a').attr('href').substr(-12, 10);
 			clickedGame(firstGameID);
@@ -188,20 +188,20 @@ function getSeasonLinks() {
 	// Show links activity indicator
 	$('#SeasonLinks .loadMask').show();
 	$('#SeasonLinks .activityIndicator').activity();
-	
+
 	// Clear previous link data
 	clearSeasonLinks();
-	
+
 	$.ajax({
 		url:'/teams/' + currentTeamID +'/seasons/' + currentSeasonID + '/links?gameType=' + currentGameType,
 		success: function(data, textStatus, jqXHR) {
 			// Append link html
 			$("#seasonLinkList").append(data);
 			$("#seasonLinkList").show();
-			
+
 			// Set game number in header
 			$('#seasonNumber').text(currentSeasonID);
-			
+
 			// Hide links activity indicator
 			$('#SeasonLinks .loadMask').hide();
 			$('#SeasonLinks .activityIndicator').activity(false);
@@ -211,7 +211,7 @@ function getSeasonLinks() {
 
 function clearGames() {
 	$("#gameList").empty();
-	
+
 	// Reset sort link
 	$(".sort").attr("href", "javascript:clickedGameSort('ASC')");
 	$(".glyph-up").addClass("glyph-down");
