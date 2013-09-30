@@ -4,7 +4,7 @@ puts
 puts "Checking for duplicate games..."
 puts
 
-allGames = Season.all(:seasonID => '20122013').games.all
+allGames = Season.all(:seasonID => '20132014').games.all
 
 duplicateGameIDs = Array.new
 
@@ -19,15 +19,15 @@ end
 
 
 if duplicateGameIDs.length > 0
-  
+
   puts
   puts "Removing duplicate games..."
   puts
-  
+
   # Loop through duplicates and remove one copy of the game
   duplicateGameIDs.each do |gameID|
     gameToRemove = Game.all(:gameID => gameID)
-    
+
     # Remove game from database
     if gameToRemove.count > 1
       gameToRemove = gameToRemove.last
