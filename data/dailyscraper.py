@@ -29,8 +29,8 @@ if __name__ == "__main__":
         scrapeFile = open('dailyscrape.txt', 'a')
 
     # Regular expressions for parsing game links to extract the game ID
-    previewLinkPattern = re.compile('/ice/preview\.htm\?id=')
-    recapLinkPattern = re.compile('/ice/recap\.htm\?id=')
+    previewLinkPattern = re.compile('gamecenter/en/preview\?id=')
+    recapLinkPattern = re.compile('gamecenter/en/recap\?id=')
 
     print 'Connecting to nhl.com daily schedule...'
 
@@ -108,8 +108,9 @@ if __name__ == "__main__":
                 # Loop through the anchors and look for the preview link
                 for anchor in skedLinkAnchors:
                     # Use the regular expressions compiled above to check for game link
-                    regExMatch1 = previewLinkPattern.match(anchor['href'])
-                    regExMatch2 = recapLinkPattern.match(anchor['href'])
+                    regExMatch1 = previewLinkPattern.search(anchor['href'])
+                    regExMatch2 = recapLinkPattern.search(anchor['href'])
+
                     if regExMatch1:
                         # Extract the nhl game ID from the end of the preview link
                         nhlGameID = anchor['href'][regExMatch1.end():]
