@@ -2,24 +2,24 @@
 // Height Calculations
 //
 
-$total-height: 870px;
+$total-height: 920px;
 
 $section-margin: 5px;
 $section-border: 2px;
 $section-separator-margin: 10px;
 $section-header-height: 28px;
 
-$column-height: $total-height - 2.0 * $section-margin; 
+$column-height: $total-height - 2.0 * $section-margin;
 $section-height: $column-height - 2.0 * $section-border;
 
-$divided-column-available-height: $section-height - $section-separator-margin - 2.0 * $section-border; 
+$divided-column-available-height: $section-height - $section-separator-margin - 2.0 * $section-border;
 
-$season-section-height: $divided-column-available-height * 0.30;
+$season-section-height: $divided-column-available-height * 0.33;
 $team-section-height: $divided-column-available-height - $season-section-height;
-$season-link-section-height: $divided-column-available-height * 0.54;
+$season-link-section-height: $divided-column-available-height * 0.50;
 $game-link-section-height: $divided-column-available-height - $season-link-section-height;
 
-/* ----------- */ 
+/* ----------- */
 /* - Article - */
 /* ----------- */
 
@@ -37,7 +37,7 @@ article {
   padding: 0;
   height: $column-height;
   width: 33.33333333%;
-  
+
   section {
     overflow:hidden;
     height: $section-height;
@@ -48,21 +48,21 @@ article {
   #Seasons {
     height: $season-section-height;
   }
-  
+
   #Teams {
     height: $team-section-height;
     margin-top: $section-separator-margin;
   }
-  
+
   #SeasonLinks {
     height: $season-link-section-height;
-  } 
-  
+  }
+
   #GameLinks {
     height: $game-link-section-height;
     margin-top: $section-separator-margin;
   }
-  
+
 }
 
 /* --------- */
@@ -72,15 +72,15 @@ article {
 /* Lists need a height so overflow works properly */
 article ol, article ul {
   overflow:auto;
-  height: 100px; 
+  height: 100px;
 }
 
 #seasonList{
-  height: $season-section-height - $section-header-height;  
+  height: $season-section-height - $section-header-height;
 }
 
 #teamList {
-  height: $team-section-height - $section-header-height; 
+  height: $team-section-height - $section-header-height;
 }
 
 #gameList {
@@ -121,14 +121,14 @@ article a:hover {
 .selected, .selected:hover, .selected a, .selected:hover a {
   background: {
     color: #00AEFF;
-    
+
     @include selected-anchor-background(webkit);
     @include selected-anchor-background(moz);
     @include selected-anchor-background(ms);
     @include selected-anchor-background(o);
-    
+
     image: linear-gradient(to top, #00AEFF 0%, #36C3FF 50%, #00A3EF 100%);
-    
+
   }
 }
 
@@ -154,24 +154,24 @@ $border-style: 5px solid transparent;
   width: 0;
   height: 0;
   margin: 4px 0 4px 4px;
-  
+
   border: {
     left: $border-style;
     right: $border-style;
     top: 10px solid $blue-color;
   }
-  
+
 }
 
 .glyph-up {
   width: 0;
   height: 0;
   margin: 4px;
-  
+
   border: {
     left: $border-style;
     right: $border-style;
-    bottom: 10px solid $blue-color; 
+    bottom: 10px solid $blue-color;
   }
-  
+
 }
