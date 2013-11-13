@@ -360,12 +360,12 @@ helpers do
       awayTeamParts = awayTeam.split
       awayTeamAbbrev = awayTeamParts[-1].downcase
 
-      # Maple Leafs and Blue Jackets are the only teams with two words in their name
+      # Maple Leafs and Bluejackets are special cases for Extra Skater
       if awayTeamAbbrev == "leafs"
         awayTeamAbbrev = "maple-" + awayTeamAbbrev
       end
-      if awayTeamAbbrev == "jackets"
-        awayTeamAbbrev = "blue-" + awayTeamAbbrev
+      if awayTeamAbbrev == "bluejackets"
+        awayTeamAbbrev = "blue-jackets"
       end
 
       # Format home team name for Extra Skater site
@@ -373,12 +373,12 @@ helpers do
       homeTeamParts = homeTeam.split
       homeTeamAbbrev = homeTeamParts[-1].downcase
 
-      # Maple Leafs and Blue Jackets are the only teams with two words in their name
+      # Maple Leafs and Bluejackets are special cases for Extra Skater
       if homeTeamAbbrev == "leafs"
         homeTeamAbbrev = "maple-" + homeTeamAbbrev
       end
-      if homeTeamAbbrev == "jackets"
-        homeTeamAbbrev = "blue-" + homeTeamAbbrev
+      if homeTeamAbbrev == "bluejackets"
+        homeTeamAbbrev = "blue-jackets"
       end
 
       # Format game date for Extra Skater site
