@@ -355,6 +355,36 @@ helpers do
       year = season.seasonID
       gameNumber = game.gameID
 
+      # Format away team name for Extra Skater site
+      awayTeam = game.awayTeam.name
+      awayTeamParts = awayTeam.split
+      awayTeamAbbrev = awayTeamParts[-1].downcase
+
+      # Maple Leafs and Blue Jackets are the only teams with two words in their name
+      if awayTeamAbbrev == "leafs"
+        awayTeamAbbrev = "maple-" + awayTeamAbbrev
+      end
+      if awayTeamAbbrev == "jackets"
+        awayTeamAbbrev = "blue-" + awayTeamAbbrev
+      end
+
+      # Format home team name for Extra Skater site
+      homeTeam = game.homeTeam.name
+      homeTeamParts = homeTeam.split
+      homeTeamAbbrev = homeTeamParts[-1].downcase
+
+      # Maple Leafs and Blue Jackets are the only teams with two words in their name
+      if homeTeamAbbrev == "leafs"
+        homeTeamAbbrev = "maple-" + homeTeamAbbrev
+      end
+      if homeTeamAbbrev == "jackets"
+        homeTeamAbbrev = "blue-" + homeTeamAbbrev
+      end
+
+      # Format game date for Extra Skater site
+      gameDate = game.date
+      gameDateString = Date.parse(gameDate).to_s
+
       newLink = Link.new("NHL.com", "Boxscore", "http://www.nhl.com/ice/boxscore.htm?id=#{gameNumber}")
       links << newLink
       newLink = Link.new("NHL.com", "Recap", "http://www.nhl.com/ice/recap.htm?id=#{gameNumber}")
@@ -377,6 +407,12 @@ helpers do
       links << newLink
       newLink = Link.new("NHL.com", "Shot Report", "http://www.nhl.com/scores/htmlreports/#{year}/SS#{gameNumber[-6, 6]}.HTM")
       links << newLink
+      newLink = Link.new("Extra Skater", "Advanced Stats", "http://www.extraskater.com/game/#{gameDateString}-#{awayTeamAbbrev}-#{homeTeamAbbrev}")
+      links << newLink
+      newLink = Link.new("Nullisecund", "Even Strength Shooting", "http://nullisecund.us/nhl/game.php?id=#{gameNumber[-5, 5]}")
+      links << newLink
+      newLink = Link.new("Nullisecund", "Shift Chart", "http://nullisecund.us/nhl/toi.php?id=#{gameNumber[-5, 5]}")
+      links << newLink
       newLink = Link.new("Time on Ice", "Shift Chart", "http://timeonice.com/#{year == CURRENTSEASON ? "default" : "SC" + year[2, 2] + year[-2, 2]}.html?GameNumber=#{gameNumber[-5, 5]}&submit=Go")
       links << newLink
       newLink = Link.new("Time on Ice", "Head-to-Head", "http://timeonice.com/H2H#{year[2, 2] + year[-2, 2]}.html?GameNumber=#{gameNumber[-5, 5]}&submit=Go")
@@ -387,10 +423,8 @@ helpers do
       links << newLink
       newLink = Link.new("Behind the Net", "Shot Timeline", "http://behindthenet.ca/charts/Shots_#{game.gameType == "Playoffs" ? "Playoffs_" : ""}#{year[0,4]}_#{gameNumber[-5, 5]}.php")
       links << newLink
-      newLink = Link.new("Nullisecund", "Even Strength Shooting", "http://nullisecund.us/nhl/game.php?id=#{gameNumber[-5, 5]}")
-      links << newLink
-      newLink = Link.new("Nullisecund", "Shift Chart", "http://nullisecund.us/nhl/toi.php?id=#{gameNumber[-5, 5]}")
-      links << newLink
+
+
     end
 
     return links
