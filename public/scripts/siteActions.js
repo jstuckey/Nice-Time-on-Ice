@@ -3,13 +3,13 @@ $(document).ready(function() {
 	currentSeasonID = '20132014';
 
 	// Game type global var
-	currentGameType = 'Regular'
+	currentGameType = 'Playoffs'
 
 	// Team global var
 	currentTeamID = null;
 
 	// Set selected default season
-	$("#seasonList").children().eq(0).addClass('selected');
+	$("#seasonList").children().eq(1).addClass('selected');
 
 	// Hide Atlanta <li> by default. Poor Thrashers...
 	$(".team:contains('Atlanta')").parent().hide();
@@ -36,10 +36,6 @@ $(document).ready(function() {
 	if (!foundTeamCookie) {
 		clickedTeam('WSH');
 	}
-
-	// Disable 2013-2014 playoffs for now
-	$($('#seasonList li a')[1]).addClass('disabled');
-	$($('#seasonList li a')[1]).removeAttr('href');
 
 });
 
