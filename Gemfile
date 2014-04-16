@@ -1,9 +1,19 @@
-source :rubygems
+source 'https://rubygems.org'
+ruby '2.0.0'
+
 gem 'sinatra'
 gem 'data_mapper'
-gem 'ps'
-gem 'do_postgres'
-gem 'dm-postgres-adapter'
 gem 'json'
 gem 'thin'
-gem 'newrelic_rpm'
+
+group :development do
+	gem 'shotgun'
+	gem 'dm-sqlite-adapter'
+end
+
+group :production do
+	gem 'ps'
+	gem 'do_postgres'
+	gem 'dm-postgres-adapter'
+	gem 'newrelic_rpm'
+end
