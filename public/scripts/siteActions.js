@@ -1,15 +1,15 @@
 $(document).ready(function() {
 	// Season global var
-	currentSeasonID = '20132014';
+	currentSeasonID = '20142015';
 
 	// Game type global var
-	currentGameType = 'Playoffs'
+	currentGameType = 'Regular'
 
 	// Team global var
 	currentTeamID = null;
 
 	// Set selected default season
-	$("#seasonList").children().eq(1).addClass('selected');
+	$("#seasonList").children().eq(0).addClass('selected');
 
 	// Hide Atlanta <li> by default. Poor Thrashers...
 	$(".team:contains('Atlanta')").parent().hide();

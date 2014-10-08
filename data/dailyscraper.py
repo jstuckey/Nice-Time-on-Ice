@@ -9,7 +9,7 @@ from bs4 import Tag
 if __name__ == "__main__":
 
     # Hardcode this season's seasonID
-    seasonID = '20132014'
+    seasonID = '20142015'
 
     # Check if calling this script from the project root or the data folder
     rootDir = True

@@ -3,8 +3,8 @@ require_relative "../ntoidatamapper.rb"
 
 def getAllGames
   allGames = Array.new
-  gameNumberToAdd = 2013020001
-  lastGameNumber = Season.all(:seasonID => '20132014').games.all(:order => :gameID).last.gameID.to_i
+  gameNumberToAdd = 2014020001
+  lastGameNumber = Season.all(:seasonID => '20142015').games.all(:order => :gameID).last.gameID.to_i
 
   # Add game numbers to array
   while gameNumberToAdd <= lastGameNumber do
@@ -18,7 +18,7 @@ end
 
 def getDatabaseGames
   allGamesInDatabase = Array.new
-  games = Season.all(:seasonID => '20132014').games.all(:order => :gameID)
+  games = Season.all(:seasonID => '20142015').games.all(:order => :gameID)
 
   games.each do |g|
     allGamesInDatabase << g.gameID
@@ -35,7 +35,7 @@ def getDatabaseGames
 end
 
 puts
-puts 'Getting games for the 2013-2014 season...'
+puts 'Getting games for the 2014-2015 season...'
 puts
 
 # Get array of games
@@ -55,11 +55,11 @@ end
 
 # Check if missing games were found
 if missingGames.length > 0
-  puts "Missing games as of #{Season.all(:seasonID => '20132014').games.all(:order => :gameID).last.date}:"
+  puts "Missing games as of #{Season.all(:seasonID => '20142015').games.all(:order => :gameID).last.date}:"
   missingGames.each do |mg|
     puts mg
   end
 else
-  puts "No missing games as of #{Season.all(:seasonID => '20132014').games.all(:order => :gameID).last.date}."
+  puts "No missing games as of #{Season.all(:seasonID => '20142015').games.all(:order => :gameID).last.date}."
   puts
 end

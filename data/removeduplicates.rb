@@ -4,7 +4,7 @@ puts
 puts "Checking for duplicate games..."
 puts
 
-allGames = Season.all(:seasonID => '20132014').games.all
+allGames = Season.all(:seasonID => '20142015').games.all
 
 duplicateGameIDs = Array.new
 

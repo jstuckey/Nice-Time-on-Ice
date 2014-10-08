@@ -28,6 +28,7 @@ def initDatabase
   Season.create(:seasonID => "20112012")
   Season.create(:seasonID => "20122013")
   Season.create(:seasonID => "20132014")
+  Season.create(:seasonID => "20142015")
   puts 'Added seasons to database.'
 
   # Add teams

@@ -5,7 +5,7 @@ end
 configure do
 
   # Constants
-  CURRENTSEASON = "20132014"
+  CURRENTSEASON = "20142015"
 
   # HTML Classes
   SEASONLINKCLASS = "season"

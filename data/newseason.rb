@@ -3,19 +3,19 @@ require_relative "../ntoidatamapper.rb"
 
 def addSeason
 
-  # Add 2013-2014 season
-  Season.create(:seasonID => "20132014")
-  puts 'Added 2013-2014 season to database.'
+  # Add 2014-2015 season
+  Season.create(:seasonID => "20142015")
+  puts 'Added 2014-2015 season to database.'
 
-  # Add 2013-2014 season for all teams
+  # Add 2014-2015 season for all teams
   teams = Team.all
   teams.each do |t|
     if t.teamID != "ATL"
-      t.seasons << Season.first(:seasonID => "20132014")
+      t.seasons << Season.first(:seasonID => "20142015")
       t.save
     end
   end
-  puts 'Added 2013-2014 season to teams.'
+  puts 'Added 2014-2015 season to teams.'
 
 end
 
