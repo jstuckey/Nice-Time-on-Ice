@@ -381,6 +381,12 @@ helpers do
       links << newLink
       newLink = Link.new("Nullisecund", "Shift Chart", "http://nullisecund.us/nhl/toi.php?id=#{gameNumber[-5, 5]}")
       links << newLink
+      newLink = Link.new("War-on-Ice", "Game Statistics", "http://war-on-ice.com/game.html?seasongcode=#{season.seasonID}#{gameNumber[-5, 5]}")
+      links << newLink
+      newLink = Link.new("Hockey Stats", "Game Statistics", "http://hockeystats.ca/game/#{gameNumber}")
+      links << newLink
+      newLink = Link.new("Natural Stat Trick", "Game Statistics", "http://naturalstattrick.com/game.php?season=#{season.seasonID}&game=#{gameNumber[-5, 5]}")
+      links << newLink
     end
 
     return links
