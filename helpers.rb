@@ -377,23 +377,10 @@ helpers do
       links << newLink
       newLink = Link.new("NHL.com", "Shot Report", "http://www.nhl.com/scores/htmlreports/#{year}/SS#{gameNumber[-6, 6]}.HTM")
       links << newLink
-      newLink = Link.new("Extra Skater", "Advanced Stats", "http://www.extraskater.com/game/#{year[0, 4]}#{game.gameType == "Playoffs" ? "p" : ""}/#{gameNumber[-6, 6]}")
-      links << newLink
       newLink = Link.new("Nullisecund", "Even Strength Shooting", "http://nullisecund.us/nhl/game.php?id=#{gameNumber[-5, 5]}")
       links << newLink
       newLink = Link.new("Nullisecund", "Shift Chart", "http://nullisecund.us/nhl/toi.php?id=#{gameNumber[-5, 5]}")
       links << newLink
-      newLink = Link.new("Time on Ice", "Shift Chart", "http://timeonice.com/#{year == CURRENTSEASON ? "default" : "SC" + year[2, 2] + year[-2, 2]}.html?GameNumber=#{gameNumber[-5, 5]}&submit=Go")
-      links << newLink
-      newLink = Link.new("Time on Ice", "Head-to-Head", "http://timeonice.com/H2H#{year[2, 2] + year[-2, 2]}.html?GameNumber=#{gameNumber[-5, 5]}&submit=Go")
-      links << newLink
-      newLink = Link.new("Time on Ice", "Fenwick/Corsi", "http://timeonice.com/shots#{year[2, 2] + year[-2, 2]}.php?gamenumber=#{gameNumber[-5, 5]}")
-      links << newLink
-      newLink = Link.new("Time on Ice", "Zone Starts", "http://www.timeonice.com/faceoffs#{year[2, 2] + year[-2, 2]}.php?gamenumber=#{gameNumber[-5, 5]}")
-      links << newLink
-      newLink = Link.new("Behind the Net", "Shot Timeline", "http://behindthenet.ca/charts/Shots_#{game.gameType == "Playoffs" ? "Playoffs_" : ""}#{year[0,4]}_#{gameNumber[-5, 5]}.php")
-      links << newLink
-
     end
 
     return links
