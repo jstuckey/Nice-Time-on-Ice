@@ -331,6 +331,8 @@ helpers do
       links << newLink
       newLink = Link.new("Some Kind of Ninja", "Super Shot Search", "http://somekindofninja.com/nhl/index.php?season=#{gameTypeNumber == "3" ? "Post" : "Regular"}&year=#{year[0,4]}-#{year[4,4]}&shots=For&team=#{teamName.gsub(' ', '+')}&ice_player_name=&withPlayer=On+Ice&player_name=&goalie_name=&event=Shots+and+Goals&game=Away&strength=Even&time=Regulation&search=Search")
       links << newLink
+      newLink = Link.new("Faceoffs.net", "Faceoffs", "http://faceoffs.net/team/#{teamAbbrev}?year=#{year[0, 4]}-#{year[6, 2]}")
+      links << newLink
     end
 
     return links
