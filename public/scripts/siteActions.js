@@ -13,6 +13,7 @@ $(document).ready(function() {
 
 	// Hide Atlanta <li> by default. Poor Thrashers...
 	$(".team:contains('Atlanta')").parent().hide();
+	$(".team:contains('Phoenix')").parent().hide();
 
 	// Hide load mask divs
 	$('.loadMask').hide();
@@ -36,6 +37,10 @@ $(document).ready(function() {
 	if (!foundTeamCookie) {
 		clickedTeam('WSH');
 	}
+
+	// Disable 2014-2015 playoffs for now
+  $($('#seasonList li a')[1]).addClass('disabled');
+  $($('#seasonList li a')[1]).removeAttr('href');
 
 });
 
@@ -63,6 +68,15 @@ function clickedSeason(seasonID, gameType) {
 	} else {
 		$(".team:contains('Atlanta')").parent().hide();
 		$(".team:contains('Winnipeg')").parent().show();
+	}
+
+	// Show/hide Arizona and Phoenix depending on the season
+	if (parseInt(seasonID, 10) < 20142015) {
+		$(".team:contains('Phoenix')").parent().show();
+		$(".team:contains('Arizona')").parent().hide();
+	} else {
+		$(".team:contains('Phoenix')").parent().hide();
+		$(".team:contains('Arizona')").parent().show();
 	}
 
 	if (currentTeamID) {
