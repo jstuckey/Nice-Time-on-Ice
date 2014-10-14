@@ -1,7 +1,9 @@
 .project
 .DS_Store
 .pydevproject
-deploy.sh
+.bundle
 .sass-cache
+deploy.sh
 bs4
 data/*.txt
+
