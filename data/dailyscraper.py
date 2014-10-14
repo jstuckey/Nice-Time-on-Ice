@@ -32,10 +32,20 @@ if __name__ == "__main__":
     previewLinkPattern = re.compile('gamecenter/en/preview\?id=')
     recapLinkPattern = re.compile('gamecenter/en/recap\?id=')
 
+    # Check for passed in date
+    if len(sys.argv) >= 2:
+        # Example: 10/12/2014
+        parse_date = '?date=' + sys.argv[1]
+    else:
+        parse_date = ''
+
+
     print 'Connecting to nhl.com daily schedule...'
 
+    print parse_date
+
     # Make some soup out of the nhl.com daily schedule page
-    soup = BeautifulSoup(urllib2.urlopen('http://www.nhl.com/ice/schedulebyday.htm').read(), 'html5lib')
+    soup = BeautifulSoup(urllib2.urlopen('http://www.nhl.com/ice/schedulebyday.htm' + parse_date).read(), 'html5lib')
 
     print 'Scraping nhl.com schedule for today\'s games...'
 
