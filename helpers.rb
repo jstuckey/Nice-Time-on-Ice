@@ -331,6 +331,8 @@ helpers do
       links << newLink
       newLink = Link.new("Some Kind of Ninja", "Super Shot Search", "http://somekindofninja.com/nhl/index.php?season=#{gameTypeNumber == "3" ? "Post" : "Regular"}&year=#{year[0,4]}-#{year[4,4]}&shots=For&team=#{teamName.gsub(' ', '+')}&ice_player_name=&withPlayer=On+Ice&player_name=&goalie_name=&event=Shots+and+Goals&game=Away&strength=Even&time=Regulation&search=Search")
       links << newLink
+      newLink = Link.new("Faceoffs.net", "Faceoffs", "http://faceoffs.net/team/#{teamAbbrev}?year=#{year[0, 4]}-#{year[6, 2]}")
+      links << newLink
     end
 
     return links
@@ -377,23 +379,16 @@ helpers do
       links << newLink
       newLink = Link.new("NHL.com", "Shot Report", "http://www.nhl.com/scores/htmlreports/#{year}/SS#{gameNumber[-6, 6]}.HTM")
       links << newLink
-      newLink = Link.new("Extra Skater", "Advanced Stats", "http://www.extraskater.com/game/#{year[0, 4]}#{game.gameType == "Playoffs" ? "p" : ""}/#{gameNumber[-6, 6]}")
-      links << newLink
       newLink = Link.new("Nullisecund", "Even Strength Shooting", "http://nullisecund.us/nhl/game.php?id=#{gameNumber[-5, 5]}")
       links << newLink
       newLink = Link.new("Nullisecund", "Shift Chart", "http://nullisecund.us/nhl/toi.php?id=#{gameNumber[-5, 5]}")
       links << newLink
-      newLink = Link.new("Time on Ice", "Shift Chart", "http://timeonice.com/#{year == CURRENTSEASON ? "default" : "SC" + year[2, 2] + year[-2, 2]}.html?GameNumber=#{gameNumber[-5, 5]}&submit=Go")
+      newLink = Link.new("War-on-Ice", "Game Statistics", "http://war-on-ice.com/game.html?seasongcode=#{season.seasonID}#{gameNumber[-5, 5]}")
       links << newLink
-      newLink = Link.new("Time on Ice", "Head-to-Head", "http://timeonice.com/H2H#{year[2, 2] + year[-2, 2]}.html?GameNumber=#{gameNumber[-5, 5]}&submit=Go")
+      newLink = Link.new("Hockey Stats", "Game Statistics", "http://hockeystats.ca/game/#{gameNumber}")
       links << newLink
-      newLink = Link.new("Time on Ice", "Fenwick/Corsi", "http://timeonice.com/shots#{year[2, 2] + year[-2, 2]}.php?gamenumber=#{gameNumber[-5, 5]}")
+      newLink = Link.new("Natural Stat Trick", "Game Statistics", "http://naturalstattrick.com/game.php?season=#{season.seasonID}&game=#{gameNumber[-5, 5]}")
       links << newLink
-      newLink = Link.new("Time on Ice", "Zone Starts", "http://www.timeonice.com/faceoffs#{year[2, 2] + year[-2, 2]}.php?gamenumber=#{gameNumber[-5, 5]}")
-      links << newLink
-      newLink = Link.new("Behind the Net", "Shot Timeline", "http://behindthenet.ca/charts/Shots_#{game.gameType == "Playoffs" ? "Playoffs_" : ""}#{year[0,4]}_#{gameNumber[-5, 5]}.php")
-      links << newLink
-
     end
 
     return links
