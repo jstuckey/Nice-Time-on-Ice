@@ -8,6 +8,7 @@ gem 'thin'
 group :development do
 	gem 'shotgun'
 	gem 'dm-sqlite-adapter'
+  gem 'sass'
 end
 
 group :production do
