@@ -315,11 +315,11 @@ helpers do
       links << newLink
       newLink = Link.new("Hockey-Reference", "Schedule and Results", "http://www.hockey-reference.com/teams/#{teamAbbrev}/#{year[4,4]}_games.html")
       links << newLink
-      newLink = Link.new("Behind the Net", "Player Breakdown", "http://www.behindthenet.ca/nhl_statistics.php?ds=29&f1=#{year[0,4]}_#{gameTypeNumber == "3" ? "p" : "s"}&f2=5v5&f5=#{fixBTNTeamName(teamAbbrev)}&c=0+3+4+6+7+8+29+30+31+13+14+15+16+11+12+34+32+33+35+36+17+18+19+20+21+22+25+26+27+28+10+37+38+39+40+47+48+49+50+51+52+53+54+55+56+63+67+57+58+59+60+61+62+64+65+66+41+42+43+44+45+46")
+      newLink = Link.new("Behind the Net", "Player Breakdown", "http://www.behindthenet.ca/nhl_statistics.php?ds=29&f1=#{year[0,4]}_#{gameTypeNumber == "3" ? "p" : "s"}&f2=5v5&f5=#{fixTeamName(teamAbbrev)}&c=0+3+4+6+7+8+29+30+31+13+14+15+16+11+12+34+32+33+35+36+17+18+19+20+21+22+25+26+27+28+10+37+38+39+40+47+48+49+50+51+52+53+54+55+56+63+67+57+58+59+60+61+62+64+65+66+41+42+43+44+45+46")
       links << newLink
-      newLink = Link.new("Behind the Net", "Player Shooting", "http://www.behindthenet.ca/nhl_shot_statistics.php?ds=13&f1=#{year[0,4]}_#{gameTypeNumber == "3" ? "p" : "s"}&f2=5v5&f5=#{fixBTNTeamName(teamAbbrev)}&c=0+1+3+5+4+7+8+9+10+11+12+13+14+15+16+17+18+19+20+21+22+23+24+25+26+27+28")
+      newLink = Link.new("Behind the Net", "Player Shooting", "http://www.behindthenet.ca/nhl_shot_statistics.php?ds=13&f1=#{year[0,4]}_#{gameTypeNumber == "3" ? "p" : "s"}&f2=5v5&f5=#{fixTeamName(teamAbbrev)}&c=0+1+3+5+4+7+8+9+10+11+12+13+14+15+16+17+18+19+20+21+22+23+24+25+26+27+28")
       links << newLink
-      newLink = Link.new("Behind the Net", "Linemates", "http://www.behindthenet.ca/nhl_time_on_ice_stats.php?ds=8&f1=#{year[0,4]}_#{gameTypeNumber == "3" ? "p" : "s"}&f2=5v5&f5=#{fixBTNTeamName(teamAbbrev)}&c=0+1+3+5+8+9+10+11+12+13+14+15+16+17+18+19+20+21+22+23+24+25+26+27+28")
+      newLink = Link.new("Behind the Net", "Linemates", "http://www.behindthenet.ca/nhl_time_on_ice_stats.php?ds=8&f1=#{year[0,4]}_#{gameTypeNumber == "3" ? "p" : "s"}&f2=5v5&f5=#{fixTeamName(teamAbbrev)}&c=0+1+3+5+8+9+10+11+12+13+14+15+16+17+18+19+20+21+22+23+24+25+26+27+28")
       links << newLink
       newLink = Link.new("Hockey Analysis", "Player Ratings (Goals)", "http://stats.hockeyanalysis.com/ratings.php?db=#{year[0, 4] + year[6, 2]}&sit=5v5&type=goals&teamid=#{teamNumber}&pos=skaters&minutes=50&disp=1")
       links << newLink
@@ -327,9 +327,13 @@ helpers do
       links << newLink
       newLink = Link.new("Hockey Analysis", "Individual Stats", "http://stats.hockeyanalysis.com/ratings.php?db=#{year[0, 4] + year[6, 2]}&sit=5v5&type=individual&teamid=#{teamNumber}&pos=skaters&minutes=50&disp=1")
       links << newLink
-      newLink = Link.new("Some Kind of Ninja", "Player Usage Chart", "http://somekindofninja.com/nhl/usage.php?f1=#{year[0,4]}_#{gameTypeNumber == "3" ? "p" : "s"}&f2=5v5&f3=&f5=#{fixBTNTeamName(teamAbbrev)}&f4=&f7=&update-filters=Update+Results")
+      newLink = Link.new("Some Kind of Ninja", "Player Usage Chart", "http://somekindofninja.com/nhl/usage.php?f1=#{year[0,4]}_#{gameTypeNumber == "3" ? "p" : "s"}&f2=5v5&f3=&f5=#{fixTeamName(teamAbbrev)}&f4=&f7=&update-filters=Update+Results")
       links << newLink
       newLink = Link.new("Some Kind of Ninja", "Super Shot Search", "http://somekindofninja.com/nhl/index.php?season=#{gameTypeNumber == "3" ? "Post" : "Regular"}&year=#{year[0,4]}-#{year[4,4]}&shots=For&team=#{teamName.gsub(' ', '+')}&ice_player_name=&withPlayer=On+Ice&player_name=&goalie_name=&event=Shots+and+Goals&game=Away&strength=Even&time=Regulation&search=Search")
+      links << newLink
+      newLink = Link.new("War-on-Ice", "Stats by Game/Season", "http://war-on-ice.com/teambygame.html?team=#{fixTeamName(teamAbbrev)}")
+      links << newLink
+      newLink = Link.new("War-on-Ice", "Player Comparison", "http://war-on-ice.com/playertable.html?team=#{fixTeamName(teamAbbrev)}&start0=#{year}&end0=#{year}")
       links << newLink
       newLink = Link.new("Faceoffs.net", "Faceoffs", "http://faceoffs.net/team/#{teamAbbrev}?year=#{year[0, 4]}-#{year[6, 2]}")
       links << newLink
@@ -505,8 +509,8 @@ helpers do
     !val.nil? && !val.strip.empty?
   end
 
-  def fixBTNTeamName(teamName)
-    # Handle funky team abbreviations for Behind the Net
+  def fixTeamName(teamName)
+    # Handle funky team abbreviations for Behind the Net and War on Ice
     case teamName
     when "LAK" then "L.A"
     when "NJD" then "N.J"
