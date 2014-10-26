@@ -5,42 +5,10 @@ $(document).ready(function() {
 	// Game type global var
 	currentGameType = 'Regular'
 
-	// Team global var
-	currentTeamID = null;
+	prepareDefaultView();
 
-	// Set selected default season
-	$("#seasonList").children().eq(0).addClass('selected');
-
-	// Hide Atlanta <li> by default. Poor Thrashers...
-	$(".team:contains('Atlanta')").parent().hide();
-	$(".team:contains('Phoenix')").parent().hide();
-
-	// Hide load mask divs
-	$('.loadMask').hide();
-
-	// Check for cookie containing the selected team option
-	var foundTeamCookie = false;
-	var allCookies = document.cookie.split(';');
-	for (var cookieIndex = 0; cookieIndex < allCookies.length; cookieIndex++) {
-		// Check if the current cookie is for the selected option
-		var cookieName = allCookies[cookieIndex].split('=')[0];
-		if (cookieName === 'selectedTeam' || cookieName === ' selectedTeam') { // Note the preceeding whitespace
-			// Get cookie value load the selected team
-			var cookieValue = allCookies[cookieIndex].split('=')[1];
-			clickedTeam(cookieValue);
-			foundTeamCookie = true;
-			break;
-		}
-  	}
-
-	// Load Washington by default. Go Caps!
-	if (!foundTeamCookie) {
-		clickedTeam('WSH');
-	}
-
-	// Disable 2014-2015 playoffs for now
-  $($('#seasonList li a')[1]).addClass('disabled');
-  $($('#seasonList li a')[1]).removeAttr('href');
+  // Load the default team
+	clickedTeam(getCurrentTeam());
 
 });
 
@@ -119,9 +87,8 @@ function clickedTeam(teamID) {
 			$('#Games .loadMask').hide();
 			$('#Games .activityIndicator').activity(false);
 
-			// Select the first link in the list
-			var firstGameID = $('#gameList').children('li:first').children('a').attr('href').substr(24, 10);
-			clickedGame(firstGameID);
+			// Select the current game
+			clickedGame(getCurrentGame());
 		}
 	});
 }
@@ -236,3 +203,81 @@ function clearGameLinks() {
 function clearSeasonLinks() {
 	$("#seasonLinkList").empty();
 }
+
+function getCurrentTeam() {
+	// Check if team was specified in the url
+	urlTeam = urlParams.team;
+	cookieTeam = getTeamCookie();
+
+	if(urlTeam) {
+		return urlTeam;
+	} else if (cookieTeam) {
+		return cookieTeam;
+	} else {
+		// Use Washington by default. Go Caps!
+		return 'WSH';
+	}
+}
+
+function getTeamCookie() {
+	// Check for cookie containing the selected team option
+	var allCookies = document.cookie.split(';');
+	for (var cookieIndex = 0; cookieIndex < allCookies.length; cookieIndex++) {
+		// Check if the current cookie is for the selected option
+		var cookieName = allCookies[cookieIndex].split('=')[0];
+		if (cookieName === 'selectedTeam' || cookieName === ' selectedTeam') { // Note the preceeding whitespace
+			// Get cookie value load the selected team
+			return allCookies[cookieIndex].split('=')[1];
+		}
+	}
+
+	return undefined;
+}
+
+var urlParams = (function() {
+	paramsObj = {};
+
+	paramsStart = window.location.href.indexOf('?') + 1;
+	params = window.location.href.slice(paramsStart).split('&');
+	params.forEach(function(param) {
+		kv = param.split('=');
+		key = kv[0];
+		value = kv[1];
+		paramsObj[key] = value;
+	});
+	return paramsObj;
+})();
+
+function getCurrentGame() {
+	urlGame = urlParams.game
+	if (urlGame) {
+		return urlGame;
+	} else {
+		return $('#gameList').children('li:first')
+		                     .children('a')
+		                     .attr('href')
+		                     .substr(-12, 10);
+	}
+}
+
+function prepareDefaultView() {
+	// Hide load mask divs
+	$('.loadMask').hide();
+
+	// Hide Atlanta <li> by default. Poor Thrashers...
+	$(".team:contains('Atlanta')").parent().hide();
+
+	// Hide Phoenix <li> since they are Arizona now
+	$(".team:contains('Phoenix')").parent().hide();
+
+	// Set selected default season
+	//
+	// 0 for regular season
+	// 1 for playoffs
+	$("#seasonList").children().eq(0).addClass('selected');
+
+	// Disable 2014-2015 playoffs for now
+  $($('#seasonList li a')[1]).addClass('disabled');
+  $($('#seasonList li a')[1]).removeAttr('href');
+}
+
