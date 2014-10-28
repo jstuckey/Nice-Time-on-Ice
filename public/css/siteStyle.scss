@@ -2,7 +2,7 @@
 // Height Calculations
 //
 
-$total-height: 945px;
+$total-height: 975px;
 
 $section-margin: 5px;
 $section-border: 2px;
@@ -14,9 +14,9 @@ $section-height: $column-height - 2.0 * $section-border;
 
 $divided-column-available-height: $section-height - $section-separator-margin - 2.0 * $section-border;
 
-$season-section-height: $divided-column-available-height * 0.33;
+$season-section-height: $divided-column-available-height * 0.35;
 $team-section-height: $divided-column-available-height - $season-section-height;
-$season-link-section-height: $divided-column-available-height * 0.52;
+$season-link-section-height: $divided-column-available-height * 0.56;
 $game-link-section-height: $divided-column-available-height - $season-link-section-height;
 
 /* ----------- */
