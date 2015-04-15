@@ -3,7 +3,7 @@ $(document).ready(function() {
 	currentSeasonID = '20142015';
 
 	// Game type global var
-	currentGameType = 'Regular'
+	currentGameType = 'Playoffs';
 
 	prepareDefaultView();
 
@@ -274,10 +274,10 @@ function prepareDefaultView() {
 	//
 	// 0 for regular season
 	// 1 for playoffs
-	$("#seasonList").children().eq(0).addClass('selected');
+	$("#seasonList").children().eq(1).addClass('selected');
 
 	// Disable 2014-2015 playoffs for now
-  $($('#seasonList li a')[1]).addClass('disabled');
-  $($('#seasonList li a')[1]).removeAttr('href');
+  //$($('#seasonList li a')[1]).addClass('disabled');
+  //$($('#seasonList li a')[1]).removeAttr('href');
 }
 
