@@ -1,0 +1,6 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+game_one:
+  game_number: 2014020709
+  date: <%= Date.new(2014, 1, 28).to_s(:db) %>
+  playoffs: false

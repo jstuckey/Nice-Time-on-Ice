@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+caps:
+  name: Washington Capitals
+  abbreviation: WSH
+
+pens:
+  name: Pittsburgh Penguins
+  abbreviation: PIT
+
+islanders:
+  name: New York Islanders
+  abbreviation: NYI
