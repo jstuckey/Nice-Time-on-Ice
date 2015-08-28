@@ -8,6 +8,30 @@ class Links::Base
     @game_type = determine_game_type(game_type)
   end
 
+  # Override these methods in subclass
+
+  def site_name
+    raise "Override ##{__method__} method in subclass"
+  end
+
+  def description
+    raise "Override ##{__method__} method in subclass"
+  end
+
+  def url
+    raise "Override ##{__method__} method in subclass"
+  end
+
+  def group
+    raise "Override ##{__method__} method in subclass"
+  end
+
+  def position
+    raise "Override ##{__method__} method in subclass"
+  end
+
+  # Helpers
+
   def alternate_team_abbreviation
     return unless team
 
