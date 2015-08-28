@@ -1,0 +1,37 @@
+class Links::<%= model_name %> < Links::Base
+
+  def site_name
+    # Name of website
+    # Be consistent with other links on same site
+    #
+    # Example: NHL.com
+  end
+
+  def description
+    # Short summary of page
+    #
+    # Example: Schedule and Results
+  end
+
+  def url
+    # Link to the specific page on the site
+    # Will require formtting using team, season, game, etc.
+    #
+    # Example: "http://www.nhl.com/ice/schedulebyseason.htm?season=#{year}&gameType=#{type}&team=#{team}"
+  end
+
+  def group
+    # Which section the link falls under, e.g. Season vs. Game
+    # Should be an integer
+    #
+    # Example: 0
+  end
+
+  def position
+    # The order the link appears in
+    # Should be an integer
+    # Grouped by #group then by #site_name then ordered by #position
+    #
+    # Example: 1
+  end
+end
