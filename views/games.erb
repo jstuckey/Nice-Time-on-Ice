@@ -1,4 +1,0 @@
-<% games.each do |g| %>
-	<h4><%= g.date %></h4>
-	<li><a class="<%= GAMELINKCLASS %>"href="javascript:clickedGame('<%= g.gameID %>')"><%= g.awayTeam.name %> at<br><%= g.homeTeam.name %></a></li>
-<% end %>

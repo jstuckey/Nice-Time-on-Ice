@@ -1,9 +1,0 @@
-.project
-.DS_Store
-.pydevproject
-.bundle
-.sass-cache
-deploy.sh
-bs4
-data/*.txt
-
