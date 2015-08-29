@@ -3,7 +3,9 @@ require 'test_helper'
 class Links::<%= model_name %>Test < ActiveSupport::TestCase
 
   test "#site_name" do
+    <%- if options.comments? -%>
     # Example: assert_equal "NHL.com", Links::<%= model_name %>.new.site_name
+    <%- end -%>
     skip
   end
 

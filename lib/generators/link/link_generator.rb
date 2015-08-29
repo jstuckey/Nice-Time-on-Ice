@@ -1,7 +1,9 @@
 class LinkGenerator < Rails::Generators::NamedBase
   source_root File.expand_path('../templates', __FILE__)
+  class_option :comments, type: :boolean, default: true
 
   def create_model
+    puts "Comment option: #{options.comments?}"
     template "model.rb.erb", "app/models/links/#{file_name}.rb"
   end
 
