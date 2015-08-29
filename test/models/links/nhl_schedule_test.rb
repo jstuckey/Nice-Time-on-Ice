@@ -16,6 +16,7 @@ class Links::NhlScheduleTest < ActiveSupport::TestCase
     game_type = "regular"
 
     url = "http://www.nhl.com/ice/schedulebyseason.htm?season=20142015&gameType=2&team=WSH&network=&venue="
+
     link = Links::NhlSchedule.new(team: team, season: season, game_type: game_type)
     assert_equal url, link.url
   end
