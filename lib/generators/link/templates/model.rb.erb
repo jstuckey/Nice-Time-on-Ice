@@ -1,0 +1,47 @@
+class Links::<%= model_name %> < Links::Base
+
+  def site_name
+    <%- if options.comments? -%>
+    # Name of website
+    # Be consistent with other links on same site
+    #
+    # Example: NHL.com
+    <%- end -%>
+  end
+
+  def description
+    <%- if options.comments? -%>
+    # Short summary of page
+    #
+    # Example: Schedule and Results
+    <%- end -%>
+  end
+
+  def url
+    <%- if options.comments? -%>
+    # Link to the specific page on the site
+    # Will require formtting using team, season, game, etc.
+    #
+    # Example: "http://www.nhl.com/ice/schedulebyseason.htm?season=#{year}&gameType=#{type}&team=#{team}"
+    <%- end -%>
+  end
+
+  def group
+    <%- if options.comments? -%>
+    # Which section the link falls under, e.g. Season vs. Game
+    # Should be an integer
+    #
+    # Example: 0
+    <%- end -%>
+  end
+
+  def position
+    <%- if options.comments? -%>
+    # The order the link appears in
+    # Should be an integer
+    # Grouped by #group then by #site_name then ordered by #position
+    #
+    # Example: 1
+    <%- end -%>
+  end
+end

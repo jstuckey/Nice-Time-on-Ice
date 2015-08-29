@@ -1,0 +1,12 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: nice_time_on_ice_development
+
+test:
+  <<: *default
+  database: nice_time_on_ice_test
