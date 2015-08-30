@@ -45,6 +45,11 @@ class Links::Base
     end
   end
 
+  def alternate_game_type
+    return 'p' if game_type == 3
+    's'
+  end
+
   def team_in_playoffs?
     return false unless team && season
 
