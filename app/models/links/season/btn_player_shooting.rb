@@ -1,4 +1,4 @@
-class Links::BtnPlayerShooting < Links::Base
+class Links::Season::BtnPlayerShooting < Links::Base
 
   def site_name
     "Behind the Net"

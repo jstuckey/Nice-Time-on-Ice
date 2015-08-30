@@ -1,4 +1,4 @@
-class Links::HrScheduleResults < Links::Base
+class Links::Season::HrScheduleResults < Links::Base
 
   def site_name
     "Hockey-Reference"

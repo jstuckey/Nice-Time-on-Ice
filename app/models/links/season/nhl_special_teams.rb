@@ -1,4 +1,4 @@
-class Links::NhlSpecialTeams < Links::Base
+class Links::Season::NhlSpecialTeams < Links::Base
 
   def site_name
     "NHL.com"

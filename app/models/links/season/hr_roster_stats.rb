@@ -1,4 +1,4 @@
-class Links::HrRosterStats < Links::Base
+class Links::Season::HrRosterStats < Links::Base
 
   def site_name
     "Hockey-Reference"

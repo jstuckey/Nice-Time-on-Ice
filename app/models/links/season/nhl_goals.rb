@@ -1,4 +1,4 @@
-class Links::NhlGoals < Links::Base
+class Links::Season::NhlGoals < Links::Base
 
   def site_name
     "NHL.com"

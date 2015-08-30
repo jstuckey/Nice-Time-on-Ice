@@ -1,4 +1,4 @@
-class Links::BtnLinemates < Links::Base
+class Links::Season::BtnLinemates < Links::Base
 
   def site_name
     "Behind the Net"

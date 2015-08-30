@@ -1,4 +1,4 @@
-class Links::NhlSchedule < Links::Base
+class Links::Season::NhlSchedule < Links::Base
 
   def site_name
     "NHL.com"

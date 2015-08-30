@@ -1,18 +1,17 @@
-class Links::NhlFaceoffs < Links::Base
+class Links::Season::NhlTimeOnIce < Links::Base
 
   def site_name
     "NHL.com"
   end
 
   def description
-    "Faceoffs"
+    "Time on Ice"
   end
 
   def url
     "http://www.nhl.com/ice/playerstats.htm?gameType=" \
     "#{game_type}&position=S&season=#{season}&sort=" \
-    "totalFaceOffs&status=A&team=#{team.abbreviation}&viewName=" \
-    "faceOffPercentageAll"
+    "timeOnIce&status=A&team=#{team.abbreviation}&viewName=timeOnIce"
   end
 
   def group
@@ -20,6 +19,6 @@ class Links::NhlFaceoffs < Links::Base
   end
 
   def position
-    6
+    7
   end
 end

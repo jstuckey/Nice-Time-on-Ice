@@ -1,4 +1,4 @@
-class Links::NhlPenalties < Links::Base
+class Links::Season::NhlPenalties < Links::Base
 
   def site_name
     "NHL.com"

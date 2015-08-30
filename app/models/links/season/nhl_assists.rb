@@ -1,4 +1,4 @@
-class Links::NhlAssists < Links::Base
+class Links::Season::NhlAssists < Links::Base
 
   def site_name
     "NHL.com"

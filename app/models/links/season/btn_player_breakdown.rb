@@ -1,4 +1,4 @@
-class Links::BtnPlayerBreakdown < Links::Base
+class Links::Season::BtnPlayerBreakdown < Links::Base
 
   def site_name
     "Behind the Net"
