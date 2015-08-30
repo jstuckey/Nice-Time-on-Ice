@@ -3,9 +3,9 @@ Description:
 
 Examples:
 
-    rails generate link nhl_schedule
+    rails generate link season nhl_schedule
 
     This will create:
 
-    app/models/links/nhl_schedule.rb
-    test/models/links/nhl_schedule_test.rb
+    app/models/links/season/nhl_schedule.rb
+    test/models/links/season/nhl_schedule_test.rb

@@ -1,4 +1,4 @@
-class Links::<%= model_name %> < Links::Base
+class Links::<%= submodule_name %>::<%= class_name %> < Links::Base
 
   def site_name
     <%- if options.comments? -%>
@@ -37,9 +37,9 @@ class Links::<%= model_name %> < Links::Base
 
   def position
     <%- if options.comments? -%>
-    # The order the link appears in
+    # The order in which the link appears
     # Should be an integer
-    # Grouped by #group then by #site_name then ordered by #position
+    # Grouped by #group then ordered by #position
     #
     # Example: 1
     <%- end -%>
