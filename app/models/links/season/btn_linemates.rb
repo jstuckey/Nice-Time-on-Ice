@@ -16,7 +16,7 @@ class Links::Season::BtnLinemates < Links::Base
   end
 
   def group
-    0
+    2
   end
 
   def position

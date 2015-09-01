@@ -136,6 +136,156 @@ class Links::BaseTest < ActiveSupport::TestCase
     refute Links::Base.new(team: team, season: season).team_in_playoffs?
   end
 
+  test "#ha_team_number should return 1 for Anaheim" do
+    team = Team.create(abbreviation: "ANA")
+    assert_equal 1, Links::Base.new(team: team).ha_team_number
+  end
+
+  test "#ha_team_number should return 23 for Arizona" do
+    team = Team.create(abbreviation: "ARI")
+    assert_equal 23, Links::Base.new(team: team).ha_team_number
+  end
+
+  test "#ha_team_number should return 3 for Boston" do
+    team = Team.create(abbreviation: "BOS")
+    assert_equal 3, Links::Base.new(team: team).ha_team_number
+  end
+
+  test "#ha_team_number should return 4 for Buffalo" do
+    team = Team.create(abbreviation: "BUF")
+    assert_equal 4, Links::Base.new(team: team).ha_team_number
+  end
+
+  test "#ha_team_number should return 5 for Carolina" do
+    team = Team.create(abbreviation: "CAR")
+    assert_equal 5, Links::Base.new(team: team).ha_team_number
+  end
+
+  test "#ha_team_number should return 6 for Calgary" do
+    team = Team.create(abbreviation: "CGY")
+    assert_equal 6, Links::Base.new(team: team).ha_team_number
+  end
+
+  test "#ha_team_number should return 7 for Chicago" do
+    team = Team.create(abbreviation: "CHI")
+    assert_equal 7, Links::Base.new(team: team).ha_team_number
+  end
+
+  test "#ha_team_number should return 9 for Colorado" do
+    team = Team.create(abbreviation: "COL")
+    assert_equal 9, Links::Base.new(team: team).ha_team_number
+  end
+
+  test "#ha_team_number should return 8 for Columbus" do
+    team = Team.create(abbreviation: "CBJ")
+    assert_equal 8, Links::Base.new(team: team).ha_team_number
+  end
+
+  test "#ha_team_number should return 10 for Dallas" do
+    team = Team.create(abbreviation: "DAL")
+    assert_equal 10, Links::Base.new(team: team).ha_team_number
+  end
+
+  test "#ha_team_number should return 11 for Detroit" do
+    team = Team.create(abbreviation: "DET")
+    assert_equal 11, Links::Base.new(team: team).ha_team_number
+  end
+
+  test "#ha_team_number should return 12 for Edmonton" do
+    team = Team.create(abbreviation: "EDM")
+    assert_equal 12, Links::Base.new(team: team).ha_team_number
+  end
+
+  test "#ha_team_number should return 13 for Florida" do
+    team = Team.create(abbreviation: "FLA")
+    assert_equal 13, Links::Base.new(team: team).ha_team_number
+  end
+
+  test "#ha_team_number should return 14 for Los Angeles" do
+    team = Team.create(abbreviation: "LAK")
+    assert_equal 14, Links::Base.new(team: team).ha_team_number
+  end
+
+  test "#ha_team_number should return 15 for Minnesota" do
+    team = Team.create(abbreviation: "MIN")
+    assert_equal 15, Links::Base.new(team: team).ha_team_number
+  end
+
+  test "#ha_team_number should return 16 for Montreal" do
+    team = Team.create(abbreviation: "MTL")
+    assert_equal 16, Links::Base.new(team: team).ha_team_number
+  end
+
+  test "#ha_team_number should return 17 for Nashville" do
+    team = Team.create(abbreviation: "NSH")
+    assert_equal 17, Links::Base.new(team: team).ha_team_number
+  end
+
+  test "#ha_team_number should return 18 for New Jersey" do
+    team = Team.create(abbreviation: "NJD")
+    assert_equal 18, Links::Base.new(team: team).ha_team_number
+  end
+
+  test "#ha_team_number should return 19 for NY Islanders" do
+    team = teams(:islanders)
+    assert_equal 19, Links::Base.new(team: team).ha_team_number
+  end
+
+  test "#ha_team_number should return 20 for NY Rangers" do
+    team = Team.create(abbreviation: "NYR")
+    assert_equal 20, Links::Base.new(team: team).ha_team_number
+  end
+
+  test "#ha_team_number should return 21 for Ottawa" do
+    team = Team.create(abbreviation: "OTT")
+    assert_equal 21, Links::Base.new(team: team).ha_team_number
+  end
+
+  test "#ha_team_number should return 22 for Philadelphia" do
+    team = Team.create(abbreviation: "PHI")
+    assert_equal 22, Links::Base.new(team: team).ha_team_number
+  end
+
+  test "#ha_team_number should return 24 for Pittsburgh" do
+    team = teams(:pens)
+    assert_equal 24, Links::Base.new(team: team).ha_team_number
+  end
+
+  test "#ha_team_number should return 25 for San Jose" do
+    team = Team.create(abbreviation: "SJS")
+    assert_equal 25, Links::Base.new(team: team).ha_team_number
+  end
+
+  test "#ha_team_number should return 26 for St. Louis" do
+    team = Team.create(abbreviation: "STL")
+    assert_equal 26, Links::Base.new(team: team).ha_team_number
+  end
+
+  test "#ha_team_number should return 27 for Tampa Bay" do
+    team = Team.create(abbreviation: "TBL")
+    assert_equal 27, Links::Base.new(team: team).ha_team_number
+  end
+
+  test "#ha_team_number should return 28 for Toronto" do
+    team = Team.create(abbreviation: "TOR")
+    assert_equal 28, Links::Base.new(team: team).ha_team_number
+  end
+
+  test "#ha_team_number should return 29 for Vancouver" do
+    team = Team.create(abbreviation: "VAN")
+    assert_equal 29, Links::Base.new(team: team).ha_team_number
+  end
+
+  test "#ha_team_number should return 30 for Washington" do
+    team = teams(:caps)
+    assert_equal 30, Links::Base.new(team: team).ha_team_number
+  end
+
+  test "#ha_team_number should return 2 for Winnipeg" do
+    team = Team.create(abbreviation: "WPG")
+    assert_equal 2, Links::Base.new(team: team).ha_team_number
+  end
+
   test "#site_name should raise exception" do
     message = nil
     begin

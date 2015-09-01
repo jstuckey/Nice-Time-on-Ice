@@ -17,7 +17,7 @@ class Links::Season::BtnPlayerShooting < Links::Base
   end
 
   def group
-    0
+    2
   end
 
   def position

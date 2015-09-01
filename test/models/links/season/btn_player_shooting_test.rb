@@ -22,7 +22,7 @@ class Links::Season::BtnPlayerShootingTest < ActiveSupport::TestCase
   end
 
   test "#group" do
-    assert_equal 0, Links::Season::BtnPlayerShooting.new.group
+    assert_equal 2, Links::Season::BtnPlayerShooting.new.group
   end
 
   test "#position" do

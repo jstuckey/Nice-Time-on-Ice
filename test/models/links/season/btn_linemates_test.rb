@@ -22,7 +22,7 @@ class Links::Season::BtnLinematesTest < ActiveSupport::TestCase
   end
 
   test "#group" do
-    assert_equal 0, Links::Season::BtnLinemates.new.group
+    assert_equal 2, Links::Season::BtnLinemates.new.group
   end
 
   test "#position" do

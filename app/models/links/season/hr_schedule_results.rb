@@ -14,7 +14,7 @@ class Links::Season::HrScheduleResults < Links::Base
   end
 
   def group
-    0
+    1
   end
 
   def position

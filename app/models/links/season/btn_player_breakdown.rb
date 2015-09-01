@@ -19,7 +19,7 @@ class Links::Season::BtnPlayerBreakdown < Links::Base
   end
 
   def group
-    0
+    2
   end
 
   def position

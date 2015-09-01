@@ -22,7 +22,7 @@ class Links::Season::HrScheduleResultsTest < ActiveSupport::TestCase
   end
 
   test "#group" do
-    assert_equal 0, Links::Season::HrScheduleResults.new.group
+    assert_equal 1, Links::Season::HrScheduleResults.new.group
   end
 
   test "#position" do

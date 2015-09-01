@@ -22,11 +22,11 @@ class Links::Season::BtnPlayerBreakdownTest < ActiveSupport::TestCase
   end
 
   test "#group" do
-    assert_equal 0, Links::Season::BtnPlayerBreakdown.new.group
+    assert_equal 2, Links::Season::BtnPlayerBreakdown.new.group
   end
 
   test "#position" do
-    assert_equal 0, Links::Season::BtnPlayerBreakdown.new.group
+    assert_equal 0, Links::Season::BtnPlayerBreakdown.new.position
   end
 
 end
