@@ -1,4 +1,5 @@
 class Links::Base
+
   attr_reader :team, :season, :game, :game_type
 
   def initialize(team: nil, season: nil, game: nil, game_type: nil)
@@ -30,36 +31,6 @@ class Links::Base
     raise "Override ##{__method__} method in subclass"
   end
 
-  # Helpers
-
-  def alternate_team_abbreviation
-    return unless team
-
-    # Some sites use non-standard team abbreviations
-    case team.abbreviation
-    when "LAK" then "L.A"
-    when "NJD" then "N.J"
-    when "SJS" then "S.J"
-    when "TBL" then "T.B"
-    else team.abbreviation
-    end
-  end
-
-  def alternate_game_type
-    return 'p' if game_type == 3
-    's'
-  end
-
-  def team_in_playoffs?
-    return false unless team && season
-
-    game_count =
-      Game.where(season: season, playoffs: true)
-          .where(%q("away_team_id" = ? OR "home_team_id" = ?), team, team)
-          .count
-    game_count > 0
-  end
-
   private
 
   def determine_team(team)
@@ -89,4 +60,5 @@ class Links::Base
       2
     end
   end
+
 end
