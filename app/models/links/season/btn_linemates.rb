@@ -1,5 +1,7 @@
 class Links::Season::BtnLinemates < Links::Base
 
+  include Links::Helpers
+
   def site_name
     "Behind the Net"
   end
