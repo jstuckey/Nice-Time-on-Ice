@@ -79,6 +79,9 @@ module Links
       game_count > 0
     end
 
-  end
+    def game_number_without_year
+      game.game_number.to_s[-6, 6]
+    end
 
+  end
 end

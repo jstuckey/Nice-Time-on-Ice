@@ -4,7 +4,7 @@ class Links::HelpersTest < ActiveSupport::TestCase
 
   include Links::Helpers
 
-  attr_accessor :team, :season, :game_type
+  attr_accessor :team, :season, :game, :game_type
 
   test "#ha_team_number should return 1 for Anaheim" do
     self.team = Team.create(abbreviation: "ANA")
@@ -209,6 +209,11 @@ class Links::HelpersTest < ActiveSupport::TestCase
     season.games << game
 
     refute team_in_playoffs?
+  end
+
+  test "#game_number_without_year should strip year off the front of the game number" do
+    self.game = Game.create(game_number: 2014021217)
+    assert_equal "021217", game_number_without_year
   end
 
 end
