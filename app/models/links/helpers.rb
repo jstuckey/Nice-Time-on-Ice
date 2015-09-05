@@ -83,5 +83,9 @@ module Links
       game.game_number.to_s[-6, 6]
     end
 
+    def game_number_without_year_and_zero
+      game.game_number.to_s[-5, 5]
+    end
+
   end
 end
