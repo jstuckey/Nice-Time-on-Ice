@@ -9,6 +9,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'virtus'
+gem 'nokogiri'
 
 group :test do
   gem 'shoulda'
