@@ -9,9 +9,7 @@ class NhlParser
   end
 
   def call
-    Nokogiri::HTML(open(url)) do |config|
-      config.options = Nokogiri::XML::ParseOptions::NONET
-    end
+    Nokogiri::HTML(open(url))
   end
 
 end
