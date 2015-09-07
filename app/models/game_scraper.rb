@@ -12,6 +12,10 @@ class GameScraper
   end
 
   def call
+    message = "Scraping #{url}"
+    puts message
+    Rails.logger.info message
+
     @games = []
     @doc = parser.call
 
@@ -22,6 +26,10 @@ class GameScraper
       games << game_from_row(row)
     end
     games.compact!
+
+    message = "#{games.length} games found"
+    puts message
+    Rails.logger.info message
 
     self
   end
