@@ -12,25 +12,11 @@ class GameScraper
   end
 
   def call
-    message = "Scraping #{url}"
-    puts message
-    Rails.logger.info message
-
     @games = []
-    @doc = parser.call
-
+    scrape_website
     return self if no_games_scheduled?
     return self unless games_table
-
-    games_table.each do |row|
-      games << game_from_row(row)
-    end
-    games.compact!
-
-    message = "#{games.length} games found"
-    puts message
-    Rails.logger.info message
-
+    parse_games
     self
   end
 
@@ -44,6 +30,14 @@ class GameScraper
     end
   end
 
+  def scrape_website
+    message = "Scraping #{url}"
+    puts message unless Rails.env.test?
+    Rails.logger.info message
+
+    @doc = parser.call
+  end
+
   def no_games_scheduled?
     doc.css("#noGamesScheduled").present?
   end
@@ -54,6 +48,17 @@ class GameScraper
       return unless tables
       tables.last.css("tbody tr")
     end
+  end
+
+  def parse_games
+    games_table.each do |row|
+      games << game_from_row(row)
+    end
+    games.compact!
+
+    message = "#{games.length} games found"
+    puts message unless Rails.env.test?
+    Rails.logger.info message
   end
 
   def game_from_row(row)
@@ -82,7 +87,7 @@ class GameScraper
 
   def get_game_number(row)
     # The game number is contained in an href
-    # attribute of an <a> tag with the <tr>
+    # attribute of an <a> tag within the <tr>
     anchors = row.css("a.btn")
     anchors.each do |a|
       url = a.attribute("href")
@@ -105,8 +110,8 @@ class GameScraper
 
   def get_home_team(row)
     # The home team abbreviation is contained in
-    # a rel attribute of the first <a> tag with
-    # a teamName class
+    # a rel attribute of the last <a> tag with a
+    # teamName class
     anchors = row.css(".teamName a")
     return unless anchors.present?
     anchors.last.attribute("rel")
