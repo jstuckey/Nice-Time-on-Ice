@@ -13,4 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//
+//= stub ./ie
+//= stub ie.js
+//
 //= require_tree .
+//= require_tree ../../../vendor/assets/javascripts
