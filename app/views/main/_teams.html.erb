@@ -1,0 +1,13 @@
+<section id="Teams">
+  <h3>Teams</h3>
+  <ol id="teamList">
+  <% @team_presenter.links \
+    .zip(@team_presenter.li_classes) \
+    .each do |link, li_class| %>
+
+    <li <%= li_class %>>
+      <%= link %>
+    </li>
+  <% end %>
+  </ol>
+</section>
