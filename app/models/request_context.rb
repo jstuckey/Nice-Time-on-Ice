@@ -39,9 +39,9 @@ class RequestContext
   def determine_game(game)
     Game.find_by_id(game) ||
       Game.where(game_number: game).first ||
-      Game.where(season: season, playoffs: game_type == 3)
-          .where("away_team_id = ? OR home_team_id = ?", team.id, team.id)
-          .order(:date).last
+        Game.where(season: season, playoffs: game_type == 3)
+            .where("away_team_id = ? OR home_team_id = ?", team.id, team.id)
+            .order(:date).last
   end
 
 end
