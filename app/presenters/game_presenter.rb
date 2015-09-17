@@ -18,8 +18,11 @@ class GamePresenter
     end
   end
 
-  def dates_and_links
-    dates.zip(links)
+  def li_classes
+    classes = Array.new(all_games.length, "")
+    index = all_games.index { |g| g == context.game }
+    classes[index] = %Q(class="selected").html_safe if index
+    classes
   end
 
   private

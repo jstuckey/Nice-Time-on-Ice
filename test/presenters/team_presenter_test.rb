@@ -47,4 +47,12 @@ class TeamPresenterTest < ActiveSupport::TestCase
     assert_equal expected, TeamPresenter.new(@context).links
   end
 
+  test "#li_classes should return list of css clases for <li> tags" do
+    expected = [
+      "", "", "", "", "", "", "", "", "", "", "", "", "",
+      "", "", "", "", "", "", "", "", "", "", "", "", "",
+      "", "", "class=\"selected\"", ""]
+    assert_equal expected, TeamPresenter.new(@context).li_classes
+  end
+
 end

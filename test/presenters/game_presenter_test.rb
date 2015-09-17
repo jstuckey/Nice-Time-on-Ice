@@ -23,13 +23,9 @@ class GamePresenterTest < ActiveSupport::TestCase
     assert_equal expected, GamePresenter.new(@context).dates
   end
 
-  test "#dates_and_links should return tuples of date and link" do
-    link = %Q(<a class="game" href="/?game=2014021217&game_type=2&season=2014&team=WSH">New York Rangers at</br>Washington Capitals</a>)
-    link = link.gsub("&", "&amp;")
-    date = "Sat Apr 11, 2015"
-    expected = [ [date, link] ]
-
-    assert_equal expected, GamePresenter.new(@context).dates_and_links
+  test "#li_classes should return list of css clases for <li> tags" do
+    expected = ["class=\"selected\""]
+    assert_equal expected, GamePresenter.new(@context).li_classes
   end
 
 end

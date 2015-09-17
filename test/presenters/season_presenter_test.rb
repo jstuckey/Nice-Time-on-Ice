@@ -4,7 +4,7 @@ class SeasonPresenterTest < ActiveSupport::TestCase
 
   setup do
     @context = RequestContext.new(team: 'WSH',
-                                  season: '2014',
+                                  season: '2013',
                                   game_type: '2')
   end
 
@@ -19,6 +19,11 @@ class SeasonPresenterTest < ActiveSupport::TestCase
     expected = expected.map { |anchor| anchor.gsub("&", "&amp;") }
 
     assert_equal expected, SeasonPresenter.new(@context).links
+  end
+
+  test "#li_classes should return list of css clases for <li> tags" do
+    expected = ["", "", "class=\"selected\"", ""]
+    assert_equal expected, SeasonPresenter.new(@context).li_classes
   end
 
 end

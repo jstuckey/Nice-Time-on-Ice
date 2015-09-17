@@ -12,6 +12,13 @@ class TeamPresenter
     end
   end
 
+  def li_classes
+    classes = Array.new(all_teams.length, "")
+    index = all_teams.index { |t| t == context.team }
+    classes[index] = %Q(class="selected").html_safe if index
+    classes
+  end
+
   private
 
   attr_reader :context
