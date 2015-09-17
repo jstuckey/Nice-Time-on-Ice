@@ -2,5 +2,16 @@
 
 game_one:
   game_number: 2014021217
-  date: <%= Date.new(2014, 4, 11).to_s(:db) %>
+  date: <%= Date.new(2015, 4, 11).to_s(:db) %>
   playoffs: false
+  away_team: rags
+  home_team: caps
+  season: fourteen
+
+game_two:
+  game_number: 2014030141
+  date: <%= Date.new(2015, 4, 15).to_s(:db) %>
+  playoffs: true
+  away_team: islanders
+  home_team: caps
+  season: fourteen
