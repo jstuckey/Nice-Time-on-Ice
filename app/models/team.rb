@@ -4,8 +4,4 @@ class Team < ActiveRecord::Base
 
   validates :name, uniqueness: true
   validates :abbreviation, uniqueness: true
-
-  def games
-    Game.where("away_team_id = ? OR home_team_id = ?", self.id, self.id).order(:date)
-  end
 end
