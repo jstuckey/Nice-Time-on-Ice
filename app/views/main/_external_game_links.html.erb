@@ -1,7 +1,13 @@
 <section id="GameLinks">
   <h3>
-    <span id="gameNumber"></span>
+  <span id="gameNumber"><%= @context.game.game_number %></span>
     Game Links
   </h3>
-  <ul id="gameLinkList"></ul>
+  <ul id="gameLinkList">
+  <% @game_link_presenter.links.each do |link| %>
+    <li>
+      <%= link %>
+    </li>
+  <% end %>
+  </ul>
 </section>
