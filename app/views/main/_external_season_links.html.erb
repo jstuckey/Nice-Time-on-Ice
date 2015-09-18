@@ -1,9 +1,9 @@
-<section id="SeasonLinks">
+<section id="season-links">
   <h3>
-    <span id="seasonNumber"><%= @context.season.to_s</span>
+    <span id="season-number"><%= @context.season.to_s %></span>
     Season Links
   </h3>
-  <ul id="seasonLinkList">
+  <ul id="season-link-list">
   <% @season_link_presenter.links.each do |link| %>
     <li>
       <%= link %>

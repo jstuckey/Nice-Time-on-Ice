@@ -1,9 +1,9 @@
-<section id="Games">
+<section id="games">
   <h3>
     <a href="javascript:clickedGameSort('ASC')" class="sort">Sort<div class="glyph-down"></div></a>
     Games
   </h3>
-  <ol id="gameList">
+  <ol id="game-list">
   <% @game_presenter.links \
     .zip(@game_presenter.dates,
          @game_presenter.li_classes) \

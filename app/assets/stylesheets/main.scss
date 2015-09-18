@@ -45,20 +45,20 @@ article {
     margin: $section-margin;
   }
 
-  #Seasons {
+  #seasons {
     height: $season-section-height;
   }
 
-  #Teams {
+  #teams {
     height: $team-section-height;
     margin-top: $section-separator-margin;
   }
 
-  #SeasonLinks {
+  #season-links {
     height: $season-link-section-height;
   }
 
-  #GameLinks {
+  #game-links {
     height: $game-link-section-height;
     margin-top: $section-separator-margin;
   }
@@ -75,23 +75,23 @@ article ol, article ul {
   height: 100px;
 }
 
-#seasonList{
+#season-list {
   height: $season-section-height - $section-header-height;
 }
 
-#teamList {
+#team-list {
   height: $team-section-height - $section-header-height;
 }
 
-#gameList {
+#game-list {
   height: $section-height - $section-header-height;
 }
 
-#seasonLinkList {
+#season-link-list {
   height: $season-link-section-height - $section-header-height;
 }
 
-#gameLinkList {
+#game-link-list {
   height: $game-link-section-height - $section-header-height;
 }
 
@@ -144,7 +144,7 @@ article a:hover {
 $blue-color: #0082CE;
 $border-style: 5px solid transparent;
 
-.sort, #gameNumber, #seasonNumber, .glyph-down, .glyph-up {
+.sort, #game-number, #season-number, .glyph-down, .glyph-up {
   float: right;
   color:$blue-color;
   text-decoration: none;
