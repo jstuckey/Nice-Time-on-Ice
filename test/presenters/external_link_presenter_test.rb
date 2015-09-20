@@ -57,4 +57,19 @@ class ExternalLinkPresenterTest < ActiveSupport::TestCase
 
     assert_equal expected, ExternalLinkPresenter.new(@context, :game).links
   end
+
+  test "#headers should return list of <h4> tags for each season link site name" do
+    expected = ["NHL.com", nil, nil, nil, nil, nil, nil, nil,
+      "Hockey-Reference", nil, "Behind the Net", nil, nil,
+      "Hockey Analysis", nil, nil, "Some Kind of Ninja", nil,
+      "War-on-Ice", nil, "Faceoffs.net"]
+    assert_equal expected, ExternalLinkPresenter.new(@context, :season).headers
+  end
+
+  test "#headers should return list of <h4> tags for each game link site name" do
+    expected = ["NHL.com", nil, nil, nil, nil, nil, nil, nil, nil, nil, nil,
+      "Nullisecund", nil, "War-on-Ice", "Hockey Stats", "Natural Stat Trick"]
+    assert_equal expected, ExternalLinkPresenter.new(@context, :game).headers
+  end
+
 end

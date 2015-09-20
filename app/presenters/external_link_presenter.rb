@@ -13,6 +13,19 @@ class ExternalLinkPresenter
     end
   end
 
+  def headers
+    current_name = nil
+    link_objects.map do |link|
+      name = link.site_name
+      if current_name == name
+        nil
+      else
+        current_name = name
+        name
+      end
+    end
+  end
+
   private
 
   attr_reader :context, :module_name

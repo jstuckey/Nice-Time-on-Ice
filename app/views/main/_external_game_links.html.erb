@@ -4,7 +4,10 @@
     Game Links
   </h3>
   <ul id="game-link-list">
-  <% @game_link_presenter.links.each do |link| %>
+  <% @game_link_presenter.links \
+    .zip(@game_link_presenter.headers) \
+    .each do |link, header| %>
+    <h4><%= header %></h4>
     <li>
       <%= link %>
     </li>
