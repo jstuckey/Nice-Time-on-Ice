@@ -1,12 +1,13 @@
 class RequestContext
 
-  attr_reader :team, :season, :game_type, :game
+  attr_reader :team, :season, :game_type, :game, :game_order
 
   def initialize(params = {})
-    @team      = determine_team(params[:team])
-    @season    = determine_season(params[:season])
-    @game_type = determine_game_type(params[:game_type])
-    @game      = determine_game(params[:game])
+    @team       = determine_team(params[:team])
+    @season     = determine_season(params[:season])
+    @game_type  = determine_game_type(params[:game_type])
+    @game       = determine_game(params[:game])
+    @game_order = determine_game_order(params[:game_order])
   end
 
   private
@@ -42,6 +43,14 @@ class RequestContext
         Game.where(season: season, playoffs: game_type == 3)
             .where("away_team_id = ? OR home_team_id = ?", team.id, team.id)
             .order(:date).last
+  end
+
+  def determine_game_order(order)
+    if order.to_s.downcase == "asc"
+      "asc"
+    else
+      "desc"
+    end
   end
 
 end

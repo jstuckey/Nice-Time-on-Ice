@@ -118,10 +118,25 @@ class RequestContextTest < ActiveSupport::TestCase
     assert_equal game, context.game
   end
 
-  test "should defaults to the Caps' most recent regular season game" do
+  test "should default to the Caps' most recent regular season game" do
     game = games(:game_one)
     context = RequestContext.new
     assert_equal game, context.game
+  end
+
+  test "should set game_order to 'asc' if 'asc' is passed in" do
+    context = RequestContext.new(game_order: "asc")
+    assert_equal "asc", context.game_order
+  end
+
+  test "should set game_order to 'desc' if bad data is passed in" do
+    context = RequestContext.new(game_order: "soup")
+    assert_equal "desc", context.game_order
+  end
+
+  test "should set game_order to 'desc' by default" do
+    context = RequestContext.new()
+    assert_equal "desc", context.game_order
   end
 
 end
