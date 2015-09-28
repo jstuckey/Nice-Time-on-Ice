@@ -58,6 +58,14 @@ class ExternalLinkPresenterTest < ActiveSupport::TestCase
     assert_equal expected, ExternalLinkPresenter.new(@context, :game).links
   end
 
+  test "#links should return empty list if no game" do
+    context = RequestContext.new(team: 'WSH',
+                                 season: '2013',
+                                 game_type: '3')
+
+    assert_equal [], ExternalLinkPresenter.new(context, :game).links
+  end
+
   test "#headers should return list of <h4> tags for each season link site name" do
     expected = ["NHL.com", nil, nil, nil, nil, nil, nil, nil,
       "Hockey-Reference", nil, "Behind the Net", nil, nil,
@@ -70,6 +78,14 @@ class ExternalLinkPresenterTest < ActiveSupport::TestCase
     expected = ["NHL.com", nil, nil, nil, nil, nil, nil, nil, nil, nil, nil,
       "Nullisecund", nil, "War-on-Ice", "Hockey Stats", "Natural Stat Trick"]
     assert_equal expected, ExternalLinkPresenter.new(@context, :game).headers
+  end
+
+  test "#headers should return empty list if no game" do
+    context = RequestContext.new(team: 'WSH',
+                                 season: '2013',
+                                 game_type: '3')
+
+    assert_equal [], ExternalLinkPresenter.new(context, :game).headers
   end
 
 end

@@ -8,12 +8,14 @@ class ExternalLinkPresenter
   end
 
   def links
+    return [] unless context.game.present?
     bodies.zip(urls).map do |body, url|
       link_to(body, url, class: "link", target: "new")
     end
   end
 
   def headers
+    return [] unless context.game.present?
     current_name = nil
     link_objects.map do |link|
       name = link.site_name

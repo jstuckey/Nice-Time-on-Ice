@@ -1,6 +1,6 @@
 <section id="game-links">
   <h3>
-  <span id="game-number"><%= @context.game.game_number %></span>
+  <span id="game-number"><%= @context.game.try(:game_number) %></span>
     Game Links
   </h3>
   <ul id="game-link-list">
