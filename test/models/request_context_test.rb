@@ -139,4 +139,15 @@ class RequestContextTest < ActiveSupport::TestCase
     assert_equal "desc", context.game_order
   end
 
+  test "should default to the oldest game for team in a season if game_order is ascending" do
+    team = teams(:caps)
+    season = seasons(:fourteen)
+    game_type = "regular"
+    game_order = "asc"
+    game = games(:game_one)
+
+    context = RequestContext.new(game_order: game_order, team: team, season: season, game_type: game_type)
+    assert_equal game, context.game
+  end
+
 end

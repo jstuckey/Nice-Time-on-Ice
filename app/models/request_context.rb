@@ -6,8 +6,8 @@ class RequestContext
     @team       = determine_team(params[:team])
     @season     = determine_season(params[:season])
     @game_type  = determine_game_type(params[:game_type])
-    @game       = determine_game(params[:game])
     @game_order = determine_game_order(params[:game_order])
+    @game       = determine_game(params[:game])
   end
 
   private
@@ -42,7 +42,7 @@ class RequestContext
       Game.where(game_number: game).first ||
         Game.where(season: season, playoffs: game_type == 3)
             .where("away_team_id = ? OR home_team_id = ?", team.id, team.id)
-            .order(:date).last
+            .order(date: game_order).first
   end
 
   def determine_game_order(order)
