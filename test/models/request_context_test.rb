@@ -102,7 +102,7 @@ class RequestContextTest < ActiveSupport::TestCase
     team = teams(:caps)
     season = seasons(:fourteen)
     game_type = "regular"
-    game = games(:game_one)
+    game = games(:game_two)
 
     context = RequestContext.new(team: team, season: season, game_type: game_type)
     assert_equal game, context.game
@@ -112,14 +112,14 @@ class RequestContextTest < ActiveSupport::TestCase
     team = teams(:caps)
     season = seasons(:fourteen)
     game_type = "playoffs"
-    game = games(:game_two)
+    game = games(:game_three)
 
     context = RequestContext.new(team: team, season: season, game_type: game_type)
     assert_equal game, context.game
   end
 
   test "should default to the Caps' most recent regular season game" do
-    game = games(:game_one)
+    game = games(:game_two)
     context = RequestContext.new
     assert_equal game, context.game
   end
