@@ -14,7 +14,7 @@ class Links::Base
 
   def self.autoload_links
     path = File.join(Rails.root, "app", "models", "links", "**/*.rb")
-    Dir[path].each { |file| require file }
+    Dir[path].each { |file| require_dependency file }
   end
 
   def <=>(other)
