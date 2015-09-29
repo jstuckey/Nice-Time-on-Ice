@@ -36,7 +36,11 @@ class ExternalLinkPresenter
     @link_objects||= begin
       Links::Base.autoload_links
 
-      klasses = module_name.constants.map do |const|
+      constants = module_name.constants.reject do |const|
+        const =~ /Test$/
+      end
+
+      klasses = constants.map do |const|
         module_name.const_get(const)
       end
 
