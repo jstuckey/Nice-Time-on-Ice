@@ -35,7 +35,8 @@ class TeamPresenter
     all_teams.map do |team|
       root_path.call(season: context.season.year_start,
                      team: team.abbreviation,
-                     game_type: context.game_type)
+                     game_type: context.game_type,
+                     game_order: context.game_order)
     end
   end
 

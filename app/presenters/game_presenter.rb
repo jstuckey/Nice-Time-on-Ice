@@ -62,7 +62,8 @@ class GamePresenter
       root_path.call(game: game.game_number,
                      season: context.season.year_start,
                      team: context.team.abbreviation,
-                     game_type: context.game_type)
+                     game_type: context.game_type,
+                     game_order: context.game_order)
     end
   end
 

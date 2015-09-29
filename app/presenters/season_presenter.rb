@@ -44,13 +44,15 @@ class SeasonPresenter
     regular = all_seasons.map do |season|
       root_path.call(season: season.year_start,
                      team: context.team.abbreviation,
-                     game_type: 2)
+                     game_type: 2,
+                     game_order: context.game_order)
     end
 
     playoffs = all_seasons.map do |season|
       root_path.call(season: season.year_start,
                      team: context.team.abbreviation,
-                     game_type: 3)
+                     game_type: 3,
+                     game_order: context.game_order)
     end
 
     regular.zip(playoffs).flatten
