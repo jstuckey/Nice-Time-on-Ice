@@ -25,6 +25,22 @@ class GamePresenter
     classes
   end
 
+  def order_href
+    Rails.application.routes.url_helpers.root_path(
+      season: context.season.year_start,
+      team: context.team.abbreviation,
+      game_type: context.game_type,
+      game_order: opposite_of_current_order)
+  end
+
+  def order_class
+    if context.game_order == "asc"
+      "glyph-up"
+    else
+      "glyph-down"
+    end
+  end
+
   private
 
   attr_reader :context
@@ -33,7 +49,7 @@ class GamePresenter
     @all_games ||= begin
       Game.where(season: context.season, playoffs: is_playoffs?)
           .where("away_team_id = ? OR home_team_id = ?", context.team.id, context.team.id)
-          .order(date: :desc)
+          .order(date: context.game_order)
     end
   end
 
@@ -58,6 +74,14 @@ class GamePresenter
 
   def is_playoffs?
     context.game_type == 3
+  end
+
+  def opposite_of_current_order
+    if context.game_order == "asc"
+      "desc"
+    else
+      "asc"
+    end
   end
 
 end

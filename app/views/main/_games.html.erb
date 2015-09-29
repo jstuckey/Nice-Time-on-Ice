@@ -1,6 +1,9 @@
 <section id="games">
   <h3>
-    <a href="javascript:clickedGameSort('ASC')" class="sort">Sort<div class="glyph-down"></div></a>
+    <a href="<%= @game_presenter.order_href %>" class="sort">
+      Sort
+      <div class="<%= @game_presenter.order_class %>"></div>
+    </a>
     Games
   </h3>
   <ol id="game-list">

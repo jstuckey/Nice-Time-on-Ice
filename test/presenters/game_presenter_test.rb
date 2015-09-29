@@ -42,4 +42,29 @@ class GamePresenterTest < ActiveSupport::TestCase
     assert_equal expected, GamePresenter.new(@context).dates
   end
 
+  test "#li_classes should return list of css clases for <li> tags" do
+    expected = ["class=\"selected\"", ""]
+    assert_equal expected, GamePresenter.new(@context).li_classes
+  end
+
+  test "#order_href should return ascending when order is descending" do
+    expected = "/?game_order=asc&game_type=2&season=2014&team=WSH"
+    assert_equal expected, GamePresenter.new(@context).order_href
+  end
+
+  test "#order_href should return descending when order is ascending" do
+    expected = "/?game_order=desc&game_type=2&season=2014&team=WSH"
+    def @context.game_order ; "asc" ; end
+    assert_equal expected, GamePresenter.new(@context).order_href
+  end
+
+  test "#order_class should be glyph-down when order is descending" do
+    assert_equal "glyph-down", GamePresenter.new(@context).order_class
+  end
+
+  test "#order_class should be glyph-up when order is ascending" do
+    def @context.game_order ; "asc" ; end
+    assert_equal "glyph-up", GamePresenter.new(@context).order_class
+  end
+
 end
