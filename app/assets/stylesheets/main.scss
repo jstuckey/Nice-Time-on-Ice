@@ -1,32 +1,3 @@
-//
-// Height Calculations
-//
-
-$total-height: 975px;
-
-$section-margin: 5px;
-$section-border: 2px;
-$section-separator-margin: 10px;
-$section-header-height: 28px;
-
-$column-height: $total-height - 2.0 * $section-margin;
-$section-height: $column-height - 2.0 * $section-border;
-
-$divided-column-available-height: $section-height - $section-separator-margin - 2.0 * $section-border;
-
-$season-section-height: $divided-column-available-height * 0.35;
-$team-section-height: $divided-column-available-height - $season-section-height;
-$season-link-section-height: $divided-column-available-height * 0.56;
-$game-link-section-height: $divided-column-available-height - $season-link-section-height;
-
-/* ----------- */
-/* - Article - */
-/* ----------- */
-
-article {
-  height: $total-height;
-}
-
 /* ----------- */
 /* - Columns - */
 /* ----------- */
@@ -35,64 +6,34 @@ article {
   float: left;
   margin: 0;
   padding: 0;
-  height: $column-height;
   width: 33.33333333%;
 
   section {
-    overflow:hidden;
-    height: $section-height;
-    padding: 0;
-    margin: $section-margin;
+    padding: 4px;
+    margin: 5px;
+    overflow: hidden;
+
+    h3 {
+      height: 20px;
+    }
+
+    .list-wrapper {
+      height: 95%;
+      overflow:scroll;
+    }
   }
 
-  #seasons {
-    height: $season-section-height;
+  section:last-child {
+    height: 550px;
   }
 
-  #teams {
-    height: $team-section-height;
-    margin-top: $section-separator-margin;
+  section:first-child {
+    height: 300px;
   }
 
-  #season-links {
-    height: $season-link-section-height;
+  ol, ul {
+    padding-bottom: 15px;
   }
-
-  #game-links {
-    height: $game-link-section-height;
-    margin-top: $section-separator-margin;
-  }
-
-}
-
-/* --------- */
-/* - Lists - */
-/* --------- */
-
-/* Lists need a height so overflow works properly */
-article ol, article ul {
-  overflow:auto;
-  height: 100px;
-}
-
-#season-list {
-  height: $season-section-height - $section-header-height;
-}
-
-#team-list {
-  height: $team-section-height - $section-header-height;
-}
-
-#game-list {
-  height: $section-height - $section-header-height;
-}
-
-#season-link-list {
-  height: $season-link-section-height - $section-header-height;
-}
-
-#game-link-list {
-  height: $game-link-section-height - $section-header-height;
 }
 
 /* ----------- */

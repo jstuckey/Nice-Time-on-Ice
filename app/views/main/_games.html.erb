@@ -6,17 +6,19 @@
     </a>
     Games
   </h3>
-  <ol id="game-list">
-  <% @game_presenter.links \
-    .zip(@game_presenter.dates,
-         @game_presenter.li_classes) \
-    .each do |link, date, li_class| %>
-    <h4>
-      <%= date %>
-    </h4>
-    <li <%= li_class %>>
-      <%= link %>
-    </li>
-  <% end %>
-  </ol>
+  <div class="list-wrapper">
+    <ol id="game-list">
+    <% @game_presenter.links \
+      .zip(@game_presenter.dates,
+           @game_presenter.li_classes) \
+      .each do |link, date, li_class| %>
+      <h4>
+        <%= date %>
+      </h4>
+      <li <%= li_class %>>
+        <%= link %>
+      </li>
+    <% end %>
+    </ol>
+  </div>
 </section>
