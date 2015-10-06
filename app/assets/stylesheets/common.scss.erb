@@ -169,32 +169,23 @@ footer {
     width:2px;
   }
 
-  h3 {
-    padding: 0;
-  }
-
  section {
     float:left;
     width:100%;
     margin: 15px 0 0;
   }
 
-  div {
-    float:left;
-    width: 20%;
-    margin: 0px auto;
+  h1 {
+    font-size: 1em;
   }
 
   ul {
-    margin: 0;
-
-    a {
-      margin-left:15px;
-    }
+    margin: 0 auto;
+    text-align: center;
   }
 
   li {
-    @include list-item-style;
+   @include list-item-style;
   }
 
   p {
@@ -205,21 +196,9 @@ footer {
     height:100px;
     width:100px;
     display:block;
-    margin: auto;
+    margin: 1em auto;
   }
 
-}
-
-.spacer {
-  padding:1px; /* Give padding so empty spacer div still takes up space */
-}
-
-.linksRight ul, .linksRight h3 {
-  text-align: right;
-}
-
-.linksRight ul a {
-  margin-right: 15px;
 }
 
 /* ------------------------------- */
