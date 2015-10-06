@@ -10,6 +10,7 @@ class MainControllerTest < ActionController::TestCase
     assert_not_nil assigns(:game_presenter)
     assert_not_nil assigns(:season_link_presenter)
     assert_not_nil assigns(:game_link_presenter)
+    assert_not_nil assigns(:misc_link_presenter)
   end
 
 end

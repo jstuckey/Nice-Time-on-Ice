@@ -7,6 +7,7 @@ class MainController < ApplicationController
     @game_presenter        = GamePresenter.new(@context)
     @season_link_presenter = ExternalLinkPresenter.new(@context, :season)
     @game_link_presenter   = ExternalLinkPresenter.new(@context, :game)
+    @misc_link_presenter   = ExternalLinkPresenter.new(@context, :misc)
   end
 
 end

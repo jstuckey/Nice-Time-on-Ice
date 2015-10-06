@@ -1,0 +1,15 @@
+<section id="misc-links">
+  <h3>
+    Miscellaneous Links
+  </h3>
+  <ul id="misc-link-list">
+  <% @misc_link_presenter.links \
+    .zip(@misc_link_presenter.headers) \
+    .each do |link, header| %>
+    <h4><%= header %></h4>
+    <li>
+      <%= link %>
+    </li>
+  <% end %>
+  </ul>
+</section>
