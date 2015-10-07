@@ -15,3 +15,7 @@ gem 'nokogiri'
 group :test do
   gem 'shoulda'
 end
+
+group :production do
+  gem 'puma'
+end
