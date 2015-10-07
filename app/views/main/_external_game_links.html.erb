@@ -1,0 +1,16 @@
+<section id="game-links">
+  <h3>
+  <span id="game-number"><%= @context.game.try(:game_number) %></span>
+    Game Links
+  </h3>
+  <ul id="game-link-list">
+  <% @game_link_presenter.links \
+    .zip(@game_link_presenter.headers) \
+    .each do |link, header| %>
+    <h4><%= header %></h4>
+    <li>
+      <%= link %>
+    </li>
+  <% end %>
+  </ul>
+</section>

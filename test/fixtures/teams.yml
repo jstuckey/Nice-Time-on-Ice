@@ -1,0 +1,119 @@
+ducks:
+  name: Anaheim Ducks
+  abbreviation: ANA
+
+yotes:
+  name: Arizona Coyotes
+  abbreviation: ARI
+
+bruins:
+  name: Boston Bruins
+  abbreviation: BOS
+
+sabres:
+  name: Buffalo Sabres
+  abbreviation: BUF
+
+flames:
+  name: Calgary Flames
+  abbreviation: CGY
+
+canes:
+  name: Carolina Hurricanes
+  abbreviation: CAR
+
+blackhawks:
+  name: Chicago Blackhawks
+  abbreviation: CHI
+
+avalanche:
+  name: Colorado Avalanche
+  abbreviation: COL
+
+jackets:
+  name: Columbus Blue Jackets
+  abbreviation: CBJ
+
+stars:
+  name: Dallas Stars
+  abbreviation: DAL
+
+wings:
+  name: Detroit Red Wings
+  abbreviation: DET
+
+oilers:
+  name: Edmonton Oilers
+  abbreviation: EDM
+
+cats:
+  name: Florida Panthers
+  abbreviation: FLA
+
+kings:
+  name: Los Angeles Kings
+  abbreviation: LAK
+
+wild:
+  name: Minnesota Wild
+  abbreviation: MIN
+
+habs:
+  name: Montreal Canadiens
+  abbreviation: MTL
+
+preds:
+  name: Nashville Predators
+  abbreviation: NSH
+
+devils:
+  name: New Jersey Devils
+  abbreviation: NJD
+
+islanders:
+  name: New York Islanders
+  abbreviation: NYI
+
+rags:
+  name: New York Rangers
+  abbreviation: NYR
+
+sens:
+  name: Ottawa Senators
+  abbreviation: OTT
+
+flyers:
+  name: Philadelphia Flyers
+  abbreviation: PHI
+
+pens:
+  name: Pittsburgh Penguins
+  abbreviation: PIT
+
+sharks:
+  name: San Jose Sharks
+  abbreviation: SJS
+
+blues:
+  name: St. Louis Blues
+  abbreviation: STL
+
+bolts:
+  name: Tampa Bay Lightning
+  abbreviation: TBL
+
+leafs:
+  name: Toronto Maple Leafs
+  abbreviation: TOR
+
+canucks:
+  name: Vancouver Canucks
+  abbreviation: VAN
+
+caps:
+  name: Washington Capitals
+  abbreviation: WSH
+
+jets:
+  name: Winnipeg Jets
+  abbreviation: WPG

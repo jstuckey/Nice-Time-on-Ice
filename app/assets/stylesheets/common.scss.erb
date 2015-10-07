@@ -1,0 +1,224 @@
+/* -------- */
+/* - Font - */
+/* -------- */
+
+@mixin michroma-font {
+  font: {
+    family: 'Michroma';
+    style: normal;
+    weight: normal;
+  }
+}
+
+@font-face {
+  @include michroma-font;
+  src: local('Michroma'), url('https://themes.googleusercontent.com/static/fonts/michroma/v4/FZQqjemuMkmQGwk1YxMXlXYhjbSpvc47ee6xR_80Hnw.woff') format('woff');
+}
+
+h1, h2, h3, h4 {
+  @include michroma-font;
+}
+
+/* -------- */
+/* - Body - */
+/* -------- */
+
+$white-color: #fff;
+
+body {
+  font:16px Helvetica;
+  margin:0 auto;
+  background-color: $white-color;
+  background:url(<%= asset_path('background.jpg') %>)  no-repeat top center;
+  width:980px;
+}
+
+@media only screen and (max-width: 979px) {
+  body {
+    width: 100% !important;
+    background: none !important;
+  }
+}
+
+/* ----------- */
+/* - Headers - */
+/* ----------- */
+
+header{
+  height:120px;
+  width: 100%;
+  margin-bottom: 5px;
+  background:url(<%= asset_path('rink.png') %>)  no-repeat center;
+
+  border-bottom: {
+    style:ridge;
+    width:2px;
+  }
+
+  a, a:hover, a:visited {
+    text-decoration: none;
+    color: #000;
+  }
+
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+h1 {
+  padding-top: 10px;
+  font-size: 45px;
+}
+
+h2 {
+  font-size: 14px;
+  color: #757575;
+}
+
+h3 {
+  color:#0082CE;
+  padding: 0;
+  margin: 5px;
+  font-size: 13px;
+}
+
+h4 {
+  color:#000;
+  font-size: 12px;
+  padding-left:15px;
+}
+
+/* ------------ */
+/* - Sections - */
+/* ------------ */
+
+@mixin section-background-image($vendor-prefix) {
+  image: url(<%= asset_path('faceoff.png') %>), -#{$vendor-prefix}-radial-gradient(right top, circle farthest-corner, #C9C9C9 0%, #FFFFFF 100%);
+}
+
+article section {
+  position: relative;
+  margin: 5px;
+
+  border: {
+    style: solid;
+    color: #000;
+    width: 2px;
+    radius: 10px;
+  }
+
+  background: {
+    color: #C9C9C9;
+    repeat: no-repeat, no-repeat;
+    position: bottom right, top left;
+
+    @include section-background-image(webkit);
+    @include section-background-image(moz);
+    @include section-background-image(ms);
+    @include section-background-image(o);
+
+    image: url(<%= asset_path('faceoff.png') %>), radial-gradient(circle farthest-corner at right top, #C9C9C9 0%, #FFFFFF 100%);
+  }
+
+}
+
+/* --------- */
+/* - Lists - */
+/* --------- */
+
+@mixin list-item-style {
+  list-style-type:none;
+  margin: 0;
+  line-height: 18px;
+}
+
+article {
+  ol, ul {
+    margin: 0;
+  }
+
+  li {
+    @include list-item-style;
+
+    &:hover {
+      background-color: #E8E8E8;
+    }
+  }
+
+  a {
+    margin-left:  15px;
+  }
+
+}
+
+/* ---------- */
+/* - Footer - */
+/* ---------- */
+
+footer {
+  height: 75px !important;
+  width: 100%;
+  margin: 5px 0;
+  float: left;
+  bottom:0px;
+  font-size: 13px;
+
+  border-top: {
+    style:ridge;
+    width:2px;
+  }
+
+ section {
+    float:left;
+    width:100%;
+    margin: 15px 0 0;
+  }
+
+  h1 {
+    font-size: 1em;
+  }
+
+  ul {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  li {
+   @include list-item-style;
+  }
+
+  p {
+    text-align: center;
+  }
+
+  img {
+    height:100px;
+    width:100px;
+    display:block;
+    margin: 1em auto;
+  }
+
+}
+
+/* ------------------------------- */
+/* - Activity Indicator and Mask - */
+/* ------------------------------- */
+
+.loadMask {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  background-color: black;
+  opacity: 0.25;
+}
+
+.activityIndicator {
+  height:100%;
+  color:$white-color;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  width:100%;
+}

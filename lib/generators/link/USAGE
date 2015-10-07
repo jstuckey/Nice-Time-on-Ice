@@ -1,0 +1,11 @@
+Description:
+    Create a subclass of Links::Base and a corresponding test
+
+Examples:
+
+    rails generate link season nhl_schedule
+
+    This will create:
+
+    app/models/links/season/nhl_schedule.rb
+    test/models/links/season/nhl_schedule_test.rb

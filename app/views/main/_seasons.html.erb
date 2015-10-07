@@ -1,0 +1,15 @@
+<section id="seasons">
+  <h3>Seasons</h3>
+  <div class="list-wrapper">
+    <ol id="season-list">
+    <% @season_presenter.links \
+        .zip(@season_presenter.li_classes) \
+        .each do |link, li_class| %>
+
+      <li <%= li_class %>>
+        <%= link %>
+      </li>
+    <% end %>
+    </ol>
+  </div>
+</section>
