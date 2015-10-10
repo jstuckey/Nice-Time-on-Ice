@@ -12,7 +12,7 @@ class Links::Season::SportracPayroll < Links::Base
 
   def url
     "http://www.spotrac.com/nhl/" \
-    "#{full_team_team}/cap/#{season.year_start}/"
+    "#{full_team_name}/cap/#{season.year_start}/"
   end
 
   def group

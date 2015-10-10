@@ -16,7 +16,7 @@ class Links::Game::HsGameStatsTest < ActiveSupport::TestCase
     game = games(:game_one)
     game_type = "regular"
 
-    url = "http://hockeystats.ca/game/2014021217"
+    url = "http://hockeystats.ca/game/2014021201"
 
     link = Links::Game::HsGameStats.new(team: team, season: season, game: game, game_type: game_type)
     assert_equal url, link.url

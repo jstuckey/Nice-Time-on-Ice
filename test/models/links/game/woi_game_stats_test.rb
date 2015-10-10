@@ -16,7 +16,7 @@ class Links::Game::WoiGameStatsTest < ActiveSupport::TestCase
     game = games(:game_one)
     game_type = "regular"
 
-    url = "http://war-on-ice.com/game.html?seasongcode=2014201521217"
+    url = "http://war-on-ice.com/game.html?seasongcode=2014201521201"
 
     link = Links::Game::WoiGameStats.new(team: team, season: season, game: game, game_type: game_type)
     assert_equal url, link.url

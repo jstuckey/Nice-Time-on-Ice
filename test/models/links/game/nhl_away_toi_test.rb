@@ -16,7 +16,7 @@ class Links::Game::NhlAwayToiTest < ActiveSupport::TestCase
     game = games(:game_one)
     game_type = "regular"
 
-    url = "http://www.nhl.com/scores/htmlreports/20142015/TV021217.HTM"
+    url = "http://www.nhl.com/scores/htmlreports/20142015/TV021201.HTM"
 
     link = Links::Game::NhlAwayToi.new(team: team, season: season, game: game, game_type: game_type)
     assert_equal url, link.url

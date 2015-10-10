@@ -3,7 +3,7 @@ class Links::Base
   def initialize(context = nil)
     return unless context
     if context.is_a? Hash
-      context = RequestContext.new
+      context = RequestContext.new(context)
     end
 
     @team = context.team
