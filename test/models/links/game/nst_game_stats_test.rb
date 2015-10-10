@@ -16,7 +16,7 @@ class Links::Game::NstGameStatsTest < ActiveSupport::TestCase
     game = games(:game_one)
     game_type = "regular"
 
-    url = "http://naturalstattrick.com/game.php?season=20142015&game=21217"
+    url = "http://naturalstattrick.com/game.php?season=20142015&game=21201"
 
     link = Links::Game::NstGameStats.new(team: team, season: season, game: game, game_type: game_type)
     assert_equal url, link.url

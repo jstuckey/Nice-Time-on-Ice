@@ -16,7 +16,7 @@ class Links::Game::NhlGameSummaryTest < ActiveSupport::TestCase
     game = games(:game_one)
     game_type = "regular"
 
-    url = "http://www.nhl.com/scores/htmlreports/20142015/GS021217.HTM"
+    url = "http://www.nhl.com/scores/htmlreports/20142015/GS021201.HTM"
 
     link = Links::Game::NhlGameSummary.new(team: team, season: season, game: game, game_type: game_type)
     assert_equal url, link.url

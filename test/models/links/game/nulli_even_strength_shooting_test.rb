@@ -16,7 +16,7 @@ class Links::Game::NulliEvenStrengthShootingTest < ActiveSupport::TestCase
     game = games(:game_one)
     game_type = "regular"
 
-    url = "http://nullisecund.us/nhl/game.php?id=21217"
+    url = "http://nullisecund.us/nhl/game.php?id=21201"
 
     link = Links::Game::NulliEvenStrengthShooting.new(team: team, season: season, game: game, game_type: game_type)
     assert_equal url, link.url
