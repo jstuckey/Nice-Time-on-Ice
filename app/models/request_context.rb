@@ -21,7 +21,8 @@ class RequestContext
   def determine_season(season)
     if season
       Season.find_by_id(season) ||
-        Season.where(year_start: season).first
+        Season.where(year_start: season).first ||
+          Season.where(year_start: season.to_s[0..3]).first
     else
       Season.last
     end
