@@ -87,5 +87,9 @@ module Links
       game.game_number.to_s[-5, 5]
     end
 
+    def full_team_team
+      team.name.downcase.gsub(" ", "-")
+    end
+
   end
 end
