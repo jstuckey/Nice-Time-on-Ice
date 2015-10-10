@@ -221,4 +221,11 @@ class Links::HelpersTest < ActiveSupport::TestCase
     assert_equal "21217", game_number_without_year_and_zero
   end
 
+  test "#full_team_team should return city and team name separated by hyphens" do
+    self.team = teams(:jackets)
+    assert_equal "columbus-blue-jackets", full_team_team
+    self.team = teams(:islanders)
+    assert_equal "new-york-islanders", full_team_team
+  end
+
 end
