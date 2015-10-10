@@ -38,6 +38,18 @@ class RequestContextTest < ActiveSupport::TestCase
     assert_equal season, context.season
   end
 
+  test "should convert a year number to a season object" do
+    season = seasons(:fourteen)
+    context = RequestContext.new(season: 20142015)
+    assert_equal season, context.season
+  end
+
+  test "should convert a year string to a season object" do
+    season = seasons(:fourteen)
+    context = RequestContext.new(season: "20142015")
+    assert_equal season, context.season
+  end
+
   test "should convert a season object to a season object" do
     season = seasons(:fourteen)
     context = RequestContext.new(season: season)
