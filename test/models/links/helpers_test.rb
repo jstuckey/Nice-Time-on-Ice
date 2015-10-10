@@ -228,4 +228,14 @@ class Links::HelpersTest < ActiveSupport::TestCase
     assert_equal "new-york-islanders", full_team_team
   end
 
+  test "#team_nickname should return name without the city" do
+    self.team = teams(:caps)
+    assert_equal "capitals", team_nickname
+  end
+
+  test "#team_nickname should return name for bluejackets" do
+    self.team = teams(:jackets)
+    assert_equal "bluejackets", team_nickname
+  end
+
 end

@@ -91,5 +91,13 @@ module Links
       team.name.downcase.gsub(" ", "-")
     end
 
+    def team_nickname
+      if team.abbreviation == "CBJ"
+        team.name.split(" ").last(2).join.downcase
+      else
+        team.name.split(" ").last.downcase
+      end
+    end
+
   end
 end
