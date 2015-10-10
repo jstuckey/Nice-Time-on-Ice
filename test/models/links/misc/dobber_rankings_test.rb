@@ -22,7 +22,7 @@ class Links::Misc::DobberRankingsTest < ActiveSupport::TestCase
   end
 
   test "#group" do
-    assert_equal 1, Links::Misc::DobberRankings.new.group
+    assert_equal 2, Links::Misc::DobberRankings.new.group
   end
 
   test "#position" do

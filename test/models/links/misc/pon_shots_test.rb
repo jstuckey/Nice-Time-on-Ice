@@ -22,7 +22,7 @@ class Links::Misc::PonShotsTest < ActiveSupport::TestCase
   end
 
   test "#group" do
-    assert_equal 2, Links::Misc::PonShots.new.group
+    assert_equal 3, Links::Misc::PonShots.new.group
   end
 
   test "#position" do

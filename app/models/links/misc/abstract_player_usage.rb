@@ -13,7 +13,7 @@ class Links::Misc::AbstractPlayerUsage < Links::Base
   end
 
   def group
-    0
+    1
   end
 
   def position

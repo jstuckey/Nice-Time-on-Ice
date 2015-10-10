@@ -22,7 +22,7 @@ class Links::Misc::AbstractPlayerUsageTest < ActiveSupport::TestCase
   end
 
   test "#group" do
-    assert_equal 0, Links::Misc::AbstractPlayerUsage.new.group
+    assert_equal 1, Links::Misc::AbstractPlayerUsage.new.group
   end
 
   test "#position" do
