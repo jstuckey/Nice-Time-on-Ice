@@ -22,7 +22,7 @@ class Links::Misc::RinkStatsWinProbTest < ActiveSupport::TestCase
   end
 
   test "#group" do
-    assert_equal 4, Links::Misc::RinkStatsWinProb.new.group
+    assert_equal 5, Links::Misc::RinkStatsWinProb.new.group
   end
 
   test "#position" do

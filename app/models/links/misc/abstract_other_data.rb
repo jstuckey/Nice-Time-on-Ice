@@ -13,7 +13,7 @@ class Links::Misc::AbstractOtherData < Links::Base
   end
 
   def group
-    0
+    1
   end
 
   def position

@@ -13,7 +13,7 @@ class Links::Misc::DobberLineCombinations < Links::Base
   end
 
   def group
-    1
+    2
   end
 
   def position

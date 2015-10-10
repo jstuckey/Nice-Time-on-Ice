@@ -13,7 +13,7 @@ class Links::Misc::ScMatchups < Links::Base
   end
 
   def group
-    3
+    4
   end
 
   def position

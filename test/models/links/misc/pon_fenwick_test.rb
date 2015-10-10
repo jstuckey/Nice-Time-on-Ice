@@ -22,7 +22,7 @@ class Links::Misc::PonFenwickTest < ActiveSupport::TestCase
   end
 
   test "#group" do
-    assert_equal 2, Links::Misc::PonFenwick.new.group
+    assert_equal 3, Links::Misc::PonFenwick.new.group
   end
 
   test "#position" do

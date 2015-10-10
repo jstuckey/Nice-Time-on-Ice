@@ -14,7 +14,7 @@ class Links::Misc::PonCorsi < Links::Base
   end
 
   def group
-    2
+    3
   end
 
   def position

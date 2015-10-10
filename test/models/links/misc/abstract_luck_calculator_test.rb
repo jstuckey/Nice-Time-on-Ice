@@ -22,7 +22,7 @@ class Links::Misc::AbstractLuckCalculatorTest < ActiveSupport::TestCase
   end
 
   test "#group" do
-    assert_equal 0, Links::Misc::AbstractLuckCalculator.new.group
+    assert_equal 1, Links::Misc::AbstractLuckCalculator.new.group
   end
 
   test "#position" do

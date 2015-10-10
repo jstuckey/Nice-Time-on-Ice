@@ -22,7 +22,7 @@ class Links::Misc::ScPlayerStatsTest < ActiveSupport::TestCase
   end
 
   test "#group" do
-    assert_equal 3, Links::Misc::ScPlayerStats.new.group
+    assert_equal 4, Links::Misc::ScPlayerStats.new.group
   end
 
   test "#position" do

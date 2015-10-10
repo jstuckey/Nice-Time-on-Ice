@@ -14,7 +14,7 @@ class Links::Misc::PonShots < Links::Base
   end
 
   def group
-    2
+    3
   end
 
   def position
