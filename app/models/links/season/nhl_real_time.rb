@@ -1,17 +1,17 @@
-class Links::Season::NhlAssists < Links::Base
+class Links::Season::NhlRealTime < Links::Base
 
   def site_name
     "NHL.com"
   end
 
   def description
-    "Assists"
+    "Real Time"
   end
 
   def url
    "http://www.nhl.com/stats/player?" \
    "team=#{team.abbreviation}&season=#{season}&" \
-   "gameType=#{game_type}&report=assists"
+   "gameType=#{game_type}&report=realtime"
   end
 
   def group
@@ -19,6 +19,7 @@ class Links::Season::NhlAssists < Links::Base
   end
 
   def position
-    3
+    12
   end
+
 end

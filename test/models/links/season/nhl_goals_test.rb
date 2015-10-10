@@ -15,7 +15,7 @@ class Links::Season::NhlGoalsTest < ActiveSupport::TestCase
     team = teams(:caps)
     game_type = "regular"
 
-    url = "http://www.nhl.com/ice/playerstats.htm?gameType=2&position=S&season=20142015&sort=goals&status=A&team=WSH&viewName=goals"
+    url = "http://www.nhl.com/stats/player?team=WSH&season=20142015&gameType=2&report=goals"
 
     link = Links::Season::NhlGoals.new(team: team, season: season, game_type: game_type)
     assert_equal url, link.url
