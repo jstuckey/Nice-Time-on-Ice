@@ -15,7 +15,7 @@ class Links::Season::NhlSummaryTest < ActiveSupport::TestCase
     team = teams(:caps)
     game_type = "regular"
 
-    url = "http://www.nhl.com/ice/playerstats.htm?season=20142015&gameType=2&team=WSH&position=S&country=&status=&viewName=summary"
+    url = "http://www.nhl.com/stats/player?team=WSH&season=20142015&gameType=2&report=summary"
 
     link = Links::Season::NhlSummary.new(team: team, season: season, game_type: game_type)
     assert_equal url, link.url

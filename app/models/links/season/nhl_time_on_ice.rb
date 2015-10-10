@@ -9,9 +9,9 @@ class Links::Season::NhlTimeOnIce < Links::Base
   end
 
   def url
-    "http://www.nhl.com/ice/playerstats.htm?gameType=" \
-    "#{game_type}&position=S&season=#{season}&sort=" \
-    "timeOnIce&status=A&team=#{team.abbreviation}&viewName=timeOnIce"
+   "http://www.nhl.com/stats/player?" \
+   "team=#{team.abbreviation}&season=#{season}&" \
+   "gameType=#{game_type}&report=timeonice"
   end
 
   def group
@@ -19,6 +19,6 @@ class Links::Season::NhlTimeOnIce < Links::Base
   end
 
   def position
-    7
+    11
   end
 end

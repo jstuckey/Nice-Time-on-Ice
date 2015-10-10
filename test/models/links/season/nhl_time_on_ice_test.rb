@@ -15,7 +15,7 @@ class Links::Season::NhlTimeOnIceTest < ActiveSupport::TestCase
     team = teams(:caps)
     game_type = "regular"
 
-    url = "http://www.nhl.com/ice/playerstats.htm?gameType=2&position=S&season=20142015&sort=timeOnIce&status=A&team=WSH&viewName=timeOnIce"
+    url = "http://www.nhl.com/stats/player?team=WSH&season=20142015&gameType=2&report=timeonice"
 
     link = Links::Season::NhlTimeOnIce.new(team: team, season: season, game_type: game_type)
     assert_equal url, link.url
@@ -26,7 +26,7 @@ class Links::Season::NhlTimeOnIceTest < ActiveSupport::TestCase
   end
 
   test "#position" do
-    assert_equal 7, Links::Season::NhlTimeOnIce.new.position
+    assert_equal 11, Links::Season::NhlTimeOnIce.new.position
   end
 
 end

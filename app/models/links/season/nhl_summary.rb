@@ -9,9 +9,9 @@ class Links::Season::NhlSummary < Links::Base
   end
 
   def url
-   "http://www.nhl.com/ice/playerstats.htm?season=" \
-   "#{season}&gameType=#{game_type}&team=#{team.abbreviation}" \
-   "&position=S&country=&status=&viewName=summary"
+   "http://www.nhl.com/stats/player?" \
+   "team=#{team.abbreviation}&season=#{season}&" \
+   "gameType=#{game_type}&report=summary"
   end
 
   def group

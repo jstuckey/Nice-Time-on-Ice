@@ -9,9 +9,9 @@ class Links::Season::NhlPenalties < Links::Base
   end
 
   def url
-    "http://www.nhl.com/ice/playerstats.htm?gameType=" \
-    "#{game_type}&position=S&season=#{season}&sort=penaltyMinutes" \
-    "&status=A&team=#{team.abbreviation}&viewName=penalties"
+   "http://www.nhl.com/stats/player?" \
+   "team=#{team.abbreviation}&season=#{season}&" \
+   "gameType=#{game_type}&report=penalties"
   end
 
   def group
@@ -19,6 +19,6 @@ class Links::Season::NhlPenalties < Links::Base
   end
 
   def position
-    4
+    10
   end
 end

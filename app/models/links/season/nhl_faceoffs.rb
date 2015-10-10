@@ -9,10 +9,9 @@ class Links::Season::NhlFaceoffs < Links::Base
   end
 
   def url
-    "http://www.nhl.com/ice/playerstats.htm?gameType=" \
-    "#{game_type}&position=S&season=#{season}&sort=" \
-    "totalFaceOffs&status=A&team=#{team.abbreviation}&viewName=" \
-    "faceOffPercentageAll"
+   "http://www.nhl.com/stats/player?" \
+   "team=#{team.abbreviation}&season=#{season}&" \
+   "gameType=#{game_type}&report=faceoffs"
   end
 
   def group
@@ -20,6 +19,6 @@ class Links::Season::NhlFaceoffs < Links::Base
   end
 
   def position
-    6
+    9
   end
 end
