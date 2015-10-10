@@ -18,4 +18,5 @@
 
 .DS_Store
 *.swp
+*.swo
 .sass-cache
