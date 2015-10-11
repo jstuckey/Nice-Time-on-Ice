@@ -1,5 +1,8 @@
 class ApiController < ApplicationController
-  before_filter :set_json_format
+  before_filter :set_json_format, except: :index
+
+  def index
+  end
 
   def seasons
     seasons = Season.all

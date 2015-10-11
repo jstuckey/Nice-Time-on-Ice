@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'main/index'
 
   # API
+  get 'api',                                   to: 'api#index'
   get 'api/seasons',                           to: 'api#seasons'
   get 'api/seasons/:season',                   to: 'api#season'
   get 'api/seasons/:season/games',             to: 'api#season_games'

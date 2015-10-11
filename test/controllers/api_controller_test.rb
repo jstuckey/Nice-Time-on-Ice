@@ -1,6 +1,13 @@
 require 'test_helper'
 
 class ApiControllerTest < ActionController::TestCase
+
+  test "index should return html page" do
+    get :index
+    assert_response :success
+    assert_template :index
+  end
+
   test "should get api/seasons" do
     get :seasons
     assert_response :success
