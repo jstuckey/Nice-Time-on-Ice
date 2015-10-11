@@ -13,4 +13,14 @@ class MainControllerTest < ActionController::TestCase
     assert_not_nil assigns(:misc_link_presenter)
   end
 
+  test "should store last used team in cookies" do
+    get :index, team: "SJS"
+    assert_equal "SJS", cookies[:team]
+  end
+
+  test "should read last used team from cookies" do
+    cookies[:team] = "SJS"
+    get :index
+    assert_equal "SJS", assigns(:context).team.abbreviation
+  end
 end
