@@ -238,4 +238,24 @@ class Links::HelpersTest < ActiveSupport::TestCase
     assert_equal "bluejackets", team_nickname
   end
 
+  test "#nhl_numbers_team_abbreviation should return CLB for Columbus" do
+    self.team = teams(:jackets)
+    assert_equal "CLB", nhl_numbers_team_abbreviation
+  end
+
+  test "#nhl_numbers_team_abbreviation should return NAS for Nashville" do
+    self.team = teams(:preds)
+    assert_equal "NAS", nhl_numbers_team_abbreviation
+  end
+
+  test "#nhl_numbers_team_abbreviation should return WAS for Washington" do
+    self.team = teams(:caps)
+    assert_equal "WAS", nhl_numbers_team_abbreviation
+  end
+
+  test "#nhl_numbers_team_abbreviation should return regular abbreviation otherwise" do
+    self.team = teams(:devils)
+    assert_equal "NJD", nhl_numbers_team_abbreviation
+  end
+
 end

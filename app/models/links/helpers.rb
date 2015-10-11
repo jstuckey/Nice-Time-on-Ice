@@ -59,6 +59,16 @@ module Links
       end
     end
 
+    def nhl_numbers_team_abbreviation
+      # NHL Numbers uses some non-standard abbreviations
+      case team.abbreviation
+      when "CBJ" then "CLB"
+      when "NSH" then "NAS"
+      when "WSH" then "WAS"
+      else team.abbreviation
+      end
+    end
+
     def alternate_game_type
       return unless game_type
 
