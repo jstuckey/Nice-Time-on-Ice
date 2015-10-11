@@ -15,7 +15,7 @@ class RequestContext
   def determine_team(team)
     Team.find_by_id(team) ||
       Team.where(abbreviation: team).first ||
-      Team.where(abbreviation: "WSH").first # Go Caps!
+        Team.where(abbreviation: "WSH").first # Go Caps!
   end
 
   def determine_season(season)
