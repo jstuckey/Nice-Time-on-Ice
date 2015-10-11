@@ -1,7 +1,6 @@
 /*
- * This is a manifest file that'll be compiled into
- * application.css only if the browser is IE 9 or lower
+ * This is a manifest file that'll only be included if
+ * the browser is IE 9 or lower
  *
- *= require_self
  *= require_directory ./ie
  */
