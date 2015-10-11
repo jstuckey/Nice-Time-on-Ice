@@ -2,117 +2,118 @@
 /* - Columns - */
 /* ----------- */
 
-.column {
-  float: left;
-  margin: 0;
-  padding: 0;
-  width: 33.33333333%;
+#main {
 
-  section {
-    padding: 4px;
-    margin: 5px;
-    overflow: hidden;
+  .column {
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: 33.33333333%;
 
-    h3 {
-      height: 20px;
+    section {
+      padding: 4px;
+      margin: 5px;
+      overflow: hidden;
+
+      h3 {
+        height: 20px;
+      }
+
+      .list-wrapper {
+        height: 95%;
+        overflow:scroll;
+      }
     }
 
-    .list-wrapper {
-      height: 95%;
-      overflow:scroll;
+    section:last-child {
+      height: 800px;
+    }
+
+    section:first-child {
+      height: 300px;
+    }
+
+    ol, ul {
+      padding-bottom: 15px;
     }
   }
 
-  section:last-child {
-    height: 800px;
+  /* ----------- */
+  /* - Anchors - */
+  /* ----------- */
+
+  a, a:visited {
+    color:#000;
+    display: block;
+    margin-left:30px;
+    transition: margin 0.1s ease-out;
   }
 
-  section:first-child {
-    height: 300px;
+  a:hover {
+    margin-left:25px;
   }
 
-  ol, ul {
-    padding-bottom: 15px;
-  }
-}
+  /* ----------- */
+  /* - Classes - */
+  /* ----------- */
 
-/* ----------- */
-/* - Anchors - */
-/* ----------- */
-
-article a, article a:visited {
-  color:#000;
-  display: block;
-  margin-left:30px;
-  transition: margin 0.1s ease-out;
-}
-
-article a:hover {
-  margin-left:25px;
-}
-
-/* ----------- */
-/* - Classes - */
-/* ----------- */
-
-@mixin selected-anchor-background($vendor-prefix) {
-  image: -#{$vendor-prefix}-linear-gradient(bottom, #00AEFF 0%, #36C3FF 50%, #00A3EF 100%);
-}
-
-.selected, .selected:hover, .selected a, .selected:hover a {
-  background: {
-    color: #00AEFF;
-
-    @include selected-anchor-background(webkit);
-    @include selected-anchor-background(moz);
-    @include selected-anchor-background(ms);
-    @include selected-anchor-background(o);
-
-    image: linear-gradient(to top, #00AEFF 0%, #36C3FF 50%, #00A3EF 100%);
-
-  }
-}
-
-.selected a, .selected:hover a, .selected a:visited {
-  color:#FFF;
-}
-
-.disabled, .disabled:hover {
-  color: #C9C9C9;
-  text-decoration: underline;
-}
-
-$blue-color: #0082CE;
-$border-style: 5px solid transparent;
-
-.sort, #game-number, #season-number, .glyph-down, .glyph-up {
-  float: right;
-  color:$blue-color;
-  text-decoration: none;
-}
-
-.glyph-down {
-  width: 0;
-  height: 0;
-  margin: 4px 0 4px 4px;
-
-  border: {
-    left: $border-style;
-    right: $border-style;
-    top: 10px solid $blue-color;
+  @mixin selected-anchor-background($vendor-prefix) {
+    image: -#{$vendor-prefix}-linear-gradient(bottom, #00AEFF 0%, #36C3FF 50%, #00A3EF 100%);
   }
 
-}
+  .selected, .selected:hover, .selected a, .selected:hover a {
+    background: {
+      color: #00AEFF;
 
-.glyph-up {
-  width: 0;
-  height: 0;
-  margin: 4px;
+      @include selected-anchor-background(webkit);
+      @include selected-anchor-background(moz);
+      @include selected-anchor-background(ms);
+      @include selected-anchor-background(o);
 
-  border: {
-    left: $border-style;
-    right: $border-style;
-    bottom: 10px solid $blue-color;
+      image: linear-gradient(to top, #00AEFF 0%, #36C3FF 50%, #00A3EF 100%);
+
+    }
   }
 
+  .selected a, .selected:hover a, .selected a:visited {
+    color:#FFF;
+  }
+
+  .disabled, .disabled:hover {
+    color: #C9C9C9;
+    text-decoration: underline;
+  }
+
+  $blue-color: #0082CE;
+  $border-style: 5px solid transparent;
+
+  .sort, #game-number, #season-number, .glyph-down, .glyph-up {
+    float: right;
+    color:$blue-color;
+    text-decoration: none;
+  }
+
+  .glyph-down {
+    width: 0;
+    height: 0;
+    margin: 4px 0 4px 4px;
+
+    border: {
+      left: $border-style;
+      right: $border-style;
+      top: 10px solid $blue-color;
+    }
+  }
+
+  .glyph-up {
+    width: 0;
+    height: 0;
+    margin: 4px;
+
+    border: {
+      left: $border-style;
+      right: $border-style;
+      bottom: 10px solid $blue-color;
+    }
+  }
 }
