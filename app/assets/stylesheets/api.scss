@@ -3,24 +3,30 @@
 /* -------------- */
 
 #api {
-  article section:first-child h3 {
+
+  &:first-child h3 {
     margin: 3px 20px 7px;
   }
 
-  article section:first-child p {
+  &:first-child p {
     margin: 3px 40px 11px;
   }
 
-  article h3 {
+  h3 {
     padding: 0;
   }
 
-  article li {
+  li {
     margin-bottom: 20px;
   }
 
-  article li * {
+  li * {
     margin: 3px 20px;
+  }
+
+  a {
+    display: inline;
+    margin: 0;
   }
 
   form input {
@@ -50,5 +56,14 @@
     margin-left: 50px;
     display: inline-block;
     vertical-align: middle;
+  }
+}
+
+.under-construction {
+  margin: 20px;
+  color: red;
+  a {
+    display: inline;
+    margin: 0;
   }
 }
