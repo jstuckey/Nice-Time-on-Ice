@@ -13,6 +13,10 @@ gem 'jbuilder', '~> 2.0'
 gem 'virtus'
 gem 'nokogiri'
 
+group :development do
+  gem 'bullet'
+end
+
 group :test do
   gem 'shoulda'
 end

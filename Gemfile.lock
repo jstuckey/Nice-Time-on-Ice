@@ -42,6 +42,9 @@ GEM
       ice_nine (~> 0.11.0)
       thread_safe (~> 0.3, >= 0.3.1)
     builder (3.2.2)
+    bullet (4.14.9)
+      activesupport (>= 3.0.0)
+      uniform_notifier (~> 1.9.0)
     coercible (1.0.0)
       descendants_tracker (~> 0.0.1)
     coffee-rails (4.1.0)
@@ -137,6 +140,7 @@ GEM
     uglifier (2.7.1)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    uniform_notifier (1.9.0)
     virtus (1.0.5)
       axiom-types (~> 0.1)
       coercible (~> 1.0)
@@ -147,6 +151,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bullet
   coffee-rails (~> 4.1.0)
   jbuilder (~> 2.0)
   jquery-rails
