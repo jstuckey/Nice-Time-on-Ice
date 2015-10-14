@@ -1,7 +1,11 @@
 class ApiController < ApplicationController
   before_filter :set_json_format, except: :index
 
+  DOCUMENTATION_PATH = File.join(Rails.root, 'config', 'api_doc.yml')
+
   def index
+    file = File.open(DOCUMENTATION_PATH)
+    @documentation = YAML.load(file).deep_symbolize_keys
   end
 
   def seasons

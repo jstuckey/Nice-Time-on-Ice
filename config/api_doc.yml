@@ -1,0 +1,71 @@
+seasons:
+  path: "api/seasons"
+  description: "Returns all available seasons as a JSON array"
+  inputs: []
+  input_descriptions: []
+
+season:
+  path: "api/seasons/{season_id}"
+  description: "Returns the specified season as a JSON object"
+  inputs: ["season_id"]
+  input_descriptions: ["A season number. Example: 20152016"]
+
+season_games:
+  path: "api/seasons/{season_id}/games"
+  description: "Returns all games in a season as a JSON array"
+  inputs: ["season_id"]
+  input_descriptions: ["A season number. Example 20152016"]
+
+season_game:
+  path: "api/seasons/{season_id}/games/{game_id}"
+  description: "Returns a specified game for the specified sedason as a JSON object"
+  inputs: ["season_id", "game_id"]
+  input_descriptions: ["A season number. Example: 20152016", "A game number. Example: 2015020218"]
+
+season_game_links:
+  path: "api/seasons/{season_id}/games/{game_id}/links"
+  description: "Returns links for the specified game/season as a JSON array"
+  inputs: ["season_id", "game_id"]
+  input_descriptions: ["A season number. Example: 20152016", "A game number. Example: 2015020218"]
+
+teams:
+  path: "api/teams"
+  description: "Returns all available teams as a JSON array"
+  inputs: []
+  input_descriptions: []
+
+team:
+  path: "api/teams/{team_id}"
+  description: "Returns the specified team as a JSON object"
+  inputs: ["team_id"]
+  input_descriptions: ["A team abbreviation. Example: WSH"]
+
+team_seasons:
+  path: "api/teams/{team_id}/seasons"
+  description: "Returns all seasons for a specified team as a JSON array"
+  inputs: ["team_id"]
+  input_descriptions: ["A team abbreviation. Example: WSH"]
+
+teams_season:
+  path: "api/teams/{team_id}/seasons/{season_id}"
+  description: "Returns the specified sedason for a team as a JSON array"
+  inputs: ["team_id", "season_id"]
+  input_descriptions: ["A team abbreviation. Example: WSH", "A season number. Example: 20152016"]
+
+team_season_links:
+  path: "api/teams/{team_id}/seasons/{season_id}/links"
+  description: "Returns links for the specified team/season as a JSON array"
+  inputs: ["team_id", "season_id"]
+  input_descriptions: ["A team abbreviation. Example: WSH", "A season number. Example: 20152016"]
+
+games:
+  path: "api/games"
+  description: "Returns all available games as a JSON array"
+  inputs: []
+  input_descriptions: []
+
+game:
+  path: "api/games/{game_id}"
+  description: "Returns the specified game as a JSON object"
+  inputs: ["game_id"]
+  input_descriptions: ["A game number. Example: 2015020218"]

@@ -8,6 +8,19 @@ class ApiControllerTest < ActionController::TestCase
     assert_template :index
   end
 
+  test "index should set documentation_hash" do
+    get :index
+    assert_response :success
+    documentation = assigns(:documentation)
+    assert documentation
+
+    doc_hash = documentation.values.first
+    assert doc_hash.has_key?(:path)
+    assert doc_hash.has_key?(:description)
+    assert doc_hash.has_key?(:inputs)
+    assert doc_hash.has_key?(:input_descriptions)
+  end
+
   test "should get api/seasons" do
     get :seasons
     assert_response :success

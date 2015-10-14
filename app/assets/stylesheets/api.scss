@@ -4,16 +4,13 @@
 
 #api {
 
-  &:first-child h3 {
-    margin: 3px 20px 7px;
-  }
-
-  &:first-child p {
-    margin: 3px 40px 11px;
-  }
-
   h3 {
+    margin: 3px 20px 7px;
     padding: 0;
+  }
+
+  p {
+    margin: 3px 20px 11px;
   }
 
   li {
@@ -24,8 +21,16 @@
     margin: 3px 20px;
   }
 
+  li p {
+    margin: 10px 20px;
+  }
+
   a {
     display: inline;
+    margin: 0;
+  }
+
+  strong {
     margin: 0;
   }
 
@@ -48,22 +53,11 @@
 
   .button {
     width: 50px;
-    margin-left: 50px;
   }
 
-  .inputLabel {
+  .input-label {
     width: 50px;
-    margin-left: 50px;
     display: inline-block;
     vertical-align: middle;
-  }
-}
-
-.under-construction {
-  margin: 20px;
-  color: red;
-  a {
-    display: inline;
-    margin: 0;
   }
 }
