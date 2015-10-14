@@ -4,8 +4,10 @@ class ApiController < ApplicationController
   DOCUMENTATION_PATH = File.join(Rails.root, 'config', 'api_doc.yml')
 
   def index
-    file = File.open(DOCUMENTATION_PATH)
-    @documentation = YAML.load(file).deep_symbolize_keys
+    @documentation = Rails.cache.fetch("api_documentation_v1") do
+      file = File.open(DOCUMENTATION_PATH)
+      YAML.load(file).deep_symbolize_keys
+    end
   end
 
   def seasons
