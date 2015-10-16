@@ -1,18 +1,41 @@
-<section id="api">
-	<h3>Nice Time on Ice API Browser</h3>
-	<p>
-		A <abbr title="Representational State Transfer">REST</abbr> <abbr title="Application Programming Interface">API</abbr> for Nice Time on Ice.
-  </p>
-  <p>
-		This API includes resources for seasons, games, teams, and links. Resources can be accessed using the appropriate identifiers. Query string parameters are available to filter the returned data.
-		Season, game, and team data is scraped from the NHL <a href="http://www.nhl.com/ice/schedulebyseason.htm" target="new">schedule page</a> every morning at 6:00 am EST.
-	</p>
-	<p>
-    <strong>Please note:</strong> data is updated once per day. Please cache results instead of calling this API repeatedly! This site is hosted on a free Heroku account with limited bandwidth.
-	</p>
-</section>
-<p class="under-construction">
-<strong>
-  I am still in the process of updating this page. The API is still active. The routes are described <a href="https://nicetimeonice.herokuapp.com/api">here</a>. Sorry for the delay!
-</strong>
-</p>
+<div  id="api">
+  <section>
+    <h3>Nice Time on Ice API Browser</h3>
+    <p>
+      A <abbr title="Representational State Transfer">REST</abbr> <abbr title="Application Programming Interface">API</abbr> for Nice Time on Ice.
+    </p>
+    <p>
+      <strong>Please note:</strong> data is only updated once per day. Please cache results instead of calling this API repeatedly! This site is hosted on a free Heroku account with limited bandwidth.
+    </p>
+    <p>
+      This API includes resources for seasons, games, teams, and links. Resources can be accessed using the appropriate identifiers. Season, game, and team data is scraped from the NHL <a href="http://www.nhl.com/ice/schedulebyseason.htm" target="new">schedule page</a> every morning at 6:00 am EST.
+    </p>
+    <p>
+      Click on a URL below to expand it and reveal the available input parameters. Click the button to send a GET <abbr title="Hypertext Transfer Protocol">HTTP</abbr> Request to the API. The response <abbr title="JavaScript Object Notation">JSON</abbr> data will populate a text box below the button.
+    </p>
+  </section>
+  <section>
+    <ul>
+      <% @documentation.values.each do |resource| %>
+        <li>
+          <h3><%= resource[:path]  %></h3>
+          <p><%= resource[:description] %></p>
+          <form class="input">
+            <% if resource[:inputs].length > 0 %>
+              <p><strong>Resource Identifiers:</strong></p>
+            <% end %>
+            <% resource[:inputs].zip(resource[:input_descriptions]).each do |input, description| %>
+              <div class="input-label"><%= input %>:</div>
+              <input type="text" placeholder="<%= description %>">
+              <br />
+            <% end %>
+            <input class="button" type="button" value=" GET " uri-template=<%= resource[:path] %> ></input>
+          </form>
+          <form class="output">
+            <textarea></textarea>
+          </form>
+        </li>
+      <% end %>
+    </ul>
+  </section>
+</div>

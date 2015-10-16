@@ -1,94 +1,85 @@
 $(document).ready(function() {
-	// Hide activity indicator divs and form elements
-	$('.loadMask').hide();
-	$('form').hide();
 
-	// Show api parameter form
-   	$('li').click(function(event) {
-   		if ($(event.target).hasClass('expanded')) {
-   			// Hide input area
-			$(event.target).removeClass('expanded');
-   			$(event.target).children(".input").hide("1");
-   			$(event.target).children(".output").hide("1");
-   		} else {
-   			// Show input area
-   			$(event.target).addClass('expanded');
-   			$(event.target).children(".input").show("1");
-   		}
-	});
+  // Hide form elements by default
+  $('form').hide();
 
-	// Show api parameter form
-	$('h3, p').click(function(event) {
-		if ($(event.target).parent().hasClass('expanded')) {
-   			// Hide input area
-			$(event.target).parent().removeClass('expanded');
-   			$(event.target).siblings(".input").hide("1");
-   			$(event.target).siblings(".output").hide("1");
-   		} else {
-   			// Show input area
-   			$(event.target).parent().addClass('expanded');
-   			$(event.target).siblings(".input").show("1");
-   		}
+  $('li > *, li').click(function(event) {
+    if ($(this).is('form')) {
+      event.stopPropagation();
+      return false;
+    } else if ($(this).is('li')) {
+      toggleFormVisibility.call(this);
+    }
+  });
 
-	});
+  $('input[type=button]').click(function(event) {
+    makeAPIRequest.call(this);
+  });
+
 });
 
-function makeAPICall(clickedEl, apiPath) {
+function toggleFormVisibility() {
+  var target = $(this);
+  var animationSeconds = '1';
 
-	// Hide the output area
-	$(clickedEl).parent().siblings(".output").hide();
+  if (target.hasClass('expanded')) {
+    target.removeClass('expanded');
+    target.find('.input').hide(animationSeconds) ;
+    target.find('.output').hide(animationSeconds);
+  } else {
+    target.addClass('expanded');
+    target.find('.input').show(animationSeconds);
+  }
+}
 
-	// Show activity indicator
-	$('.loadMask').show();
-	$('.activityIndicator').activity();
+function determineTarget() {
+  var target = $(this);
+  var targetParent = target.parent('li');
 
-	// Check if path has parameters
-	if (apiPath.indexOf('{')) {
-		// Loop through form inputs
-		$(clickedEl).siblings(".inputLabel").each( function() {
-			// Get the label text
-			var currentField = $(this).text();
+  if (targetParent.length >= 1) {
+    return targetParent;
+  } else {
+    return target;
+  }
+}
 
-			// Remove the trailing colon
-			currentField = currentField.substr(0, currentField.length - 1);
+function makeAPIRequest() {
+  var output = $(this).parent().siblings('.output')
+  output.hide();
 
-			// Get the value entered in the text box
-			var currentValue = $(this).next().val();
-			if (!currentValue) {
-				currentValue = " ";
-			}
+  var uri = assembleURI.call(this);
+  callAPI(uri, function(result) {
+    output.children('textarea').val(result);
+    output.show('2');
+  });
+}
 
-			// Replace the api path placeholder with the value entered in the text box
-			apiPath = apiPath.replace('{' + currentField + '}', currentValue);
-		});
-	}
+function assembleURI() {
+  var inputs = $(this).siblings('input[type=text]').toArray();
+  var uriTemplate = $(this).attr('uri-template');
+  var uriPieces = uriTemplate.split('/');
 
-	// Make the API call
-	$.ajax({
-		url:apiPath,
-		dataType: 'text',
-		success: function(data, textStatus, jqXHR) {
-			// Populate the textarea with the returned JSON
-			$(clickedEl).parent().siblings(".output").children('textarea').val(data);
+  pathComponents = uriPieces.map(function(component) {
+    if (component.match(/^{/)) {
+      // Substitute the value entered in the text box for the placeholder
+      return inputs.shift().value;
+    } else {
+      return component
+    }
+  });
 
-			// Hide activity indicator
-			$('.loadMask').hide();
-			$('.activityIndicator').activity(false);
+  return pathComponents.join('/');
+}
 
-			// Show the output form
-			$(clickedEl).parent().siblings(".output").show("2");
-		},
-		error: function(jqXHR, textStatus, errorThrown) {
-			// Populate the textarea with the returned JSON
-			$(clickedEl).parent().siblings(".output").children('textarea').val(textStatus + " - " + jqXHR.status + " " + errorThrown);
-
-			// Hide activity indicator
-			$('.loadMask').hide();
-			$('.activityIndicator').activity(false);
-
-			// Show the output form
-			$(clickedEl).parent().siblings(".output").show("1");
-		}
-	});
-
+function callAPI(url, callback) {
+  $.ajax({
+    url: url,
+    dataType: 'text',
+    success: function(data, textStatus, jqXHR) {
+      callback(data);
+    },
+    error: function(jqXHR, textStatus, errorThrown) {
+      callback(textStatus);
+    }
+  });
 }
