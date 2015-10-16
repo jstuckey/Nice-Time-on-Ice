@@ -22,12 +22,6 @@ season_game:
   inputs: ["season_id", "game_id"]
   input_descriptions: ["A season number. Example: 20152016", "A game number. Example: 2015020218"]
 
-season_game_links:
-  path: "api/seasons/{season_id}/games/{game_id}/links"
-  description: "Returns links for the specified game/season as a JSON array"
-  inputs: ["season_id", "game_id"]
-  input_descriptions: ["A season number. Example: 20152016", "A game number. Example: 2015020218"]
-
 teams:
   path: "api/teams"
   description: "Returns all available teams as a JSON array"
@@ -49,12 +43,6 @@ team_seasons:
 teams_season:
   path: "api/teams/{team_id}/seasons/{season_id}"
   description: "Returns the specified sedason for a team as a JSON array"
-  inputs: ["team_id", "season_id"]
-  input_descriptions: ["A team abbreviation. Example: WSH", "A season number. Example: 20152016"]
-
-team_season_links:
-  path: "api/teams/{team_id}/seasons/{season_id}/links"
-  description: "Returns links for the specified team/season as a JSON array"
   inputs: ["team_id", "season_id"]
   input_descriptions: ["A team abbreviation. Example: WSH", "A season number. Example: 20152016"]
 
