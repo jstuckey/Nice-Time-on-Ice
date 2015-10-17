@@ -1,5 +1,14 @@
+// Standard page load
 $(document).ready(function() {
+  setup();
+});
 
+// Turbolinks
+$(document).on('page:load', function() {
+  setup();
+});
+
+function setup() {
   // Hide form elements by default
   $('form').hide();
 
@@ -15,8 +24,7 @@ $(document).ready(function() {
   $('input[type=button]').click(function(event) {
     makeAPIRequest.call(this);
   });
-
-});
+}
 
 function toggleFormVisibility() {
   var target = $(this);
