@@ -1,5 +1,14 @@
+// Standard page load
 $(document).ready(function() {
+  setup();
+});
 
+// Turbolinks
+$(document).on('page:load', function() {
+  setup();
+});
+
+function setup() {
   // Hide form elements by default
   $('form').hide();
 
@@ -15,8 +24,7 @@ $(document).ready(function() {
   $('input[type=button]').click(function(event) {
     makeAPIRequest.call(this);
   });
-
-});
+}
 
 function toggleFormVisibility() {
   var target = $(this);
@@ -32,19 +40,8 @@ function toggleFormVisibility() {
   }
 }
 
-function determineTarget() {
-  var target = $(this);
-  var targetParent = target.parent('li');
-
-  if (targetParent.length >= 1) {
-    return targetParent;
-  } else {
-    return target;
-  }
-}
-
 function makeAPIRequest() {
-  var output = $(this).parent().siblings('.output')
+  var output = $(this).parent().siblings('.output');
   output.hide();
 
   var uri = assembleURI.call(this);
@@ -59,12 +56,12 @@ function assembleURI() {
   var uriTemplate = $(this).attr('uri-template');
   var uriPieces = uriTemplate.split('/');
 
-  pathComponents = uriPieces.map(function(component) {
-    if (component.match(/^{/)) {
+  var pathComponents = uriPieces.map(function(component) {
+    if (component.match(/^\{/)) {
       // Substitute the value entered in the text box for the placeholder
       return inputs.shift().value;
     } else {
-      return component
+      return component;
     }
   });
 
