@@ -79,6 +79,16 @@ module Links
       end
     end
 
+    def full_text_game_type
+      return unless game_type
+
+      if game_type == 3
+        "Playoffs"
+      else
+        "Regular"
+      end
+    end
+
     def team_in_playoffs?
       return false unless team && season
 
