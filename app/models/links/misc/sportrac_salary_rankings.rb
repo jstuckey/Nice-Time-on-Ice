@@ -13,7 +13,7 @@ class Links::Misc::SportracSalaryRankings < Links::Base
   end
 
   def group
-    6
+    7
   end
 
   def position

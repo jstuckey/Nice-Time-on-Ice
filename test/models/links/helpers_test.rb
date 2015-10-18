@@ -191,6 +191,16 @@ class Links::HelpersTest < ActiveSupport::TestCase
     assert_equal 's', alternate_game_type
   end
 
+  test "#full_text_game_type should return 'Playoffs' for playoff game" do
+    self.game_type = 3
+    assert_equal "Playoffs", full_text_game_type
+  end
+
+  test "#full_text_game_type should return 'Regular' for regular game" do
+    self.game_type = 2
+    assert_equal "Regular", full_text_game_type
+  end
+
   test "#team_in_playoffs? should return true if team made playoffs for a season" do
     self.team = teams(:caps)
     self.season = Season.create()

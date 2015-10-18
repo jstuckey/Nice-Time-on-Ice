@@ -13,7 +13,7 @@ class Links::Misc::DobberRankings < Links::Base
   end
 
   def group
-    2
+    3
   end
 
   def position

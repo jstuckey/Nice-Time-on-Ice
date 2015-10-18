@@ -13,7 +13,7 @@ class Links::Misc::SportracBuyoutCalculator < Links::Base
   end
 
   def group
-    6
+    7
   end
 
   def position

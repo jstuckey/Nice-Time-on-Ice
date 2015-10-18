@@ -22,7 +22,7 @@ class Links::Misc::ScMatchupsTest < ActiveSupport::TestCase
   end
 
   test "#group" do
-    assert_equal 4, Links::Misc::ScMatchups.new.group
+    assert_equal 5, Links::Misc::ScMatchups.new.group
   end
 
   test "#position" do

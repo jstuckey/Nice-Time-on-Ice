@@ -13,7 +13,7 @@ class Links::Misc::SportracTransactions < Links::Base
   end
 
   def group
-    6
+    7
   end
 
   def position

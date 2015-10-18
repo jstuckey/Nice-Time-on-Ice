@@ -22,7 +22,7 @@ class Links::Misc::HcapThirtyFiveContractsTest < ActiveSupport::TestCase
   end
 
   test "#group" do
-    assert_equal 7, Links::Misc::HcapThirtyFiveContracts.new.group
+    assert_equal 8, Links::Misc::HcapThirtyFiveContracts.new.group
   end
 
   test "#position" do
