@@ -13,7 +13,7 @@ class Links::Misc::ScHeatMap < Links::Base
   end
 
   def group
-    4
+    5
   end
 
   def position

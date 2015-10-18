@@ -22,7 +22,7 @@ class Links::Misc::PonCorsiTest < ActiveSupport::TestCase
   end
 
   test "#group" do
-    assert_equal 3, Links::Misc::PonCorsi.new.group
+    assert_equal 4, Links::Misc::PonCorsi.new.group
   end
 
   test "#position" do

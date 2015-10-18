@@ -22,7 +22,7 @@ class Links::Misc::HcapBuyoutCalculatorTest < ActiveSupport::TestCase
   end
 
   test "#group" do
-    assert_equal 7, Links::Misc::HcapBuyoutCalculator.new.group
+    assert_equal 8, Links::Misc::HcapBuyoutCalculator.new.group
   end
 
   test "#position" do

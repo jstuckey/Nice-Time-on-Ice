@@ -22,7 +22,7 @@ class Links::Misc::HcapCapHitTest < ActiveSupport::TestCase
   end
 
   test "#group" do
-    assert_equal 7, Links::Misc::HcapCapHit.new.group
+    assert_equal 8, Links::Misc::HcapCapHit.new.group
   end
 
   test "#position" do

@@ -22,7 +22,7 @@ class Links::Misc::SportracSalaryRankingsTest < ActiveSupport::TestCase
   end
 
   test "#group" do
-    assert_equal 6, Links::Misc::SportracSalaryRankings.new.group
+    assert_equal 7, Links::Misc::SportracSalaryRankings.new.group
   end
 
   test "#position" do

@@ -22,7 +22,7 @@ class Links::Misc::ScHeatMapTest < ActiveSupport::TestCase
   end
 
   test "#group" do
-    assert_equal 4, Links::Misc::ScHeatMap.new.group
+    assert_equal 5, Links::Misc::ScHeatMap.new.group
   end
 
   test "#position" do

@@ -13,7 +13,7 @@ class Links::Misc::HcapWaiverCalculator < Links::Base
   end
 
   def group
-    7
+    8
   end
 
   def position

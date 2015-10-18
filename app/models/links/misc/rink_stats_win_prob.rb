@@ -13,7 +13,7 @@ class Links::Misc::RinkStatsWinProb < Links::Base
   end
 
   def group
-    5
+    6
   end
 
   def position

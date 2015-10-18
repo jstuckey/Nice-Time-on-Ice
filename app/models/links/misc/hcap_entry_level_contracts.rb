@@ -13,7 +13,7 @@ class Links::Misc::HcapEntryLevelContracts < Links::Base
   end
 
   def group
-    7
+    8
   end
 
   def position
