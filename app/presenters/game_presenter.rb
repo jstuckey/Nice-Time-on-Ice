@@ -26,11 +26,7 @@ class GamePresenter
   end
 
   def order_href
-    Rails.application.routes.url_helpers.root_path(
-      season: context.season.year_start,
-      team: context.team.abbreviation,
-      game_type: context.game_type,
-      game_order: opposite_of_current_order)
+    path_helper(order_path_params)
   end
 
   def order_class
@@ -72,6 +68,15 @@ class GamePresenter
       team: context.team.abbreviation,
       game_type: context.game_type,
       game_order: context.game_order
+    }
+  end
+
+  def order_path_params
+    {
+      season: context.season.year_start,
+      team: context.team.abbreviation,
+      game_type: context.game_type,
+      game_order: opposite_of_current_order
     }
   end
 
