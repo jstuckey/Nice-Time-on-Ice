@@ -28,16 +28,23 @@ class TeamPresenter
   end
 
   def urls
-    root_path = ->(args) do
-      Rails.application.routes.url_helpers.root_path(args)
-    end
-
     all_teams.map do |team|
-      root_path.call(season: context.season.year_start,
-                     team: team.abbreviation,
-                     game_type: context.game_type,
-                     game_order: context.game_order)
+      args = path_params(team)
+      path_helper(args)
     end
+  end
+
+  def path_helper(args)
+    Rails.application.routes.url_helpers.root_path(args)
+  end
+
+  def path_params(team)
+    {
+      season: context.season.year_start,
+      team: team.abbreviation,
+      game_type: context.game_type,
+      game_order: context.game_order
+    }
   end
 
   def bodies

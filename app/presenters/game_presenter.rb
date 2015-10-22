@@ -55,17 +55,24 @@ class GamePresenter
   end
 
   def urls
-    root_path = ->(args) do
-      Rails.application.routes.url_helpers.root_path(args)
-    end
-
     all_games.map do |game|
-      root_path.call(game: game.game_number,
-                     season: context.season.year_start,
-                     team: context.team.abbreviation,
-                     game_type: context.game_type,
-                     game_order: context.game_order)
+      args = path_params(game)
+      path_helper(args)
     end
+  end
+
+  def path_helper(args)
+    Rails.application.routes.url_helpers.root_path(args)
+  end
+
+  def path_params(game)
+    {
+      game: game.game_number,
+      season: context.season.year_start,
+      team: context.team.abbreviation,
+      game_type: context.game_type,
+      game_order: context.game_order
+    }
   end
 
   def bodies
