@@ -20,8 +20,8 @@ class GamePresenter
 
   def li_classes
     classes = Array.new(all_games.length, "")
-    index = all_games.index { |g| g == context.game }
-    classes[index] = %Q(class="selected").html_safe if index
+    index = all_games.index(context.game) || 0
+    classes[index] = %Q(class="selected").html_safe
     classes
   end
 

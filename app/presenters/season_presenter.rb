@@ -13,18 +13,8 @@ class SeasonPresenter
   end
 
   def li_classes
-    # Season list contains regular season and postseason
-    # for each year, so we need to do some weird arithmatic
-    season_count = all_seasons.length * 2
-    classes = Array.new(season_count, "")
-
-    index = all_seasons.index { |s| s == context.season }
-    return classes unless index
-
-    index = index * 2
-    index += 1 if context.game_type == 3
-
-    classes[index] = %Q(class="selected").html_safe
+    classes = Array.new(all_seasons.length * 2, "")
+    classes[selected_season_index] = %Q(class="selected").html_safe
     classes
   end
 
@@ -74,6 +64,15 @@ class SeasonPresenter
     end
 
     regular.zip(playoffs).flatten
+  end
+
+  def selected_season_index
+    # Season list contains regular season and postseason
+    # for each year, so we need to do some weird arithmatic
+    index = all_seasons.index(context.season) || 0
+    index = index * 2
+    index += 1 if context.game_type == 3
+    index
   end
 
 end

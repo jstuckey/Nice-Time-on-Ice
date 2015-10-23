@@ -14,8 +14,8 @@ class TeamPresenter
 
   def li_classes
     classes = Array.new(all_teams.length, "")
-    index = all_teams.index { |t| t == context.team }
-    classes[index] = %Q(class="selected").html_safe if index
+    index = all_teams.index(context.team) || 0
+    classes[index] = %Q(class="selected").html_safe
     classes
   end
 
