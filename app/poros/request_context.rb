@@ -13,19 +13,49 @@ class RequestContext
   private
 
   def determine_team(team)
-    Team.find_by_id(team) ||
-      Team.where(abbreviation: team).first ||
-        Team.where(abbreviation: "WSH").first # Go Caps!
+    team_by_id(team) ||
+      team_by_abbreviation(team) ||
+      default_team
+  end
+
+  def team_by_id(possible_id)
+    Team.find_by_id(possible_id)
+  end
+
+  def team_by_abbreviation(possible_abbreviation)
+    Team.where(abbreviation: possible_abbreviation).first
+  end
+
+  def default_team
+    # Go Caps!
+    Team.where(abbreviation: "WSH").first
   end
 
   def determine_season(season)
-    if season
-      Season.find_by_id(season) ||
-        Season.where(year_start: season).first ||
-          Season.where(year_start: season.to_s[0..3]).first
-    else
-      Season.last
-    end
+    season_by_id(season) ||
+      season_by_year_start(season) ||
+      season_by_full_season_number(season) ||
+      default_season
+  end
+
+  def season_by_id(possible_id)
+    return unless possible_id
+    Season.find_by_id(possible_id)
+  end
+
+  def season_by_year_start(possible_year)
+    return unless possible_year
+    Season.where(year_start: possible_year).first
+  end
+
+  def season_by_full_season_number(possible_season_number)
+    return unless possible_season_number
+    year_start = possible_season_number.to_s[0..3]
+    season_by_year_start(year_start)
+  end
+
+  def default_season
+    Season.last
   end
 
   def determine_game_type(type)
@@ -39,11 +69,23 @@ class RequestContext
   end
 
   def determine_game(game)
-    Game.find_by_id(game) ||
-      Game.where(game_number: game).first ||
-        Game.where(season: season, playoffs: game_type == 3)
-            .where("away_team_id = ? OR home_team_id = ?", team.id, team.id)
-            .order(date: game_order).first
+    game_by_id(game) ||
+      game_by_game_number(game) ||
+      default_game
+  end
+
+  def game_by_id(possible_id)
+    Game.find_by_id(possible_id)
+  end
+
+  def game_by_game_number(possible_game_number)
+    Game.where(game_number: possible_game_number).first
+  end
+
+  def default_game
+    Game.where(season: season, playoffs: game_type == 3)
+        .where("away_team_id = ? OR home_team_id = ?", team.id, team.id)
+        .order(date: game_order).first
   end
 
   def determine_game_order(order)

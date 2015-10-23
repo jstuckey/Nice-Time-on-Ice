@@ -16,16 +16,7 @@ class ExternalLinkPresenter
 
   def headers
     return [] unless context.game.present?
-    current_name = nil
-    link_objects.map do |link|
-      name = link.site_name
-      if current_name == name
-        nil
-      else
-        current_name = name
-        name
-      end
-    end
+    site_names_with_duplicates_replaced
   end
 
   private
@@ -34,30 +25,45 @@ class ExternalLinkPresenter
 
   def link_objects
     @link_objects||= begin
-      Links::Base.autoload_links
-
-      constants = module_name.constants.reject do |const|
-        const =~ /Test$/
-      end
-
-      klasses = constants.map do |const|
-        module_name.const_get(const)
-      end
-
-      objects = klasses.map do |klass|
-        klass.new(context)
-      end
-
-      objects.sort
+      autoload_link_objects
+      instantiate_link_objects
     end
   end
 
+  def autoload_link_objects
+    Links::Base.autoload_links
+  end
+
+  def instantiate_link_objects
+    module_name.constants
+      .reject { |const_name| const_name =~ /Test$/ }
+      .map { |const_name| module_name.const_get(const_name) }
+      .map { |klass| klass.new(context) }
+      .sort
+  end
+
   def urls
-    link_objects.map(&:url)
+    @urls ||= link_objects.map(&:url)
   end
 
   def bodies
-    link_objects.map(&:description)
+    @bodies ||= link_objects.map(&:description)
+  end
+
+  def site_names
+    @site_names ||= link_objects.map(&:site_name)
+  end
+
+  def site_names_with_duplicates_replaced
+    current_name = nil
+    site_names.map do |name|
+      if current_name == name
+        nil
+      else
+        current_name = name
+        name
+      end
+    end
   end
 
 end

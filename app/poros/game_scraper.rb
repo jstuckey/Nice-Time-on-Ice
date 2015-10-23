@@ -62,28 +62,28 @@ class GameScraper
   end
 
   def game_from_row(row)
-    year_start = season[0, 4]
+    game_attrs = game_attribute_hash(row)
+    return if game_attrs.values.any?(&:nil?)
+    GameBuilder.new(game_attrs).to_game
+  end
+
+  def game_attribute_hash(row)
     game_number = get_game_number(row)
-    away_team = get_away_team(row)
-    home_team = get_home_team(row)
-    is_playoffs = is_playoffs?(game_number)
-
-    return if year_start.nil?  ||
-              game_number.nil? ||
-              away_team.nil?   ||
-              home_team.nil?   ||
-              is_playoffs.nil?
-
-    GameBuilder.new(year_start: year_start,
-                    game_number: game_number,
-                    away_team_abbreviation: away_team,
-                    home_team_abbreviation: home_team,
-                    date: date,
-                    is_playoffs: is_playoffs)
-              .to_game
+    {
+      year_start: get_season,
+      game_number: game_number,
+      away_team_abbreviation: get_away_team(row),
+      home_team_abbreviation: get_home_team(row),
+      date: date,
+      is_playoffs: is_playoffs?(game_number)
+    }
   end
 
   GAME_LINK_PATTERN = /\?id=(?<game_number>[0-9]+)$/
+
+  def get_season
+    season[0, 4]
+  end
 
   def get_game_number(row)
     # The game number is contained in an href

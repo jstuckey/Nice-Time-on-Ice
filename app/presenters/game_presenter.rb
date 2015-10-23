@@ -20,17 +20,13 @@ class GamePresenter
 
   def li_classes
     classes = Array.new(all_games.length, "")
-    index = all_games.index { |g| g == context.game }
-    classes[index] = %Q(class="selected").html_safe if index
+    index = all_games.index(context.game) || 0
+    classes[index] = %Q(class="selected").html_safe
     classes
   end
 
   def order_href
-    Rails.application.routes.url_helpers.root_path(
-      season: context.season.year_start,
-      team: context.team.abbreviation,
-      game_type: context.game_type,
-      game_order: opposite_of_current_order)
+    path_helper(order_path_params)
   end
 
   def order_class
@@ -48,24 +44,46 @@ class GamePresenter
   def all_games
     @all_games ||= begin
       Game.where(season: context.season, playoffs: is_playoffs?)
-          .where("away_team_id = ? OR home_team_id = ?", context.team.id, context.team.id)
+          .where(home_or_away_team)
           .order(date: context.game_order)
           .includes(:away_team, :home_team)
     end
   end
 
-  def urls
-    root_path = ->(args) do
-      Rails.application.routes.url_helpers.root_path(args)
-    end
+  def home_or_away_team
+    ["away_team_id = ? OR home_team_id = ?",
+      context.team.id,
+      context.team.id]
+  end
 
+  def urls
     all_games.map do |game|
-      root_path.call(game: game.game_number,
-                     season: context.season.year_start,
-                     team: context.team.abbreviation,
-                     game_type: context.game_type,
-                     game_order: context.game_order)
+      args = path_params(game)
+      path_helper(args)
     end
+  end
+
+  def path_helper(args)
+    Rails.application.routes.url_helpers.root_path(args)
+  end
+
+  def path_params(game)
+    {
+      game: game.game_number,
+      season: context.season.year_start,
+      team: context.team.abbreviation,
+      game_type: context.game_type,
+      game_order: context.game_order
+    }
+  end
+
+  def order_path_params
+    {
+      season: context.season.year_start,
+      team: context.team.abbreviation,
+      game_type: context.game_type,
+      game_order: opposite_of_current_order
+    }
   end
 
   def bodies
