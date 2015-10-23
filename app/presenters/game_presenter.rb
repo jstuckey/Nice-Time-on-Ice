@@ -44,10 +44,16 @@ class GamePresenter
   def all_games
     @all_games ||= begin
       Game.where(season: context.season, playoffs: is_playoffs?)
-          .where("away_team_id = ? OR home_team_id = ?", context.team.id, context.team.id)
+          .where(home_or_away_team)
           .order(date: context.game_order)
           .includes(:away_team, :home_team)
     end
+  end
+
+  def home_or_away_team
+    ["away_team_id = ? OR home_team_id = ?",
+      context.team.id,
+      context.team.id]
   end
 
   def urls
