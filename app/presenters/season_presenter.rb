@@ -14,7 +14,7 @@ class SeasonPresenter
 
   def li_classes
     classes = Array.new(all_seasons.length * 2, "")
-    classes[selected_season_index] = %Q(class="selected").html_safe
+    classes[selected_season_index] = %(class="selected").html_safe
     classes
   end
 
@@ -27,19 +27,17 @@ class SeasonPresenter
   end
 
   def urls
-    regular = all_seasons.map do |season|
-      args = path_params(season)
-      args[:game_type] = 2
-      path_helper(args)
-    end
-
-    playoffs = all_seasons.map do |season|
-      args = path_params(season)
-      args[:game_type] = 3
-      path_helper(args)
-    end
-
+    regular = season_urls { |args| args[:game_type] = 2 }
+    playoffs = season_urls { |args| args[:game_type] = 3 }
     regular.zip(playoffs).flatten
+  end
+
+  def season_urls
+    all_seasons.map do |season|
+      args = path_params(season)
+      yield(args) if block_given?
+      path_helper(args)
+    end
   end
 
   def path_helper(args)
@@ -70,7 +68,7 @@ class SeasonPresenter
     # Season list contains regular season and postseason
     # for each year, so we need to do some weird arithmatic
     index = all_seasons.index(context.season) || 0
-    index = index * 2
+    index *= 2
     index += 1 if context.game_type == 3
     index
   end

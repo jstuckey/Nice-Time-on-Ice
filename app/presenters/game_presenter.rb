@@ -21,7 +21,7 @@ class GamePresenter
   def li_classes
     classes = Array.new(all_games.length, "")
     index = all_games.index(context.game) || 0
-    classes[index] = %Q(class="selected").html_safe
+    classes[index] = %(class="selected").html_safe
     classes
   end
 
@@ -42,18 +42,20 @@ class GamePresenter
   attr_reader :context
 
   def all_games
-    @all_games ||= begin
-      Game.where(season: context.season, playoffs: is_playoffs?)
-          .where(home_or_away_team)
-          .order(date: context.game_order)
-          .includes(:away_team, :home_team)
-    end
+    @all_games ||= all_games_query
+  end
+
+  def all_games_query
+    Game.where(season: context.season, playoffs: playoffs?)
+        .where(home_or_away_team)
+        .order(date: context.game_order)
+        .includes(:away_team, :home_team)
   end
 
   def home_or_away_team
     ["away_team_id = ? OR home_team_id = ?",
-      context.team.id,
-      context.team.id]
+     context.team.id,
+     context.team.id]
   end
 
   def urls
@@ -92,7 +94,7 @@ class GamePresenter
     end
   end
 
-  def is_playoffs?
+  def playoffs?
     context.game_type == 3
   end
 
