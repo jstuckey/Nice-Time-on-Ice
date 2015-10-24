@@ -181,6 +181,11 @@ class Links::HelpersTest < ActiveSupport::TestCase
     assert_equal "TOR", alternate_team_abbreviation
   end
 
+  test "#alternate_team_abbreviation accepts a parameter instead of self#team" do
+    team = teams(:sharks)
+    assert_equal "S.J", alternate_team_abbreviation(team)
+  end
+
   test "#alternate_game_type should return 'p' for playoff game" do
     self.game_type = 3
     assert_equal 'p', alternate_game_type

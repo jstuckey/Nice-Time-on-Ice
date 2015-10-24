@@ -46,16 +46,18 @@ module Links
       end
     end
 
-    def alternate_team_abbreviation
-      return unless team
+    def alternate_team_abbreviation(team_param = nil)
+      t = team_param || team
+      return unless t
+      abbreviation = t.abbreviation
 
       # Some sites use non-standard team abbreviations
-      case team.abbreviation
+      case abbreviation
       when "LAK" then "L.A"
       when "NJD" then "N.J"
       when "SJS" then "S.J"
       when "TBL" then "T.B"
-      else team.abbreviation
+      else abbreviation
       end
     end
 
