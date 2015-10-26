@@ -57,14 +57,13 @@ class GameCSVImporter
   end
 
   def log_results
-    log "Created #{success_count} games. Failed to create #{failure_count} games."
+    log "Created #{success_count} games."
+    log "Failed to create #{failure_count} games."
   end
 
   def log(message)
-    if Rails.env.test?
-    elsif Rails.env.production?
-    else
-      puts message
-    end
+    return if Rails.env.test?
+    Rails.logger.info(message)
+    puts message
   end
 end

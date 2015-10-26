@@ -68,24 +68,24 @@ class GameScraper
   end
 
   def game_attribute_hash(row)
-    game_number = get_game_number(row)
+    game_number = game_number(row)
     {
-      year_start: get_season,
+      year_start: year_start,
       game_number: game_number,
-      away_team_abbreviation: get_away_team(row),
-      home_team_abbreviation: get_home_team(row),
+      away_team_abbreviation: away_team(row),
+      home_team_abbreviation: home_team(row),
       date: date,
-      is_playoffs: is_playoffs?(game_number)
+      playoffs: playoffs?(game_number)
     }
   end
 
   GAME_LINK_PATTERN = /\?id=(?<game_number>[0-9]+)$/
 
-  def get_season
+  def year_start
     season[0, 4]
   end
 
-  def get_game_number(row)
+  def game_number(row)
     # The game number is contained in an href
     # attribute of an <a> tag within the <tr>
     anchors = row.css("a.btn")
@@ -99,7 +99,7 @@ class GameScraper
     nil
   end
 
-  def get_away_team(row)
+  def away_team(row)
     # The away team abbreviation is contained in
     # a rel attribute of the first <a> tag with
     # a teamName class
@@ -108,7 +108,7 @@ class GameScraper
     anchors.first.attribute("rel")
   end
 
-  def get_home_team(row)
+  def home_team(row)
     # The home team abbreviation is contained in
     # a rel attribute of the last <a> tag with a
     # teamName class
@@ -117,7 +117,7 @@ class GameScraper
     anchors.last.attribute("rel")
   end
 
-  def is_playoffs?(game_number)
+  def playoffs?(game_number)
     # The sixth character in the game number
     # represents the game type e.g. 2 for
     # regular season and 3 for playoffs

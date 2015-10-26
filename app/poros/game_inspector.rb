@@ -5,7 +5,8 @@ class GameInspector
   end
 
   def missing_games
-    compare actual_regular_season_game_numbers, ideal_regular_season_game_numbers
+    compare(actual_regular_season_game_numbers,
+            ideal_regular_season_game_numbers)
     missing_list
   end
 
@@ -14,7 +15,7 @@ class GameInspector
   attr_reader :year_start, :missing_list
 
   def compare(actual_list, ideal_list)
-    until actual_list.empty? do
+    until actual_list.empty?
       actual = actual_list.shift.to_i
       ideal  = ideal_list.shift.to_i
       next if actual == ideal
