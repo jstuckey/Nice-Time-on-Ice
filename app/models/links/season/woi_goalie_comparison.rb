@@ -11,10 +11,10 @@ class Links::Season::WoiGoalieComparison < Links::Base
   end
 
   def url
-   "http://war-on-ice.com/goalietable.html?" \
-   "playoffs=#{full_text_game_type}&" \
-   "start1=#{season.year_start}-10-01&" \
-   "end1=#{season.year_end}-10-01"
+    "http://war-on-ice.com/goalietable.html?" \
+    "playoffs=#{full_text_game_type}&" \
+    "start1=#{season.year_start}-10-01&" \
+    "end1=#{season.year_end}-10-01"
   end
 
   def group

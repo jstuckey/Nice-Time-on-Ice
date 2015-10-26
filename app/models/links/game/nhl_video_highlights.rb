@@ -9,8 +9,8 @@ class Links::Game::NhlVideoHighlights < Links::Base
   end
 
   def url
-   "http://video.nhl.com/videocenter/embed?playlist=" \
-   "#{game.game_number}-X-h"
+    "http://video.nhl.com/videocenter/embed?playlist=" \
+    "#{game.game_number}-X-h"
   end
 
   def group

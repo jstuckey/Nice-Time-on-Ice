@@ -11,12 +11,12 @@ class Links::Season::QuantTeamStats < Links::Base
   end
 
   def url
-   "http://www.quanthockey.com/nhl/teams/" \
-   "#{full_team_name}-players-" \
-   "#{season.year_start}-" \
-   "#{season.year_end.to_s[2, 2]}-" \
-   "#{game_type == 3 ? 'playoff-' : ''}" \
-   "nhl-stats.html"
+    "http://www.quanthockey.com/nhl/teams/" \
+    "#{full_team_name}-players-" \
+    "#{season.year_start}-" \
+    "#{season.year_end.to_s[2, 2]}-" \
+    "#{game_type == 3 ? 'playoff-' : ''}" \
+    "nhl-stats.html"
   end
 
   def group

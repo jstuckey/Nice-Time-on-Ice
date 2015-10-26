@@ -10,7 +10,7 @@ class Links::Season::FaceoffsDotNetFaceoffs < Links::Base
 
   def url
     "http://faceoffs.net/team/#{team.abbreviation}?year=" \
-    "#{season.year_start}-#{season.year_end.to_s[2,2]}"
+    "#{season.year_start}-#{season.year_end.to_s[2, 2]}"
   end
 
   def group

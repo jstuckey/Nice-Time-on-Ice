@@ -24,7 +24,7 @@ class ExternalLinkPresenter
   attr_reader :context, :module_name
 
   def link_objects
-    @link_objects||= begin
+    @link_objects ||= begin
       autoload_link_objects
       instantiate_link_objects
     end

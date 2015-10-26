@@ -18,10 +18,10 @@ class Links::Base
   end
 
   def <=>(other)
-    if self.group == other.group
-      self.position <=> other.position
+    if group == other.group
+      position <=> other.position
     else
-      self.group <=> other.group
+      group <=> other.group
     end
   end
 

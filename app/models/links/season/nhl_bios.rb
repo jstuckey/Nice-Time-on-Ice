@@ -9,9 +9,9 @@ class Links::Season::NhlBios < Links::Base
   end
 
   def url
-   "http://www.nhl.com/stats/player?" \
-   "team=#{team.abbreviation}&season=#{season}&" \
-   "gameType=#{game_type}&report=bios"
+    "http://www.nhl.com/stats/player?" \
+    "team=#{team.abbreviation}&season=#{season}&" \
+    "gameType=#{game_type}&report=bios"
   end
 
   def group

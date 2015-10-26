@@ -1,6 +1,5 @@
 module Links
   module Helpers
-
     #
     # These are helper methods for various links.
     #
@@ -94,10 +93,9 @@ module Links
     def team_in_playoffs?
       return false unless team && season
 
-      game_count =
-        ::Game.where(season: season, playoffs: true) \
-              .where(%q("away_team_id" = ? OR "home_team_id" = ?), team, team) \
-              .count
+      game_count = ::Game.where(season: season, playoffs: true) \
+                         .where(%("away_team_id" = ? OR "home_team_id" = ?), team, team) \
+                         .count
       game_count > 0
     end
 
@@ -110,7 +108,7 @@ module Links
     end
 
     def full_team_name
-      team.name.downcase.gsub(" ", "-")
+      team.name.downcase.tr(" ", "-")
     end
 
     def team_nickname
