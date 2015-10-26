@@ -9,9 +9,9 @@ class Links::Season::NhlShootingToi < Links::Base
   end
 
   def url
-   "http://www.nhl.com/stats/player?" \
-   "team=#{team.abbreviation}&season=#{season}&" \
-   "gameType=#{game_type}&report=skatershootingtimeonice"
+    "http://www.nhl.com/stats/player?" \
+    "team=#{team.abbreviation}&season=#{season}&" \
+    "gameType=#{game_type}&report=skatershootingtimeonice"
   end
 
   def group

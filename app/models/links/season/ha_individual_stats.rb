@@ -12,7 +12,7 @@ class Links::Season::HaIndividualStats < Links::Base
 
   def url
     "http://stats.hockeyanalysis.com/ratings.php?" \
-    "db=#{season.year_start}#{season.year_end.to_s[2,2]}" \
+    "db=#{season.year_start}#{season.year_end.to_s[2, 2]}" \
     "&sit=5v5&type=individual&teamid=#{ha_team_number}" \
     "&pos=skaters&minutes=50&disp=1"
   end
