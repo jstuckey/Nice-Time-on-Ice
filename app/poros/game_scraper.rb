@@ -75,7 +75,7 @@ class GameScraper
       away_team_abbreviation: away_team(row),
       home_team_abbreviation: home_team(row),
       date: date,
-      playoffs: playoffs?(game_number)
+      is_playoffs: playoffs?(game_number)
     }
   end
 
