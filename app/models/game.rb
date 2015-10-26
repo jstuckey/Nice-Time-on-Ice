@@ -4,4 +4,9 @@ class Game < ActiveRecord::Base
   belongs_to :home_team, class_name: "Team", foreign_key: "home_team_id"
 
   validates :game_number, uniqueness: true
+
+  def to_s
+    "#<Game: #{game_number}>"
+  end
+
 end
