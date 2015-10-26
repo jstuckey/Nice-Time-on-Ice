@@ -1,7 +1,7 @@
 class MainController < ApplicationController
 
   before_filter :read_team_cookie
-  after_filter  :write_team_cookie
+  after_filter :write_team_cookie
 
   def index
     @context               = RequestContext.new(params)

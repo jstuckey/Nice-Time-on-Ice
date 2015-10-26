@@ -62,7 +62,7 @@ class ApiController < ApplicationController
 
   def games
     games = Game.all
-    render "api/games", locals: { games: games}
+    render "api/games", locals: { games: games }
   end
 
   def game
