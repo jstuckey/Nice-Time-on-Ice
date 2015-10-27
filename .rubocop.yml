@@ -9,3 +9,6 @@ Style/EmptyLinesAroundClassBody:
 
 Style/ClassAndModuleChildren:
   Enabled: false
+
+Style/StringLiteralsInInterpolation:
+  Enabled: false
