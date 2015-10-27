@@ -12,3 +12,6 @@ Style/ClassAndModuleChildren:
 
 Style/StringLiteralsInInterpolation:
   Enabled: false
+
+Style/NumericLiterals:
+  Enabled: false
