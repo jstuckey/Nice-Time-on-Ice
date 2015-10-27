@@ -5,7 +5,7 @@ class LinkGenerator < Rails::Generators::Base
   class_option :comments,  type: :boolean, default: true
 
   def check_model_directory
-    empty_directory(model_path) unless Dir.exists?(model_path)
+    empty_directory(model_path) unless Dir.exist?(model_path)
   end
 
   def create_model
@@ -13,7 +13,7 @@ class LinkGenerator < Rails::Generators::Base
   end
 
   def check_test_directory
-    empty_directory(test_path) unless Dir.exists?(test_path)
+    empty_directory(test_path) unless Dir.exist?(test_path)
   end
 
   def create_test

@@ -22,7 +22,7 @@ class RequestContextTest < ActiveSupport::TestCase
 
   test "should default to the Caps' team object" do
     team = teams(:caps)
-    context = RequestContext.new()
+    context = RequestContext.new
     assert_equal team, context.team
   end
 
@@ -58,7 +58,7 @@ class RequestContextTest < ActiveSupport::TestCase
 
   test "should default to the most recent season object" do
     season = seasons(:fourteen)
-    context = RequestContext.new()
+    context = RequestContext.new
     assert_equal season, context.season
   end
 
@@ -90,7 +90,6 @@ class RequestContextTest < ActiveSupport::TestCase
     context = RequestContext.new
     assert_equal 2, context.game_type
   end
-
 
   test "should convert a game id to a game object" do
     game = games(:game_one)
@@ -147,7 +146,7 @@ class RequestContextTest < ActiveSupport::TestCase
   end
 
   test "should set game_order to 'desc' by default" do
-    context = RequestContext.new()
+    context = RequestContext.new
     assert_equal "desc", context.game_order
   end
 

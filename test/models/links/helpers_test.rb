@@ -208,7 +208,7 @@ class Links::HelpersTest < ActiveSupport::TestCase
 
   test "#team_in_playoffs? should return true if team made playoffs for a season" do
     self.team = teams(:caps)
-    self.season = Season.create()
+    self.season = Season.create
 
     game = Game.create(playoffs: true, home_team: team)
     season.games << game
@@ -218,7 +218,7 @@ class Links::HelpersTest < ActiveSupport::TestCase
 
   test "#team_in_playoffs? should return false if team missed playoffs for a season" do
     self.team = teams(:flyers)
-    self.season = Season.create()
+    self.season = Season.create
 
     game = Game.create(playoffs: false, home_team: team)
     season.games << game

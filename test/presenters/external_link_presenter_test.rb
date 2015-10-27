@@ -11,8 +11,8 @@ class ExternalLinkPresenterTest < ActiveSupport::TestCase
 
   test "#links should return list of anchor tags for each season link" do
     expected = [
-      %Q(<a class="link" target="new" href="http://nhl.com">Main Page</a>),
-      %Q(<a class="link" target="new" href="http://nhl.com/stats">Stats</a>)
+      %(<a class="link" target="new" href="http://nhl.com">Main Page</a>),
+      %(<a class="link" target="new" href="http://nhl.com/stats">Stats</a>)
     ]
 
     assert_equal expected, ExternalLinkPresenter.new(@context, :test).links

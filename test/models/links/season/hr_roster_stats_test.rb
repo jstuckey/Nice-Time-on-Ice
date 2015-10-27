@@ -17,7 +17,7 @@ class Links::Season::HrRosterStatsTest < ActiveSupport::TestCase
 
     url = "http://www.hockey-reference.com/teams/WSH/2015.html"
 
-    link = Links::Season::HrRosterStats.new(team: team, season: season)
+    link = Links::Season::HrRosterStats.new(team: team, season: season, game_type: game_type)
     assert_equal url, link.url
   end
 

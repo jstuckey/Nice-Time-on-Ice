@@ -1,5 +1,5 @@
 desc "Check for missing games"
-task :missing_games, [:season] => :environment do |t, args|
+task :missing_games, [:season] => :environment do |_t, args|
   year_start = if args[:season].present?
                  args[:season].to_s[0..3]
                else

@@ -2,7 +2,6 @@ require 'rake/testtask'
 require 'rails/test_unit/sub_test_task'
 
 namespace :test do
-
   Rails::TestTask.new(poros: "test:prepare") do |t|
     t.pattern = 'test/poros/**/*_test.rb'
   end
@@ -15,5 +14,4 @@ namespace :test do
   Rails::TestTask.new(units: "test:prepare") do |t|
     t.pattern = "test/{models,helpers,unit,poros,presenters}/**/*_test.rb"
   end
-
 end
