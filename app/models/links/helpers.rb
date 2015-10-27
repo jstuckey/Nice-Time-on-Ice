@@ -96,7 +96,7 @@ module Links
       return false unless team && season
 
       game_count = ::Game.where(season: season, playoffs: true) \
-                         .where(%("away_team_id" = ? OR "home_team_id" = ?), team, team) \
+                         .where(team_where_clause) \
                          .count
       game_count > 0
     end
@@ -121,5 +121,10 @@ module Links
       end
     end
 
+    private
+
+    def team_where_clause
+      [%("away_team_id" = ? OR "home_team_id" = ?), team, team]
+    end
   end
 end

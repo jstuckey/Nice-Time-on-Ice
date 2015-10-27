@@ -23,7 +23,6 @@ class GameInspector
       missing_list << ideal
       actual_list.unshift(actual)
     end
-
   end
 
   def ideal_regular_season_game_numbers

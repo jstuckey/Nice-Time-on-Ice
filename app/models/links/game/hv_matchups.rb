@@ -11,9 +11,6 @@ class Links::Game::HvMatchups < Links::Base
   end
 
   def url
-    away_abbreviation = alternate_team_abbreviation(game.away_team)
-    home_abbreviation = alternate_team_abbreviation(game.home_team)
-
     "http://hockeyviz.com/img/game/matchups/" \
     "#{season.year_start.to_s[2, 2]}" \
     "#{season.year_end.to_s[2, 2]}" \
@@ -30,6 +27,16 @@ class Links::Game::HvMatchups < Links::Base
 
   def position
     1
+  end
+
+  private
+
+  def away_abbreviation
+    alternate_team_abbreviation(game.away_team)
+  end
+
+  def home_abbreviation
+    alternate_team_abbreviation(game.home_team)
   end
 
 end

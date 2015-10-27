@@ -28,23 +28,23 @@ class Links::Base
   # Override these methods in subclass
 
   def site_name
-    raise "Override ##{__method__} method in subclass"
+    fail "Override ##{__method__} method in subclass"
   end
 
   def description
-    raise "Override ##{__method__} method in subclass"
+    fail "Override ##{__method__} method in subclass"
   end
 
   def url
-    raise "Override ##{__method__} method in subclass"
+    fail "Override ##{__method__} method in subclass"
   end
 
   def group
-    raise "Override ##{__method__} method in subclass"
+    fail "Override ##{__method__} method in subclass"
   end
 
   def position
-    raise "Override ##{__method__} method in subclass"
+    fail "Override ##{__method__} method in subclass"
   end
 
   private
