@@ -13,8 +13,8 @@ class ScraperMailerTest < ActionMailer::TestCase
     email = ScraperMailer.results_email(results)
 
     body_enumerator(email).each do |body|
-      assert_match /Saved game 123/, body
-      assert_match /Error saving game 456/, body
+      assert_match(/Saved game 123/, body)
+      assert_match(/Error saving game 456/, body)
     end
   end
 

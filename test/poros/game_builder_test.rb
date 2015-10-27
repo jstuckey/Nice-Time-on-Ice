@@ -81,11 +81,11 @@ class GameBuilderTest < ActiveSupport::TestCase
 
   test "should be able to save returned game if all data is supplied" do
     data = GameBuilder.new(year_start: "2014",
-                        game_number: "2014020709",
-                        away_team_abbreviation: "PIT",
-                        home_team_abbreviation: "WSH",
-                        date: "Jan 28, 2015",
-                        is_playoffs: "false")
+                           game_number: "2014020709",
+                           away_team_abbreviation: "PIT",
+                           home_team_abbreviation: "WSH",
+                           date: "Jan 28, 2015",
+                           is_playoffs: "false")
     game = data.to_game
     assert game.save
   end

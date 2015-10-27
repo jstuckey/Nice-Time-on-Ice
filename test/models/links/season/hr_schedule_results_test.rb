@@ -17,7 +17,7 @@ class Links::Season::HrScheduleResultsTest < ActiveSupport::TestCase
 
     url = "http://www.hockey-reference.com/teams/WSH/2015_games.html"
 
-    link = Links::Season::HrScheduleResults.new(team: team, season: season)
+    link = Links::Season::HrScheduleResults.new(team: team, season: season, game_type: game_type)
     assert_equal url, link.url
   end
 
