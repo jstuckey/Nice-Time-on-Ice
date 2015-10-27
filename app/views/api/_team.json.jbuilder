@@ -1,2 +1,2 @@
-json.name   team.name
+json.name team.name
 json.teamID team.abbreviation

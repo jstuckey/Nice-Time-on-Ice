@@ -7,6 +7,7 @@ module Links
     # game, season, and team params.
     #
 
+    # rubocop:disable all
     def ha_team_number
       return unless team
 
@@ -44,6 +45,7 @@ module Links
       when 'WSH' then 30
       end
     end
+    # rubocop:enable all
 
     def alternate_team_abbreviation(team_param = nil)
       t = team_param || team
@@ -94,7 +96,7 @@ module Links
       return false unless team && season
 
       game_count = ::Game.where(season: season, playoffs: true) \
-                         .where(%("away_team_id" = ? OR "home_team_id" = ?), team, team) \
+                         .where(team_where_clause) \
                          .count
       game_count > 0
     end
@@ -119,5 +121,10 @@ module Links
       end
     end
 
+    private
+
+    def team_where_clause
+      [%("away_team_id" = ? OR "home_team_id" = ?), team, team]
+    end
   end
 end
