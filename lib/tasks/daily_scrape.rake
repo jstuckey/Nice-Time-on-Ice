@@ -1,13 +1,15 @@
 namespace :scrape do
   desc "Scrape today's game data from NHL.com"
-  task :today => :environment do
+  task today: :environment do
     scrape_for_date
   end
 
   desc "Scrape game data for specified date from NHL.com"
-  task :date, [:year, :month, :day] => [:environment] do |t, args|
+  task :date, [:year, :month, :day] => [:environment] do |_t, args|
     year, month, day = args[:year], args[:month], args[:day]
-    raise "Format must be: rake scrape:date[2015,5,25]" unless year && month && day
+    unless year && month && day
+      fail "Format must be: rake scrape:date[2015,5,25]"
+    end
 
     date = Date.new(year.to_i, month.to_i, day.to_i)
     scrape_for_date(date)
@@ -36,7 +38,8 @@ def attempt_to_save(game)
   if game.save
     "Saved game #{game.game_number}"
   else
-    "Error saving game #{game.game_number}: #{game.errors.full_messages.join(". ")}"
+    "Error saving game #{game.game_number}: " \
+      "#{game.errors.full_messages.join(". ")}"
   end
 end
 
@@ -47,7 +50,7 @@ def log_result(message)
 end
 
 def results_for_email
-  @results_for_email ||= Array.new
+  @results_for_email ||= []
 end
 
 def email_results
