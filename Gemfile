@@ -24,4 +24,5 @@ end
 
 group :production do
   gem 'postmark-rails', '~> 0.10.0'
+  gem 'newrelic_rpm'
 end
