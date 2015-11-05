@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150821234457) do
+ActiveRecord::Schema.define(version: 20151105001048) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,9 @@ ActiveRecord::Schema.define(version: 20150821234457) do
     t.datetime "updated_at",   null: false
   end
 
+  add_index "games", ["away_team_id"], name: "index_games_on_away_team_id", using: :btree
+  add_index "games", ["game_number"], name: "index_games_on_game_number", using: :btree
+  add_index "games", ["home_team_id"], name: "index_games_on_home_team_id", using: :btree
   add_index "games", ["season_id"], name: "index_games_on_season_id", using: :btree
 
   create_table "season_teams", force: :cascade do |t|
@@ -46,11 +49,16 @@ ActiveRecord::Schema.define(version: 20150821234457) do
     t.datetime "updated_at", null: false
   end
 
+  add_index "seasons", ["year_end"], name: "index_seasons_on_year_end", using: :btree
+  add_index "seasons", ["year_start"], name: "index_seasons_on_year_start", using: :btree
+
   create_table "teams", force: :cascade do |t|
     t.string   "name"
     t.string   "abbreviation"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
+
+  add_index "teams", ["abbreviation"], name: "index_teams_on_abbreviation", using: :btree
 
 end
