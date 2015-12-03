@@ -6,7 +6,9 @@
   <% @misc_link_presenter.links \
     .zip(@misc_link_presenter.headers) \
     .each do |link, header| %>
-    <h4><%= header %></h4>
+    <% if header.present? %>
+      <h4><%= header %></h4>
+    <% end %>
     <li>
       <%= link %>
     </li>
