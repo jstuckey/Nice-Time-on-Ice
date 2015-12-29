@@ -206,26 +206,6 @@ class Links::HelpersTest < ActiveSupport::TestCase
     assert_equal "Regular", full_text_game_type
   end
 
-  test "#team_in_playoffs? should return true if team made playoffs for a season" do
-    self.team = teams(:caps)
-    self.season = Season.create
-
-    game = Game.create(playoffs: true, home_team: team)
-    season.games << game
-
-    assert team_in_playoffs?
-  end
-
-  test "#team_in_playoffs? should return false if team missed playoffs for a season" do
-    self.team = teams(:flyers)
-    self.season = Season.create
-
-    game = Game.create(playoffs: false, home_team: team)
-    season.games << game
-
-    refute team_in_playoffs?
-  end
-
   test "#game_number_without_year should strip year off the front of the game number" do
     self.game = Game.create(game_number: 2014021217)
     assert_equal "021217", game_number_without_year

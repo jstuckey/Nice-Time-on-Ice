@@ -92,15 +92,6 @@ module Links
       end
     end
 
-    def team_in_playoffs?
-      return false unless team && season
-
-      game_count = ::Game.where(season: season, playoffs: true) \
-                         .where(team_where_clause) \
-                         .count
-      game_count > 0
-    end
-
     def game_number_without_year
       game.game_number.to_s[-6, 6]
     end
