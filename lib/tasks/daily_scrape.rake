@@ -20,27 +20,16 @@ private
 
 def scrape_for_date(date = nil)
   games = GameScraper.new(date: date).call.games
-  save_games(games)
+  results = GameSaver.new(games).call.results
+  log_results(results)
 rescue => ex
   log_result(ex.message)
 ensure
   email_results
 end
 
-def save_games(games)
-  games.each do |game|
-    message = attempt_to_save(game)
-    log_result(message)
-  end
-end
-
-def attempt_to_save(game)
-  if game.save
-    "Saved game #{game.game_number}"
-  else
-    "Error saving game #{game.game_number}: " \
-      "#{game.errors.full_messages.join(". ")}"
-  end
+def log_results(messages)
+  messages.each { |m| log_result(m) }
 end
 
 def log_result(message)
