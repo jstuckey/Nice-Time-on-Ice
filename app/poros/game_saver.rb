@@ -4,6 +4,7 @@ class GameSaver
   def initialize(game_or_games)
     @games = Array(game_or_games)
     @results = []
+    @game_saver = assemble_save_steps
   end
 
   def call
@@ -13,57 +14,80 @@ class GameSaver
 
   private
 
+  attr_reader :game_saver
+
+  def assemble_save_steps
+    step3 = ReportFailure.new(nil)
+    step2 = UpdateGameDate.new(step3)
+    step1 = SaveGame.new(step2)
+  end
+
   attr_writer :results
 
   def save_games
     games.each do |game|
-      attempt_to_save(game)
+      results << game_saver.call(game)
     end
   end
 
-  def attempt_to_save(game)
-    if game.save
-      results << success_message(game)
-    else
-      attempt_to_update_date(game)
+  class Step
+    attr_reader :game, :next_step
+
+    def initialize(next_step)
+      @next_step = next_step
     end
-  end
 
-  def success_message(game)
-   "Saved game #{game.game_number}"
-  end
-
-  def failure_message(game)
-    "Error saving game #{game.game_number}: " \
-      "#{game.errors.full_messages.join(". ")}"
-  end
-end
-
-class UpdateGameDate
-  def initialize(game)
-    @game = game
-  end
-
-  private
-
-  attr_reader :game
-
-  def attempt_to_update_date(game)
-    existing_game = Game.where(game_number: game.game_number).first
-    if existing_game && existing_game.date < game.date
-      existing_game.date = game.date
-      if existing_game.save
-        results << update_message(existing_game)
+    def call(game)
+      @game = game
+      if perform_step
+        message
       else
-        results << failure_message(existing_game)
+        next_step.(game)
       end
-    else
-      results << failure_message(game)
+    end
+
+    private
+
+    def perform_step
+      fail "override #perform_step in subclass"
+    end
+
+    def message
+      fail "override #message in subclass"
     end
   end
 
-  def update_message(game)
-    "Updated date for game #{game.game_number}"
+  class SaveGame < Step
+    def perform_step
+      game.save
+    end
+
+    def message
+      "Saved game #{game.game_number}"
+    end
   end
 
+  class UpdateGameDate < Step
+    def perform_step
+      existing_game = Game.find_by_game_number(game.game_number)
+      return unless existing_game.present?
+      existing_game.date = Date.current
+      existing_game.save
+    end
+
+    def message
+      "Updated date for game #{game.game_number}"
+    end
+  end
+
+  class ReportFailure < Step
+    def perform_step
+      true
+    end
+
+    def message
+      "Error saving game #{game.game_number}: " \
+        "#{game.errors.full_messages.join(". ")}"
+    end
+  end
 end
