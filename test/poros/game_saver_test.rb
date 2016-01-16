@@ -30,6 +30,20 @@ class GameSaverTest < ActiveSupport::TestCase
     assert_equal expected, results.first
   end
 
+  test "should change a game's date if it already exists" do
+    old_game = build_game
+    old_game.save!
+    game = build_game
+    new_date = Date.current
+    game.date = new_date
+
+    results = GameSaver.new(game).call.results
+
+    expected = "Updated date for game #{TEST_GAME_NUMBER}"
+    assert_equal expected, results.first
+    assert_equal new_date, old_game.reload.date
+  end
+
   private
 
   TEST_GAME_NUMBER = 201502999
