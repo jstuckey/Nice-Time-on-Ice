@@ -5,9 +5,7 @@ class GameScraper
   def initialize(date: nil, parser: nil)
     @date = date || Date.today
     @season = season_from_date(@date)
-    @url = "http://www.nhl.com/ice/schedulebyday.htm?" \
-           "date=#{@date.strftime("%m/%d/%Y")}&" \
-           "season=#{@season}"
+    @url = "https://www.nhl.com/schedule/#{@date.strftime("%Y-%m-%d")}"
     @parser = parser || NhlParser.new(@url)
   end
 
@@ -44,7 +42,7 @@ class GameScraper
 
   def games_table
     @games_table ||= begin
-      tables = doc.css("table.schedTbl")
+      tables = doc.css("table.day-table")
       return unless tables
       tables.last.css("tbody tr")
     end
@@ -79,7 +77,7 @@ class GameScraper
     }
   end
 
-  GAME_LINK_PATTERN = /\?id=(?<game_number>[0-9]+)$/
+  GAME_LINK_PATTERN = /\/gamecenter\/(?<game_number>[0-9]+)$/
 
   def year_start
     season[0, 4]
@@ -88,7 +86,7 @@ class GameScraper
   def game_number(row)
     # The game number is contained in an href
     # attribute of an <a> tag within the <tr>
-    anchors = row.css("a.btn")
+    anchors = row.css("a.icon-label-link")
     anchors.each do |a|
       url = a.attribute("href")
       if match = GAME_LINK_PATTERN.match(url)
@@ -103,18 +101,18 @@ class GameScraper
     # The away team abbreviation is contained in
     # a rel attribute of the first <a> tag with
     # a teamName class
-    anchors = row.css(".teamName a")
+    anchors = row.css(".narrow-matchup__team a")
     return unless anchors.present?
-    anchors.first.attribute("rel")
+    anchors.first.text
   end
 
   def home_team(row)
     # The home team abbreviation is contained in
     # a rel attribute of the last <a> tag with a
     # teamName class
-    anchors = row.css(".teamName a")
+    anchors = row.css(".narrow-matchup__team a")
     return unless anchors.present?
-    anchors.last.attribute("rel")
+    anchors.last.text
   end
 
   def playoffs?(game_number)
