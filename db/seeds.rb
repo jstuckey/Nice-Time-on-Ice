@@ -4,6 +4,7 @@ Season.create(year_start: 2011, year_end: 2012)
 Season.create(year_start: 2012, year_end: 2013)
 Season.create(year_start: 2013, year_end: 2014)
 Season.create(year_start: 2014, year_end: 2015)
+Season.create(year_start: 2015, year_end: 2016)
 
 puts "Creating teams..."
 

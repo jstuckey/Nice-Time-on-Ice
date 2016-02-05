@@ -53,7 +53,7 @@ class GameCSVImporter
 
   def log_failure(game)
     @failure_count += 1
-    log "Failed to create game #{game.errors.join(', ')}"
+    log "Failed to create game #{game.errors.to_a.join(",")}"
   end
 
   def log_results
