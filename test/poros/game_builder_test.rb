@@ -19,14 +19,26 @@ class GameBuilderTest < ActiveSupport::TestCase
     assert_equal @season, game.season
   end
 
-  test "should return a game that has an away team" do
-    data = GameBuilder.new(away_team_abbreviation: @team1.abbreviation)
+  test "should return a game that has an away team when given an abbreviation" do
+    data = GameBuilder.new(away_team: @team1.abbreviation)
     game = data.to_game
     assert_equal @team1, game.away_team
   end
 
-  test "should return a game that has a home team" do
-    data = GameBuilder.new(home_team_abbreviation: @team2.abbreviation)
+  test "should return a game that has a home team when given an abbreviation" do
+    data = GameBuilder.new(home_team: @team2.abbreviation)
+    game = data.to_game
+    assert_equal @team2, game.home_team
+  end
+
+  test "should return a game that has an away team when given a name" do
+    data = GameBuilder.new(away_team: @team1.name)
+    game = data.to_game
+    assert_equal @team1, game.away_team
+  end
+
+  test "should return a game that has a home team when given an name" do
+    data = GameBuilder.new(home_team: @team2.name)
     game = data.to_game
     assert_equal @team2, game.home_team
   end
@@ -82,8 +94,8 @@ class GameBuilderTest < ActiveSupport::TestCase
   test "should be able to save returned game if all data is supplied" do
     data = GameBuilder.new(year_start: "2014",
                            game_number: "2014020709",
-                           away_team_abbreviation: "PIT",
-                           home_team_abbreviation: "WSH",
+                           away_team: "PIT",
+                           home_team: "WSH",
                            date: "Jan 28, 2015",
                            is_playoffs: "false")
     game = data.to_game

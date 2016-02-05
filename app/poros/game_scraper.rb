@@ -70,8 +70,8 @@ class GameScraper
     {
       year_start: year_start,
       game_number: game_number,
-      away_team_abbreviation: away_team(row),
-      home_team_abbreviation: home_team(row),
+      away_team: away_team(row),
+      home_team: home_team(row),
       date: date,
       is_playoffs: playoffs?(game_number)
     }

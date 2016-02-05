@@ -3,8 +3,8 @@ class GameBuilder
 
   attribute :year_start, Integer
   attribute :game_number, Integer
-  attribute :away_team_abbreviation, String
-  attribute :home_team_abbreviation, String
+  attribute :away_team, String
+  attribute :home_team, String
   attribute :date, Date
   attribute :is_playoffs, Boolean
 
@@ -32,11 +32,15 @@ class GameBuilder
   end
 
   def set_away_team
-    game.away_team = Team.where(abbreviation: away_team_abbreviation).first
+    game.away_team =
+      Team.find_by_name(away_team) ||
+      Team.find_by_abbreviation(away_team)
   end
 
   def set_home_team
-    game.home_team = Team.where(abbreviation: home_team_abbreviation).first
+    game.home_team =
+      Team.find_by_name(home_team) ||
+      Team.find_by_abbreviation(home_team)
   end
 
   def set_game_number

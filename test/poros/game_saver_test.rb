@@ -52,8 +52,8 @@ class GameSaverTest < ActiveSupport::TestCase
    builder = GameBuilder.new
    builder.year_start = 2014
    builder.game_number = TEST_GAME_NUMBER
-   builder.away_team_abbreviation = "PIT"
-   builder.home_team_abbreviation = "WSH"
+   builder.away_team = "PIT"
+   builder.home_team = "WSH"
    builder.date = 1.day.ago
    builder.is_playoffs = false
    builder.to_game
