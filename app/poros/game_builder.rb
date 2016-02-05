@@ -19,12 +19,18 @@ class GameBuilder
   attr_accessor :game
 
   def set_game_attributes
+    fix_team_names
     set_season
     set_away_team
     set_home_team
     set_game_number
     set_date
     set_playoffs
+  end
+
+  def fix_team_names
+    self.away_team = away_team.tr("é", "e") if away_team.present?
+    self.home_team = home_team.tr("é", "e") if home_team.present?
   end
 
   def set_season

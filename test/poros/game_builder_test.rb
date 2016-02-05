@@ -43,6 +43,18 @@ class GameBuilderTest < ActiveSupport::TestCase
     assert_equal @team2, game.home_team
   end
 
+  test "should return a game when the away team name has special characters" do
+    data = GameBuilder.new(away_team: "Montréal Canadiens")
+    game = data.to_game
+    assert_equal teams(:habs), game.away_team
+  end
+
+  test "should return a game when the home team name has special characters" do
+    data = GameBuilder.new(home_team: "Montréal Canadiens")
+    game = data.to_game
+    assert_equal teams(:habs), game.home_team
+  end
+
   test "should return a game that has a game number" do
     data = GameBuilder.new(game_number: 2014020709)
     game = data.to_game
