@@ -60,6 +60,7 @@ class GameScraperTest < ActiveSupport::TestCase
     refute game.playoffs?
   end
 
+  # TODO: update fixture come playoff time
   test "playoff games" do
     skip("Needs a new fixture")
     date = Date.new(2015, 4, 27)
@@ -75,23 +76,6 @@ class GameScraperTest < ActiveSupport::TestCase
     assert_equal seasons(:fourteen), game.season
     assert_equal date, game.date
     assert game.playoffs?
-  end
-
-  test "winter classic" do
-    skip("Needs a new fixture")
-    date = Date.new(2015, 1, 1)
-    parser = ParserFake.new("winter_classic")
-    scraper = GameScraper.new(date: date, parser: parser)
-    games = scraper.call.games
-
-    assert_equal 2, games.count
-    game = games.first
-    assert_equal 2014020556, game.game_number
-    assert_equal teams(:blackhawks), game.away_team
-    assert_equal teams(:caps), game.home_team
-    assert_equal seasons(:fourteen), game.season
-    assert_equal date, game.date
-    refute game.playoffs?
   end
 
   test "all star game" do
