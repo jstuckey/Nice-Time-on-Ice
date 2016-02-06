@@ -13,8 +13,9 @@ class GameScraper
     @games = []
     scrape_website
     return self if no_games_scheduled?
-    return self unless games_table
+    return self unless game_rows
     parse_games
+    log_parsed_games
     self
   end
 
@@ -37,23 +38,31 @@ class GameScraper
   end
 
   def no_games_scheduled?
-    doc.css("#noGamesScheduled").present?
+    # If there are games for a given date, the
+    # first date div on the page will match
+    first_date_on_page = doc.css(".section-subheader").first
+    return true unless first_date_on_page.present?
+    first_date_on_page.text != date.strftime("%A, %b %-d")
   end
 
-  def games_table
-    @games_table ||= begin
+  def game_rows
+    # The games for a given date are in the first table
+    # on the page that has the 'day-table' class
+    @game_rows ||= begin
       tables = doc.css("table.day-table")
       return unless tables
-      tables.last.css("tbody tr")
+      tables.first.css("tbody tr")
     end
   end
 
   def parse_games
-    games_table.each do |row|
+    game_rows.each do |row|
       games << game_from_row(row)
     end
     games.compact!
+  end
 
+  def log_parsed_games
     message = "#{games.length} games found"
     puts message unless Rails.env.test?
     Rails.logger.info message
@@ -98,21 +107,19 @@ class GameScraper
   end
 
   def away_team(row)
-    # The away team abbreviation is contained in
-    # a rel attribute of the first <a> tag with
-    # a teamName class
-    anchors = row.css(".narrow-matchup__team a")
-    return unless anchors.present?
-    anchors.first.text
+    # The away team name is contained in a
+    # title attribute of an <a> tag
+    anchor = row.css(".away a").first
+    return unless anchor.present?
+    anchor.attribute("title").text
   end
 
   def home_team(row)
-    # The home team abbreviation is contained in
-    # a rel attribute of the last <a> tag with a
-    # teamName class
-    anchors = row.css(".narrow-matchup__team a")
-    return unless anchors.present?
-    anchors.last.text
+    # The home team name is contained in a
+    # title attribute of the last <a> tag
+    anchor = row.css(".home a").first
+    return unless anchor.present?
+    anchor.attribute("title").text
   end
 
   def playoffs?(game_number)

@@ -21,13 +21,13 @@ class GameScraperTest < ActiveSupport::TestCase
   end
 
   test "no games scheduled" do
+    date = Date.new(2014, 1, 26)
     parser = ParserFake.new("no_games")
-    scraper = GameScraper.new(parser: parser)
+    scraper = GameScraper.new(date: date, parser: parser)
     assert_equal [], scraper.call.games
   end
 
   test "regular season games in future" do
-    skip("Needs a new fixture")
     date = Date.new(2014, 11, 21)
     parser = ParserFake.new("regular_season_in_future")
     scraper = GameScraper.new(date: date, parser: parser)
@@ -44,7 +44,6 @@ class GameScraperTest < ActiveSupport::TestCase
   end
 
   test "regular season games in past" do
-    skip("Needs a new fixture")
     date = Date.new(2014, 11, 20)
     parser = ParserFake.new("regular_season_in_past")
     scraper = GameScraper.new(date: date, parser: parser)
@@ -60,9 +59,7 @@ class GameScraperTest < ActiveSupport::TestCase
     refute game.playoffs?
   end
 
-  # TODO: update fixture come playoff time
   test "playoff games" do
-    skip("Needs a new fixture")
     date = Date.new(2015, 4, 27)
     parser = ParserFake.new("playoffs")
     scraper = GameScraper.new(date: date, parser: parser)
@@ -79,9 +76,9 @@ class GameScraperTest < ActiveSupport::TestCase
   end
 
   test "all star game" do
-    skip("Needs a new fixture")
+    date = Date.new(2014, 1, 25)
     parser = ParserFake.new("all_star_game")
-    scraper = GameScraper.new(parser: parser)
+    scraper = GameScraper.new(date: date, parser: parser)
     assert_equal [], scraper.call.games
   end
 
