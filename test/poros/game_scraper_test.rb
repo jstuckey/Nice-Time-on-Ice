@@ -21,13 +21,13 @@ class GameScraperTest < ActiveSupport::TestCase
   end
 
   test "no games scheduled" do
+    date = Date.new(2014, 1, 26)
     parser = ParserFake.new("no_games")
-    scraper = GameScraper.new(parser: parser)
+    scraper = GameScraper.new(date: date, parser: parser)
     assert_equal [], scraper.call.games
   end
 
   test "regular season games in future" do
-    skip("Needs a new fixture")
     date = Date.new(2014, 11, 21)
     parser = ParserFake.new("regular_season_in_future")
     scraper = GameScraper.new(date: date, parser: parser)
@@ -44,7 +44,6 @@ class GameScraperTest < ActiveSupport::TestCase
   end
 
   test "regular season games in past" do
-    skip("Needs a new fixture")
     date = Date.new(2014, 11, 20)
     parser = ParserFake.new("regular_season_in_past")
     scraper = GameScraper.new(date: date, parser: parser)
@@ -61,7 +60,6 @@ class GameScraperTest < ActiveSupport::TestCase
   end
 
   test "playoff games" do
-    skip("Needs a new fixture")
     date = Date.new(2015, 4, 27)
     parser = ParserFake.new("playoffs")
     scraper = GameScraper.new(date: date, parser: parser)
@@ -77,27 +75,10 @@ class GameScraperTest < ActiveSupport::TestCase
     assert game.playoffs?
   end
 
-  test "winter classic" do
-    skip("Needs a new fixture")
-    date = Date.new(2015, 1, 1)
-    parser = ParserFake.new("winter_classic")
-    scraper = GameScraper.new(date: date, parser: parser)
-    games = scraper.call.games
-
-    assert_equal 2, games.count
-    game = games.first
-    assert_equal 2014020556, game.game_number
-    assert_equal teams(:blackhawks), game.away_team
-    assert_equal teams(:caps), game.home_team
-    assert_equal seasons(:fourteen), game.season
-    assert_equal date, game.date
-    refute game.playoffs?
-  end
-
   test "all star game" do
-    skip("Needs a new fixture")
+    date = Date.new(2014, 1, 25)
     parser = ParserFake.new("all_star_game")
-    scraper = GameScraper.new(parser: parser)
+    scraper = GameScraper.new(date: date, parser: parser)
     assert_equal [], scraper.call.games
   end
 

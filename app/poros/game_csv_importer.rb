@@ -32,8 +32,8 @@ class GameCSVImporter
   def extract_data(row)
     GameBuilder.new(year_start: row[HEADER_YEAR],
                     game_number: row[HEADER_GAME_NUMBER],
-                    away_team_abbreviation: row[HEADER_AWAY_TEAM],
-                    home_team_abbreviation: row[HEADER_HOME_TEAM],
+                    away_team: row[HEADER_AWAY_TEAM],
+                    home_team: row[HEADER_HOME_TEAM],
                     date: row[HEADER_GAME_DATE],
                     is_playoffs: row[HEADER_IS_PLAYOFFS])
   end
