@@ -1,6 +1,6 @@
 class RequestContext
 
-  attr_reader :team, :season, :game_type, :game, :game_order
+  attr_reader :team, :season, :game_type, :game, :game_order, :date
 
   def initialize(params = {})
     @team       = determine_team(params[:team])
@@ -8,6 +8,17 @@ class RequestContext
     @game_type  = determine_game_type(params[:game_type])
     @game_order = determine_game_order(params[:game_order])
     @game       = determine_game(params[:game])
+    @date       = params.fetch(:date, Date.current)
+  end
+
+  def cache_key
+    [team.abbreviation.downcase,
+     season.year_start,
+     game_type,
+     game_order,
+     game.game_number,
+     date.strftime("%Y_%m_%d")
+    ].join("_")
   end
 
   def to_hash

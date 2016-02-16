@@ -190,4 +190,21 @@ class RequestContextTest < ActiveSupport::TestCase
     }
     assert_equal expected, hash
   end
+
+  test "cache_key should combine all attributes in the context object" do
+    team = teams(:caps)
+    season = seasons(:fourteen)
+    game_type = "regular"
+    game_order = "asc"
+    game = games(:game_one)
+    date = Date.new(2015, 5, 15)
+
+    context = RequestContext.new(game_order: game_order,
+                                 team: team,
+                                 season: season,
+                                 game_type: game_type,
+                                 date: date)
+    expected = "wsh_2014_2_asc_2014021201_2015_05_15"
+    assert_equal expected, context.cache_key
+  end
 end
