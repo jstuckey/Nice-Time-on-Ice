@@ -7,97 +7,139 @@ class GameBuilderTest < ActiveSupport::TestCase
     @team2 = teams(:caps)
   end
 
-  test "should return a game that has a season" do
+  test "should accept year_start as a number" do
     data = GameBuilder.new(year_start: 2014)
     game = data.to_game
     assert_equal @season, game.season
   end
 
-  test "should return a game that has a season if given a string" do
+  test "should accept year_start as a string" do
     data = GameBuilder.new(year_start: "2014")
     game = data.to_game
     assert_equal @season, game.season
   end
 
-  test "should return a game that has an away team when given an abbreviation" do
+  test "should alias season to year_start as a number" do
+    data = GameBuilder.new(season: 2014)
+    game = data.to_game
+    assert_equal @season, game.season
+  end
+
+  test "should alias season to year_start as a string" do
+    data = GameBuilder.new(season: "2014")
+    game = data.to_game
+    assert_equal @season, game.season
+  end
+
+  test "should accept away_team as an abbreviation" do
     data = GameBuilder.new(away_team: @team1.abbreviation)
     game = data.to_game
     assert_equal @team1, game.away_team
   end
 
-  test "should return a game that has a home team when given an abbreviation" do
+  test "should accept home_team as an abbreviation" do
     data = GameBuilder.new(home_team: @team2.abbreviation)
     game = data.to_game
     assert_equal @team2, game.home_team
   end
 
-  test "should return a game that has an away team when given a name" do
+  test "should accept away_team as a name" do
     data = GameBuilder.new(away_team: @team1.name)
     game = data.to_game
     assert_equal @team1, game.away_team
   end
 
-  test "should return a game that has a home team when given an name" do
+  test "should accept home_team as a name" do
     data = GameBuilder.new(home_team: @team2.name)
     game = data.to_game
     assert_equal @team2, game.home_team
   end
 
-  test "should return a game when the away team name has special characters" do
+  test "should accept away_team as a name with special characters" do
     data = GameBuilder.new(away_team: "Montréal Canadiens")
     game = data.to_game
     assert_equal teams(:habs), game.away_team
   end
 
-  test "should return a game when the home team name has special characters" do
+  test "should accept home_team as a name with special characters" do
     data = GameBuilder.new(home_team: "Montréal Canadiens")
     game = data.to_game
     assert_equal teams(:habs), game.home_team
   end
 
-  test "should return a game that has a game number" do
+  test "should lias away to away_team as an abbreviation" do
+    data = GameBuilder.new(away: @team1.abbreviation)
+    game = data.to_game
+    assert_equal @team1, game.away_team
+  end
+
+  test "should alias home to home_team as an abbreviation" do
+    data = GameBuilder.new(home: @team2.abbreviation)
+    game = data.to_game
+    assert_equal @team2, game.home_team
+  end
+
+  test "should accept game_number as a number" do
     data = GameBuilder.new(game_number: 2014020709)
     game = data.to_game
     assert_equal 2014020709, game.game_number
   end
 
-  test "should return a game that has a game number if given a string" do
+  test "should accept game_number as a string" do
     data = GameBuilder.new(game_number: "2014020709")
     game = data.to_game
     assert_equal 2014020709, game.game_number
   end
 
-  test "should return a game that has a date" do
+  test "should alias number to game_number as a number" do
+    data = GameBuilder.new(number: 2014020709)
+    game = data.to_game
+    assert_equal 2014020709, game.game_number
+  end
+
+  test "should alias number to game_number as a string" do
+    data = GameBuilder.new(number: "2014020709")
+    game = data.to_game
+    assert_equal 2014020709, game.game_number
+  end
+
+  test "should accept a date" do
     data = GameBuilder.new(date: Date.new(2015, 1, 28))
     game = data.to_game
     assert_equal Date.new(2015, 1, 28), game.date
   end
 
-  test "should return a game that has a date when given a string" do
+  test "should accept a date when given a string" do
     data = GameBuilder.new(date: "Jan 28, 2015")
     game = data.to_game
     assert_equal Date.new(2015, 1, 28), game.date
   end
 
-  test "should return a game that is a regular season game" do
+  test "should default playoffs? to false" do
+    data = GameBuilder.new
+    game = data.to_game
+    refute game.playoffs?
+  end
+
+  test "should accept is_playoffs as a falsey boolean" do
     data = GameBuilder.new(is_playoffs: false)
     game = data.to_game
     refute game.playoffs?
   end
 
-  test "should return a game that is a regular season game when given a string" do
+  test "should accept is_playoffs as a falsey string" do
     data = GameBuilder.new(is_playoffs: "false")
     game = data.to_game
     refute game.playoffs?
   end
 
-  test "should return a game that is a playoff game" do
+  test "should accept is_playoffs as a truthy boolean" do
     data = GameBuilder.new(is_playoffs: true)
     game = data.to_game
     assert game.playoffs?
   end
 
-  test "should return a game that is a playoff game when given a string" do
+  test "should accept is_playoffs as a truthy string" do
     data = GameBuilder.new(is_playoffs: "true")
     game = data.to_game
     assert game.playoffs?

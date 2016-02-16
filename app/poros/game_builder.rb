@@ -1,12 +1,18 @@
 class GameBuilder
   include Virtus.model
+  include AliasAttribute
 
   attribute :year_start, Integer
-  attribute :game_number, Integer
   attribute :away_team, String
   attribute :home_team, String
+  attribute :game_number, Integer
   attribute :date, Date
   attribute :is_playoffs, Boolean
+
+  alias_attribute :season, :year_start
+  alias_attribute :away, :away_team
+  alias_attribute :home, :home_team
+  alias_attribute :number, :game_number
 
   def to_game
     self.game = Game.new
@@ -60,5 +66,4 @@ class GameBuilder
   def set_playoffs
     game.playoffs = is_playoffs
   end
-
 end
