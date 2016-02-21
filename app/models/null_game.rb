@@ -1,4 +1,6 @@
 class NullGame
+  include Falsey
+
   fields = %w(
     id
     game_number
@@ -15,13 +17,11 @@ class NullGame
     define_method(f) { BlackHole.new }
   end
 
-  class BlackHole
+  class BlackHole < BasicObject
+    include ::Falsey
+
     def method_missing(*)
       self
-    end
-
-    def to_s
-      ""
     end
   end
   private_constant :BlackHole
