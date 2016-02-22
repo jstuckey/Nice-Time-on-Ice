@@ -71,7 +71,8 @@ class RequestContext
   def determine_game(game)
     game_by_id(game) ||
       game_by_game_number(game) ||
-      default_game
+      most_recent_game_in_season ||
+      null_game
   end
 
   def game_by_id(possible_id)
@@ -82,10 +83,14 @@ class RequestContext
     Game.where(game_number: possible_game_number).first
   end
 
-  def default_game
+  def most_recent_game_in_season
     Game.where(season: season, playoffs: game_type == 3)
         .where("away_team_id = ? OR home_team_id = ?", team.id, team.id)
         .order(date: game_order).first
+  end
+
+  def null_game
+    NullGame.new
   end
 
   def determine_game_order(order)
