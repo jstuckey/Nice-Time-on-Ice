@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151105001048) do
+ActiveRecord::Schema.define(version: 20160220222109) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,6 +51,13 @@ ActiveRecord::Schema.define(version: 20151105001048) do
 
   add_index "seasons", ["year_end"], name: "index_seasons_on_year_end", using: :btree
   add_index "seasons", ["year_start"], name: "index_seasons_on_year_start", using: :btree
+
+  create_table "stats", force: :cascade do |t|
+    t.string   "request_params"
+    t.string   "request_context"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
 
   create_table "teams", force: :cascade do |t|
     t.string   "name"
