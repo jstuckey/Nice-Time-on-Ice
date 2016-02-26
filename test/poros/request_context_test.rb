@@ -20,16 +20,6 @@ class RequestContextTest < ActiveSupport::TestCase
     assert_equal team, context.team
   end
 
-  test "should return a null object if team did not make playoffs" do
-    team = teams(:caps)
-    season = seasons(:thirteen)
-    game_type = "playoffs"
-
-    context = RequestContext.new(team: team, season: season, game_type: game_type)
-    assert_not_nil context.game
-    assert_kind_of NullGame, context.game
-  end
-
   test "should default to the Caps' team object" do
     team = teams(:caps)
     context = RequestContext.new
@@ -152,6 +142,16 @@ class RequestContextTest < ActiveSupport::TestCase
 
     context = RequestContext.new(team: team, season: season)
     assert_equal game, context.game
+  end
+
+  test "should return a null object if team did not make playoffs" do
+    team = teams(:caps)
+    season = seasons(:thirteen)
+    game_type = "playoffs"
+
+    context = RequestContext.new(team: team, season: season, game_type: game_type)
+    assert_not_nil context.game
+    assert_kind_of NullGame, context.game
   end
 
   test "should default to the Caps' most recent regular season game" do
