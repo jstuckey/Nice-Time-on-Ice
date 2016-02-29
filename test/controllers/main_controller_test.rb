@@ -23,10 +23,4 @@ class MainControllerTest < ActionController::TestCase
     get :index
     assert_equal "SJS", assigns(:context).team.abbreviation
   end
-
-  test "should create a stats record" do
-    assert_difference "Stat.count" do
-      get :index, team: "WSH"
-    end
-  end
 end
