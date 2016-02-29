@@ -2,7 +2,6 @@ class MainController < ApplicationController
 
   before_filter :read_team_cookie
   after_filter :write_team_cookie
-  after_filter :add_stats
 
   def index
     @context               = RequestContext.new(params)
@@ -25,8 +24,4 @@ class MainController < ApplicationController
     cookies[:team] = @context.team.abbreviation
   end
 
-  def add_stats
-    Stat.create(request_params: params.symbolize_keys,
-                request_context: @context.to_hash)
-  end
 end
