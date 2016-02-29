@@ -1,3 +1,4 @@
+<% cache(@context.cache_key) do %>
 <div id="main">
   <div class="column">
     <%= render "teams" %>
@@ -14,3 +15,4 @@
     <%= render "external_game_links" %>
   </div>
 </div>
+<% end %>

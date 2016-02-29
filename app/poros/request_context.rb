@@ -11,16 +11,6 @@ class RequestContext
     @date       = params.fetch(:date, Date.current)
   end
 
-  def cache_key
-    [team.abbreviation.downcase,
-     season.year_start,
-     game_type,
-     game_order,
-     game.game_number,
-     date.strftime("%Y_%m_%d")
-    ].join("_")
-  end
-
   def to_hash
     {
       team: team.abbreviation,
