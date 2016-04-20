@@ -96,7 +96,13 @@ class RequestContextTest < ActiveSupport::TestCase
     assert_equal 3, context.game_type
   end
 
-  test "should default to the regular season game type" do
+  test "should default game type to playoffs if any playoff games exist in the seaon" do
+    context = RequestContext.new
+    assert_equal 3, context.game_type
+  end
+
+  test "should default game type to the regular season" do
+    destroy_playoff_fixtures
     context = RequestContext.new
     assert_equal 2, context.game_type
   end
@@ -139,7 +145,17 @@ class RequestContextTest < ActiveSupport::TestCase
     assert_equal game, context.game
   end
 
+  test "should default to the most recent game for team in a season's playoffs if game type not specified" do
+    team = teams(:caps)
+    season = seasons(:fourteen)
+    game = games(:game_three)
+
+    context = RequestContext.new(team: team, season: season)
+    assert_equal game, context.game
+  end
+
   test "should default to the Caps' most recent regular season game" do
+    destroy_playoff_fixtures
     game = games(:game_two)
     context = RequestContext.new
     assert_equal game, context.game
@@ -189,5 +205,11 @@ class RequestContextTest < ActiveSupport::TestCase
       game_order: "desc"
     }
     assert_equal expected, hash
+  end
+
+  private
+
+  def destroy_playoff_fixtures
+    Game.where(playoffs: true).destroy_all
   end
 end

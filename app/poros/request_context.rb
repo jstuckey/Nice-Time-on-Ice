@@ -69,6 +69,14 @@ class RequestContext
   end
 
   def determine_game_type(type)
+    if type.present?
+      coerce_game_type(type)
+    else
+      default_game_type
+    end
+  end
+
+  def coerce_game_type(type)
     if type.to_s.downcase =~ /playoff/
       3
     elsif type.to_i == 3
@@ -76,6 +84,18 @@ class RequestContext
     else
       2
     end
+  end
+
+  def default_game_type
+    if playoffs_have_started?
+      3
+    else
+      2
+    end
+  end
+
+  def playoffs_have_started?
+    Game.where(season: season, playoffs: true).count > 0
   end
 
   def determine_game(game)
