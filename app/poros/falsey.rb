@@ -3,10 +3,6 @@ module Falsey
     ""
   end
 
-  def to_str
-    ""
-  end
-
   def present?
     false
   end

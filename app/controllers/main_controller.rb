@@ -11,7 +11,6 @@ class MainController < ApplicationController
     @season_link_presenter = ExternalLinkPresenter.new(@context, :season)
     @game_link_presenter   = ExternalLinkPresenter.new(@context, :game)
     @misc_link_presenter   = ExternalLinkPresenter.new(@context, :misc)
-    @cache_keys            = CacheKeys.new(@context)
   end
 
   private
