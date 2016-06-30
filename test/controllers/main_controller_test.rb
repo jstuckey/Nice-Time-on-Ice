@@ -11,6 +11,7 @@ class MainControllerTest < ActionController::TestCase
     assert_not_nil assigns(:season_link_presenter)
     assert_not_nil assigns(:game_link_presenter)
     assert_not_nil assigns(:misc_link_presenter)
+    assert_not_nil assigns(:cache_key)
   end
 
   test "should store last used team in cookies" do
