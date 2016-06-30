@@ -1,3 +1,4 @@
+<% cache @cache_keys.game_key do %>
 <section id="games">
   <h3>
     <a href="<%= @game_presenter.order_href %>" class="sort">
@@ -22,3 +23,4 @@
     </ol>
   </div>
 </section>
+<% end %>

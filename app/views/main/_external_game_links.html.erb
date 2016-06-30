@@ -1,3 +1,4 @@
+<% cache @cache_keys.external_game_link_key do %>
 <section id="game-links">
   <h3>
   <span id="game-number"><%= @context.game.try(:game_number) %></span>
@@ -16,3 +17,4 @@
   <% end %>
   </ul>
 </section>
+<% end %>

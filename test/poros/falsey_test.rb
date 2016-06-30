@@ -8,6 +8,12 @@ class FalseyTest < ActiveSupport::TestCase
     assert_equal "", object.to_s
   end
 
+  test "should return empty string from  to_str" do
+    object = Object.new
+    object.extend(Falsey)
+    assert_equal "", object.to_str
+  end
+
   test "should return false from  present?" do
     object = Object.new
     object.extend(Falsey)
