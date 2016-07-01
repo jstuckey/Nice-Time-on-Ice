@@ -111,11 +111,5 @@ module Links
         team.name.split(" ").last.downcase
       end
     end
-
-    private
-
-    def team_where_clause
-      [%("away_team_id" = ? OR "home_team_id" = ?), team, team]
-    end
   end
 end
