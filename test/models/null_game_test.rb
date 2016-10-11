@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class NullGameHelper < ActiveSupport::TestCase
+class NullGameTest < ActiveSupport::TestCase
   test "should respond to id" do
     assert_respond_to NullGame.new, :id
   end
