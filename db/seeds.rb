@@ -5,6 +5,7 @@ Season.create(year_start: 2012, year_end: 2013)
 Season.create(year_start: 2013, year_end: 2014)
 Season.create(year_start: 2014, year_end: 2015)
 Season.create(year_start: 2015, year_end: 2016)
+Season.create(year_start: 2016, year_end: 2017)
 
 puts "Creating teams..."
 
@@ -52,4 +53,3 @@ puts "Creating games..."
 
 CSV_PATH = File.join(Rails.root, 'db', 'game_dump.csv')
 GameCSVImporter.new(CSV_PATH).import
-
