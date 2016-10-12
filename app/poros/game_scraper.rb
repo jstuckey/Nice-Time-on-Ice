@@ -5,7 +5,7 @@ class GameScraper
   def initialize(date: nil, parser: nil)
     @date = date || Date.today
     @season = season_from_date(@date)
-    @url = "https://www.nhl.com/schedule/#{@date.strftime("%Y-%m-%d")}"
+    @url = "https://www.nhl.com/schedule/-/ET?lazyloadStart=#{@date.strftime("%Y-%m-%d")}"
     @parser = parser || NhlParser.new(@url)
   end
 

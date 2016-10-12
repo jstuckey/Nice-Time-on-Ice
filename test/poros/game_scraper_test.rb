@@ -15,7 +15,7 @@ class GameScraperTest < ActiveSupport::TestCase
     date = Date.new(2015, 5, 15)
     scraper = GameScraper.new(date: date)
 
-    expected = "https://www.nhl.com/schedule/2015-05-15"
+    expected = "https://www.nhl.com/schedule/-/ET?lazyloadStart=2015-05-15"
 
     assert_equal expected, scraper.url
   end
