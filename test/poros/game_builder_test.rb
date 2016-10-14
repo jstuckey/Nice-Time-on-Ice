@@ -67,7 +67,7 @@ class GameBuilderTest < ActiveSupport::TestCase
     assert_equal teams(:habs), game.home_team
   end
 
-  test "should lias away to away_team as an abbreviation" do
+  test "should alias away to away_team as an abbreviation" do
     data = GameBuilder.new(away: @team1.abbreviation)
     game = data.to_game
     assert_equal @team1, game.away_team

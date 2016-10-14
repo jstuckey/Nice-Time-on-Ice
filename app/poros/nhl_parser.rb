@@ -9,7 +9,7 @@ class NhlParser
   end
 
   def call
-    Nokogiri::HTML(open(url))
+    Nokogiri::HTML(open(url), nil, "UTF-8")
   end
 
 end
