@@ -7,7 +7,7 @@ class Links::Season::HvTeamDashTest < ActiveSupport::TestCase
   end
 
   test "#description" do
-    assert_equal "Team Dashboard", Links::Season::HvTeamDash.new.description
+    assert_equal "Team Overview", Links::Season::HvTeamDash.new.description
   end
 
   test "#url" do
@@ -15,7 +15,7 @@ class Links::Season::HvTeamDashTest < ActiveSupport::TestCase
     team = teams(:caps)
     game_type = "regular"
 
-    url = "http://hockeyviz.com/teamHtml/teamDash-1415-WSH.html"
+    url = "http://hockeyviz.com/team/WSH/1415"
 
     link = Links::Season::HvTeamDash.new(team: team, season: season, game_type: game_type)
     assert_equal url, link.url
