@@ -7,15 +7,14 @@ class Links::Season::HvTeamDash < Links::Base
   end
 
   def description
-    "Team Dashboard"
+    "Team Overview"
   end
 
   def url
-   "http://hockeyviz.com/teamHtml/teamDash-" \
-   "#{season.year_start.to_s[2, 2]}" \
-   "#{season.year_end.to_s[2, 2]}-" \
-   "#{alternate_team_abbreviation}" \
-   ".html"
+   "http://hockeyviz.com/team/" \
+     "#{team.abbreviation}/" \
+     "#{season.year_start.to_s[2, 2]}" \
+     "#{season.year_end.to_s[2, 2]}"
   end
 
   def group
