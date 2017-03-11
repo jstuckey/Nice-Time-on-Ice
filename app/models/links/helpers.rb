@@ -101,7 +101,7 @@ module Links
     end
 
     def full_team_name
-      team.name.downcase.tr(" ", "-")
+      team.name.downcase.tr(" ", "-").tr(".", "")
     end
 
     def team_nickname

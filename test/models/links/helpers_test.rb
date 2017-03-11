@@ -223,6 +223,11 @@ class Links::HelpersTest < ActiveSupport::TestCase
     assert_equal "new-york-islanders", full_team_name
   end
 
+  test "#full_team_name should remove periods" do
+    self.team = teams(:blues)
+    assert_equal "st-louis-blues", full_team_name
+  end
+
   test "#team_nickname should return name without the city" do
     self.team = teams(:caps)
     assert_equal "capitals", team_nickname
