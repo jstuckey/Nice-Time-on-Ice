@@ -1,5 +1,4 @@
-class Links::Season::SportracPayroll < Links::Base
-
+class Links::Misc::SportracPayroll < Links::Base
   include Links::Helpers
 
   def site_name
@@ -22,5 +21,4 @@ class Links::Season::SportracPayroll < Links::Base
   def position
     0
   end
-
 end
