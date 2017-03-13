@@ -1,5 +1,4 @@
 class Links::Misc::PucklyticsSuperWowy < Links::Base
-
   def site_name
     "Pucklytics"
   end
@@ -21,6 +20,6 @@ class Links::Misc::PucklyticsSuperWowy < Links::Base
   end
 
   def position
-    6
+    3
   end
 end

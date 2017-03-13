@@ -26,7 +26,7 @@ class Links::Misc::PucklyticsSuperWowyTest < ActiveSupport::TestCase
   end
 
   test "#position" do
-    assert_equal 6, Links::Misc::PucklyticsSuperWowy.new.position
+    assert_equal 3, Links::Misc::PucklyticsSuperWowy.new.position
   end
 
 end

@@ -1,14 +1,14 @@
-class Links::Misc::PucklyticsTeamStats < Links::Base
+class Links::Misc::PucklyticsSkaterStats < Links::Base
   def site_name
     "Pucklytics"
   end
 
   def description
-    "Team Stats"
+    "Skater Stats"
   end
 
   def url
-    "https://puckalytics.com/#/teams?" \
+    "https://puckalytics.com/#/skaters?" \
       "season=#{season.year_start}" \
       "#{season.year_end.to_s[2, 2]}"
   end
@@ -18,6 +18,6 @@ class Links::Misc::PucklyticsTeamStats < Links::Base
   end
 
   def position
-    2
+    0
   end
 end
