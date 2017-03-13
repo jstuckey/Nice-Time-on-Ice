@@ -1,5 +1,4 @@
 class Links::Misc::PucklyticsGoalieStats < Links::Base
-
   def site_name
     "Pucklytics"
   end
@@ -9,7 +8,9 @@ class Links::Misc::PucklyticsGoalieStats < Links::Base
   end
 
   def url
-    "http://puckalytics.com/goaliestats.html"
+    "https://puckalytics.com/#/goalies?" \
+      "season=#{season.year_start}" \
+      "#{season.year_end.to_s[2, 2]}"
   end
 
   def group
@@ -17,7 +18,6 @@ class Links::Misc::PucklyticsGoalieStats < Links::Base
   end
 
   def position
-    4
+    1
   end
-
 end

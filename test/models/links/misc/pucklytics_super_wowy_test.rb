@@ -15,7 +15,7 @@ class Links::Misc::PucklyticsSuperWowyTest < ActiveSupport::TestCase
     team = teams(:caps)
     game_type = "regular"
 
-    url = "http://puckalytics.com/superwowy.html"
+    url = "https://puckalytics.com/#/SuperWOWY?startyear=2014&startmonth=9&startday=1&endyear=2015&endmonth=4&endday=30&situation=5v5"
 
     link = Links::Misc::PucklyticsSuperWowy.new(team: team, season: season, game_type: game_type)
     assert_equal url, link.url
@@ -26,7 +26,7 @@ class Links::Misc::PucklyticsSuperWowyTest < ActiveSupport::TestCase
   end
 
   test "#position" do
-    assert_equal 6, Links::Misc::PucklyticsSuperWowy.new.position
+    assert_equal 3, Links::Misc::PucklyticsSuperWowy.new.position
   end
 
 end

@@ -1,5 +1,4 @@
 class Links::Misc::PucklyticsSuperWowy < Links::Base
-
   def site_name
     "Pucklytics"
   end
@@ -9,7 +8,11 @@ class Links::Misc::PucklyticsSuperWowy < Links::Base
   end
 
   def url
-    "http://puckalytics.com/superwowy.html"
+    "https://puckalytics.com/#/SuperWOWY?" \
+      "startyear=#{season.year_start}&" \
+      "startmonth=9&startday=1" \
+      "&endyear=#{season.year_end}&" \
+      "endmonth=4&endday=30&situation=5v5"
   end
 
   def group
@@ -17,7 +20,6 @@ class Links::Misc::PucklyticsSuperWowy < Links::Base
   end
 
   def position
-    6
+    3
   end
-
 end

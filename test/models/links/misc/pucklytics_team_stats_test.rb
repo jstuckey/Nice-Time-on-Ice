@@ -15,7 +15,7 @@ class Links::Misc::PucklyticsTeamStatsTest < ActiveSupport::TestCase
     team = teams(:caps)
     game_type = "regular"
 
-    url = "http://puckalytics.com/teamstats.html"
+    url = "https://puckalytics.com/#/teams?season=201415"
 
     link = Links::Misc::PucklyticsTeamStats.new(team: team, season: season, game_type: game_type)
     assert_equal url, link.url
@@ -26,7 +26,7 @@ class Links::Misc::PucklyticsTeamStatsTest < ActiveSupport::TestCase
   end
 
   test "#position" do
-    assert_equal 5, Links::Misc::PucklyticsTeamStats.new.position
+    assert_equal 2, Links::Misc::PucklyticsTeamStats.new.position
   end
 
 end
