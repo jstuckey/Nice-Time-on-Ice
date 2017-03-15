@@ -23,7 +23,7 @@ class Links::Game::NstGameStatsTest < ActiveSupport::TestCase
   end
 
   test "#group" do
-    assert_equal 4, Links::Game::NstGameStats.new.group
+    assert_equal 3, Links::Game::NstGameStats.new.group
   end
 
   test "#position" do
