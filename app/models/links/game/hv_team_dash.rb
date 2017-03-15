@@ -1,4 +1,4 @@
-class Links::Season::HvTeamDash < Links::Base
+class Links::Game::HvTeamDash < Links::Base
 
   include Links::Helpers
 
