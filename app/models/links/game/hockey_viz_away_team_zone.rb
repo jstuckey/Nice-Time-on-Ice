@@ -17,7 +17,7 @@ class Links::Game::HockeyVizAwayTeamZone < Links::Base
   end
 
   def position
-    8
+    9
   end
 
 end

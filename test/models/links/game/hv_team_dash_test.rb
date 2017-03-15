@@ -22,7 +22,7 @@ class Links::Game::HvTeamDashTest < ActiveSupport::TestCase
   end
 
   test "#group" do
-    assert_equal 10, Links::Game::HvTeamDash.new.group
+    assert_equal 4, Links::Game::HvTeamDash.new.group
   end
 
   test "#position" do

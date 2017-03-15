@@ -18,7 +18,7 @@ class Links::Game::HvTeamDash < Links::Base
   end
 
   def group
-    10
+    4
   end
 
   def position
