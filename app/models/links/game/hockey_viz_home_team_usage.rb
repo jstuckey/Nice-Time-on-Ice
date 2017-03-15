@@ -17,7 +17,7 @@ class Links::Game::HockeyVizHomeTeamUsage < Links::Base
   end
 
   def position
-    5
+    6
   end
 
 end

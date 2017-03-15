@@ -27,7 +27,7 @@ class Links::Game::HockeyVizMatchupsTest < ActiveSupport::TestCase
   end
 
   test "#position" do
-    assert_equal 4, Links::Game::HockeyVizMatchups.new.position
+    assert_equal 5, Links::Game::HockeyVizMatchups.new.position
   end
 
 end

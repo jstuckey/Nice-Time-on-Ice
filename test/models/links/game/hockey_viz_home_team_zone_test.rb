@@ -27,7 +27,7 @@ class Links::Game::HockeyVizHomeTeamZoneTest < ActiveSupport::TestCase
   end
 
   test "#position" do
-    assert_equal 7, Links::Game::HockeyVizHomeTeamZone.new.position
+    assert_equal 8, Links::Game::HockeyVizHomeTeamZone.new.position
   end
 
 end

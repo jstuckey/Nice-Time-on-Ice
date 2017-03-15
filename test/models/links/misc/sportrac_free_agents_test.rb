@@ -26,7 +26,7 @@ class Links::Misc::SportracFreeAgentsTest < ActiveSupport::TestCase
   end
 
   test "#position" do
-    assert_equal 1, Links::Misc::SportracFreeAgents.new.position
+    assert_equal 2, Links::Misc::SportracFreeAgents.new.position
   end
 
 end

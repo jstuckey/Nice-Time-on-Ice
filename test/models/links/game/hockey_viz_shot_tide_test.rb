@@ -27,7 +27,7 @@ class Links::Game::HockeyVizShotTideTest < ActiveSupport::TestCase
   end
 
   test "#position" do
-    assert_equal 2, Links::Game::HockeyVizShotTide.new.position
+    assert_equal 3, Links::Game::HockeyVizShotTide.new.position
   end
 
 end

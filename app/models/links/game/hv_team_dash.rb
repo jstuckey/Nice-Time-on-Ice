@@ -1,4 +1,4 @@
-class Links::Season::HvTeamDash < Links::Base
+class Links::Game::HvTeamDash < Links::Base
 
   include Links::Helpers
 
@@ -18,7 +18,7 @@ class Links::Season::HvTeamDash < Links::Base
   end
 
   def group
-    10
+    4
   end
 
   def position

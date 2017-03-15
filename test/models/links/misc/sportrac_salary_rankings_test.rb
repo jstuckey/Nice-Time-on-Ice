@@ -26,7 +26,7 @@ class Links::Misc::SportracSalaryRankingsTest < ActiveSupport::TestCase
   end
 
   test "#position" do
-    assert_equal 0, Links::Misc::SportracSalaryRankings.new.position
+    assert_equal 1, Links::Misc::SportracSalaryRankings.new.position
   end
 
 end

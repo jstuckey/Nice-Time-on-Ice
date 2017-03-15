@@ -26,7 +26,7 @@ class Links::Misc::SportracTransactionsTest < ActiveSupport::TestCase
   end
 
   test "#position" do
-    assert_equal 2, Links::Misc::SportracTransactions.new.position
+    assert_equal 3, Links::Misc::SportracTransactions.new.position
   end
 
 end

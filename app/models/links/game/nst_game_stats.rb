@@ -16,7 +16,7 @@ class Links::Game::NstGameStats < Links::Base
   end
 
   def group
-    4
+    3
   end
 
   def position

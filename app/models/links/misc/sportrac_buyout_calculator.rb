@@ -17,7 +17,7 @@ class Links::Misc::SportracBuyoutCalculator < Links::Base
   end
 
   def position
-    3
+    4
   end
 
 end

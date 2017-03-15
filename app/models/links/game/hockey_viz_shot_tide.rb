@@ -17,7 +17,7 @@ class Links::Game::HockeyVizShotTide < Links::Base
   end
 
   def position
-    2
+    3
   end
 
 end

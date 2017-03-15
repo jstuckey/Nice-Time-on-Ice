@@ -17,7 +17,7 @@ class Links::Game::HockeyVizMatchups < Links::Base
   end
 
   def position
-    4
+    5
   end
 
 end
