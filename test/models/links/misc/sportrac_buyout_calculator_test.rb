@@ -26,7 +26,7 @@ class Links::Misc::SportracBuyoutCalculatorTest < ActiveSupport::TestCase
   end
 
   test "#position" do
-    assert_equal 3, Links::Misc::SportracBuyoutCalculator.new.position
+    assert_equal 4, Links::Misc::SportracBuyoutCalculator.new.position
   end
 
 end

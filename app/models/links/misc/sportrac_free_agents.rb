@@ -17,7 +17,7 @@ class Links::Misc::SportracFreeAgents < Links::Base
   end
 
   def position
-    1
+    2
   end
 
 end

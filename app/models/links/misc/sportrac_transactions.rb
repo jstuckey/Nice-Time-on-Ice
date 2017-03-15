@@ -17,7 +17,7 @@ class Links::Misc::SportracTransactions < Links::Base
   end
 
   def position
-    2
+    3
   end
 
 end

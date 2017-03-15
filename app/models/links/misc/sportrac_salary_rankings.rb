@@ -17,7 +17,7 @@ class Links::Misc::SportracSalaryRankings < Links::Base
   end
 
   def position
-    0
+    1
   end
 
 end
