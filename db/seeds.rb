@@ -6,6 +6,7 @@ Season.create(year_start: 2013, year_end: 2014)
 Season.create(year_start: 2014, year_end: 2015)
 Season.create(year_start: 2015, year_end: 2016)
 Season.create(year_start: 2016, year_end: 2017)
+Season.create(year_start: 2017, year_end: 2018)
 
 puts "Creating teams..."
 
@@ -37,6 +38,7 @@ Team.create(name: "St. Louis Blues",       abbreviation: "STL")
 Team.create(name: "Tampa Bay Lightning",   abbreviation: "TBL")
 Team.create(name: "Toronto Maple Leafs",   abbreviation: "TOR")
 Team.create(name: "Vancouver Canucks",     abbreviation: "VAN")
+Team.create(name: "Vegas Golden Knights",  abbreviation: "VGK")
 Team.create(name: "Washington Capitals",   abbreviation: "WSH")
 Team.create(name: "Winnipeg Jets",         abbreviation: "WPG")
 
