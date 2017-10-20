@@ -1,5 +1,4 @@
 class SeasonPresenter
-
   include ActionView::Helpers::UrlHelper
 
   def initialize(context)
@@ -72,5 +71,4 @@ class SeasonPresenter
     index += 1 if context.game_type == 3
     index
   end
-
 end

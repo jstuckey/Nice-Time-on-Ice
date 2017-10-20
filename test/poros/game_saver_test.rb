@@ -1,7 +1,6 @@
 require 'test_helper'
 
 class GameSaverTest < ActiveSupport::TestCase
-
   test "should save game objects to database" do
     game = build_game
 
@@ -58,5 +57,4 @@ class GameSaverTest < ActiveSupport::TestCase
    builder.is_playoffs = false
    builder.to_game
   end
-
 end

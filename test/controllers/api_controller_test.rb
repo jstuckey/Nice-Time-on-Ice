@@ -1,7 +1,6 @@
 require 'test_helper'
 
 class ApiControllerTest < ActionController::TestCase
-
   test "index should return html page" do
     get :index
     assert_response :success
@@ -175,5 +174,4 @@ class ApiControllerTest < ActionController::TestCase
     body = JSON.parse(response.body)
     assert_equal expected, body
   end
-
 end

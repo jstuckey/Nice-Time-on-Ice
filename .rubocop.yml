@@ -4,8 +4,6 @@ Style/Documentation:
 Style/StringLiterals:
   Enabled: false
 
-Style/EmptyLinesAroundClassBody:
-  Enabled: false
 
 Style/ClassAndModuleChildren:
   Enabled: false

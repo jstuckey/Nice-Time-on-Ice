@@ -1,7 +1,6 @@
 require 'test_helper'
 
 class GameInspectorTest < ActiveSupport::TestCase
-
   test "should find missing regular season game" do
     Game.destroy_all
     create_game(2014020001)

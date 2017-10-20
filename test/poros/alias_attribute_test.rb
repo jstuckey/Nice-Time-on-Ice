@@ -1,7 +1,6 @@
 require 'test_helper'
 
 class AliasAttributeTest < ActiveSupport::TestCase
-
   attr_accessor :foo
 
   test "should respond to new attribute" do
