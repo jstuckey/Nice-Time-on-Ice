@@ -32,7 +32,7 @@ class ApiControllerTest < ActionController::TestCase
   end
 
   test "should get api/seasons/:season" do
-    get :season, season: 20142015
+    get :season, params: { season: 20142015 }
     assert_response :success
 
     expected = { "seasonID" => "20142015" }
@@ -41,7 +41,7 @@ class ApiControllerTest < ActionController::TestCase
   end
 
   test "should get api/seasons/:season/games" do
-    get :season_games, season: 20142015
+    get :season_games, params: { season: 20142015 }
     assert_response :success
 
     expected = [
@@ -67,7 +67,7 @@ class ApiControllerTest < ActionController::TestCase
   end
 
   test "should get api/seasons/:season/games/:game" do
-    get :season_game, season: 20142015, game: 2014021201
+    get :season_game, params: { season: 20142015, game: 2014021201 }
     assert_response :success
 
     expected = {
@@ -83,7 +83,7 @@ class ApiControllerTest < ActionController::TestCase
   end
 
   test "should get api/seasons/:season/games/:game/links" do
-    get :season_game_links, season: 20142015, game: 2014021201
+    get :season_game_links, params: { season: 20142015, game: 2014021201 }
     assert_response :success
   end
 
@@ -103,7 +103,7 @@ class ApiControllerTest < ActionController::TestCase
     Team.destroy_all
     Team.create(name: "Caps", abbreviation: "WSH")
 
-    get :team, team: "WSH"
+    get :team, params: { team: "WSH" }
     assert_response :success
 
     expected = { "name" => "Caps", "teamID" => "WSH" }
@@ -112,7 +112,7 @@ class ApiControllerTest < ActionController::TestCase
   end
 
   test "should get api/teams/:team/seasons" do
-    get :team_seasons, team: "WSH"
+    get :team_seasons, params: { team: "WSH" }
     assert_response :success
 
     expected = [{ "seasonID" => "20132014" }, { "seasonID" => "20142015" }]
@@ -121,7 +121,7 @@ class ApiControllerTest < ActionController::TestCase
   end
 
   test "should get api/teams/:team/seasons/:season" do
-    get :team_season, team: "WSH", season: 20142015
+    get :team_season, params: { team: "WSH", season: 20142015 }
     assert_response :success
 
     expected = { "seasonID" => "20142015" }
@@ -130,7 +130,7 @@ class ApiControllerTest < ActionController::TestCase
   end
 
   test "should get api/teams/:id/seasons/:id/links" do
-    get :team_season_links, team: "WSH", season: 20142015
+    get :team_season_links, params: { team: "WSH", season: 20142015 }
     assert_response :success
   end
 
@@ -161,7 +161,7 @@ class ApiControllerTest < ActionController::TestCase
   end
 
   test "should get api/games/:game" do
-    get :game, game: 2014021201
+    get :game, params: { game: 2014021201 }
     assert_response :success
 
     expected = {

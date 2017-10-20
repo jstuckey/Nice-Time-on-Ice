@@ -15,7 +15,7 @@ class MainControllerTest < ActionController::TestCase
   end
 
   test "should store last used team in cookies" do
-    get :index, team: "SJS"
+    get :index, params: { team: "SJS" }
     assert_equal "SJS", cookies[:team]
   end
 
