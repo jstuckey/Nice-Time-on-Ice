@@ -21,6 +21,7 @@ end
 
 group :test do
   gem 'shoulda'
+  gem 'rails-controller-testing'
 end
 
 group :production do
