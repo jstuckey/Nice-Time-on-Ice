@@ -13,3 +13,6 @@ Style/StringLiteralsInInterpolation:
 
 Style/NumericLiterals:
   Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
