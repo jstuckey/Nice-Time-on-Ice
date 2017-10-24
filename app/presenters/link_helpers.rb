@@ -6,46 +6,6 @@ module LinkHelpers
   # game, season, and team params.
   #
 
-  # rubocop:disable all
-  def ha_team_number
-    return unless team
-
-    # Hockey Analysis uses this crazy id scheme
-    case team.abbreviation
-    when 'ANA' then 1
-    when 'WPG' then 2
-    when 'BOS' then 3
-    when 'BUF' then 4
-    when 'CAR' then 5
-    when 'CGY' then 6
-    when 'CHI' then 7
-    when 'CBJ' then 8
-    when 'COL' then 9
-    when 'DAL' then 10
-    when 'DET' then 11
-    when 'EDM' then 12
-    when 'FLA' then 13
-    when 'LAK' then 14
-    when 'MIN' then 15
-    when 'MTL' then 16
-    when 'NSH' then 17
-    when 'NJD' then 18
-    when 'NYI' then 19
-    when 'NYR' then 20
-    when 'OTT' then 21
-    when 'PHI' then 22
-    when 'ARI' then 23
-    when 'PIT' then 24
-    when 'SJS' then 25
-    when 'STL' then 26
-    when 'TBL' then 27
-    when 'TOR' then 28
-    when 'VAN' then 29
-    when 'WSH' then 30
-    end
-  end
-  # rubocop:enable all
-
   def alternate_team_abbreviation(team_param = nil)
     t = team_param || team
     return unless t
