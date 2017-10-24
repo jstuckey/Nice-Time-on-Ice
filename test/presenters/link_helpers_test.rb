@@ -1,8 +1,8 @@
 require 'test_helper'
 
-class Links::HelpersTest < ActiveSupport::TestCase
+class LinkHelpersTest < ActiveSupport::TestCase
 
-  include Links::Helpers
+  include LinkHelpers
 
   attr_accessor :team, :season, :game, :game_type
 
