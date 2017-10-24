@@ -58,7 +58,7 @@ class NhlLinkPresenterTest < ActiveSupport::TestCase
       "Percentages",
       "Shooting/TOI",
       "Scoring",
-      "Bios",
+      "Bios"
     ]
   end
 
