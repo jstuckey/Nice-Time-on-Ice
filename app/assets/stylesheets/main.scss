@@ -3,14 +3,13 @@
 /* ----------- */
 
 #main {
-
-  .column {
+  @mixin column() {
     float: left;
     margin: 0;
     padding: 0;
-    width: 33.33333333%;
 
     section {
+      height: 100%;
       padding: 4px;
       margin: 5px;
       overflow: hidden;
@@ -25,16 +24,26 @@
       }
     }
 
-    section:last-child {
-      height: 1000px;
-    }
-
-    section:first-child {
-      height: 300px;
-    }
-
     ol, ul {
       padding-bottom: 15px;
+    }
+  }
+
+  .column {
+    @include column;
+    width: 33.33333333%;
+
+    section {
+      height: 300px;
+    }
+  }
+
+  .three-columns {
+    @include column;
+    width: 100%;
+
+    section {
+      height: 1000px;
     }
   }
 
