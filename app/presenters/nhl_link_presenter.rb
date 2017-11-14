@@ -10,6 +10,10 @@ class NhlLinkPresenter
     @game_type = request_context.game_type
   end
 
+  def each_link
+    names.zip(links) { |name, link| yield name, link }
+  end
+
   def names
     [
       "Boxscore",
