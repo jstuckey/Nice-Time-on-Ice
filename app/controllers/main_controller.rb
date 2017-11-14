@@ -10,6 +10,7 @@ class MainController < ApplicationController
     @game_presenter        = GamePresenter.new(@context)
     @cache_key             = CacheKey.new(@context).value
     @nhl_link_presenter = NhlLinkPresenter.new(@context)
+    @hockey_viz_link_presenter = HockeyVizLinkPresenter.new(@context)
   end
 
   private
