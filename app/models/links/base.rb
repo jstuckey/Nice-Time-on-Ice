@@ -1,4 +1,5 @@
 class Links::Base
+
   def initialize(context = nil)
     return unless context
     if context.is_a? Hash
@@ -49,4 +50,5 @@ class Links::Base
   private
 
   attr_reader :team, :season, :game, :game_type
+
 end

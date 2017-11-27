@@ -1,6 +1,7 @@
 require 'test_helper'
 
 class GameScraperTest < ActiveSupport::TestCase
+
   test "::new should accept no arguments" do
     GameScraper.new
   end
@@ -96,4 +97,5 @@ class ParserFake
     file = File.open file_path
     Nokogiri::HTML(file)
   end
+
 end

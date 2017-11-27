@@ -1,4 +1,5 @@
 class RequestContext
+
   attr_reader :team, :season, :game_type, :game, :game_order
 
   def initialize(params = {})
@@ -129,4 +130,5 @@ class RequestContext
       "desc"
     end
   end
+
 end

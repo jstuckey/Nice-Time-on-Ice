@@ -1,4 +1,5 @@
 class CacheKey
+
   def initialize(request_context, date = nil)
     @request_context = request_context
     @date = date || Date.current

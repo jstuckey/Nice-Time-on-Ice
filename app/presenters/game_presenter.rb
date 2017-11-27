@@ -1,4 +1,5 @@
 class GamePresenter
+
   include ActionView::Helpers::UrlHelper
 
   def initialize(context)
@@ -104,4 +105,5 @@ class GamePresenter
       "asc"
     end
   end
+
 end

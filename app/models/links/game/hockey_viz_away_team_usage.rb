@@ -1,4 +1,5 @@
 class Links::Game::HockeyVizAwayTeamUsage < Links::Base
+
   def site_name
     "Hockey Viz"
   end
@@ -18,4 +19,5 @@ class Links::Game::HockeyVizAwayTeamUsage < Links::Base
   def position
     7
   end
+
 end

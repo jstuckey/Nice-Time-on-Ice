@@ -1,6 +1,7 @@
 require 'test_helper'
 
 class SeasonPresenterTest < ActiveSupport::TestCase
+
   setup do
     @context = RequestContext.new(team: 'WSH',
                                   season: '2013',
@@ -24,4 +25,5 @@ class SeasonPresenterTest < ActiveSupport::TestCase
     expected = ["", "", "class=\"selected\"", ""]
     assert_equal expected, SeasonPresenter.new(@context).li_classes
   end
+
 end

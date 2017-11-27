@@ -1,5 +1,5 @@
 class ApiController < ApplicationController
-  before_action :set_json_format, except: :index
+  before_filter :set_json_format, except: :index
 
   DOCUMENTATION_PATH = File.join(Rails.root, 'config', 'api_doc.yml')
 
@@ -75,4 +75,5 @@ class ApiController < ApplicationController
   def set_json_format
     request.format = :json
   end
+
 end

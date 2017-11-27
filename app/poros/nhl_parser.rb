@@ -1,6 +1,7 @@
 require 'open-uri'
 
 class NhlParser
+
   attr_reader :url
 
   def initialize(url)
@@ -10,4 +11,5 @@ class NhlParser
   def call
     Nokogiri::HTML(open(url), nil, "UTF-8")
   end
+
 end

@@ -1,6 +1,7 @@
 require 'csv'
 
 class GameCSVImporter
+
   HEADER_YEAR        = 'year'
   HEADER_GAME_NUMBER = 'game_number'
   HEADER_AWAY_TEAM   = 'away_team'

@@ -1,4 +1,5 @@
 class ExternalLinkPresenter
+
   include ActionView::Helpers::UrlHelper
 
   def initialize(context, module_name)
@@ -64,4 +65,5 @@ class ExternalLinkPresenter
       end
     end
   end
+
 end

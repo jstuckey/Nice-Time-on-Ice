@@ -26,3 +26,4 @@ class NullGame
   end
   private_constant :BlackHole
 end
+

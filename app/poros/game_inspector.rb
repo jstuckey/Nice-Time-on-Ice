@@ -50,4 +50,5 @@ class GameInspector
   rescue
     []
   end
+
 end

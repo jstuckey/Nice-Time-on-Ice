@@ -1,6 +1,8 @@
+
 require 'test_helper'
 
 class GameCSVImporterTest < ActiveSupport::TestCase
+
   CSV_PATH = File.join(Rails.root, 'test', 'fixtures', 'import.csv')
 
   test "should create a new game database record" do

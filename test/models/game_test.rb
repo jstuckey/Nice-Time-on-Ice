@@ -1,6 +1,7 @@
 require 'test_helper'
 
 class GameTest < ActiveSupport::TestCase
+
   should belong_to :season
   should belong_to :away_team
   should belong_to :home_team
@@ -16,4 +17,5 @@ class GameTest < ActiveSupport::TestCase
   test "should have custom #to_s method" do
     assert_equal "#<Game: 2014021201>", games(:game_one).to_s
   end
+
 end

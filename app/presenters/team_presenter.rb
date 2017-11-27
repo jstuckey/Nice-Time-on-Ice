@@ -1,4 +1,5 @@
 class TeamPresenter
+
   include ActionView::Helpers::UrlHelper
 
   def initialize(context)

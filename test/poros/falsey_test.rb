@@ -1,6 +1,7 @@
 require 'test_helper'
 
 class FalseyTest < ActiveSupport::TestCase
+
   test "should return empty string from  to_s" do
     object = Object.new
     object.extend(Falsey)

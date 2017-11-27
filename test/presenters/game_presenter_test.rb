@@ -1,6 +1,7 @@
 require 'test_helper'
 
 class GamePresenterTest < ActiveSupport::TestCase
+
   setup do
     @context = RequestContext.new(game: '2014021217',
                                   team: 'WSH',
@@ -65,4 +66,5 @@ class GamePresenterTest < ActiveSupport::TestCase
     def @context.game_order ; "asc" ; end
     assert_equal "glyph-up", GamePresenter.new(@context).order_class
   end
+
 end

@@ -1,6 +1,7 @@
 class MainController < ApplicationController
-  before_action :read_team_cookie
-  after_action :write_team_cookie
+
+  before_filter :read_team_cookie
+  after_filter :write_team_cookie
 
   def index
     @context               = RequestContext.new(params)
@@ -23,4 +24,5 @@ class MainController < ApplicationController
   def write_team_cookie
     cookies[:team] = @context.team.abbreviation
   end
+
 end
