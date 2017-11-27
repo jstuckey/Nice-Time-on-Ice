@@ -1,5 +1,4 @@
 class GameScraper
-
   attr_reader :date, :parser, :season, :url, :doc, :games
 
   def initialize(date: nil, parser: nil)
@@ -129,5 +128,4 @@ class GameScraper
     return unless game_number.present?
     game_number.to_s[5] == '3'
   end
-
 end

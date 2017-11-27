@@ -1,7 +1,6 @@
 require 'test_helper'
 
 class ExternalLinkPresenterTest < ActiveSupport::TestCase
-
   setup do
     @context = RequestContext.new(game: '2014021217',
                                   team: 'WSH',

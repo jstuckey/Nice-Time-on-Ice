@@ -4,8 +4,6 @@ Style/Documentation:
 Style/StringLiterals:
   Enabled: false
 
-Style/EmptyLinesAroundClassBody:
-  Enabled: false
 
 Style/ClassAndModuleChildren:
   Enabled: false
@@ -14,4 +12,7 @@ Style/StringLiteralsInInterpolation:
   Enabled: false
 
 Style/NumericLiterals:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
   Enabled: false
