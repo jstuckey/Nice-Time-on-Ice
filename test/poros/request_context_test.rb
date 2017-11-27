@@ -1,7 +1,6 @@
 require 'test_helper'
 
 class RequestContextTest < ActiveSupport::TestCase
-
   test "should convert a team id to a team object" do
     team = teams(:caps)
     context = RequestContext.new(team: team.id)

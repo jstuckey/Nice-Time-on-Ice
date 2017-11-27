@@ -6,5 +6,4 @@ class ScraperMailer < ApplicationMailer
     @results = Array(results)
     mail(subject: "Scraping Results")
   end
-
 end
