@@ -1,3 +1,8 @@
 <h4>Behind the Net</h4>
-<li>
-</li>
+<ul>
+  <% @btn_link_presenter.each_link do |name, link| %>
+    <li>
+      <a class="link" target="new" href="<%= link %>"><%= name %></a>
+    </li>
+  <% end %>
+</ul>

@@ -11,6 +11,7 @@ class MainController < ApplicationController
     @cache_key             = CacheKey.new(@context).value
     @nhl_link_presenter = NhlLinkPresenter.new(@context)
     @hockey_viz_link_presenter = HockeyVizLinkPresenter.new(@context)
+    @btn_link_presenter = BehindTheNetLinkPresenter.new(@context)
   end
 
   private
