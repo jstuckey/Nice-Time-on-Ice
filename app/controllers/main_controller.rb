@@ -12,6 +12,7 @@ class MainController < ApplicationController
     @nhl_link_presenter = NhlLinkPresenter.new(@context)
     @hockey_viz_link_presenter = HockeyVizLinkPresenter.new(@context)
     @btn_link_presenter = BehindTheNetLinkPresenter.new(@context)
+    @hockey_stats_link_presenter = HockeyStatsLinkPresenter.new(@context)
   end
 
   private
