@@ -1,6 +1,6 @@
-<h4>Hockey Stats</h4>
+<h4><%= site_name %></h4>
 <ul>
-  <% @hockey_stats_link_presenter.each_link do |name, link| %>
+  <% presenter.each_link do |name, link| %>
     <li>
       <a class="link" target="new" href="<%= link %>"><%= name %></a>
     </li>
