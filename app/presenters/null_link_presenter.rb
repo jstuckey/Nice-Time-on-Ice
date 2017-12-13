@@ -1,4 +1,9 @@
-class NullLinkPresenter
-  def each_link
+class NullLinkPresenter < LinkPresenterBase
+  def names
+    []
+  end
+
+  def links
+    []
   end
 end

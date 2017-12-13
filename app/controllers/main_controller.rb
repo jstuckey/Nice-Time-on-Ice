@@ -16,7 +16,7 @@ class MainController < ApplicationController
     @nst_link_presenter = NaturalStatTrickPresenter.new(@context)
     @nullisecund_link_presenter = NullisecundLinkPresenter.new(@context)
 
-    @null_link_presenter = NullLinkPresenter.new
+    @null_link_presenter = NullLinkPresenter.new(@context)
   end
 
   private
