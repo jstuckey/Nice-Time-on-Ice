@@ -15,6 +15,7 @@ class MainController < ApplicationController
     @hockey_stats_link_presenter = HockeyStatsLinkPresenter.new(@context)
     @nst_link_presenter = NaturalStatTrickPresenter.new(@context)
     @nullisecund_link_presenter = NullisecundLinkPresenter.new(@context)
+    @hockey_reference_link_presenter = HockeyReferenceLinkPresenter.new(@context)
 
     @null_link_presenter = NullLinkPresenter.new(@context)
   end
