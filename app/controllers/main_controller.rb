@@ -19,6 +19,7 @@ class MainController < ApplicationController
     @cap_friendly_link_presenter = CapFriendlyLinkPresenter.new(@context)
     @quant_hockey_link_presenter = QuantHockeyLinkPresenter.new(@context)
     @sportrac_link_presenter = SportracLinkPresenter.new(@context)
+    @hockey_abstract_link_presenter = HockeyAbstractLinkPresenter.new(@context)
 
     @null_link_presenter = NullLinkPresenter.new(@context)
   end
