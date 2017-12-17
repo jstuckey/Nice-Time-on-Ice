@@ -20,6 +20,7 @@ class MainController < ApplicationController
     @quant_hockey_link_presenter = QuantHockeyLinkPresenter.new(@context)
     @sportrac_link_presenter = SportracLinkPresenter.new(@context)
     @hockey_abstract_link_presenter = HockeyAbstractLinkPresenter.new(@context)
+    @nhl_numbers_link_presenter = NhlNumbersLinkPresenter.new(@context)
 
     @null_link_presenter = NullLinkPresenter.new(@context)
   end
