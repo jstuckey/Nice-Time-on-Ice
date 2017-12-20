@@ -32,7 +32,7 @@ class CorsicaLinkPresenterTest < ActiveSupport::TestCase
   end
 
   def expected_links
-    %w[
-    ]
+    %w(
+    )
   end
 end

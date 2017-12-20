@@ -38,7 +38,7 @@ class NhlLinkPresenter < LinkPresenterBase
   end
 
   def links
-    %W[
+    %W(
       http://www.nhl.com/ice/boxscore.htm?id=#{game.game_number}
       http://www.nhl.com/ice/recap.htm?id=#{game.game_number}
       http://www.nhl.com/ice/icetracker.htm?id=#{game.game_number}
@@ -70,6 +70,6 @@ class NhlLinkPresenter < LinkPresenterBase
       http://www.nhl.com/stats/player?team=#{team.abbreviation}&season=#{season}&gameType=#{game_type}&report=skatershootingtimeonice
       http://www.nhl.com/stats/player?team=#{team.abbreviation}&season=#{season}&gameType=#{game_type}&report=skaterscoring
       http://www.nhl.com/stats/player?team=#{team.abbreviation}&season=#{season}&gameType=#{game_type}&report=bios
-    ]
+    )
   end
 end

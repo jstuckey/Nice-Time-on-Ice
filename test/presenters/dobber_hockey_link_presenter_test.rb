@@ -31,6 +31,6 @@ class DobberHockeyLinkPresenterTest < ActiveSupport::TestCase
   end
 
   def expected_links
-    %W[http://frozenpool.dobbersports.com]
+    %w(http://frozenpool.dobbersports.com)
   end
 end

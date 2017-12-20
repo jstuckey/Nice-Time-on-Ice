@@ -14,7 +14,7 @@ class HockeyVizLinkPresenter < LinkPresenterBase
   end
 
   def links
-    %W[
+    %W(
       http://hockeyviz.com/team/#{team.abbreviation}/#{season.year_start.to_s[2, 2]}#{season.year_end.to_s[2, 2]}
       http://hockeyviz.com/game/#{game.game_number}
       http://hockeyviz.com/game/#{game.game_number}/tide
@@ -24,6 +24,6 @@ class HockeyVizLinkPresenter < LinkPresenterBase
       http://hockeyviz.com/game/#{game.game_number}/awayUsage
       http://hockeyviz.com/game/#{game.game_number}/homeZone
       http://hockeyviz.com/game/#{game.game_number}/awayZone
-    ]
+    )
   end
 end

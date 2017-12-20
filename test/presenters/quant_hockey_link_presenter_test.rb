@@ -34,9 +34,9 @@ class QuantHockeyLinkPresenterTest < ActiveSupport::TestCase
   end
 
   def expected_links
-    %w[
+    %w(
       http://www.quanthockey.com/nhl/teams/washington-capitals-players-2014-15-nhl-stats.html
       http://www.quanthockey.com/nhl/seasons/2014-15-nhl-players-stats.html
-    ]
+    )
   end
 end

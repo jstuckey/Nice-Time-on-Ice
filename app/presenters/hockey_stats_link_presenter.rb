@@ -9,11 +9,11 @@ class HockeyStatsLinkPresenter < LinkPresenterBase
   end
 
   def links
-    %W[
+    %W(
       http://hockeystats.ca/game/#{game.game_number}
       http://hockeystats.ca/game/#{game.game_number}/shifts
       http://hockeystats.ca/playoffs
       http://hockeystats.ca/lottery
-    ]
+    )
   end
 end

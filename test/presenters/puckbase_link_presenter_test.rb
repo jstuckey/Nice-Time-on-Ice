@@ -42,7 +42,7 @@ class PuckbaseLinkPresenterTest < ActiveSupport::TestCase
   end
 
   def expected_links
-    %w[
+    %w(
       http://puckbase.com/stats/scoring?team=WSH&season=2&year=2014
       http://puckbase.com/stats/possession?team=WSH&season=2&year=2014
       http://puckbase.com/stats/goalies?team=WSH&season=2&year=2014
@@ -53,6 +53,6 @@ class PuckbaseLinkPresenterTest < ActiveSupport::TestCase
       http://puckbase.com/stats/team-lines?team=WSH&season=2&year=2014
       http://puckbase.com/stats/team-scoring&season=2&year=2014
       http://puckbase.com/stats/team-faceoffs&season=2&year=2014
-    ]
+    )
   end
 end

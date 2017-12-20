@@ -35,10 +35,10 @@ class HockeyReferenceLinkPresenterTest < ActiveSupport::TestCase
   end
 
   def expected_links
-    %w[
+    %w(
       http://www.hockey-reference.com/teams/WSH/2015_games.html
       http://www.hockey-reference.com/teams/WSH/2015.html
       http://www.hockey-reference.com/play-index/tpbp_finder.cgi
-    ]
+    )
   end
 end

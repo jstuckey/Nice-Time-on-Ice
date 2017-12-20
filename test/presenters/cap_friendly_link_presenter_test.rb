@@ -41,7 +41,7 @@ class CapFriendlyLinkPresenterTest < ActiveSupport::TestCase
   end
 
   def expected_links
-    %w[
+    %w(
       https://www.capfriendly.com/teams/capitals
       https://www.capfriendly.com/signings
       https://www.capfriendly.com/transactions/recalls-reassignments
@@ -51,6 +51,6 @@ class CapFriendlyLinkPresenterTest < ActiveSupport::TestCase
       https://www.capfriendly.com/browse/free-agents
       https://www.capfriendly.com/draft
       https://www.capfriendly.com/comparables
-    ]
+    )
   end
 end

@@ -63,7 +63,7 @@ class NhlLinkPresenterTest < ActiveSupport::TestCase
   end
 
   def expected_links
-    %w[
+    %w(
       http://www.nhl.com/ice/boxscore.htm?id=2014021201
       http://www.nhl.com/ice/recap.htm?id=2014021201
       http://www.nhl.com/ice/icetracker.htm?id=2014021201
@@ -95,6 +95,6 @@ class NhlLinkPresenterTest < ActiveSupport::TestCase
       http://www.nhl.com/stats/player?team=WSH&season=20142015&gameType=2&report=skatershootingtimeonice
       http://www.nhl.com/stats/player?team=WSH&season=20142015&gameType=2&report=skaterscoring
       http://www.nhl.com/stats/player?team=WSH&season=20142015&gameType=2&report=bios
-    ]
+    )
   end
 end

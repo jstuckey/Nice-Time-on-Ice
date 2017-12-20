@@ -36,11 +36,11 @@ class HockeyStatsLinkPresenterTest < ActiveSupport::TestCase
   end
 
   def expected_links
-    %w[
+    %w(
       http://hockeystats.ca/game/2014021201
       http://hockeystats.ca/game/2014021201/shifts
       http://hockeystats.ca/playoffs
       http://hockeystats.ca/lottery
-    ]
+    )
   end
 end

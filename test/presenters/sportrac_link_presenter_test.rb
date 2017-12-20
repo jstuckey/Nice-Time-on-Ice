@@ -40,7 +40,7 @@ class SportracLinkPresenterTest < ActiveSupport::TestCase
   end
 
   def expected_links
-    %w[
+    %w(
       http://www.spotrac.com/nhl/washington-capitals/2014
       http://www.spotrac.com/nhl/washington-capitals/contracts/2014
       http://www.spotrac.com/nhl/washington-capitals/cap/2014
@@ -48,6 +48,6 @@ class SportracLinkPresenterTest < ActiveSupport::TestCase
       http://www.spotrac.com/nhl/washington-capitals/positional/2014
       http://www.spotrac.com/nhl/transactions/2014/washington-capitals
       http://www.spotrac.com/nhl/tools/buyout-calculator
-    ]
+    )
   end
 end

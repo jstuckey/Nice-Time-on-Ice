@@ -15,7 +15,7 @@ class PuckbaseLinkPresenter < LinkPresenterBase
   end
 
   def links
-    %W[
+    %W(
       http://puckbase.com/stats/scoring?team=#{team.abbreviation}&season=#{game_type}&year=#{season.year_start}
       http://puckbase.com/stats/possession?team=#{team.abbreviation}&season=#{game_type}&year=#{season.year_start}
       http://puckbase.com/stats/goalies?team=#{team.abbreviation}&season=#{game_type}&year=#{season.year_start}
@@ -26,6 +26,6 @@ class PuckbaseLinkPresenter < LinkPresenterBase
       http://puckbase.com/stats/team-lines?team=#{team.abbreviation}&season=#{game_type}&year=#{season.year_start}
       http://puckbase.com/stats/team-scoring&season=#{game_type}&year=#{season.year_start}
       http://puckbase.com/stats/team-faceoffs&season=#{game_type}&year=#{season.year_start}
-    ]
+    )
   end
 end

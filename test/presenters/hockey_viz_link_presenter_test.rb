@@ -41,7 +41,7 @@ class HockeyVizLinkPresenterTest < ActiveSupport::TestCase
   end
 
   def expected_links
-    %w[
+    %w(
       http://hockeyviz.com/team/WSH/1415
       http://hockeyviz.com/game/2014021201
       http://hockeyviz.com/game/2014021201/tide
@@ -51,6 +51,6 @@ class HockeyVizLinkPresenterTest < ActiveSupport::TestCase
       http://hockeyviz.com/game/2014021201/awayUsage
       http://hockeyviz.com/game/2014021201/homeZone
       http://hockeyviz.com/game/2014021201/awayZone
-    ]
+    )
   end
 end
