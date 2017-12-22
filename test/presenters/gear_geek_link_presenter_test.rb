@@ -28,11 +28,27 @@ class GearGeekLinkPresenterTest < ActiveSupport::TestCase
 
   def expected_names
     [
+      "NHL Totals",
+      "Brands",
+      "Teams",
+      "Forwards",
+      "Defensemen",
+      "Goalies",
+      "Goals",
+      "Salary Cap"
     ]
   end
 
   def expected_links
     %w(
+      https://www.geargeek.com/
+      https://www.geargeek.com/brands
+      https://www.geargeek.com/team/washington-capitals
+      https://www.geargeek.com/position/forwards
+      https://www.geargeek.com/position/defenseman
+      https://www.geargeek.com/position/goalie
+      https://www.geargeek.com/stats/goals
+      https://www.geargeek.com/salary
     )
   end
 end
