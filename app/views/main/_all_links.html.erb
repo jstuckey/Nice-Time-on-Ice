@@ -1,0 +1,24 @@
+<section id="links">
+  <h3>
+  <span id="game-number"><%= @context.game.try(:game_number) %></span>
+  Links
+  </h3>
+  <ul id="game-link-list" class="three-columns-body">
+    <%= render partial: "site_links", locals: { site_name: "NHL", presenter: @nhl_link_presenter } %>
+    <%= render partial: "site_links", locals: { site_name: "Corsica", presenter: @corsica_link_presenter } %>
+    <%= render partial: "site_links", locals: { site_name: "Hockey Viz", presenter: @hockey_viz_link_presenter } %>
+    <%= render partial: "site_links", locals: { site_name: "Behind the Net", presenter: @btn_link_presenter } %>
+    <%= render partial: "site_links", locals: { site_name: "Hockey Stats CA", presenter: @hockey_stats_link_presenter } %>
+    <%= render partial: "site_links", locals: { site_name: "Puckbase", presenter: @puckbase_link_presenter } %>
+    <%= render partial: "site_links", locals: { site_name: "Hockey-Reference", presenter: @hockey_reference_link_presenter } %>
+    <%= render partial: "site_links", locals: { site_name: "Cap Friendly", presenter: @cap_friendly_link_presenter } %>
+    <%= render partial: "site_links", locals: { site_name: "Sportrac", presenter: @sportrac_link_presenter } %>
+    <%= render partial: "site_links", locals: { site_name: "NHL Numbers", presenter: @nhl_numbers_link_presenter } %>
+    <%= render partial: "site_links", locals: { site_name: "Natural Stat Trick", presenter: @nst_link_presenter } %>
+    <%= render partial: "site_links", locals: { site_name: "Nullisecund", presenter: @nullisecund_link_presenter } %>
+    <%= render partial: "site_links", locals: { site_name: "Hockey Abstract", presenter: @hockey_abstract_link_presenter } %>
+    <%= render partial: "site_links", locals: { site_name: "GearGeek", presenter: @gear_geek_link_presenter } %>
+    <%= render partial: "site_links", locals: { site_name: "Dobber Hockey", presenter: @dobber_hockey_link_presenter } %>
+    <%= render partial: "site_links", locals: { site_name: "Quant Hockey", presenter: @quant_hockey_link_presenter } %>
+  </ul>
+</section>

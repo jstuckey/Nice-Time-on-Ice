@@ -1,0 +1,10 @@
+<div class="site-link-wrapper">
+  <h4><%= site_name %></h4>
+  <ul>
+    <% presenter.each_link do |name, link| %>
+      <li>
+        <a class="link" target="new" href="<%= link %>"><%= name %></a>
+      </li>
+    <% end %>
+  </ul>
+</div>
