@@ -48,6 +48,7 @@
 
   .site-link-wrapper {
     break-inside: avoid-column;
+    overflow: hidden; /* fix for Firefox */
   }
 
   /* ----------- */
