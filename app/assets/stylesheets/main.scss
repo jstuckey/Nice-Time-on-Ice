@@ -1,8 +1,5 @@
-/* ----------- */
-/* - Columns - */
-/* ----------- */
-
 #main {
+
   @mixin column() {
     float: left;
     margin: 0;
@@ -16,6 +13,7 @@
 
       h3 {
         height: 20px;
+        width: 100%;
       }
 
       .list-wrapper {
@@ -41,10 +39,15 @@
   .three-columns {
     @include column;
     width: 100%;
+  }
 
-    section {
-      height: 1000px;
-    }
+  .three-columns-body {
+    column-count: 3;
+    column-width: 225px;
+  }
+
+  .site-link-wrapper {
+    break-inside: avoid-column;
   }
 
   /* ----------- */

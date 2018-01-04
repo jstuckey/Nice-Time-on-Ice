@@ -3,7 +3,7 @@
   <span id="game-number"><%= @context.game.try(:game_number) %></span>
   Links
   </h3>
-  <ul id="game-link-list">
+  <ul id="game-link-list" class="three-columns-body">
     <%= render partial: "site_links", locals: { site_name: "NHL", presenter: @nhl_link_presenter } %>
     <%= render partial: "site_links", locals: { site_name: "Corsica", presenter: @corsica_link_presenter } %>
     <%= render partial: "site_links", locals: { site_name: "Hockey Viz", presenter: @hockey_viz_link_presenter } %>
