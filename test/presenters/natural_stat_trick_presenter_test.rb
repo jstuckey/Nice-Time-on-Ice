@@ -27,10 +27,26 @@ class NaturalStatTrickPresenterTest < ActiveSupport::TestCase
   end
 
   def expected_names
-    ["Game Statistics"]
+    [
+      "Game Statistics",
+      "Player Totals - On-Ice",
+      "Player Totals - Individual",
+      "Player Totals - Bios",
+      "Player Index",
+      "Line Tool",
+      "Team Totals"
+    ]
   end
 
   def expected_links
-    ["http://naturalstattrick.com/game.php?season=20142015&game=21201"]
+    %w(
+      http://naturalstattrick.com/game.php?season=20142015&game=21201
+      http://naturalstattrick.com/playerteams.php?stdoi=oi&season=20142015&stype=2&team=WSH
+      http://naturalstattrick.com/playerteams.php?stdoi=std&season=20142015&stype=2&team=WSH
+      http://naturalstattrick.com/playerteams.php?stdoi=bio&season=20142015&stype=2&team=WSH
+      http://naturalstattrick.com/playerlist.php?season=20142015
+      http://naturalstattrick.com/linestats.php?season=20142015&stype=2&team=WSH
+      http://naturalstattrick.com/teamtable.php?season=20142015&stype=2
+    )
   end
 end
