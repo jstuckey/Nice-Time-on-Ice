@@ -24,6 +24,7 @@ class MainController < ApplicationController
     @gear_geek_link_presenter = GearGeekLinkPresenter.new(@context)
     @nhl_numbers_link_presenter = NhlNumbersLinkPresenter.new(@context)
     @dobber_hockey_link_presenter = DobberHockeyLinkPresenter.new(@context)
+    @puck_on_net_link_presenter = PuckOnNetLinkPresenter.new(@context)
 
     @null_link_presenter = NullLinkPresenter.new(@context)
   end
