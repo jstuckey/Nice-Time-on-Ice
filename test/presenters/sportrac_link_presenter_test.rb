@@ -41,8 +41,8 @@ class SportracLinkPresenterTest < ActiveSupport::TestCase
 
   def expected_links
     %w(
-      http://www.spotrac.com/nhl/washington-capitals/2014
-      http://www.spotrac.com/nhl/washington-capitals/contracts/2014
+      http://www.spotrac.com/nhl/washington-capitals
+      http://www.spotrac.com/nhl/washington-capitals/contracts
       http://www.spotrac.com/nhl/washington-capitals/cap/2014
       http://www.spotrac.com/nhl/washington-capitals/yearly/cap/2014
       http://www.spotrac.com/nhl/washington-capitals/positional/2014

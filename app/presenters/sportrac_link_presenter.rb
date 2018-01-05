@@ -16,8 +16,8 @@ class SportracLinkPresenter < LinkPresenterBase
 
   def links
     %W(
-      http://www.spotrac.com/nhl/#{full_team_name}/#{season.year_start}
-      http://www.spotrac.com/nhl/#{full_team_name}/contracts/#{season.year_start}
+      http://www.spotrac.com/nhl/#{full_team_name}
+      http://www.spotrac.com/nhl/#{full_team_name}/contracts
       http://www.spotrac.com/nhl/#{full_team_name}/cap/#{season.year_start}
       http://www.spotrac.com/nhl/#{full_team_name}/yearly/cap/#{season.year_start}
       http://www.spotrac.com/nhl/#{full_team_name}/positional/#{season.year_start}
