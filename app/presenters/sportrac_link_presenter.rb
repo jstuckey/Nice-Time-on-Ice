@@ -21,6 +21,7 @@ class SportracLinkPresenter < LinkPresenterBase
       http://www.spotrac.com/nhl/#{full_team_name}/cap/#{season.year_start}
       http://www.spotrac.com/nhl/#{full_team_name}/yearly/cap/#{season.year_start}
       http://www.spotrac.com/nhl/#{full_team_name}/positional/#{season.year_start}
+      http://www.spotrac.com/nhl/free-agents/#{season.year_start}/#{full_team_name}/ufa/
       http://www.spotrac.com/nhl/transactions/#{season.year_start}/#{full_team_name}
       http://www.spotrac.com/nhl/tools/buyout-calculator
     )

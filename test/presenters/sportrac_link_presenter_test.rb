@@ -46,6 +46,7 @@ class SportracLinkPresenterTest < ActiveSupport::TestCase
       http://www.spotrac.com/nhl/washington-capitals/cap/2014
       http://www.spotrac.com/nhl/washington-capitals/yearly/cap/2014
       http://www.spotrac.com/nhl/washington-capitals/positional/2014
+      http://www.spotrac.com/nhl/free-agents/2014/washington-capitals/ufa/
       http://www.spotrac.com/nhl/transactions/2014/washington-capitals
       http://www.spotrac.com/nhl/tools/buyout-calculator
     )
