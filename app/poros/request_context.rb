@@ -76,7 +76,7 @@ class RequestContext
   end
 
   def coerce_game_type(type)
-    if type.to_s.downcase =~ /playoff/
+    if type.to_s.downcase.match?(/playoff/)
       3
     elsif type.to_i == 3
       3
