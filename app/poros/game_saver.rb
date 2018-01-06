@@ -49,11 +49,11 @@ class GameSaver
     private
 
     def perform_step
-      fail "override #perform_step in subclass"
+      raise "override #perform_step in subclass"
     end
 
     def message
-      fail "override #message in subclass"
+      raise "override #message in subclass"
     end
   end
 

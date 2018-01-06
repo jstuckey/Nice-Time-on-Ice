@@ -13,10 +13,10 @@ class LinkPresenterBase
   end
 
   def names
-    fail "Override ##{__method__} method in subclass"
+    raise "Override ##{__method__} method in subclass"
   end
 
   def links
-    fail "Override ##{__method__} method in subclass"
+    raise "Override ##{__method__} method in subclass"
   end
 end
