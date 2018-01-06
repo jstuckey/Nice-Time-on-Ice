@@ -10,7 +10,7 @@ class CacheKey
 
   private
 
-  SEPARATOR = "_"
+  SEPARATOR = "_".freeze
 
   attr_reader :request_context
 
