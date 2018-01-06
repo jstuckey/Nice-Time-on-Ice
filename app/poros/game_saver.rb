@@ -17,9 +17,11 @@ class GameSaver
   attr_reader :game_saver
 
   def assemble_save_steps
-    step3 = ReportFailure.new(nil)
-    step2 = UpdateGameDate.new(step3)
-    step1 = SaveGame.new(step2)
+    SaveGame.new(
+      UpdateGameDate.new(
+        ReportFailure.new(nil)
+      )
+    )
   end
 
   attr_writer :results
