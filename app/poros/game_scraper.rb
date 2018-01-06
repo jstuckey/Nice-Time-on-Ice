@@ -97,7 +97,7 @@ class GameScraper
     anchors = row.css("a.icon-label-link")
     anchors.each do |a|
       url = a.attribute("href")
-      if match = GAME_LINK_PATTERN.match(url)
+      GAME_LINK_PATTERN.match(url) do |match|
         return match[:game_number]
       end
     end
