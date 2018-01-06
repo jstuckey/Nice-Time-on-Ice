@@ -6,7 +6,10 @@ namespace :scrape do
 
   desc "Scrape game data for specified date from NHL.com"
   task :date, [:year, :month, :day] => [:environment] do |_t, args|
-    year, month, day = args[:year], args[:month], args[:day]
+    year = args[:year]
+    month = args[:month]
+    day = args[:day]
+
     unless year && month && day
       fail "Format must be: rake scrape:date[2015,5,25]"
     end
