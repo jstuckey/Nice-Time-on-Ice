@@ -85,7 +85,7 @@ class GameScraper
     }
   end
 
-  GAME_LINK_PATTERN = /\/gamecenter\/(?<game_number>[0-9]+)$/
+  GAME_LINK_PATTERN = %r{\/gamecenter\/(?<game_number>[0-9]+)$}
 
   def year_start
     season[0, 4]
