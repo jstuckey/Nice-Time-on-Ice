@@ -123,7 +123,7 @@ class RequestContext
   end
 
   def determine_game_order(order)
-    if order.to_s.downcase == "asc"
+    if order.to_s.casecmp("asc").zero?
       "asc"
     else
       "desc"
