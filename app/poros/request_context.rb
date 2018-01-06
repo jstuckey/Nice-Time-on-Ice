@@ -94,7 +94,7 @@ class RequestContext
   end
 
   def playoffs_have_started?
-    Game.where(season: season, playoffs: true).count > 0
+    Game.where(season: season, playoffs: true).count.positive?
   end
 
   def determine_game(game)

@@ -8,7 +8,7 @@ task :missing_games, [:season] => :environment do |_t, args|
 
   missing_games = GameInspector.new(year_start).missing_games
 
-  if missing_games.length > 0
+  if missing_games.length.positive?
     log_missing_games(missing_games, year_start)
   else
     log_no_missing_games(year_start)
