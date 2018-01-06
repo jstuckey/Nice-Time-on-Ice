@@ -44,7 +44,7 @@ class GameSaver
       if perform_step
         message
       else
-        next_step.(game)
+        next_step.call(game)
       end
     end
 
