@@ -21,7 +21,11 @@ class NullGame
     include ::Falsey
 
     def method_missing(*)
-      self
+      self || super
+    end
+
+    def respond_to_missing?(*)
+      true || super
     end
   end
   private_constant :BlackHole
