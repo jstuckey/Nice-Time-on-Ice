@@ -1,7 +1,7 @@
 class NullGame
   include Falsey
 
-  fields = %w(
+  fields = %w[
     id
     game_number
     date
@@ -11,7 +11,7 @@ class NullGame
     home_team
     created_at
     updated_at
-  )
+  ]
 
   fields.each do |f|
     define_method(f) { BlackHole.new }

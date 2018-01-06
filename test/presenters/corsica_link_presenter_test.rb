@@ -42,7 +42,7 @@ class CorsicaLinkPresenterTest < ActiveSupport::TestCase
   end
 
   def expected_links
-    %w(
+    %w[
       http://corsica.hockey/games/?id=2014021201
       http://corsica.hockey/team-stats/?season=20142015&session=Regular
       http://corsica.hockey/skater-stats/?season=20142015&session=Regular&team=WSH
@@ -53,6 +53,6 @@ class CorsicaLinkPresenterTest < ActiveSupport::TestCase
       http://corsica.hockey/war/?season=20142015&team=WSH
       http://corsica.hockey/team-rosters/?team=WSH
       http://corsica.hockey/predictions/
-    )
+    ]
   end
 end

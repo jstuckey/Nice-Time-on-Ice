@@ -8,10 +8,10 @@ class HockeyAbstractLinkPresenter < LinkPresenterBase
   end
 
   def links
-    %w(
+    %w[
       http://www.hockeyabstract.com/playerusagecharts
       http://www.hockeyabstract.com/luck
       http://www.hockeyabstract.com/testimonials
-    )
+    ]
   end
 end

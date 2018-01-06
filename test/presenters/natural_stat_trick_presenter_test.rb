@@ -39,7 +39,7 @@ class NaturalStatTrickPresenterTest < ActiveSupport::TestCase
   end
 
   def expected_links
-    %w(
+    %w[
       http://naturalstattrick.com/game.php?season=20142015&game=21201
       http://naturalstattrick.com/playerteams.php?stdoi=oi&season=20142015&stype=2&team=WSH
       http://naturalstattrick.com/playerteams.php?stdoi=std&season=20142015&stype=2&team=WSH
@@ -47,6 +47,6 @@ class NaturalStatTrickPresenterTest < ActiveSupport::TestCase
       http://naturalstattrick.com/playerlist.php?season=20142015
       http://naturalstattrick.com/linestats.php?season=20142015&stype=2&team=WSH
       http://naturalstattrick.com/teamtable.php?season=20142015&stype=2
-    )
+    ]
   end
 end

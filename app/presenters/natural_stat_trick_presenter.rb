@@ -14,7 +14,7 @@ class NaturalStatTrickPresenter < LinkPresenterBase
   end
 
   def links
-   %W(
+   %W[
      http://naturalstattrick.com/game.php?season=#{season}&game=#{game_number_without_year_and_zero}
       http://naturalstattrick.com/playerteams.php?stdoi=oi&season=#{season}&stype=#{game_type}&team=#{team.abbreviation}
       http://naturalstattrick.com/playerteams.php?stdoi=std&season=#{season}&stype=#{game_type}&team=#{team.abbreviation}
@@ -22,6 +22,6 @@ class NaturalStatTrickPresenter < LinkPresenterBase
       http://naturalstattrick.com/playerlist.php?season=#{season}
       http://naturalstattrick.com/linestats.php?season=#{season}&stype=#{game_type}&team=#{team.abbreviation}
       http://naturalstattrick.com/teamtable.php?season=#{season}&stype=#{game_type}
-   )
+   ]
   end
 end
