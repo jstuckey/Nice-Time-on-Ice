@@ -3,6 +3,8 @@ AllCops:
     - bin/**/*
     - config/**/*
     - db/**/*
+    - Gemfile
+    - Rakefile
 
 Style/Documentation:
   Enabled: false
