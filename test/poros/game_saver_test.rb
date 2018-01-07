@@ -48,13 +48,13 @@ class GameSaverTest < ActiveSupport::TestCase
   TEST_GAME_NUMBER = 201502999
 
   def build_game
-   builder = GameBuilder.new
-   builder.year_start = 2014
-   builder.game_number = TEST_GAME_NUMBER
-   builder.away_team = "PIT"
-   builder.home_team = "WSH"
-   builder.date = 1.day.ago
-   builder.is_playoffs = false
-   builder.to_game
+    builder = GameBuilder.new
+    builder.year_start = 2014
+    builder.game_number = TEST_GAME_NUMBER
+    builder.away_team = "PIT"
+    builder.home_team = "WSH"
+    builder.date = 1.day.ago
+    builder.is_playoffs = false
+    builder.to_game
   end
 end
