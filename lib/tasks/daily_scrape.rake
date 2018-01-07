@@ -25,7 +25,7 @@ def scrape_for_date(date = nil)
   games = GameScraper.new(date: date).call.games
   results = GameSaver.new(games).call.results
   log_results(results)
-rescue => ex
+rescue StandardError => ex
   log_result(ex.message)
 ensure
   email_results
