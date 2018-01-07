@@ -32,7 +32,10 @@ class GamePresenterTest < ActiveSupport::TestCase
     # Not sure why href is html escaped
     expected = expected.map { |anchor| anchor.gsub("&", "&amp;") }
 
-    def @context.game_order ; "asc" ; end
+    def @context.game_order
+      "asc"
+    end
+
     assert_equal expected, GamePresenter.new(@context).links
   end
 
@@ -43,7 +46,11 @@ class GamePresenterTest < ActiveSupport::TestCase
 
   test "#dates should return ascending list of game date strings if order passed in" do
     expected = ["Wed Apr 08, 2015", "Sat Apr 11, 2015"]
-    def @context.game_order ; "asc" ; end
+
+    def @context.game_order
+      "asc"
+    end
+
     assert_equal expected, GamePresenter.new(@context).dates
   end
 
@@ -59,7 +66,11 @@ class GamePresenterTest < ActiveSupport::TestCase
 
   test "#order_href should return descending when order is ascending" do
     expected = "/?game_order=desc&game_type=2&season=2014&team=WSH"
-    def @context.game_order ; "asc" ; end
+
+    def @context.game_order
+      "asc"
+    end
+
     assert_equal expected, GamePresenter.new(@context).order_href
   end
 
@@ -68,7 +79,10 @@ class GamePresenterTest < ActiveSupport::TestCase
   end
 
   test "#order_class should be glyph-up when order is ascending" do
-    def @context.game_order ; "asc" ; end
+    def @context.game_order
+      "asc"
+    end
+
     assert_equal "glyph-up", GamePresenter.new(@context).order_class
   end
 end
