@@ -5,7 +5,7 @@ namespace :scrape do
   end
 
   desc "Scrape game data for specified date from NHL.com"
-  task :date, [:year, :month, :day] => [:environment] do |_t, args|
+  task :date, %i[year month day] => [:environment] do |_t, args|
     year = args[:year]
     month = args[:month]
     day = args[:day]
