@@ -9,6 +9,8 @@ class TeamPresenterTest < ActiveSupport::TestCase
     )
   end
 
+  # rubocop:disable Metrics/LineLength
+  # rubocop:disable Metrics/BlockLength
   test "#links should return list of anchor tags for each team" do
     expected = [
       %(<a class="team" href="/?game_order=desc&game_type=2&season=2014&team=ANA">Anaheim Ducks</a>),
@@ -48,6 +50,8 @@ class TeamPresenterTest < ActiveSupport::TestCase
 
     assert_equal expected, TeamPresenter.new(@context).links
   end
+  # rubocop:enable Metrics/LineLength
+  # rubocop:enable Metrics/BlockLength
 
   test "#li_classes should return list of css clases for <li> tags" do
     expected = [
