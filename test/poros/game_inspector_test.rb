@@ -52,6 +52,6 @@ class GameInspectorTest < ActiveSupport::TestCase
   end
 
   def playoffs?(game_number)
-    !!(/\d\d\d\d03\d\d\d\d/ =~ game_number.to_s)
+    /\d\d\d\d03\d\d\d\d/.match?(game_number.to_s)
   end
 end
