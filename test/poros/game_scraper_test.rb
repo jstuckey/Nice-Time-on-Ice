@@ -80,11 +80,9 @@ class GameScraperTest < ActiveSupport::TestCase
     scraper = GameScraper.new(date: date, parser: parser)
     assert_equal [], scraper.call.games
   end
-
 end
 
 class ParserFake
-
   attr_reader :file_path
 
   def initialize(html_fixture_name)

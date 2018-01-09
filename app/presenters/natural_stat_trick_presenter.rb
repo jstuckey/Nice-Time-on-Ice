@@ -22,6 +22,6 @@ class NaturalStatTrickPresenter < LinkPresenterBase
       http://naturalstattrick.com/playerlist.php?season=#{season}
       http://naturalstattrick.com/linestats.php?season=#{season}&stype=#{game_type}&team=#{team.abbreviation}
       http://naturalstattrick.com/teamtable.php?season=#{season}&stype=#{game_type}
-   ]
+    ]
   end
 end
