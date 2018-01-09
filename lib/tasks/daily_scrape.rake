@@ -10,9 +10,7 @@ namespace :scrape do
     month = args[:month]
     day = args[:day]
 
-    unless year && month && day
-      raise "Format must be: rake scrape:date[2015,5,25]"
-    end
+    raise "Format must be: rake scrape:date[2015,5,25]" unless year && month && day
 
     date = Date.new(year.to_i, month.to_i, day.to_i)
     scrape_for_date(date)
