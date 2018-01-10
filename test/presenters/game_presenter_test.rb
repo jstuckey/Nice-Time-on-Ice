@@ -13,8 +13,10 @@ class GamePresenterTest < ActiveSupport::TestCase
 
   test "#links should return list of anchor tags for each game in season" do
     expected = [
-      %(<a class="game" href="/?game=2014021217&game_order=desc&game_type=2&season=2014&team=WSH">New York Rangers at</br>Washington Capitals</a>),
-      %(<a class="game" href="/?game=2014021201&game_order=desc&game_type=2&season=2014&team=WSH">Boston Bruins at</br>Washington Capitals</a>)
+      %(<a class="game" href="/?game=2014021217&game_order=desc&game_type=2) +
+        %(&season=2014&team=WSH">New York Rangers at</br>Washington Capitals</a>),
+      %(<a class="game" href="/?game=2014021201&game_order=desc&game_type=2) +
+        %(&season=2014&team=WSH">Boston Bruins at</br>Washington Capitals</a>)
     ]
 
     # Not sure why href is html escaped
@@ -25,8 +27,10 @@ class GamePresenterTest < ActiveSupport::TestCase
 
   test "#links should return ascending list of anchor tags if order passed in" do
     expected = [
-      %(<a class="game" href="/?game=2014021201&game_order=asc&game_type=2&season=2014&team=WSH">Boston Bruins at</br>Washington Capitals</a>),
-      %(<a class="game" href="/?game=2014021217&game_order=asc&game_type=2&season=2014&team=WSH">New York Rangers at</br>Washington Capitals</a>)
+      %(<a class="game" href="/?game=2014021201&game_order=asc&game_type=2) +
+        %(&season=2014&team=WSH">Boston Bruins at</br>Washington Capitals</a>),
+      %(<a class="game" href="/?game=2014021217&game_order=asc&game_type=2) +
+        %(&season=2014&team=WSH">New York Rangers at</br>Washington Capitals</a>)
     ]
 
     # Not sure why href is html escaped
