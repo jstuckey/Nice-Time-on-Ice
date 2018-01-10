@@ -23,3 +23,7 @@ Style/FrozenStringLiteralComment:
 
 Metrics/LineLength:
   Max: 100
+
+Metrics/ClassLength:
+  Exclude:
+    - test/**/*
