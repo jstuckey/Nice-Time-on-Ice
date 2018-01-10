@@ -186,26 +186,6 @@ class RequestContextTest < ActiveSupport::TestCase
     assert_equal game, context.game
   end
 
-  test "should return a hash representation" do
-    team = teams(:caps)
-    season = seasons(:fourteen)
-    game_type = "regular"
-    game_order = "desc"
-    game = games(:game_one)
-
-    context = RequestContext.new(team: team, season: season, game: game, game_order: game_order, game_type: game_type)
-    hash = context.to_hash
-
-    expected = {
-      team: "WSH",
-      season: "20142015",
-      game: "2014021201",
-      game_type: "2",
-      game_order: "desc"
-    }
-    assert_equal expected, hash
-  end
-
   private
 
   def destroy_playoff_fixtures

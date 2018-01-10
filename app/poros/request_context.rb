@@ -9,16 +9,6 @@ class RequestContext
     @game       = determine_game(params[:game])
   end
 
-  def to_hash
-    {
-      team: team.abbreviation,
-      season: season.to_s,
-      game: game.game_number.to_s,
-      game_type: game_type.to_s,
-      game_order: game_order
-    }
-  end
-
   private
 
   def determine_team(team)
