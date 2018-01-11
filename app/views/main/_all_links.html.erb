@@ -4,22 +4,22 @@
   Links
   </h3>
   <ul id="game-link-list" class="three-columns-body">
-    <%= render partial: "site_links", locals: { site_name: "NHL", presenter: @nhl_link_presenter } %>
-    <%= render partial: "site_links", locals: { site_name: "Corsica", presenter: @corsica_link_presenter } %>
-    <%= render partial: "site_links", locals: { site_name: "Hockey Viz", presenter: @hockey_viz_link_presenter } %>
-    <%= render partial: "site_links", locals: { site_name: "Behind the Net", presenter: @btn_link_presenter } %>
-    <%= render partial: "site_links", locals: { site_name: "Hockey Stats CA", presenter: @hockey_stats_link_presenter } %>
-    <%= render partial: "site_links", locals: { site_name: "Puckbase", presenter: @puckbase_link_presenter } %>
-    <%= render partial: "site_links", locals: { site_name: "Hockey-Reference", presenter: @hockey_reference_link_presenter } %>
-    <%= render partial: "site_links", locals: { site_name: "Cap Friendly", presenter: @cap_friendly_link_presenter } %>
-    <%= render partial: "site_links", locals: { site_name: "Sportrac", presenter: @sportrac_link_presenter } %>
-    <%= render partial: "site_links", locals: { site_name: "Natural Stat Trick", presenter: @nst_link_presenter } %>
-    <%= render partial: "site_links", locals: { site_name: "Puck on Net", presenter: @puck_on_net_link_presenter } %>
-    <%= render partial: "site_links", locals: { site_name: "NHL Numbers", presenter: @nhl_numbers_link_presenter } %>
-    <%= render partial: "site_links", locals: { site_name: "GearGeek", presenter: @gear_geek_link_presenter } %>
-    <%= render partial: "site_links", locals: { site_name: "Nullisecund", presenter: @nullisecund_link_presenter } %>
-    <%= render partial: "site_links", locals: { site_name: "Hockey Abstract", presenter: @hockey_abstract_link_presenter } %>
-    <%= render partial: "site_links", locals: { site_name: "Dobber Hockey", presenter: @dobber_hockey_link_presenter } %>
-    <%= render partial: "site_links", locals: { site_name: "Quant Hockey", presenter: @quant_hockey_link_presenter } %>
+    <%= render partial: "site_links", locals: { site_name: "NHL", presenter: @link_presenter.nhl } %>
+    <%= render partial: "site_links", locals: { site_name: "Corsica", presenter: @link_presenter.corsica } %>
+    <%= render partial: "site_links", locals: { site_name: "Hockey Viz", presenter: @link_presenter.hockey_viz } %>
+    <%= render partial: "site_links", locals: { site_name: "Behind the Net", presenter: @link_presenter.behind_the_net } %>
+    <%= render partial: "site_links", locals: { site_name: "Hockey Stats CA", presenter: @link_presenter.hockey_stats } %>
+    <%= render partial: "site_links", locals: { site_name: "Puckbase", presenter: @link_presenter.puckbase } %>
+    <%= render partial: "site_links", locals: { site_name: "Hockey-Reference", presenter: @link_presenter.hockey_reference } %>
+    <%= render partial: "site_links", locals: { site_name: "Cap Friendly", presenter: @link_presenter.cap_friendly } %>
+    <%= render partial: "site_links", locals: { site_name: "Sportrac", presenter: @link_presenter.sportrac } %>
+    <%= render partial: "site_links", locals: { site_name: "Natural Stat Trick", presenter: @link_presenter.natural_stat_trick } %>
+    <%= render partial: "site_links", locals: { site_name: "Puck on Net", presenter: @link_presenter.puck_on_net } %>
+    <%= render partial: "site_links", locals: { site_name: "NHL Numbers", presenter: @link_presenter.nhl_numbers } %>
+    <%= render partial: "site_links", locals: { site_name: "GearGeek", presenter: @link_presenter.gear_geek } %>
+    <%= render partial: "site_links", locals: { site_name: "Nullisecund", presenter: @link_presenter.nullisecund } %>
+    <%= render partial: "site_links", locals: { site_name: "Hockey Abstract", presenter: @link_presenter.hockey_abstract } %>
+    <%= render partial: "site_links", locals: { site_name: "Dobber Hockey", presenter: @link_presenter.dobber_hockey } %>
+    <%= render partial: "site_links", locals: { site_name: "Quant Hockey", presenter: @link_presenter.quant_hockey } %>
   </ul>
 </section>
