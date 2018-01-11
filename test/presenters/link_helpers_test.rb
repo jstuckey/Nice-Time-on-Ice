@@ -60,7 +60,7 @@ class LinkHelpersTest < ActiveSupport::TestCase
     assert_equal "021217", game_number_without_year
   end
 
-  test "#game_number_without_year_and_zero should strip year and 0 off the front of the game number" do
+  test "#game_number_without_year_and_zero strips year and 0 off front of game number" do
     self.game = Game.create(game_number: 2014021217)
     assert_equal "21217", game_number_without_year_and_zero
   end
