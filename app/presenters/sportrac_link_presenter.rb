@@ -1,6 +1,8 @@
 class SportracLinkPresenter < LinkPresenterBase
   include LinkHelpers
 
+  LINK_BASE = "http://www.spotrac.com/nhl/".freeze
+
   def names
     [
       "Financial Summary",
@@ -15,15 +17,47 @@ class SportracLinkPresenter < LinkPresenterBase
   end
 
   def links
-    %W[
-      http://www.spotrac.com/nhl/#{full_team_name}
-      http://www.spotrac.com/nhl/#{full_team_name}/contracts
-      http://www.spotrac.com/nhl/#{full_team_name}/cap/#{season.year_start}
-      http://www.spotrac.com/nhl/#{full_team_name}/yearly/cap/#{season.year_start}
-      http://www.spotrac.com/nhl/#{full_team_name}/positional/#{season.year_start}
-      http://www.spotrac.com/nhl/free-agents/#{season.year_start}/#{full_team_name}/ufa/
-      http://www.spotrac.com/nhl/transactions/#{season.year_start}/#{full_team_name}
-      http://www.spotrac.com/nhl/tools/buyout-calculator
+    [
+      financial_summary,
+      contracts,
+      salary_cap,
+      multi_year_breakdown,
+      positional_spending,
+      free_agents,
+      transactions,
+      buyout_calculator
     ]
+  end
+
+  def financial_summary
+    "#{LINK_BASE}#{full_team_name}"
+  end
+
+  def contracts
+    "#{LINK_BASE}#{full_team_name}/contracts"
+  end
+
+  def salary_cap
+    "#{LINK_BASE}#{full_team_name}/cap/#{season.year_start}"
+  end
+
+  def multi_year_breakdown
+    "#{LINK_BASE}#{full_team_name}/yearly/cap/#{season.year_start}"
+  end
+
+  def positional_spending
+    "#{LINK_BASE}#{full_team_name}/positional/#{season.year_start}"
+  end
+
+  def free_agents
+    "#{LINK_BASE}free-agents/#{season.year_start}/#{full_team_name}/ufa/"
+  end
+
+  def transactions
+    "#{LINK_BASE}transactions/#{season.year_start}/#{full_team_name}"
+  end
+
+  def buyout_calculator
+    "#{LINK_BASE}tools/buyout-calculator"
   end
 end
