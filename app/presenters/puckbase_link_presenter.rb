@@ -1,4 +1,6 @@
 class PuckbaseLinkPresenter < LinkPresenterBase
+  LINK_BASE = "http://puckbase.com/stats".freeze
+
   def names
     [
       "Scoring",
@@ -15,17 +17,65 @@ class PuckbaseLinkPresenter < LinkPresenterBase
   end
 
   def links
-    %W[
-      http://puckbase.com/stats/scoring?team=#{team.abbreviation}&season=#{game_type}&year=#{season.year_start}
-      http://puckbase.com/stats/possession?team=#{team.abbreviation}&season=#{game_type}&year=#{season.year_start}
-      http://puckbase.com/stats/goalies?team=#{team.abbreviation}&season=#{game_type}&year=#{season.year_start}
-      http://puckbase.com/stats/faceoff-percentage?team=#{team.abbreviation}&season=#{game_type}&year=#{season.year_start}
-      http://puckbase.com/stats/post-faceoff-possession?team=#{team.abbreviation}&season=#{game_type}&year=#{season.year_start}
-      http://puckbase.com/stats/faceoff-hand?team=#{team.abbreviation}&season=#{game_type}&year=#{season.year_start}
-      http://puckbase.com/stats/team-faceoff-splits?team=#{team.abbreviation}&season=#{game_type}&year=#{season.year_start}
-      http://puckbase.com/stats/team-lines?team=#{team.abbreviation}&season=#{game_type}&year=#{season.year_start}
-      http://puckbase.com/stats/team-scoring&season=#{game_type}&year=#{season.year_start}
-      http://puckbase.com/stats/team-faceoffs&season=#{game_type}&year=#{season.year_start}
+    [
+      scoring,
+      possession,
+      goalies,
+      faceoff,
+      post_faceoff,
+      faceoff_handedness,
+      faceoff_team_splits,
+      faceoff_lines,
+      team_scoring,
+      team_faceoffs
     ]
+  end
+
+  def scoring
+    "#{LINK_BASE}/scoring?team=#{team.abbreviation}" \
+      "&season=#{game_type}&year=#{season.year_start}"
+  end
+
+  def possession
+    "#{LINK_BASE}/possession?team=#{team.abbreviation}" \
+      "&season=#{game_type}&year=#{season.year_start}"
+  end
+
+  def goalies
+    "#{LINK_BASE}/goalies?team=#{team.abbreviation}" \
+      "&season=#{game_type}&year=#{season.year_start}"
+  end
+
+  def faceoff
+    "#{LINK_BASE}/faceoff-percentage?team=#{team.abbreviation}" \
+      "&season=#{game_type}&year=#{season.year_start}"
+  end
+
+  def post_faceoff
+    "#{LINK_BASE}/post-faceoff-possession?team=#{team.abbreviation}" \
+      "&season=#{game_type}&year=#{season.year_start}"
+  end
+
+  def faceoff_handedness
+    "#{LINK_BASE}/faceoff-hand?team=#{team.abbreviation}" \
+      "&season=#{game_type}&year=#{season.year_start}"
+  end
+
+  def faceoff_team_splits
+    "#{LINK_BASE}/team-faceoff-splits?team=#{team.abbreviation}" \
+      "&season=#{game_type}&year=#{season.year_start}"
+  end
+
+  def faceoff_lines
+    "#{LINK_BASE}/team-lines?team=#{team.abbreviation}" \
+      "&season=#{game_type}&year=#{season.year_start}"
+  end
+
+  def team_scoring
+    "#{LINK_BASE}/team-scoring&season=#{game_type}&year=#{season.year_start}"
+  end
+
+  def team_faceoffs
+    "#{LINK_BASE}/team-faceoffs&season=#{game_type}&year=#{season.year_start}"
   end
 end
