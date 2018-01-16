@@ -1,6 +1,7 @@
 class NhlLinkPresenter < LinkPresenterBase
   include LinkHelpers
 
+  # rubocop:disable MethodLength
   def names
     [
       "Boxscore",
@@ -72,4 +73,5 @@ class NhlLinkPresenter < LinkPresenterBase
       http://www.nhl.com/stats/player?team=#{team.abbreviation}&season=#{season}&gameType=#{game_type}&report=bios
     ]
   end
+  # rubocop:enable MethodLength
 end

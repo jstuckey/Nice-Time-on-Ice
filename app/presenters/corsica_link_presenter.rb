@@ -1,6 +1,7 @@
 class CorsicaLinkPresenter < LinkPresenterBase
   include LinkHelpers
 
+  # rubocop:disable MethodLength
   def names
     [
       "Game Stats",
@@ -30,4 +31,5 @@ class CorsicaLinkPresenter < LinkPresenterBase
       http://corsica.hockey/predictions/
     ]
   end
+  # rubocop:enable MethodLength
 end

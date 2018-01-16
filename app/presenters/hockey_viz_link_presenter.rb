@@ -1,4 +1,5 @@
 class HockeyVizLinkPresenter < LinkPresenterBase
+  # rubocop:disable MethodLength
   def names
     [
       "Team Overview",
@@ -26,4 +27,5 @@ class HockeyVizLinkPresenter < LinkPresenterBase
       http://hockeyviz.com/game/#{game.game_number}/awayZone
     ]
   end
+  # rubocop:enable MethodLength
 end

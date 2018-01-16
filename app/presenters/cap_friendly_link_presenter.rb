@@ -1,6 +1,7 @@
 class CapFriendlyLinkPresenter < LinkPresenterBase
   include LinkHelpers
 
+  # rubocop:disable MethodLength
   def names
     [
       "Cap Hits",
@@ -28,4 +29,5 @@ class CapFriendlyLinkPresenter < LinkPresenterBase
       https://www.capfriendly.com/comparables
     ]
   end
+  # rubocop:enable MethodLength
 end

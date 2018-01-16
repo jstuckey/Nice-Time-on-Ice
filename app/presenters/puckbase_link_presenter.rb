@@ -1,6 +1,7 @@
 class PuckbaseLinkPresenter < LinkPresenterBase
   LINK_BASE = "http://puckbase.com/stats".freeze
 
+  # rubocop:disable MethodLength
   def names
     [
       "Scoring",
@@ -78,4 +79,5 @@ class PuckbaseLinkPresenter < LinkPresenterBase
   def team_faceoffs
     "#{LINK_BASE}/team-faceoffs&season=#{game_type}&year=#{season.year_start}"
   end
+  # rubocop:enable MethodLength
 end
