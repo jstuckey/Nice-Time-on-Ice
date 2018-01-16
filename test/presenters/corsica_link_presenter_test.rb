@@ -33,7 +33,7 @@ class CorsicaLinkPresenterTest < ActiveSupport::TestCase
       "Skater Stats",
       "Goalie Stats",
       "Line Combinations",
-      "Defence Pairings",
+      "Defense Pairings",
       "Player Profiles",
       "WAR",
       "Roster",
