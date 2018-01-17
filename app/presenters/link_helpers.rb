@@ -6,18 +6,14 @@ module LinkHelpers
   # game, season, and team params.
   #
 
-  def alternate_team_abbreviation(team_param = nil)
-    t = team_param || team
-    return unless t
-    abbreviation = t.abbreviation
-
+  def alternate_team_abbreviation
     # Some sites use non-standard team abbreviations
-    case abbreviation
+    case team.abbreviation
     when "LAK" then "L.A"
     when "NJD" then "N.J"
     when "SJS" then "S.J"
     when "TBL" then "T.B"
-    else abbreviation
+    else team.abbreviation
     end
   end
 
