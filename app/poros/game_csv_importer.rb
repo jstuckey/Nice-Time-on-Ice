@@ -1,5 +1,7 @@
 require 'csv'
 
+# Create Game records using a CSV file
+# Used for loading historic game data in bulk
 class GameCSVImporter
   HEADER_YEAR        = "year".freeze
   HEADER_GAME_NUMBER = "game_number".freeze

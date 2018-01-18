@@ -1,3 +1,6 @@
+# Used for finding missing games in the database
+# Sometimes scraping the NHL.com schedule page fails, and I miss some games
+# This helps me find them
 class GameInspector
   def initialize(year_start)
     @year_start = year_start

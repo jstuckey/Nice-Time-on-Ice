@@ -1,3 +1,5 @@
+# Make an object behave like it's False
+# Made to be used by null objects
 module Falsey
   def to_s
     ""

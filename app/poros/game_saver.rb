@@ -1,3 +1,7 @@
+# Saves or updates one or more games (or reports failure)
+# Used when scraping the NHL.com schedule page
+#
+# Used the Chain of Responsibility design pattern for fun
 class GameSaver
   attr_reader :games, :results
 
@@ -32,6 +36,9 @@ class GameSaver
     end
   end
 
+  # Parent class for steps in the Chain of Responsibility
+  # If the step succeeeds, it returns a message
+  # If the step fails, it calls the next step
   class Step
     attr_reader :game, :next_step
 
@@ -59,6 +66,7 @@ class GameSaver
     end
   end
 
+  # Attempts to save a game
   class SaveGame < Step
     def perform_step
       game.save
@@ -69,6 +77,7 @@ class GameSaver
     end
   end
 
+  # Attempts to update a game
   class UpdateGameDate < Step
     def perform_step
       existing_game = Game.find_by_game_number(game.game_number)
@@ -82,6 +91,7 @@ class GameSaver
     end
   end
 
+  # Last step - returns and error message
   class ReportFailure < Step
     def perform_step
       true

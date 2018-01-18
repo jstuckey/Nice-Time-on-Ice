@@ -1,3 +1,4 @@
+# Controller for the main page of the NTOI website
 class MainController < ApplicationController
   before_action :read_team_cookie
   after_action :write_team_cookie

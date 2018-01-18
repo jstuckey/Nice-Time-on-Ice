@@ -1,3 +1,7 @@
+# Scrapes game information from the NHL.com schedule page
+# Extracts the date, teams, and game number that we need for recording games
+#
+# This is the secret sauce
 class GameScraper
   attr_reader :date, :parser, :season, :url, :doc, :games
 

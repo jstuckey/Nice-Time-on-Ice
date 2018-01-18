@@ -1,3 +1,4 @@
+# API endpoints for game data
 class ApiController < ApplicationController
   before_action :set_json_format, except: :index
 

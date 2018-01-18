@@ -1,3 +1,6 @@
+# An implementation of the null object pattern for the Game model
+# There might not always be available games depending on the request params
+# For example, we request playoff games for a team that didn't make the playoffs
 class NullGame
   include Falsey
 
@@ -17,6 +20,7 @@ class NullGame
     define_method(f) { BlackHole.new }
   end
 
+  # Allows calling an infinite chain of methods on the null object
   class BlackHole < BasicObject
     include ::Falsey
 

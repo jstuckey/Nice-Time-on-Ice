@@ -1,3 +1,4 @@
+# Holds information about an NHL game
 class Game < ActiveRecord::Base
   belongs_to :season
   belongs_to :away_team, class_name: "Team", foreign_key: "away_team_id"

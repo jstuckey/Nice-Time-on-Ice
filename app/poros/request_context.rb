@@ -1,3 +1,6 @@
+# Finds the team, season, game, and other parameters when viewing the website
+# Sets defaults when these parameters aren't supplied by the user
+# This gets passed around to presenters and other objects when constructing a page
 class RequestContext
   attr_reader :team, :season, :game_type, :game, :game_order
 
