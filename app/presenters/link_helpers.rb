@@ -1,11 +1,6 @@
+# These are helper methods for various links
+# Some urls require some advanced manipulation of game, season, and team params
 module LinkHelpers
-  #
-  # These are helper methods for various links.
-  #
-  # Some urls require some advanced manipulation of
-  # game, season, and team params.
-  #
-
   def alternate_team_abbreviation
     # Some sites use non-standard team abbreviations
     case team.abbreviation

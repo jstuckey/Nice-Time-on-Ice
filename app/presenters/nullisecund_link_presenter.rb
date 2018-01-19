@@ -1,3 +1,4 @@
+# Constructs links to Nullisecund
 class NullisecundLinkPresenter < LinkPresenterBase
   include LinkHelpers
 

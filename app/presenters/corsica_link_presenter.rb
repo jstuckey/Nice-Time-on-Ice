@@ -1,3 +1,4 @@
+# Constructs links to Corsica
 class CorsicaLinkPresenter < LinkPresenterBase
   include LinkHelpers
 

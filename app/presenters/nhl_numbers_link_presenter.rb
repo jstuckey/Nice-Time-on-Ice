@@ -1,3 +1,4 @@
+# Constructs links to NHL Numbers
 class NhlNumbersLinkPresenter < LinkPresenterBase
   include LinkHelpers
 

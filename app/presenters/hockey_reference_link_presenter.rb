@@ -1,3 +1,4 @@
+# Constructs links to Hockey Reference
 class HockeyReferenceLinkPresenter < LinkPresenterBase
   def names
     [

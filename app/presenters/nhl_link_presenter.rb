@@ -1,3 +1,4 @@
+# Constructs links to NHL.com
 # rubocop:disable ClassLength
 class NhlLinkPresenter < LinkPresenterBase
   include LinkHelpers

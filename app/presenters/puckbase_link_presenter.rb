@@ -1,3 +1,4 @@
+# Constructs links to Puckbase
 class PuckbaseLinkPresenter < LinkPresenterBase
   LINK_BASE = "http://puckbase.com/stats".freeze
 

@@ -1,3 +1,4 @@
+# Constructs links to Behind the Net
 class BehindTheNetLinkPresenter < LinkPresenterBase
   include LinkHelpers
 

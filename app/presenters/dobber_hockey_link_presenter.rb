@@ -1,3 +1,4 @@
+# Constructs links to Dobber Hockey
 class DobberHockeyLinkPresenter < LinkPresenterBase
   def names
     ["Fantasy Tools"]

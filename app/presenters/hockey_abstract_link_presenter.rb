@@ -1,3 +1,4 @@
+# Constructs links to Hockey Abstract
 class HockeyAbstractLinkPresenter < LinkPresenterBase
   def names
     [

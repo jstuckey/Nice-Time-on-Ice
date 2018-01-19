@@ -1,3 +1,4 @@
+# Constructs links to Sportrac
 class SportracLinkPresenter < LinkPresenterBase
   include LinkHelpers
 

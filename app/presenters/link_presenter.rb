@@ -1,4 +1,4 @@
-# Returns link presenters for all sites
+# Returns links presenters for all sites
 class LinkPresenter
   attr_reader :context
 

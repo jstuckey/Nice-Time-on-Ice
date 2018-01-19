@@ -1,3 +1,4 @@
+# Constructs links to Puck on Net
 class PuckOnNetLinkPresenter < LinkPresenterBase
   LINK_BASE = "http://www.puckon.net/".freeze
 

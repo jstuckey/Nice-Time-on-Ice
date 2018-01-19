@@ -1,3 +1,5 @@
+# Parent class for all link presenters
+# Contains common methods to DRY things up
 class LinkPresenterBase
   attr_reader :season, :team, :game, :game_type
 

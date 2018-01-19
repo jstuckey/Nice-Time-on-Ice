@@ -1,3 +1,4 @@
+# Constructs links to Cap Friendly
 class CapFriendlyLinkPresenter < LinkPresenterBase
   include LinkHelpers
 

@@ -1,3 +1,4 @@
+# Constructs links to Natural Stat Trick
 class NaturalStatTrickPresenter < LinkPresenterBase
   include LinkHelpers
 

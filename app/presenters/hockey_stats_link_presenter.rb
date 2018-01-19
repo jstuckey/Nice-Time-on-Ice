@@ -1,3 +1,4 @@
+# Constructs links to Hockey Stats CA
 class HockeyStatsLinkPresenter < LinkPresenterBase
   def names
     [

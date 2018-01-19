@@ -1,3 +1,4 @@
+# Constructs links to Hockey Viz
 class HockeyVizLinkPresenter < LinkPresenterBase
   LINK_BASE = "http://hockeyviz.com/".freeze
 

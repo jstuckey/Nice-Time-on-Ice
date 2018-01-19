@@ -1,3 +1,4 @@
+# Constructs links to Gear Geek
 class GearGeekLinkPresenter < LinkPresenterBase
   include LinkHelpers
 
