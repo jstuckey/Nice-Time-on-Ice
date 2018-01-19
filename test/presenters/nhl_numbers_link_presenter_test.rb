@@ -36,11 +36,11 @@ class NhlNumbersLinkPresenterTest < ActiveSupport::TestCase
   end
 
   def expected_links
-    %w(
+    %w[
       http://stats.nhlnumbers.com/teams/WAS?year=2015
       http://stats.nhlnumbers.com/players?year=2015
       http://stats.nhlnumbers.com/player_stats/year/2015
       http://stats.nhlnumbers.com/free_agents?year=2015
-    )
+    ]
   end
 end

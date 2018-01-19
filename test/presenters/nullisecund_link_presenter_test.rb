@@ -34,9 +34,9 @@ class NullisecundLinkPresenterTest < ActiveSupport::TestCase
   end
 
   def expected_links
-    %w(
+    %w[
       http://nullisecund.us/nhl/game.php?id=21201
       http://nullisecund.us/nhl/toi.php?id=21201
-    )
+    ]
   end
 end

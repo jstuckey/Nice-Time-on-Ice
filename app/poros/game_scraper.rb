@@ -1,10 +1,15 @@
+# Scrapes game information from the NHL.com schedule page
+# Extracts the date, teams, and game number that we need for recording games
+#
+# This is the secret sauce
 class GameScraper
   attr_reader :date, :parser, :season, :url, :doc, :games
 
   def initialize(date: nil, parser: nil)
     @date = date || Date.today
     @season = season_from_date(@date)
-    @url = "https://www.nhl.com/schedule/-/ET?lazyloadStart=#{@date.strftime("%Y-%m-%d")}"
+    @url = "https://www.nhl.com/schedule/-/ET" \
+      "?lazyloadStart=#{@date.strftime("%Y-%m-%d")}"
     @parser = parser || NhlParser.new(@url)
   end
 
@@ -85,7 +90,7 @@ class GameScraper
     }
   end
 
-  GAME_LINK_PATTERN = /\/gamecenter\/(?<game_number>[0-9]+)$/
+  GAME_LINK_PATTERN = %r{\/gamecenter\/(?<game_number>[0-9]+)$}
 
   def year_start
     season[0, 4]
@@ -97,7 +102,7 @@ class GameScraper
     anchors = row.css("a.icon-label-link")
     anchors.each do |a|
       url = a.attribute("href")
-      if match = GAME_LINK_PATTERN.match(url)
+      GAME_LINK_PATTERN.match(url) do |match|
         return match[:game_number]
       end
     end

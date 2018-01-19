@@ -1,3 +1,4 @@
+# Constructs links to Gear Geek
 class GearGeekLinkPresenter < LinkPresenterBase
   include LinkHelpers
 
@@ -15,7 +16,7 @@ class GearGeekLinkPresenter < LinkPresenterBase
   end
 
   def links
-    %W(
+    %W[
       https://www.geargeek.com/
       https://www.geargeek.com/brands
       https://www.geargeek.com/team/#{full_team_name}
@@ -24,6 +25,6 @@ class GearGeekLinkPresenter < LinkPresenterBase
       https://www.geargeek.com/position/goalie
       https://www.geargeek.com/stats/goals
       https://www.geargeek.com/salary
-    )
+    ]
   end
 end

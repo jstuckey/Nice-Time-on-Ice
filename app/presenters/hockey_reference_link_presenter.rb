@@ -1,3 +1,4 @@
+# Constructs links to Hockey Reference
 class HockeyReferenceLinkPresenter < LinkPresenterBase
   def names
     [
@@ -8,10 +9,10 @@ class HockeyReferenceLinkPresenter < LinkPresenterBase
   end
 
   def links
-    %W(
+    %W[
       http://www.hockey-reference.com/teams/#{team.abbreviation}/#{season.year_end}_games.html
       http://www.hockey-reference.com/teams/#{team.abbreviation}/#{season.year_end}.html
       http://www.hockey-reference.com/play-index/tpbp_finder.cgi
-    )
+    ]
   end
 end

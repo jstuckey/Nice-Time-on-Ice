@@ -1,3 +1,6 @@
+# Used for finding missing games in the database
+# Sometimes scraping the NHL.com schedule page fails, and I miss some games
+# This helps me find them
 class GameInspector
   def initialize(year_start)
     @year_start = year_start
@@ -32,22 +35,22 @@ class GameInspector
   end
 
   def actual_regular_season_game_numbers
-    Season.where(year_start: year_start)
-          .first.games
+    return [] unless season.present?
+    season.games
           .where(playoffs: false)
           .order(:game_number)
           .pluck(:game_number)
-  rescue
-    []
   end
 
   def actual_post_season_game_numbers
-    Season.where(year_start: year_start)
-          .first.games
+    return [] unless season.present?
+    season.games
           .where(playoffs: true)
           .order(:game_number)
           .pluck(:game_number)
-  rescue
-    []
+  end
+
+  def season
+    @season ||= Season.where(year_start: year_start).first
   end
 end

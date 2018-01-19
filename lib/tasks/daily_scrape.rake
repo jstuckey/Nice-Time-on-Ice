@@ -5,11 +5,12 @@ namespace :scrape do
   end
 
   desc "Scrape game data for specified date from NHL.com"
-  task :date, [:year, :month, :day] => [:environment] do |_t, args|
-    year, month, day = args[:year], args[:month], args[:day]
-    unless year && month && day
-      fail "Format must be: rake scrape:date[2015,5,25]"
-    end
+  task :date, %i[year month day] => [:environment] do |_t, args|
+    year = args[:year]
+    month = args[:month]
+    day = args[:day]
+
+    raise "Format must be: rake scrape:date[2015,5,25]" unless year && month && day
 
     date = Date.new(year.to_i, month.to_i, day.to_i)
     scrape_for_date(date)
@@ -22,7 +23,7 @@ def scrape_for_date(date = nil)
   games = GameScraper.new(date: date).call.games
   results = GameSaver.new(games).call.results
   log_results(results)
-rescue => ex
+rescue StandardError => ex
   log_result(ex.message)
 ensure
   email_results

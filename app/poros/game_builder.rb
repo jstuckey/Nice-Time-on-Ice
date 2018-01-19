@@ -1,3 +1,8 @@
+# Produces a Game record with all fields properly filled out
+# Allows for a more lenient range of inputs when creating a game
+#
+# For example, we could set the teams using abbreviations and
+# the season by using a year integer
 class GameBuilder
   include Virtus.model
   include AliasAttribute

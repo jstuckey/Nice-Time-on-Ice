@@ -1,3 +1,5 @@
+# Constructs links to ourself that change the selected game
+# Supports sorting games as well
 class GamePresenter
   include ActionView::Helpers::UrlHelper
 

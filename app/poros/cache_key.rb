@@ -1,3 +1,5 @@
+# Provides a unique key for all the parameters that define a view of the web page
+# Used for view caching
 class CacheKey
   def initialize(request_context, date = nil)
     @request_context = request_context
@@ -10,7 +12,7 @@ class CacheKey
 
   private
 
-  SEPARATOR = "_"
+  SEPARATOR = "_".freeze
 
   attr_reader :request_context
 

@@ -40,7 +40,7 @@ class GearGeekLinkPresenterTest < ActiveSupport::TestCase
   end
 
   def expected_links
-    %w(
+    %w[
       https://www.geargeek.com/
       https://www.geargeek.com/brands
       https://www.geargeek.com/team/washington-capitals
@@ -49,6 +49,6 @@ class GearGeekLinkPresenterTest < ActiveSupport::TestCase
       https://www.geargeek.com/position/goalie
       https://www.geargeek.com/stats/goals
       https://www.geargeek.com/salary
-    )
+    ]
   end
 end

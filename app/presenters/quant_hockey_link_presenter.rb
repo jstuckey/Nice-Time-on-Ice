@@ -1,3 +1,4 @@
+# Constructs links to Quant Hockey
 class QuantHockeyLinkPresenter < LinkPresenterBase
   include LinkHelpers
 

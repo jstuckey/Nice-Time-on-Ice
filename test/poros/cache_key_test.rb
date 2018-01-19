@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class CacheKeyTest < ActiveSupport::TestCase
-  test "should combine team, season, game, game type, game order, and today's date to form a cache key" do
+  test "combines team, season, game, game type, game order, and date into cache key" do
     context = RequestContextDouble.new
     date = Date.new(2016, 5, 15)
     cache_key = CacheKey.new(context, date)

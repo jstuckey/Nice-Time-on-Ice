@@ -1,3 +1,4 @@
+# API endpoints for game data
 class ApiController < ApplicationController
   before_action :set_json_format, except: :index
 
@@ -6,7 +7,7 @@ class ApiController < ApplicationController
   def index
     @documentation = Rails.cache.fetch("api_documentation_v1") do
       file = File.open(DOCUMENTATION_PATH)
-      YAML.load(file).deep_symbolize_keys
+      YAML.safe_load(file).deep_symbolize_keys
     end
   end
 

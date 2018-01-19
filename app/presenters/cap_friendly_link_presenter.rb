@@ -1,6 +1,8 @@
+# Constructs links to Cap Friendly
 class CapFriendlyLinkPresenter < LinkPresenterBase
   include LinkHelpers
 
+  # rubocop:disable MethodLength
   def names
     [
       "Cap Hits",
@@ -16,7 +18,7 @@ class CapFriendlyLinkPresenter < LinkPresenterBase
   end
 
   def links
-    %W(
+    %W[
       https://www.capfriendly.com/teams/#{team_nickname}
       https://www.capfriendly.com/signings
       https://www.capfriendly.com/transactions/recalls-reassignments
@@ -26,6 +28,7 @@ class CapFriendlyLinkPresenter < LinkPresenterBase
       https://www.capfriendly.com/browse/free-agents
       https://www.capfriendly.com/draft
       https://www.capfriendly.com/comparables
-    )
+    ]
   end
+  # rubocop:enable MethodLength
 end

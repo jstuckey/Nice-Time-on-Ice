@@ -1,11 +1,12 @@
-Style/Documentation:
-  Enabled: false
+AllCops:
+  Exclude:
+    - bin/**/*
+    - config/**/*
+    - db/**/*
+    - Gemfile
+    - Rakefile
 
 Style/StringLiterals:
-  Enabled: false
-
-
-Style/ClassAndModuleChildren:
   Enabled: false
 
 Style/StringLiteralsInInterpolation:
@@ -16,3 +17,14 @@ Style/NumericLiterals:
 
 Style/FrozenStringLiteralComment:
   Enabled: false
+
+Metrics/LineLength:
+  Max: 100
+
+Metrics/ClassLength:
+  Exclude:
+    - test/**/*
+
+Metrics/MethodLength:
+  Exclude:
+    - test/**/*

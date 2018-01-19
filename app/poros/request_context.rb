@@ -1,3 +1,6 @@
+# Finds the team, season, game, and other parameters when viewing the website
+# Sets defaults when these parameters aren't supplied by the user
+# This gets passed around to presenters and other objects when constructing a page
 class RequestContext
   attr_reader :team, :season, :game_type, :game, :game_order
 
@@ -7,16 +10,6 @@ class RequestContext
     @game_type  = determine_game_type(params[:game_type])
     @game_order = determine_game_order(params[:game_order])
     @game       = determine_game(params[:game])
-  end
-
-  def to_hash
-    {
-      team: team.abbreviation,
-      season: season.to_s,
-      game: game.game_number.to_s,
-      game_type: game_type.to_s,
-      game_order: game_order
-    }
   end
 
   private
@@ -76,7 +69,7 @@ class RequestContext
   end
 
   def coerce_game_type(type)
-    if type.to_s.downcase =~ /playoff/
+    if type.to_s.downcase.match?(/playoff/)
       3
     elsif type.to_i == 3
       3
@@ -94,7 +87,7 @@ class RequestContext
   end
 
   def playoffs_have_started?
-    Game.where(season: season, playoffs: true).count > 0
+    Game.where(season: season, playoffs: true).count.positive?
   end
 
   def determine_game(game)
@@ -123,7 +116,7 @@ class RequestContext
   end
 
   def determine_game_order(order)
-    if order.to_s.downcase == "asc"
+    if order.to_s.casecmp("asc").zero?
       "asc"
     else
       "desc"

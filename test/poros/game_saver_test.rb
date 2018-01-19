@@ -25,7 +25,7 @@ class GameSaverTest < ActiveSupport::TestCase
 
     results = GameSaver.new(game).call.results
 
-    expected =  "Error saving game #{TEST_GAME_NUMBER}: Date can't be blank"
+    expected = "Error saving game #{TEST_GAME_NUMBER}: Date can't be blank"
     assert_equal expected, results.first
   end
 
@@ -48,13 +48,13 @@ class GameSaverTest < ActiveSupport::TestCase
   TEST_GAME_NUMBER = 201502999
 
   def build_game
-   builder = GameBuilder.new
-   builder.year_start = 2014
-   builder.game_number = TEST_GAME_NUMBER
-   builder.away_team = "PIT"
-   builder.home_team = "WSH"
-   builder.date = 1.day.ago
-   builder.is_playoffs = false
-   builder.to_game
+    builder = GameBuilder.new
+    builder.year_start = 2014
+    builder.game_number = TEST_GAME_NUMBER
+    builder.away_team = "PIT"
+    builder.home_team = "WSH"
+    builder.date = 1.day.ago
+    builder.is_playoffs = false
+    builder.to_game
   end
 end

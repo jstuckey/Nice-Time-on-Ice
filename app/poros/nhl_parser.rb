@@ -1,5 +1,7 @@
 require 'open-uri'
 
+# Wraps Nokogiri for parsing the NHL.com website
+# Attempting to isolate this dependency
 class NhlParser
   attr_reader :url
 

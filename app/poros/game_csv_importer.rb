@@ -1,12 +1,14 @@
 require 'csv'
 
+# Create Game records using a CSV file
+# Used for loading historic game data in bulk
 class GameCSVImporter
-  HEADER_YEAR        = 'year'
-  HEADER_GAME_NUMBER = 'game_number'
-  HEADER_AWAY_TEAM   = 'away_team'
-  HEADER_HOME_TEAM   = 'home_team'
-  HEADER_GAME_DATE   = 'game_date'
-  HEADER_IS_PLAYOFFS = 'is_playoffs'
+  HEADER_YEAR        = "year".freeze
+  HEADER_GAME_NUMBER = "game_number".freeze
+  HEADER_AWAY_TEAM   = "away_team".freeze
+  HEADER_HOME_TEAM   = "home_team".freeze
+  HEADER_GAME_DATE   = "game_date".freeze
+  HEADER_IS_PLAYOFFS = "is_playoffs".freeze
 
   attr_reader :file_path, :success_count, :failure_count
 

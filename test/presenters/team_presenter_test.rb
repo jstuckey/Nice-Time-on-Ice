@@ -2,11 +2,15 @@ require 'test_helper'
 
 class TeamPresenterTest < ActiveSupport::TestCase
   setup do
-    @context = RequestContext.new(team: 'WSH',
-                                  season: '2014',
-                                  game_type: '2')
+    @context = RequestContext.new(
+      team: 'WSH',
+      season: '2014',
+      game_type: '2'
+    )
   end
 
+  # rubocop:disable Metrics/LineLength
+  # rubocop:disable Metrics/BlockLength
   test "#links should return list of anchor tags for each team" do
     expected = [
       %(<a class="team" href="/?game_order=desc&game_type=2&season=2014&team=ANA">Anaheim Ducks</a>),
@@ -38,19 +42,23 @@ class TeamPresenterTest < ActiveSupport::TestCase
       %(<a class="team" href="/?game_order=desc&game_type=2&season=2014&team=TOR">Toronto Maple Leafs</a>),
       %(<a class="team" href="/?game_order=desc&game_type=2&season=2014&team=VAN">Vancouver Canucks</a>),
       %(<a class="team" href="/?game_order=desc&game_type=2&season=2014&team=WSH">Washington Capitals</a>),
-      %(<a class="team" href="/?game_order=desc&game_type=2&season=2014&team=WPG">Winnipeg Jets</a>)]
+      %(<a class="team" href="/?game_order=desc&game_type=2&season=2014&team=WPG">Winnipeg Jets</a>)
+    ]
 
     # Not sure why href is html escaped
     expected = expected.map { |anchor| anchor.gsub("&", "&amp;") }
 
     assert_equal expected, TeamPresenter.new(@context).links
   end
+  # rubocop:enable Metrics/LineLength
+  # rubocop:enable Metrics/BlockLength
 
   test "#li_classes should return list of css clases for <li> tags" do
     expected = [
       "", "", "", "", "", "", "", "", "", "", "", "", "",
       "", "", "", "", "", "", "", "", "", "", "", "", "",
-      "", "", "class=\"selected\"", ""]
+      "", "", "class=\"selected\"", ""
+    ]
     assert_equal expected, TeamPresenter.new(@context).li_classes
   end
 end

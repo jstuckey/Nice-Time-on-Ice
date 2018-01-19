@@ -1,3 +1,5 @@
+# Parent class for all link presenters
+# Contains common methods to DRY things up
 class LinkPresenterBase
   attr_reader :season, :team, :game, :game_type
 
@@ -13,10 +15,10 @@ class LinkPresenterBase
   end
 
   def names
-    fail "Override ##{__method__} method in subclass"
+    raise "Override ##{__method__} method in subclass"
   end
 
   def links
-    fail "Override ##{__method__} method in subclass"
+    raise "Override ##{__method__} method in subclass"
   end
 end

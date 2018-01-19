@@ -1,3 +1,4 @@
+# Constructs links to ourself that change the selected team
 class TeamPresenter
   include ActionView::Helpers::UrlHelper
 

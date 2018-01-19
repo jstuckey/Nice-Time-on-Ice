@@ -40,7 +40,7 @@ class PuckOnNetLinkPresenterTest < ActiveSupport::TestCase
   end
 
   def expected_links
-    %w(
+    %w[
       http://www.puckon.net/index.php?f=0&s=2014-09-01&e=2015-06-30&l=82&p=0
       http://www.puckon.net/corsi.php?f=0&s=2017-09-01&e=2015-06-30&l=82&p=0
       http://www.puckon.net/fenwick.php?f=0&s=2014-09-01&e=2015-06-30&l=82&p=0
@@ -49,6 +49,6 @@ class PuckOnNetLinkPresenterTest < ActiveSupport::TestCase
       http://www.puckon.net/misses.php?f=0&s=2014-09-01&e=2015-06-30&l=82&p=0
       http://www.puckon.net/blocks.php?f=0&s=2014-09-01&e=2015-06-30&l=82&p=0
       http://www.puckon.net/hits.php?f=0&s=2014-09-01&e=2015-06-30&l=82&p=0
-    )
+    ]
   end
 end

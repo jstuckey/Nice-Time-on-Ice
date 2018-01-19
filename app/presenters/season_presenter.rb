@@ -1,3 +1,4 @@
+# Constructs links to ourself that change the selected season
 class SeasonPresenter
   include ActionView::Helpers::UrlHelper
 
