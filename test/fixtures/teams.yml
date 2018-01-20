@@ -1,119 +1,154 @@
 ducks:
-  name: Anaheim Ducks
+  city: Anaheim
+  name: Ducks
   abbreviation: ANA
 
 yotes:
-  name: Arizona Coyotes
+  city: Arizona
+  name: Coyotes
   abbreviation: ARI
 
 bruins:
-  name: Boston Bruins
+  city: Boston
+  name: Bruins
   abbreviation: BOS
 
 sabres:
-  name: Buffalo Sabres
+  city: Buffalo
+  name: Sabres
   abbreviation: BUF
 
 flames:
-  name: Calgary Flames
+  city: Calgary
+  name: Flames
   abbreviation: CGY
 
 canes:
-  name: Carolina Hurricanes
+  city: Carolina
+  name: Hurricanes
   abbreviation: CAR
 
 blackhawks:
-  name: Chicago Blackhawks
+  city: Chicago
+  name: Blackhawks
   abbreviation: CHI
 
 avalanche:
-  name: Colorado Avalanche
+  city: Colorado
+  name: Avalanche
   abbreviation: COL
 
 jackets:
-  name: Columbus Blue Jackets
+  city: Columbus
+  name: Blue Jackets
   abbreviation: CBJ
 
 stars:
-  name: Dallas Stars
+  city: Dallas
+  name: Stars
   abbreviation: DAL
 
 wings:
-  name: Detroit Red Wings
+  city: Detroit
+  name: Red Wings
   abbreviation: DET
 
 oilers:
-  name: Edmonton Oilers
+  city: Edmonton
+  name: Oilers
   abbreviation: EDM
 
 cats:
-  name: Florida Panthers
+  city: Florida
+  name: Panthers
   abbreviation: FLA
 
 kings:
-  name: Los Angeles Kings
+  city: Los Angeles
+  name: Kings
   abbreviation: LAK
 
 wild:
-  name: Minnesota Wild
+  city: Minnesota
+  name: Wild
   abbreviation: MIN
 
 habs:
-  name: Montreal Canadiens
+  city: Montreal
+  name: Canadiens
   abbreviation: MTL
 
 preds:
-  name: Nashville Predators
+  city: Nashville
+  name: Predators
   abbreviation: NSH
 
 devils:
-  name: New Jersey Devils
+  city: New Jersey
+  name: Devils
   abbreviation: NJD
 
 islanders:
-  name: New York Islanders
+  city: New York
+  name: Islanders
   abbreviation: NYI
 
 rags:
-  name: New York Rangers
+  city: New York
+  name: Rangers
   abbreviation: NYR
 
 sens:
-  name: Ottawa Senators
+  city: Ottawa
+  name: Senators
   abbreviation: OTT
 
 flyers:
-  name: Philadelphia Flyers
+  city: Philadelphia
+  name: Flyers
   abbreviation: PHI
 
 pens:
-  name: Pittsburgh Penguins
+  city: Pittsburgh
+  name: Penguins
   abbreviation: PIT
 
 sharks:
-  name: San Jose Sharks
+  city: San Jose
+  name: Sharks
   abbreviation: SJS
 
 blues:
-  name: St. Louis Blues
+  city: St. Louis
+  name: Blues
   abbreviation: STL
 
 bolts:
-  name: Tampa Bay Lightning
+  city: Tampa Bay
+  name: Lightning
   abbreviation: TBL
 
 leafs:
-  name: Toronto Maple Leafs
+  city: Toronto
+  name: Maple Leafs
   abbreviation: TOR
 
 canucks:
-  name: Vancouver Canucks
+  city: Vancouver
+  name: Canucks
   abbreviation: VAN
 
+knights:
+  city: Vegas
+  name: Golden Knights
+  abbreviation: VGK
+
 caps:
-  name: Washington Capitals
+  city: Washington
+  name: Capitals
   abbreviation: WSH
 
 jets:
-  name: Winnipeg Jets
+  city: Winnipeg
+  name: Jets
   abbreviation: WPG
