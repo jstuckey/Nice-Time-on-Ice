@@ -5,4 +5,8 @@ class Team < ActiveRecord::Base
 
   validates :name, uniqueness: true
   validates :abbreviation, uniqueness: true
+
+  def full_name
+    "#{city} #{name}"
+  end
 end
