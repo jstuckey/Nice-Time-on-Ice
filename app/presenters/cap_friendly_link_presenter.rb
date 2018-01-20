@@ -19,7 +19,7 @@ class CapFriendlyLinkPresenter < LinkPresenterBase
 
   def links
     %W[
-      https://www.capfriendly.com/teams/#{team_nickname}
+      https://www.capfriendly.com/teams/#{team.name.downcase.tr(" ", "")}
       https://www.capfriendly.com/signings
       https://www.capfriendly.com/transactions/recalls-reassignments
       https://www.capfriendly.com/transactions/injuries
