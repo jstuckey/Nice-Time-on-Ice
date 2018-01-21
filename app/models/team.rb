@@ -7,6 +7,6 @@ class Team < ActiveRecord::Base
   validates :abbreviation, uniqueness: true
 
   def full_name
-    "#{city} #{name}"
+    "#{city} #{name}".strip
   end
 end
