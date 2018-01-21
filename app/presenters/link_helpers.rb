@@ -51,6 +51,6 @@ module LinkHelpers
   end
 
   def full_team_name
-    team.name.downcase.tr(" ", "-").tr(".", "")
+    team.full_name.downcase.tr(" ", "-").tr(".", "")
   end
 end
