@@ -50,12 +50,14 @@ class GameBuilder
 
   def set_away_team
     game.away_team =
+      Team.find_by_full_name(away_team) ||
       Team.find_by_name(away_team) ||
       Team.find_by_abbreviation(away_team)
   end
 
   def set_home_team
     game.home_team =
+      Team.find_by_full_name(home_team) ||
       Team.find_by_name(home_team) ||
       Team.find_by_abbreviation(home_team)
   end
