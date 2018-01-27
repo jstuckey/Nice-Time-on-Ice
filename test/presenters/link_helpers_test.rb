@@ -72,16 +72,6 @@ class LinkHelpersTest < ActiveSupport::TestCase
     assert_equal "st-louis-blues", full_team_name
   end
 
-  test "#team_nickname should return name without the city" do
-    self.team = teams(:caps)
-    assert_equal "capitals", team_nickname
-  end
-
-  test "#team_nickname should return name for bluejackets" do
-    self.team = teams(:jackets)
-    assert_equal "bluejackets", team_nickname
-  end
-
   test "#nhl_numbers_team_abbreviation should return CLB for Columbus" do
     self.team = teams(:jackets)
     assert_equal "CLB", nhl_numbers_team_abbreviation

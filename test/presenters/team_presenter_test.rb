@@ -41,6 +41,7 @@ class TeamPresenterTest < ActiveSupport::TestCase
       %(<a class="team" href="/?game_order=desc&game_type=2&season=2014&team=TBL">Tampa Bay Lightning</a>),
       %(<a class="team" href="/?game_order=desc&game_type=2&season=2014&team=TOR">Toronto Maple Leafs</a>),
       %(<a class="team" href="/?game_order=desc&game_type=2&season=2014&team=VAN">Vancouver Canucks</a>),
+      %(<a class="team" href="/?game_order=desc&game_type=2&season=2014&team=VGK">Vegas Golden Knights</a>),
       %(<a class="team" href="/?game_order=desc&game_type=2&season=2014&team=WSH">Washington Capitals</a>),
       %(<a class="team" href="/?game_order=desc&game_type=2&season=2014&team=WPG">Winnipeg Jets</a>)
     ]
@@ -57,7 +58,7 @@ class TeamPresenterTest < ActiveSupport::TestCase
     expected = [
       "", "", "", "", "", "", "", "", "", "", "", "", "",
       "", "", "", "", "", "", "", "", "", "", "", "", "",
-      "", "", "class=\"selected\"", ""
+      "", "", "", "class=\"selected\"", ""
     ]
     assert_equal expected, TeamPresenter.new(@context).li_classes
   end

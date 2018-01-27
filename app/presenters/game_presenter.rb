@@ -91,7 +91,7 @@ class GamePresenter
 
   def bodies
     all_games.map do |game|
-      "#{game.away_team.name} at</br>#{game.home_team.name}".html_safe
+      "#{game.away_team.full_name} at</br>#{game.home_team.full_name}".html_safe
     end
   end
 

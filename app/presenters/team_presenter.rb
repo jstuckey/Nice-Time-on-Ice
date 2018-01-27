@@ -24,7 +24,7 @@ class TeamPresenter
   attr_reader :context
 
   def all_teams
-    @all_teams ||= Team.all.order(:name)
+    @all_teams ||= Team.all.order(:city)
   end
 
   def urls
@@ -48,6 +48,6 @@ class TeamPresenter
   end
 
   def bodies
-    all_teams.pluck(:name)
+    all_teams.map(&:full_name)
   end
 end

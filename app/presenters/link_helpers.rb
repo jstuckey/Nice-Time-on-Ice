@@ -51,14 +51,6 @@ module LinkHelpers
   end
 
   def full_team_name
-    team.name.downcase.tr(" ", "-").tr(".", "")
-  end
-
-  def team_nickname
-    if team.abbreviation == "CBJ"
-      team.name.split(" ").last(2).join.downcase
-    else
-      team.name.split(" ").last.downcase
-    end
+    team.full_name.downcase.tr(" ", "-").tr(".", "")
   end
 end

@@ -55,6 +55,18 @@ class GameBuilderTest < ActiveSupport::TestCase
     assert_equal @team2, game.home_team
   end
 
+  test "should accept away_team as full name" do
+    data = GameBuilder.new(home_team: @team1.full_name)
+    game = data.to_game
+    assert_equal @team1, game.home_team
+  end
+
+  test "should accept home_team as full name" do
+    data = GameBuilder.new(home_team: @team2.full_name)
+    game = data.to_game
+    assert_equal @team2, game.home_team
+  end
+
   test "should accept away_team as a name with special characters" do
     data = GameBuilder.new(away_team: "Montréal Canadiens")
     game = data.to_game
