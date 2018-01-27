@@ -12,7 +12,7 @@ class ShiftChartLinkPresenter < LinkPresenterBase
   def shift_chart
     "http://www.shiftchart.com/game/" \
       "#{game.date.strftime("%Y-%m-%d")}-" \
-      "#{game.home_team.name.downcase.tr(" ", "-")}-" \
-      "#{game.away_team.name.downcase.tr(" ", "-")}"
+      "#{game.away_team.name.downcase.tr(" ", "-")}-" \
+      "#{game.home_team.name.downcase.tr(" ", "-")}"
   end
 end

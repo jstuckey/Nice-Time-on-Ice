@@ -31,6 +31,6 @@ class ShiftChartLinkPresenterTest < ActiveSupport::TestCase
   end
 
   def expected_links
-    ["http://www.shiftchart.com/game/2015-04-08-capitals-bruins"]
+    ["http://www.shiftchart.com/game/2015-04-08-bruins-capitals"]
   end
 end
