@@ -74,6 +74,10 @@ class LinkPresenter
     @puck_on_net ||= PuckOnNetLinkPresenter.new(@context)
   end
 
+  def shift_chart
+    @shift_chart ||= ShiftChartLinkPresenter.new(@context)
+  end
+
   def null
     @null ||= NullLinkPresenter.new(@context)
   end
