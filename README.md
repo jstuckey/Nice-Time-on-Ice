@@ -9,9 +9,8 @@ Setup
 ------------
 
     **Setup Postgresql**
-    brew update && brew instal postgres
-    initdb /usr/local/var/postgres
-    pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start
+    brew update && brew install postgres
+    brew services start postgresql
 
     **Setup Rails**
     bundle install
