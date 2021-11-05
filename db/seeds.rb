@@ -33,6 +33,7 @@ Team.create(abbreviation: "NYR", city: "New York",     name: "Rangers",        f
 Team.create(abbreviation: "OTT", city: "Ottawa",       name: "Senators",       full_name: "Ottawa Senators")
 Team.create(abbreviation: "PHI", city: "Philadelphia", name: "Flyers",         full_name: "Philadelphia Flyers")
 Team.create(abbreviation: "PIT", city: "Pittsburgh",   name: "Penguins",       full_name: "Pittsburgh Penguins")
+Team.create(abbreviation: "SEA", city: "Seattle",      name: "Kraken",         full_name: "Seattle Kraken")
 Team.create(abbreviation: "SJS", city: "San Jose",     name: "Sharks",         full_name: "San Jose Sharks")
 Team.create(abbreviation: "STL", city: "St. Louis",    name: "Blues",          full_name: "St. Louis Blues")
 Team.create(abbreviation: "TBL", city: "Tampa Bay",    name: "Lightning",      full_name: "Tampa Bay Lightning")
