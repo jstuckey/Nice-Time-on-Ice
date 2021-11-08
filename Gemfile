@@ -18,6 +18,7 @@ group :development do
   gem 'bullet'
   gem 'rubocop', require: false
   gem 'brakeman', require: false
+  gem 'listen'
 end
 
 group :test do
