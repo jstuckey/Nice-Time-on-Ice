@@ -20,7 +20,6 @@ group :development do
 end
 
 group :test do
-  gem 'shoulda'
   gem 'rails-controller-testing'
 end
 

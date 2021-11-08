@@ -1,9 +1,6 @@
 require 'test_helper'
 
 class SeasonTeamTest < ActiveSupport::TestCase
-  should belong_to :season
-  should belong_to :team
-
   test "should not allow duplicate id pairs" do
     team_id = "1"
     season_id = "2"
