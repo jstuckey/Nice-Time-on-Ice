@@ -1,4 +1,4 @@
-require File.expand_path('../boot', __FILE__)
+require_relative 'boot'
 
 require 'rails/all'
 
@@ -8,8 +8,7 @@ Bundler.require(*Rails.groups)
 
 module NiceTimeOnIce
   class Application < Rails::Application
-    config.autoload_paths << File.join(config.root, "app", "poros")
-    config.autoload_paths << File.join(config.root, "app", "presenters")
-    config.autoload_paths << File.join(config.root, "app", "models", "links")
+    # Initialize configuration defaults for originally generated Rails version.
+    config.load_defaults 5.0
   end
 end
