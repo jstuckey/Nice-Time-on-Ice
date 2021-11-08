@@ -12,6 +12,7 @@ gem 'turbolinks'
 gem 'jbuilder'
 gem 'virtus'
 gem 'nokogiri'
+gem 'bootsnap', require: false
 
 group :development do
   gem 'bullet'
