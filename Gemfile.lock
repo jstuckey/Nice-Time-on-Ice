@@ -111,13 +111,11 @@ GEM
     marcel (1.0.2)
     method_source (1.0.0)
     mini_mime (1.1.2)
-    mini_portile2 (2.6.1)
     minitest (5.14.4)
     msgpack (1.4.2)
     newrelic_rpm (8.1.0)
     nio4r (2.5.8)
-    nokogiri (1.12.5)
-      mini_portile2 (~> 2.6.1)
+    nokogiri (1.12.5-arm64-darwin)
       racc (~> 1.4)
     parallel (1.21.0)
     parser (3.0.2.0)
@@ -217,7 +215,7 @@ GEM
     zeitwerk (2.5.1)
 
 PLATFORMS
-  ruby
+  arm64-darwin-21
 
 DEPENDENCIES
   bootsnap
@@ -241,7 +239,7 @@ DEPENDENCIES
   virtus
 
 RUBY VERSION
-   ruby 2.7.4p191
+   ruby 3.0.2p107
 
 BUNDLED WITH
-   2.1.4
+   2.2.22
