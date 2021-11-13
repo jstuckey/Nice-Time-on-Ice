@@ -2,7 +2,7 @@ require 'csv'
 
 # Create Game records using a CSV file
 # Used for loading historic game data in bulk
-class GameCSVImporter
+class GameCsvImporter
   HEADER_YEAR        = "year".freeze
   HEADER_GAME_NUMBER = "game_number".freeze
   HEADER_AWAY_TEAM   = "away_team".freeze
