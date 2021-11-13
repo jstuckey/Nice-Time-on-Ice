@@ -54,4 +54,4 @@ end
 puts "Creating games..."
 
 CSV_PATH = File.join(Rails.root, 'db', 'game_dump.csv')
-GameCSVImporter.new(CSV_PATH).import
+GameCsvImporter.new(CSV_PATH).import

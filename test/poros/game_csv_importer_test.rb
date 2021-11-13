@@ -1,17 +1,17 @@
 require 'test_helper'
 
-class GameCSVImporterTest < ActiveSupport::TestCase
+class GameCsvImporterTest < ActiveSupport::TestCase
   CSV_PATH = File.join(Rails.root, 'test', 'fixtures', 'import.csv')
 
   test "should create a new game database record" do
     assert_difference "Game.count" do
-      GameCSVImporter.new(CSV_PATH).import
+      ::GameCsvImporter.new(CSV_PATH).import
     end
   end
 
   test "should create game with attributes matching the csv file" do
     Game.destroy_all
-    GameCSVImporter.new(CSV_PATH).import
+    ::GameCsvImporter.new(CSV_PATH).import
     game = Game.last
 
     assert_equal 2014, game.season.year_start
